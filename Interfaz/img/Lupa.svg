@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="29.235" height="32.482" viewBox="0 0 29.235 32.482">
+  <defs>
+    <filter id="Trazado_31" x="1.235" y="0" width="28" height="28" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Trazado_32" x="0" y="8.543" width="22.84" height="23.939" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Lupa" transform="translate(9.398 6)">
+    <g transform="matrix(1, 0, 0, 1, -9.4, -6)" filter="url(#Trazado_31)">
+      <g id="Trazado_31-2" data-name="Trazado 31" transform="translate(10.23 6)" fill="none">
+        <path d="M5,0A5,5,0,1,1,0,5,5,5,0,0,1,5,0Z" stroke="none"/>
+        <path d="M 5 1 C 2.794390201568604 1 1 2.794390201568604 1 5 C 1 7.205610275268555 2.794390201568604 9 5 9 C 7.205610275268555 9 9 7.205610275268555 9 5 C 9 2.794390201568604 7.205610275268555 1 5 1 M 5 0 C 7.761420249938965 0 10 2.238580226898193 10 5 C 10 7.761420249938965 7.761420249938965 10 5 10 C 2.238580226898193 10 0 7.761420249938965 0 5 C 0 2.238580226898193 2.238580226898193 0 5 0 Z" stroke="none" fill="#fff"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9.4, -6)" filter="url(#Trazado_32)">
+      <path id="Trazado_32-2" data-name="Trazado 32" d="M3.329.345-.715,5.68" transform="translate(10.11 14.5)" fill="none" stroke="#fff" stroke-width="1"/>
+    </g>
+  </g>
+</svg>
