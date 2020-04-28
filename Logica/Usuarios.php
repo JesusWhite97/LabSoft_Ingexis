@@ -2,7 +2,7 @@
     // ========================================================
     include '../BD/ProceUser.php';
     // ========================================================
-    class Usuarios{
+    class Usuario{
         //#####################################################
         public function Existencia_de_correo($correo){
             $usuarioBD = new procedimientos_User();
