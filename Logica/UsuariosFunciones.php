@@ -40,12 +40,6 @@
             return $respuesta;
         }
         //#####################################################
-        public function TarjetasUsuarios(){
-            $usuarioBD = new procedimientos_User();
-            $respuesta = $usuarioBD->ListaTarjetasUsuarios();
-            return $respuesta;
-        }
-        //#####################################################
         public function TarjetaEspecifica($correo){
             $usuarioBD = new procedimientos_User();
             $respuesta = $usuarioBD->TrajetaEspecifica($correo);
@@ -110,26 +104,55 @@
             //pendiente por interfaz
         }
         //#####################################################
-        public function Buscar_tarjetas($texto){
+        public function Buscar_tarjetas($texto, $arregloPuestos){
             $usuarioBD = new procedimientos_User();
             $respuesta = $usuarioBD->Buscar_tarjetas_usuarios($texto);
+            $lim = count($respuesta);
+            //filtrado Si existe ===============
+            for($i = 0; $i < $lim; $i++){
+                if($arregloPuestos[0] == '0' && $respuesta[$i]['puesto'] == 'Jefe De Laboratorio'){
+                    unset($respuesta[$i]);
+                }
+                else if($arregloPuestos[1] == '0' && $respuesta[$i]['puesto'] == 'Administrador'){
+                    unset($respuesta[$i]);
+                }
+                else if($arregloPuestos[2] == '0' && $respuesta[$i]['puesto'] == 'Laboratorista 1'){
+                    unset($respuesta[$i]);
+                }
+                else if($arregloPuestos[3] == '0' && $respuesta[$i]['puesto'] == 'Laboratorista 2'){
+                    unset($respuesta[$i]);
+                }
+            }
+            //==================================
+            $respuesta = array_values($respuesta);
             return $respuesta;
         }
         //#####################################################
-        public function Filtro_por_puesto($arregloPuestos){
-            //ingresar arreglo con los puestos buscados 
-            //Ejemplo1: $puestos = ['Jefe De Laboratorio','Administrador','Laboratorista 1','Laboratorista 2'];
-            //Ejemplo2: $puestos = ['Jefe De Laboratorio','Administrador','Laboratorista 1',''];
-            //Ejemplo3: $puestos = ['Jefe De Laboratorio','Administrador','',''];
-            //Ejemplo4: $puestos = ['Jefe De Laboratorio','','',''];
-            $usuarioBD = new procedimientos_User();
-            $respuesta = $usuarioBD->Filtro_tarjetas_puesto($arregloPuestos[0], $arregloPuestos[1], $arregloPuestos[2], $arregloPuestos[3]);
-            return $respuesta;
-        }
+        // public function TarjetasUsuarios(){
+        //     $usuarioBD = new procedimientos_User();
+        //     $respuesta = $usuarioBD->ListaTarjetasUsuarios();
+        //     return $respuesta;
+        // }
+        //#####################################################
+        // public function Filtro_por_puesto($arregloPuestos){
+        //     //ingresar arreglo con los puestos buscados 
+        //     //Ejemplo1: $puestos = ['Jefe De Laboratorio','Administrador','Laboratorista 1','Laboratorista 2'];
+        //     //Ejemplo2: $puestos = ['Jefe De Laboratorio','Administrador','Laboratorista 1',''];
+        //     //Ejemplo3: $puestos = ['Jefe De Laboratorio','Administrador','',''];
+        //     //Ejemplo4: $puestos = ['Jefe De Laboratorio','','',''];
+        //     $usuarioBD = new procedimientos_User();
+        //     $respuesta = $usuarioBD->Filtro_tarjetas_puesto($arregloPuestos[0], $arregloPuestos[1], $arregloPuestos[2], $arregloPuestos[3]);
+        //     return $respuesta;
+        // }
         //#####################################################
     }
     // ========================================================
-    // $usuario = new Usuarios();
+    // $usuario = new Usuario();
+    // $puestos = '0110';
+    // $arregloEjemplo = $usuario->Buscar_tarjetas('', $puestos);
+    // var_dump($arregloEjemplo);
+    // ========================================================
+    // $usuario = new Usuario();
     // $arregloEjemplo = $usuario->TarjetasUsuarios('Luis@gmail.com','1234');
     // var_dump($arregloEjemplo);
     // echo '

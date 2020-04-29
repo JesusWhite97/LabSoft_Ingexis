@@ -1,5 +1,5 @@
 <?php   
-    include_once '../Logica/claseImprimirInterfaz.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="css/main.css">
+        <script
+                src="https://code.jquery.com/jquery-3.4.1.min.js"
+                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+                crossorigin="anonymous">
+        </script>
+        <script src="js/usuarios.js"></script>
         <script>
                 var flag = true;
                 function mostrarOpciones(){
@@ -34,21 +40,21 @@
                         }
                 }
                 function cargarInfoUsuario(){
-                    let divUsuarios = document.getElementById("divUsuarios");
-                    let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-                    divUsuarios.style.display = "none";
-                    divInfoUsuarios.style.display = "block";
+                        let divUsuarios = document.getElementById("divUsuarios");
+                        let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+                        divUsuarios.style.display = "none";
+                        divInfoUsuarios.style.display = "block";
                 }
                 function goBack(){
-                    let divUsuarios = document.getElementById("divUsuarios");
-                    let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-                    divUsuarios.style.display = "block";
-                    divInfoUsuarios.style.display = "none";
+                        let divUsuarios = document.getElementById("divUsuarios");
+                        let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+                        divUsuarios.style.display = "block";
+                        divInfoUsuarios.style.display = "none";
                 }
         </script>
         <title>Ingexis Labsoft - Usuarios</title>
 </head>
-<body>
+<body >
         <div class="fondoPantalla"></div>
 
         <header id="encabezadoBotones">
@@ -62,16 +68,16 @@
                 <div id="divUsuarios">
                         <div id="contenedorBuscador">
                                 <div id="desenfoque" class="sombra"></div>
-                                <input type="text" id="buscarEntrada" onkeyup="myFunction()" placeholder="Buscar..." title="Type in a name"></input>
+                                <input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(this.Text,'1111')" placeholder="Buscar..." title="Type in a name"></input>
                                 <button id="opciones" onclick="mostrarOpciones()"></button>
                         </div> 
                         <div id="contenedorOpciones" clsass="sombra" style="display: none;">
                                 <a href="">Agregar usuario</a>
                                 <a href="">Filtrado</a>
                         </div>
-                        <div id="contenedorGridResponsivo"> 
+                        <div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
 
-                        <?php echo imprimir_tarjetas_usuario(); ?>
+                        
 
                         </div>
                 </div>

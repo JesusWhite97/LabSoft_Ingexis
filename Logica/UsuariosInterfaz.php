@@ -1,8 +1,8 @@
 <?php
-    include '/wamp64/www/LabSoft_Ingexis/Logica/Usuarios.php';
-    function Imprimir_tarjetas_usuario(){
+    include '/wamp64/www/LabSoft_Ingexis/Logica/UsuariosFunciones.php';
+    function imprimir_tarjetas_usuario($busqueda, $filtro){
         $Usuario = new Usuario();
-        $arrayTajetas = $Usuario->TarjetasUsuarios();
+        $arrayTajetas = $Usuario->Buscar_tarjetas($busqueda,$filtro);
         $Tarjetas = '';
         for($i = 0; $i<count($arrayTajetas); $i++){
             $Tarjetas = $Tarjetas . '
