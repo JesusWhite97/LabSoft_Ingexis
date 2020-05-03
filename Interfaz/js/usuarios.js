@@ -15,5 +15,4 @@ function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
         tarjetas = arrayResponse[0].mensajeRespuesta;
         document.getElementById("contenedorGridResponsivo").innerHTML = arrayResponse[0].mensajeDatos;
     });
-    
 }
