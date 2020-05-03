@@ -1,3 +1,11 @@
+<!-- ========================================================================================== -->
+<?php
+    session_start();
+    if(!isset($_SESSION["correo"])){
+        header('Location: /LabSoft_Ingexis/Interfaz/Login.php');
+    }
+?>
+<!-- ========================================================================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,17 +17,24 @@
     <script src="js/jquery-3.4.1.js"></script>
     <script src="js/login.js"></script>
     <title>Ingexis LabSoftware</title>
+    <script>
+        function clickIniciar(){
+            let contra = document.getElementById("inputLogin").value; 
+            validaContra(contra);
+        }
+    </script>
 </head>
 
     <div id="contenedorLogin">
         <div id="contenedorTituloLogin">
             <div id="imgUser"></div>
-            <h2 id="tituloLogin">Titulo Usuario</h2>
+            <h2 id="tituloLogin"> <?php echo $_SESSION['apodo']; ?></h2>
         </div>
         <div id="contenedorInputLogin">
             <input type="password" name="password" id="inputLogin" placeholder="Contraseña">
-            <button id="footerGuardar_Boton" style="margin:00px auto;">Iniciar sesión</button>
+            <button id="footerGuardar_Boton" style="margin:00px auto;" onclick=clickIniciar()>Iniciar sesión</button>
         </div>
     </div>
 
 </html>
+<!-- ========================================================================================== -->
