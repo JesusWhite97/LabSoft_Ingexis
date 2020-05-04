@@ -8,7 +8,7 @@ use databaseingexis;
 --     contra          varchar(20),
 --     img_log         VARCHAR(100)
 -- );
---======================================--
+-- ======================================--
 -- create table usuarios(
 --     id_usuario      int             not null,
 --     nombre1         varchar(20),

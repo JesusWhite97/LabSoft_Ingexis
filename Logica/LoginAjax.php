@@ -8,6 +8,7 @@
             //declaracion de variables--------------------------
             $Respuesta = '';
             $infoUser = '';
+            $Salida = '';
             $correo = $_POST['correo'];
             $usuario = new Usuario();
             //Formular Respuesta--------------------------------
@@ -17,14 +18,16 @@
                 $_SESSION["correo"]     = $correo;
                 $_SESSION["apodo"]      = $infoUser[0];
                 $_SESSION["imgUsuario"] = $infoUser[1];
+                $Salida = '/LabSoft_Ingexis/Interfaz/LoginContraseña.php';
             }
             else{
                 $Respuesta = 'El correo ingresado no existe. -'. $correo .'-';
+                $Salida = '/LabSoft_Ingexis/Interfaz/Login.php';
             }
             //salida--------------------------------------------
             $json[] =   [
                             'mensajeSalida' => $Respuesta,
-                            'validacion'    => $usuario->Existencia_de_correo($correo)
+                            'validacion'    => $Salida
                         ];
                 $jsonString = json_encode($json);
                 echo $jsonString;

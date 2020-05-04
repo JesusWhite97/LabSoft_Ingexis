@@ -1,155 +1,104 @@
 <?php   
-
+	session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="css/main.css">
-        <script
-                src="https://code.jquery.com/jquery-3.4.1.min.js"
-                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-                crossorigin="anonymous">
-        </script>
-        <script src="js/usuarios.js"></script>
-        <script>
-                var flag = true;
-                function mostrarOpciones(){
-                        let contenedorOpciones = document.getElementById("contenedorOpciones");
-                        let contenedorGridResponsivo = document.getElementById("contenedorGridResponsivo");
-                        let sombradesenfoque = document.getElementById("desenfoque");
-                        let botonOpciones = document.getElementById("opciones");
-                        
-                        if(flag == true){
-                                contenedorOpciones.style.display = "grid";
-                                contenedorGridResponsivo.style.marginTop = "175px";
-                                sombradesenfoque.classList.remove("sombra");
-                                sombradesenfoque.style.borderRadius = "10px 10px 0px 0px";
-                                botonOpciones.style.backgroundImage = "url(../img/opcionesOpen.svg)";
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/main.css">
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+		crossorigin="anonymous">
+	</script>
+	<script src="js/usuarios.js"></script>
+	<script>
+		// --------------------------------------
+		window.onload = function(){
+			this.cargarTarjetas('','1111');
+			cargarInfo('<?php echo $_SESSION['correo'] ?>');
+		}
+		// --------------------------------------
+		var flag = true;
+		function mostrarOpciones(){
+			let contenedorOpciones = document.getElementById("contenedorOpciones");
+			let contenedorGridResponsivo = document.getElementById("contenedorGridResponsivo");
+			let sombradesenfoque = document.getElementById("desenfoque");
+			let botonOpciones = document.getElementById("opciones");
+			if(flag == true){
+				contenedorOpciones.style.display = "grid";
+				contenedorGridResponsivo.style.marginTop = "175px";
+				sombradesenfoque.classList.remove("sombra");
+				sombradesenfoque.style.borderRadius = "10px 10px 0px 0px";
+				botonOpciones.style.backgroundImage = "url(../img/opcionesOpen.svg)";
+				flag = false;
+			}else{
+				contenedorOpciones.style.display = "none";
+				contenedorGridResponsivo.style.marginTop = "120px";
+				sombradesenfoque.classList.add("sombra");
+				sombradesenfoque.style.borderRadius = "10px";
+				botonOpciones.style.backgroundImage = "url(../img/opcionesClose.svg)";
+				flag = true;
+			}
+		}
+		// --------------------------------------
+		function cargarInfoUsuario(email){
+			if (screen.width >= 800) {
+			let divUsuarios = document.getElementById("divUsuarios");
+			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+			divUsuarios.style.display = "block";
+			divInfoUsuarios.style.display = "block";
+			}
 
-                                flag = false;
-                        }else{
-                                contenedorOpciones.style.display = "none";
-                                contenedorGridResponsivo.style.marginTop = "120px";
-                                sombradesenfoque.classList.add("sombra");
-                                sombradesenfoque.style.borderRadius = "10px";
-                                botonOpciones.style.backgroundImage = "url(../img/opcionesClose.svg)";
-                                flag = true;
-                        }
-                }
-                function cargarInfoUsuario(){
-                        let divUsuarios = document.getElementById("divUsuarios");
-                        let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-                        divUsuarios.style.display = "none";
-                        divInfoUsuarios.style.display = "block";
-                }
-                function goBack(){
-                        let divUsuarios = document.getElementById("divUsuarios");
-                        let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-                        divUsuarios.style.display = "block";
-                        divInfoUsuarios.style.display = "none";
-                }
-        </script>
-        <title>Ingexis Labsoft - Usuarios</title>
+			if (screen.width < 800) {
+			let divUsuarios = document.getElementById("divUsuarios");
+			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+			divUsuarios.style.display = "none";
+			divInfoUsuarios.style.display = "block";
+			}
+			cargarInfo(email);
+		}
+		// --------------------------------------
+		function goBack(){
+			if (screen.width < 800) {
+			let divUsuarios = document.getElementById("divUsuarios");
+			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+			divUsuarios.style.display = "block";
+			divInfoUsuarios.style.display = "none";
+			}
+		}
+		// --------------------------------------
+	</script>
+	<title>Ingexis Labsoft - Usuarios</title>
 </head>
 <body >
-        <div class="fondoPantalla"></div>
-
-        <header id="encabezadoBotones">
-        <button id="regresar" onclick="goBack()"></button>
-        <h2 id="titulo">Usuarios</h2>
-        <button id="menu"></button>
-        </header>
-
-        <div class="contenedorPrincipal">
-
-                <div id="divUsuarios">
-                        <div id="contenedorBuscador">
-                                <div id="desenfoque" class="sombra"></div>
-                                <input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(this.Text,'1111')" placeholder="Buscar..." title="Type in a name"></input>
-                                <button id="opciones" onclick="mostrarOpciones()"></button>
-                        </div> 
-                        <div id="contenedorOpciones" clsass="sombra" style="display: none;">
-                                <a href="">Agregar usuario</a>
-                                <a href="">Filtrado</a>
-                        </div>
-                        <div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
-
-                        
-
-                        </div>
-                </div>
-
-
-                <div id="divInfoUsuarios">
-                        <div class="contenedorCentradoResponsivo">
-                                <div id="tituloContenedor">
-                                        <div id="tituloImagen"> </div>
-                                        <h3 id="tituloInfo">Obed Kachock</h3>
-                                </div>
-                                <div class="tarjetaBlanca" style="margin-top: 0px;">        
-                                        <input style="text-align: center; grid-row: 1/ span 1; grid-column: 1/ span 1;" type="text" placeholder="Jefe de Laboratorio">
-                                        <p class="textoAyuda" style="text-align: center; grid-row: 2/ span 1; grid-column: 1/ span 1;">Puesto</p>
-                        
-                                </div>
-                        
-                                <div class="tarjetaBlanca">
-                                        <p class="titulo">Datos personales</p>
-                                        <div class="inputEnLinea" >
-                                                <input type="text"  placeholder="Raúl">
-                                                <input type="text"  placeholder="Obed">
-                                        </div>
-                                        <div class="inputEnLinea">
-                                                <p class="textoAyuda">Primer Nombre</p>
-                                                <p class="textoAyuda">Segundo Nombre</p>
-                                        </div>
-                                        <div class="inputEnLinea" >
-                                                <input type="text"  placeholder="Hernandez">
-                                                <input type="text"  placeholder="Kachok">
-                                        </div>
-                                        <div class="inputEnLinea" >
-                                                <p class="textoAyuda">Apellido Paterno</p>
-                                                <p class="textoAyuda">Apellido Materno</p>
-                                        </div>
-                                        <input type="text" placeholder="HEKR0503897F1" >
-                                        <p class="textoAyuda" >RFC</p>
-                                        <input type="text" placeholder="HEKR050389HBSZPL07">
-                                        <p class="textoAyuda">CURP</p>
-                                </div>
-                        
-                                <div class="tarjetaBlanca">
-                                        <p class="titulo">Contacto</p>
-                                        <input type="text"id="telefono" placeholder="6121083616">
-                                        <p class="textoAyuda">Número celular</p>
-                                        <input type="text" id="email" placeholder="el_obd01@gmail.com">
-                                        <p class="textoAyuda">Email</p>
-                                        <input type="text" id="password"  placeholder="************">
-                                        <p class="textoAyuda" >Contraseña</p>
-                                </div>
-                        
-                                <div class="tarjetaBlanca">
-                                        <p class="titulo">Dirección</p>
-                                        <input type="text" placeholder="Ayuntamiento">
-                                        <p class="textoAyuda">Calle</p>
-                                        <input type="text" placeholder="Yucatán">
-                                        <p class="textoAyuda">Entre</p>
-                                        <div class="inputEnLinea">
-                                                <input type="text" placeholder="La Paz">
-                                                <input type="text" placeholder="23080">
-                                        </div>
-                                        <div class="inputEnLinea">
-                                                <p class="textoAyuda">Ciudad</p>
-                                                <p class="textoAyuda">Código Postal</p>
-                                        </div>
-                                        <input type="text" placeholder="Sudcalifornia">
-                                        <p class="textoAyuda">Colonia</p>
-                                </div>
-                        </div>
-
-                </div>
-
-        </div>
-
+	<div class="fondoPantalla"></div>
+	<header id="encabezadoBotones">
+	<button id="regresar" onclick="goBack()"></button>
+	<h2 id="titulo">Usuarios</h2>
+	<button id="menu"></button>
+	</header>
+	<div class="contenedorPrincipal">
+		<!-- 00000000000000000000000 -->
+		<div id="divUsuarios">
+			<div id="contenedorBuscador">
+					<div id="desenfoque" class="sombra"></div>
+					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,'1111')" placeholder="Buscar..." title="Type in a name"></input>
+					<button id="opciones" onclick="mostrarOpciones()"></button>
+			</div> 
+			<div id="contenedorOpciones" clsass="sombra" style="display: none;">
+					<a href="">Agregar usuario</a>
+					<a href="">Filtrado</a>
+			</div>
+			<div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
+			</div>
+		</div>
+		<!-- 11111111111111111111111 -->
+		<div id="divInfoUsuarios">
+			
+		</div>
+		<!-- 22222222222222222222222 -->
+	</div>
 </body>
