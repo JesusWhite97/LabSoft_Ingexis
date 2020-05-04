@@ -1,5 +1,5 @@
 --======================================--
--- use databaseingexis;
+use databaseingexis;
 --======================================--
 -- create procedure insertarCliente(
 --     in titulo           varchar(60),
@@ -44,7 +44,6 @@
 --     select id_by_correo_Clientes(correo) into id_cliente;
 --     update clientes set clientes.nota = nota where clientes.id_clientes = id_cliente;
 -- end
--- call Clientes_mod_nota('ut.nisi@Phasellusfermentum.ca', 'no mames si terminamos al time')
 --======================================--
 -- create procedure Clientes_mod_Contacto(in correo varchar(50), in nom_contac varchar(100), in num_contac varchar(30))
 -- begin
@@ -58,7 +57,6 @@
 --     where
 --         clientes.id_clientes = id_cliente;
 -- end 
--- call Clientes_mod_Contacto('ut.nisi@Phasellusfermentum.ca', 'juanito perez pitaz', '6128795524');
 --======================================--
 -- create procedure Clientes_mod_Dbasicos(in correo varchar(50), in titulo varchar(60), in nombreE varchar(60), in RFC varchar(13))
 -- begin 
@@ -73,7 +71,6 @@
 --     WHERE 
 --         clientes.id_clientes = id_cliente;
 -- end
--- call Clientes_mod_Dbasicos('ut.nisi@Phasellusfermentum.ca', 'La empresa Fav', 'Ingexis', 'abc123456ef7');
 --======================================--
 -- create procedure Clientes_mod_direccion(in correo varchar(50), in direccion varchar(100), in cod_pos varchar(10), in colonia varchar(20), in ciudad varchar(30))
 -- begin
@@ -89,7 +86,6 @@
 --     WHERE 
 --         clientes.id_clientes = id_cliente;
 -- end
--- call Clientes_mod_direccion('ut.nisi@Phasellusfermentum.ca', 'forjadores numero 500 entre banito y alexa', '23085', 'forjadores', 'La Paz');
 --======================================--
 -- create procedure Clientes_mod_Img(in correo varchar(50), in Img varchar(100))
 -- begin   

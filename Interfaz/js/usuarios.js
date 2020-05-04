@@ -1,5 +1,4 @@
 //Funciones=====================================================
-
 //################################
 function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
     const postData ={
@@ -8,7 +7,6 @@ function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
         filtro: cadenaFiltrado
     };
     $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
-        alert('si entro');
         console.log(response);
         let arrayResponse = JSON.parse(response);
         document.getElementById("contenedorGridResponsivo").innerHTML = arrayResponse[0].mensajeDatos;

@@ -5,7 +5,7 @@
     //Metodos===================================================
     if(isset($_POST["metodo"])){
         if($_POST["metodo"]=="iniciarSesion"){
-            //declaracion de variables--------------------------
+            //declaracion de variables--------------------------            
             $Respuesta = '';
             $infoUser = '';
             $Salida = '';
@@ -36,19 +36,22 @@
         if($_POST["metodo"]=="validaContra"){
             //declaracion de variables--------------------------
             $Respuesta = '';
+            $Salida = '';
             $usuario = new Usuario();
             $contra = $_POST['contra'];
             //Formular Respuesta--------------------------------
             if($usuario->Validar_contra($_SESSION["correo"], $contra) == 'true'){
                 $Respuesta = 'A Trabajar '. $_SESSION["apodo"] .' 👍.';
+                $Salida = '/LabSoft_Ingexis/Interfaz/html/principal.html';
             }
             else{
-                $Respuesta = 'Contraseña Incorrecta.';
+                $Respuesta = 'Contraseña Incorrecta.';                
+                $Salida = '/LabSoft_Ingexis/Interfaz/LoginContraseña.php';
             }
             //salida--------------------------------------------
             $json[] =   [
                             'mensajeSalida' => $Respuesta,
-                            'validacion'    => $usuario->Validar_contra($_SESSION["correo"], $contra)
+                            'validacion'    => $Salida
                         ];
             $jsonString = json_encode($json);
             echo $jsonString;

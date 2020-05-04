@@ -1,4 +1,4 @@
---CREATE database databaseingexis;
+-- CREATE database databaseingexis;
 --======================================--
 use databaseingexis;
 --======================================--

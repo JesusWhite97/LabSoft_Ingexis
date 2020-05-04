@@ -27,10 +27,10 @@
             $nom2,      $ape1,      $ape2,      $apodo, 
             $num,       $puesto,    $curp,      $rfc,
             $calleP,    $entre,     $numCasas,  $col, 
-            $codPost
+            $codPost,   $ciudad
         ){
             $usuarioBD = new procedimientos_User();
-            $respuesta = $usuarioBD->AgregarUsuario($correo, $contra, $img, $nom1, $nom2, $ape1, $ape2, $apodo, $num, $puesto, $curp, $rfc, $calleP, $entre, $numCasas, $col, $codPost);
+            $respuesta = $usuarioBD->AgregarUsuario($correo, $contra, $img, $nom1, $nom2, $ape1, $ape2, $apodo, $num, $puesto, $curp, $rfc, $calleP, $entre, $numCasas, $col, $codPost, $ciudad);
             return $respuesta;
         }
         //#####################################################

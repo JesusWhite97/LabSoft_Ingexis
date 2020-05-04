@@ -7,7 +7,7 @@ use databaseingexis;
 --     in correo       varchar(50), 
 --     in contra       varchar(20), 
 --     in img          varchar(100),
---     ---------------------------
+--     -------------------------
 --     in nom1         varchar(20),
 --     in nom2         varchar(20),
 --     in ape1         varchar(30),

@@ -70,8 +70,8 @@
                             <p class="textoAyuda">Número celular</p>
                             <input type="text" id="email" placeholder="'.$infoUsuario['correo'].'">
                             <p class="textoAyuda">Email</p>
-                            <input type="text" id="password"  placeholder="************">
-                            <p class="textoAyuda" >'.$infoUsuario['contra'].'</p>
+                            <input type="text" id="password"  placeholder="'.$infoUsuario['contra'].'">
+                            <p class="textoAyuda" >Contraseña</p>
                         </div>
                         <!-- Datos De direccion========================== -->
                         <div class="tarjetaBlanca">
@@ -81,7 +81,7 @@
                             <input type="text" placeholder="'.$infoUsuario['entre'].'">
                             <p class="textoAyuda">Entre</p>
                             <div class="inputEnLinea">
-                                <input type="text" placeholder="La Paz">
+                                <input type="text" placeholder="'.$infoUsuario['ciudad'].'">
                                 <input type="text" placeholder="'.$infoUsuario['codPostal'].'">
                             </div>
                             <div class="inputEnLinea">
@@ -94,14 +94,6 @@
                 </div>
         ';
         return $interfazInfoUsuario;
-        
-
-
-
-
-
-
     }
-
     // ========================================================
 ?>

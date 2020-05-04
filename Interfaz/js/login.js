@@ -24,9 +24,7 @@ function validaContra(contra){
         console.log(response);
         let arrayResponse = JSON.parse(response);
         alert(arrayResponse[0].mensajeSalida);
-        if(arrayResponse[0].validacion == 'true'){
-            location.href='/LabSoft_Ingexis/Interfaz/html/principal.html';
-        }
+        location.href = arrayResponse[0].validacion;
     });
 }
 // ============================================================================

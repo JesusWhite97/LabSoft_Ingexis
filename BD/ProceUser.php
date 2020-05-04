@@ -11,6 +11,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "select correoExistente('".$correo."');";
             $resultado=$mysqli->query($query);
             $rows = $resultado->fetch_array();
@@ -74,13 +75,14 @@
             $nom2,      $ape1,      $ape2,      $apodo, 
             $num,       $puesto,    $curp,      $rfc,
             $calleP,    $entre,     $numCasas,  $col, 
-            $codPost
+            $codPost,   $ciudad
         ){
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
-            $query = "CALL agregaUsuario('".$correo."', '".$contra."', '".$img."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."', '".$apodo."', '".$num."', '".$puesto."', '".$curp."', '".$rfc."', '".$calleP."', '".$entre."', '".$numCasas."', '".$col."', '".$codPost."')";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL agregaUsuario('".$correo."', '".$contra."', '".$img."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."', '".$apodo."', '".$num."', '".$puesto."', '".$curp."', '".$rfc."', '".$calleP."', '".$entre."', '".$numCasas."', '".$col."', '".$codPost."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
                 return 'true';
             }else{
@@ -94,6 +96,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL eliminar_usuario('".$correo."')";
             if($mysqli->query($query)===TRUE){
                 return "true";
@@ -170,6 +173,7 @@
             $salida['numCasa']  = $rows['numCasa'];
             $salida['codPostal']= $rows['codPostal'];
             $salida['colonia']  = $rows['colonia'];
+            $salida['ciudad']  = $rows['ciudad'];
             //============================
             return $salida;
             $resultado->free();
@@ -197,6 +201,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_puesto('".$correo."', '".$puesto."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
@@ -211,6 +216,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_nombre('".$correo."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
@@ -225,6 +231,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_curp('".$correo."', '".$curp."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
@@ -239,6 +246,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_rfc('".$correo."', '".$rfc."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
@@ -253,6 +261,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_apodo('".$correo."', '".$apodo."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
@@ -267,6 +276,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Telefono('".$correo."', '".$telefono."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
@@ -282,6 +292,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
@@ -296,6 +307,7 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
