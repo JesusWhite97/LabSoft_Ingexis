@@ -8,7 +8,7 @@ use databaseingexis;
 --     contra          varchar(20),
 --     img_log         VARCHAR(100)
 -- );
---======================================--
+-- ======================================--
 -- create table usuarios(
 --     id_usuario      int             not null,
 --     nombre1         varchar(20),
@@ -19,7 +19,7 @@ use databaseingexis;
 --     --informacion---------------
 --     Num_contacto    varchar(30),
 --     puesto          enum('Jefe De Laboratorio', 'Administrador', 'Laboratorista 1', 'Laboratorista 2'),
---     Curp            varchar(18), -- 4 letras, 6 numeros, 1 letra, 2 letras, 3 letras, 1 num o letra, 1 numero
+--     Curp            varchar(18)     primary key, -- 4 letras, 6 numeros, 1 letra, 2 letras, 3 letras, 1 num o letra, 1 numero
 --     rfc             varchar(13), -- 4 0 3 letras, 6 numeros, 3 num o letras
 --     --direccion-----------------
 --     calleP          varchar(20),
@@ -27,6 +27,7 @@ use databaseingexis;
 --     numero          varchar(10),
 --     colonia         varchar(20),
 --     cod_postal      varchar(10),
+--     ciudad          varchar(50),
 --     --ralaciones ETC------------
 --     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
 -- );

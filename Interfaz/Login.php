@@ -1,13 +1,19 @@
+<!-- ========================================================================================== -->
+<?php
+    session_start();
+    unset($_SESSION['correo']);
+?>
+<!-- ========================================================================================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/main.js"></script>
-    <script src="../js/jquery-3.4.1.js"></script>
-    <script src="../js/login.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/login.js"></script>
     <script>
         function clickIniciar(){
             let email = document.getElementById("inputLogin").value; 
@@ -30,3 +36,4 @@
     </div>
 </body>
 </html>
+<!-- ========================================================================================== -->

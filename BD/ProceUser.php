@@ -1,6 +1,7 @@
 <?php
     // ========================================================
     include 'conexion.php';
+    header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================
     class procedimientos_User{
         //#####################################################
@@ -26,6 +27,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "select verificaContra('".$correo."', '".$contraseña."');");
             $rows = $resultado->fetch_array();
             $salida = $rows[0];
@@ -56,6 +58,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call inf_log('".$correo."');");
             $rows = $resultado->fetch_array();
             $salida[0] = $rows[0];
@@ -106,6 +109,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call listaTargetaUsuario()");
             while ($rows = $resultado->fetch_assoc())
             {
@@ -127,6 +131,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call Targeta_Especifica_Usuario('".$correo."');");
             $rows = $resultado->fetch_assoc();
             $salida['img']      = $rows['img'];
@@ -146,6 +151,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call vista_por_usuario('".$correo."');");
             $rows = $resultado->fetch_assoc();
             $salida['apodo']    = $rows['apodo'];
@@ -158,6 +164,7 @@
             $salida['curp']     = $rows['curp'];
             $salida['telefono'] = $rows['telefono'];
             $salida['correo']   = $rows['correo'];
+            $salida['contra']   = $rows['contra'];
             $salida['calle']    = $rows['calle'];
             $salida['entre']    = $rows['entre'];
             $salida['numCasa']  = $rows['numCasa'];
@@ -175,6 +182,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "CALL Usuario_mod_contra('".$correo."', '".$anterior."', '".$nueva."');");
             $rows = $resultado->fetch_array();
             $salida = $rows[0];
@@ -304,6 +312,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call buscar_tar_usuarios('".$texto."')");
             while ($rows = $resultado->fetch_assoc())
             {
@@ -323,6 +332,7 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             //============================
             $salida = array();
             if($puesto2 == null && $puesto3 == null && $puesto4 == null){

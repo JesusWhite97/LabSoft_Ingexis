@@ -25,11 +25,13 @@ use databaseingexis;
 --     usuarios.Curp as 'curp',
 --     usuarios.Num_contacto as 'telefono',
 --     log_usuarios.correo as 'correo',
+--     log_usuarios.contra as 'contra',
 --     usuarios.calleP as 'calle',
 --     usuarios.Entrecalles as 'entre',
 --     usuarios.numero as 'numCasa',
 --     usuarios.cod_postal as 'codPostal',
---     usuarios.colonia as 'colonia'
+--     usuarios.colonia as 'colonia',
+--     usuarios.ciudad as 'ciudad'
 -- FROM 
 --     log_usuarios,
 --     usuarios

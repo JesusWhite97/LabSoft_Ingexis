@@ -714,7 +714,6 @@ body {
   grid-row: 1 / 3;
   width: 100%;
   height: 100%;
-  background-image: url("../img/user.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1788,11 +1787,6 @@ body {
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
   }
-  .contenedorPrincipal .divInfoUsuarios {
-    grid-column: 2 span 1;
-    display: block;
-    overflow-y: scroll;
-  }
   .divUsuarios {
     grid-column: 1 span 1;
     display: block;
@@ -1803,6 +1797,11 @@ body {
     background-image: linear-gradient(to right, #17232470, #17232470);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
+  }
+  .divInfoUsuarios {
+    grid-column: 2 span 1;
+    display: none;
+    overflow-y: scroll;
   }
   #contenedorBuscador {
     position: relative;

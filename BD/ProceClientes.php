@@ -1,6 +1,7 @@
 <?php
     // ========================================================
     include 'conexion.php';
+    header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================
     class procedimientos_Clientes{
         //#####################################################
@@ -13,6 +14,7 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             //============================
             $fecha = date("Y-m-d");
             //============================
@@ -45,6 +47,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call tarjetas_clientes()");
             while ($rows = $resultado->fetch_assoc())
             {
@@ -137,6 +140,7 @@
             $mysqli = $conex->conexion();
             //============================
             $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call buscar_tar_Cliente('".$texto."')");
             while ($rows = $resultado->fetch_assoc())
             {

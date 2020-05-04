@@ -2,7 +2,7 @@ use databaseingexis;
 --======================================--
 -- create procedure inf_log(in correo varchar(50))
 --     select usuarios.apodo, log_usuarios.img_log from log_usuarios, usuarios where usuarios.id_usuario = log_usuarios.id_usuario and log_usuarios.correo = correo;
---======================================--
+-- ======================================--
 -- create PROCEDURE agregaUsuario(
 --     in correo       varchar(50), 
 --     in contra       varchar(20), 
@@ -21,14 +21,15 @@ use databaseingexis;
 --     in entre        varchar(50),
 --     in numcasa      varchar(10),
 --     in colonia      varchar(20),
---     in codPostal    varchar(20)
+--     in codPostal    varchar(20),
+--     in ciudad       varchar(50)
 -- )
 -- BEGIN
 --     INSERT Log_usuarios (log_usuarios.correo, log_usuarios.contra, log_usuarios.img_log) values (correo, contra, img);
 --     if apodo = '' then
 --         set apodo = CONCAT(nom1, ' ', nom2);
 --     end if;
---     INSERT usuarios values(last_insert_id(), nom1, nom2, ape1, ape2, apodo, num, puest, curp, rfc, calleP, entre, numcasa, colonia, codPostal);
+--     INSERT usuarios values(last_insert_id(), nom1, nom2, ape1, ape2, apodo, num, puest, curp, rfc, calleP, entre, numcasa, colonia, codPostal, ciudad);
 -- END
 --======================================--
 -- create PROCEDURE eliminar_usuario(in correo varchar(50))
@@ -124,7 +125,8 @@ use databaseingexis;
 --     in entre varchar(50), 
 --     in numCasa varchar(10), 
 --     in col varchar(20), 
---     in codigoP varchar(10)
+--     in codigoP varchar(10),
+--     in ciudad varchar(50)
 --     )
 -- begin
 --     declare id_usuario int;
@@ -135,7 +137,8 @@ use databaseingexis;
 --         usuarios.Entrecalles = entre,
 --         usuarios.numero = numCasa,
 --         usuarios.colonia = col,
---         usuarios.cod_postal = codigoP
+--         usuarios.cod_postal = codigoP,
+--         usuarios.ciudad = ciudad
 --     where 
 --         usuarios.id_usuario = id_usuario;
 -- end
