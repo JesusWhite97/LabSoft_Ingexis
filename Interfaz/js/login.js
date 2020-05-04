@@ -6,7 +6,7 @@ function iniciarSesion(correo){
         correo: correo
     };
     $.post('/LabSoft_Ingexis/Logica/LoginAjax.php', postData, function(response){
-        // console.log(response);
+        console.log(response);
         let arrayResponse = JSON.parse(response);
         alert(arrayResponse[0].mensajeSalida);
         location.href = arrayResponse[0].validacion;
@@ -21,7 +21,7 @@ function validaContra(contra){
         contra: contra
     }
     $.post('/LabSoft_Ingexis/Logica/LoginAjax.php', postData, function(response){
-        // console.log(response);
+        console.log(response);
         let arrayResponse = JSON.parse(response);
         alert(arrayResponse[0].mensajeSalida);
         if(arrayResponse[0].validacion == 'true'){
