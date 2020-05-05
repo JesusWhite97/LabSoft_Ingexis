@@ -52,7 +52,7 @@
             $json[] =   [
                             'mensajeSalida' => $Respuesta,
                             'validacion'    => $Salida
-                        ];
+                        ]; 
             $jsonString = json_encode($json);
             echo $jsonString;
         }
