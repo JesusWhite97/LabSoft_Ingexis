@@ -125,20 +125,20 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
   }
 }
 
-  function eliminarUsuario(str) {
-    var respuesta = "";
-    const postData ={metodo:"eliminar",usuario:str};
-    $.post('../Logica/claseProcedures.php',postData,function(response){
-      console.log(response);
-      let arrayResponse = JSON.parse(response);
-      document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
-      document.getElementById("contenedorModal").style.height = "0%";
-      document.getElementById("contenedorModalEliminado").style.height = "100%";
-      window.addEventListener('scroll', noScrollModal);
+//   function eliminarUsuario(str) {
+//     var respuesta = "";
+//     const postData ={metodo:"eliminar",usuario:str};
+//     $.post('../Logica/claseProcedures.php',postData,function(response){
+//       console.log(response);
+//       let arrayResponse = JSON.parse(response);
+//       document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
+//       document.getElementById("contenedorModal").style.height = "0%";
+//       document.getElementById("contenedorModalEliminado").style.height = "100%";
+//       window.addEventListener('scroll', noScrollModal);
 
-    });
-    return respuesta;
-}
+//     });
+//     return respuesta;
+// }
 
 
     function cambiarPantallaEditar(item){
@@ -207,56 +207,56 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
       return arrayOptions[index].value;
     }
 
-    function modificarUsuario(img){
-      var respuesta;
+    // function modificarUsuario(img){
+    //   var respuesta;
       
-      if(flagImg == 1){
-        subirImg();
-        respuestaImg = "../img/"+ respuestaSubirIMG;
-        console.log(respuestaSubirIMG);
-        console.log(respuestaImg);
-      }else{
-        respuestaImg = img;
-      }
+    //   if(flagImg == 1){
+    //     subirImg();
+    //     respuestaImg = "../img/"+ respuestaSubirIMG;
+    //     console.log(respuestaSubirIMG);
+    //     console.log(respuestaImg);
+    //   }else{
+    //     respuestaImg = img;
+    //   }
 
-      if(respuestaImg != "../img/NO"){
-      const postData ={
-        metodo:"modificar",
-        titulo:document.getElementById("tituloInfo").value,
-        img:respuestaImg,
-        puesto:obtenerValorSelect(document.getElementById("puesto").selectedIndex),
-        primerNombre:document.getElementById("primerNombre").value,
-        segundoNombre:document.getElementById("segundoNombre").value,
-        apellidoPaterno:document.getElementById("apellidoPaterno").value,
-        apellidoMaterno:document.getElementById("apellidoMaterno").value,
-        rfc:document.getElementById("rfc").value,
-        curp:document.getElementById("curp").value,
-        telefono:document.getElementById("telefono").value,
-        email:document.getElementById("email").value,
-        calle:document.getElementById("calle").value,
-        entre:document.getElementById("entre").value,
-        ciudad:document.getElementById("ciudad").value,
-        cp:document.getElementById("cp").value,
-        colonia:document.getElementById("colonia").value
-      };
-      $.post('../Logica/claseProcedures.php',postData,function(response){
-        console.log(response);
-        let arrayResponse = JSON.parse(response);
-        document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
-        document.getElementById("contenedorModal").style.height = "0%";
-        document.getElementById("contenedorModalEliminado").style.height = "100%";
-        window.addEventListener('scroll', noScrollModal);
+    //   if(respuestaImg != "../img/NO"){
+    //   const postData ={
+    //     metodo:"modificar",
+    //     titulo:document.getElementById("tituloInfo").value,
+    //     img:respuestaImg,
+    //     puesto:obtenerValorSelect(document.getElementById("puesto").selectedIndex),
+    //     primerNombre:document.getElementById("primerNombre").value,
+    //     segundoNombre:document.getElementById("segundoNombre").value,
+    //     apellidoPaterno:document.getElementById("apellidoPaterno").value,
+    //     apellidoMaterno:document.getElementById("apellidoMaterno").value,
+    //     rfc:document.getElementById("rfc").value,
+    //     curp:document.getElementById("curp").value,
+    //     telefono:document.getElementById("telefono").value,
+    //     email:document.getElementById("email").value,
+    //     calle:document.getElementById("calle").value,
+    //     entre:document.getElementById("entre").value,
+    //     ciudad:document.getElementById("ciudad").value,
+    //     cp:document.getElementById("cp").value,
+    //     colonia:document.getElementById("colonia").value
+    //   };
+    //   $.post('../Logica/claseProcedures.php',postData,function(response){
+    //     console.log(response);
+    //     let arrayResponse = JSON.parse(response);
+    //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
+    //     document.getElementById("contenedorModal").style.height = "0%";
+    //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+    //     window.addEventListener('scroll', noScrollModal);
   
-      });
-    }else{
-      document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
-      document.getElementById("contenedorModal").style.height = "0%";
-      document.getElementById("contenedorModalEliminado").style.height = "100%";
-      window.addEventListener('scroll', noScrollModal);
+    //   });
+    // }else{
+    //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
+    //   document.getElementById("contenedorModal").style.height = "0%";
+    //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+    //   window.addEventListener('scroll', noScrollModal);
 
-    }
-      return respuesta;
-    }
+    // }
+    //   return respuesta;
+    // }
     // ==================================================================================
     var respuestaSubirIMG = "";
     var errorSubirIMG = "";
@@ -265,12 +265,12 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
       console.log(postData);
       $.ajax({
         data:postData,
-        url:'../../Logica/claseSubirImg.php',
+        url:'../Logica/claseSubirImg.php',
         type:"POST",
         contentType:false,
         processData:false,
         async:false,
-        success:function(response){ 
+        success:function(response){
           var arrayResponse = JSON.parse(response);
           console.log(arrayResponse[0].respuesta);
           respuestaSubirIMG = arrayResponse[0].respuesta;
@@ -279,171 +279,169 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
       });
   }
   // ==================================================================================
-  function registrarUsuario(){
-    var respuesta;
-      subirImg();
-      respuestaImg = "../img/"+ respuestaSubirIMG;
-      console.log(respuestaSubirIMG);
-      console.log(respuestaImg);
-    if(respuestaImg != "../img/NO"){
-    const postData ={
-      metodo:"registrar",
-      titulo:document.getElementById("tituloInfo").value,
-      img:respuestaImg,
-      puesto:obtenerValorSelect(document.getElementById("puesto").selectedIndex),
-      primerNombre:document.getElementById("primerNombre").value,
-      segundoNombre:document.getElementById("segundoNombre").value,
-      apellidoPaterno:document.getElementById("apellidoPaterno").value,
-      apellidoMaterno:document.getElementById("apellidoMaterno").value,
-      rfc:document.getElementById("rfc").value,
-      curp:document.getElementById("curp").value,
-      telefono:document.getElementById("telefono").value,
-      email:document.getElementById("email").value,
-      password:document.getElementById("password").value,
-      calle:document.getElementById("calle").value,
-      entre:document.getElementById("entre").value,
-      ciudad:document.getElementById("ciudad").value,
-      cp:document.getElementById("cp").value,
-      colonia:document.getElementById("colonia").value
-    };
-    $.post('../Logica/claseProcedures.php',postData,function(response){
-      console.log(response);
-      let arrayResponse = JSON.parse(response);
-      document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
-      document.getElementById("contenedorModal").style.height = "0%";
-      document.getElementById("contenedorModalEliminado").style.height = "100%";
-      window.addEventListener('scroll', noScrollModal);
+  // function registrarUsuario(){
+  //   var respuesta;
+  //     subirImg();
+  //     respuestaImg = "../img/"+ respuestaSubirIMG;
+  //     console.log(respuestaSubirIMG);
+  //     console.log(respuestaImg);
+  //   if(respuestaImg != "../img/NO"){
+  //   const postData ={
+  //     metodo:"registrar",
+  //     titulo:document.getElementById("tituloInfo").value,
+  //     img:respuestaImg,
+  //     puesto:obtenerValorSelect(document.getElementById("puesto").selectedIndex),
+  //     primerNombre:document.getElementById("primerNombre").value,
+  //     segundoNombre:document.getElementById("segundoNombre").value,
+  //     apellidoPaterno:document.getElementById("apellidoPaterno").value,
+  //     apellidoMaterno:document.getElementById("apellidoMaterno").value,
+  //     rfc:document.getElementById("rfc").value,
+  //     curp:document.getElementById("curp").value,
+  //     telefono:document.getElementById("telefono").value,
+  //     email:document.getElementById("email").value,
+  //     password:document.getElementById("password").value,
+  //     calle:document.getElementById("calle").value,
+  //     entre:document.getElementById("entre").value,
+  //     ciudad:document.getElementById("ciudad").value,
+  //     cp:document.getElementById("cp").value,
+  //     colonia:document.getElementById("colonia").value
+  //   };
+  //   $.post('../Logica/claseProcedures.php',postData,function(response){
+  //     console.log(response);
+  //     let arrayResponse = JSON.parse(response);
+  //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
+  //     document.getElementById("contenedorModal").style.height = "0%";
+  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     window.addEventListener('scroll', noScrollModal);
 
-    });
-  }else{
-    document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
-    document.getElementById("contenedorModal").style.height = "0%";
-    document.getElementById("contenedorModalEliminado").style.height = "100%";
-    window.addEventListener('scroll', noScrollModal);
+  //   });
+  // }else{
+  //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
+  //   document.getElementById("contenedorModal").style.height = "0%";
+  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   window.addEventListener('scroll', noScrollModal);
 
-  }
-    return respuesta;
-  }
+  // }
+  //   return respuesta;
+  // }
 
-  function registrarCliente(){
-    var respuesta;
-      subirImg();
-      respuestaImg = "../img/"+ respuestaSubirIMG;
-      console.log(respuestaSubirIMG);
-      console.log(respuestaImg);
-    if(respuestaImg != "../img/NO"){
-    const postData ={
-      metodo:"registrarCliente",
-      titulo:document.getElementById("tituloInfo").value,
-      img:respuestaImg,
-      nombre:document.getElementById("nombre").value,      
-      rfc:document.getElementById("rfc").value,      
-      direccion:document.getElementById("direccion").value,      
-      cp:document.getElementById("cp").value,      
-      colonia:document.getElementById("colonia").value,      
-      ciudad:document.getElementById("ciudad").value,      
-      nombreContacto:document.getElementById("nombreContacto").value,      
-      telefono:document.getElementById("telefono").value,      
-      email:document.getElementById("email").value,      
-      notas:document.getElementById("descripcion").value,      
-    };
-    $.post('../Logica/claseProcedures.php',postData,function(response){
-      console.log(response);
-      let arrayResponse = JSON.parse(response);
-      document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
-      document.getElementById("contenedorModal").style.height = "0%";
-      document.getElementById("contenedorModalEliminado").style.height = "100%";
-      window.addEventListener('scroll', noScrollModal);
+  // function registrarCliente(){
+  //   var respuesta;
+  //     subirImg();
+  //     respuestaImg = "../img/"+ respuestaSubirIMG;
+  //     console.log(respuestaSubirIMG);
+  //     console.log(respuestaImg);
+  //   if(respuestaImg != "../img/NO"){
+  //   const postData ={
+  //     metodo:"registrarCliente",
+  //     titulo:document.getElementById("tituloInfo").value,
+  //     img:respuestaImg,
+  //     nombre:document.getElementById("nombre").value,      
+  //     rfc:document.getElementById("rfc").value,      
+  //     direccion:document.getElementById("direccion").value,      
+  //     cp:document.getElementById("cp").value,      
+  //     colonia:document.getElementById("colonia").value,      
+  //     ciudad:document.getElementById("ciudad").value,      
+  //     nombreContacto:document.getElementById("nombreContacto").value,      
+  //     telefono:document.getElementById("telefono").value,      
+  //     email:document.getElementById("email").value,      
+  //     notas:document.getElementById("descripcion").value,      
+  //   };
+  //   $.post('../Logica/claseProcedures.php',postData,function(response){
+  //     console.log(response);
+  //     let arrayResponse = JSON.parse(response);
+  //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
+  //     document.getElementById("contenedorModal").style.height = "0%";
+  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     window.addEventListener('scroll', noScrollModal);
 
-    });
-  }else{
-    document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
-    document.getElementById("contenedorModal").style.height = "0%";
-    document.getElementById("contenedorModalEliminado").style.height = "100%";
-    window.addEventListener('scroll', noScrollModal);
+  //   });
+  // }else{
+  //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
+  //   document.getElementById("contenedorModal").style.height = "0%";
+  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   window.addEventListener('scroll', noScrollModal);
 
-  }
-    return respuesta;
-  }
+  // }
+  //   return respuesta;
+  // }
 
 
-  function modificarCliente(img){
-    var respuesta;
-    if(flagImg == 1){
-      subirImg();
-      respuestaImg = "../img/"+ respuestaSubirIMG;
-      console.log(respuestaSubirIMG);
-      console.log(respuestaImg);
-    }else{
-      respuestaImg = img;
-    }
+  // function modificarCliente(img){
+  //   var respuesta;
+  //   if(flagImg == 1){
+  //     subirImg();
+  //     respuestaImg = "../img/"+ respuestaSubirIMG;
+  //     console.log(respuestaSubirIMG);
+  //     console.log(respuestaImg);
+  //   }else{
+  //     respuestaImg = img;
+  //   }
 
-    if(respuestaImg != "../img/NO"){
-    const postData ={
-      metodo:"modificarCliente",
-      idCliente:document.getElementById("id").value,
-      titulo:document.getElementById("tituloInfo").value,
-      img:respuestaImg,
-      nombre:document.getElementById("nombre").value,
-      rfc:document.getElementById("rfc").value,
-      nombreContacto:document.getElementById("nombreContacto").value,
-      numeroContacto:document.getElementById("numeroContacto").value,
-      email:document.getElementById("email").value,
-      direccion:document.getElementById("direccion").value,
-      ciudad:document.getElementById("ciudad").value,
-      cp:document.getElementById("cp").value,
-      colonia:document.getElementById("colonia").value,
-      notas:document.getElementById("descripcion").value
-    };
-    $.post('../Logica/claseProcedures.php',postData,function(response){
-      console.log(response);
-      let arrayResponse = JSON.parse(response);
-      document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
-      document.getElementById("contenedorModal").style.height = "0%";
-      document.getElementById("contenedorModalEliminado").style.height = "100%";
-      window.addEventListener('scroll', noScrollModal);
+  //   if(respuestaImg != "../img/NO"){
+  //   const postData ={
+  //     metodo:"modificarCliente",
+  //     idCliente:document.getElementById("id").value,
+  //     titulo:document.getElementById("tituloInfo").value,
+  //     img:respuestaImg,
+  //     nombre:document.getElementById("nombre").value,
+  //     rfc:document.getElementById("rfc").value,
+  //     nombreContacto:document.getElementById("nombreContacto").value,
+  //     numeroContacto:document.getElementById("numeroContacto").value,
+  //     email:document.getElementById("email").value,
+  //     direccion:document.getElementById("direccion").value,
+  //     ciudad:document.getElementById("ciudad").value,
+  //     cp:document.getElementById("cp").value,
+  //     colonia:document.getElementById("colonia").value,
+  //     notas:document.getElementById("descripcion").value
+  //   };
+  //   $.post('../Logica/claseProcedures.php',postData,function(response){
+  //     console.log(response);
+  //     let arrayResponse = JSON.parse(response);
+  //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
+  //     document.getElementById("contenedorModal").style.height = "0%";
+  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     window.addEventListener('scroll', noScrollModal);
 
-    });
-  }else{
-    document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
-    document.getElementById("contenedorModal").style.height = "0%";
-    document.getElementById("contenedorModalEliminado").style.height = "100%";
-    window.addEventListener('scroll', noScrollModal);
+  //   });
+  // }else{
+  //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
+  //   document.getElementById("contenedorModal").style.height = "0%";
+  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   window.addEventListener('scroll', noScrollModal);
 
-  }
-    return respuesta;
-  }
+  // }
+  //   return respuesta;
+  // }
 
-  function eliminarCliente() {
-    var respuesta = "";
-    const postData ={metodo:"eliminarCliente",cliente:document.getElementById("id").value};
-    $.post('../Logica/claseProcedures.php',postData,function(response){
-      console.log(response);
-      let arrayResponse = JSON.parse(response);
-      document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
-      document.getElementById("contenedorModal").style.height = "0%";
-      document.getElementById("contenedorModalEliminado").style.height = "100%";
-      window.addEventListener('scroll', noScrollModal);
+//   function eliminarCliente() {
+//     var respuesta = "";
+//     const postData ={metodo:"eliminarCliente",cliente:document.getElementById("id").value};
+//     $.post('../Logica/claseProcedures.php',postData,function(response){
+//       console.log(response);
+//       let arrayResponse = JSON.parse(response);
+//       document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
+//       document.getElementById("contenedorModal").style.height = "0%";
+//       document.getElementById("contenedorModalEliminado").style.height = "100%";
+//       window.addEventListener('scroll', noScrollModal);
 
-    });
-    return respuesta;
-}
-function eliminarObra(id) {
-  var respuesta = "";
-  const postData ={metodo:"eliminarObra",idObra:id};
-  $.post('../Logica/claseProcedures.php',postData,function(response){
-    console.log(response);
-    let arrayResponse = JSON.parse(response);
-    document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
-    document.getElementById("contenedorModal").style.height = "0%";
-    document.getElementById("contenedorModalEliminado").style.height = "100%";
-    window.addEventListener('scroll', noScrollModal);
+//     });
+//     return respuesta;
+// }
+// function eliminarObra(id) {
+//   var respuesta = "";
+//   const postData ={metodo:"eliminarObra",idObra:id};
+//   $.post('../Logica/claseProcedures.php',postData,function(response){
+//     console.log(response);
+//     let arrayResponse = JSON.parse(response);
+//     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
+//     document.getElementById("contenedorModal").style.height = "0%";
+//     document.getElementById("contenedorModalEliminado").style.height = "100%";
+//     window.addEventListener('scroll', noScrollModal);
 
-  });
-  return respuesta;
-}
-  
-  
+//   });
+//   return respuesta;
+// }
 //################################################
 
 function obtenerNombreArchivo(){

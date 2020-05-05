@@ -24,23 +24,23 @@
 		// --------------------------------------
 		var flag = true;
 		function mostrarOpciones(){
+			let contenedorBuscador = document.getElementById("contenedorBuscador");
 			let contenedorOpciones = document.getElementById("contenedorOpciones");
 			let contenedorGridResponsivo = document.getElementById("contenedorGridResponsivo");
 			let sombradesenfoque = document.getElementById("desenfoque");
 			let botonOpciones = document.getElementById("opciones");
 			if(flag == true){
+				contenedorBuscador.style.backgroundImage = ":linear-gradient(to right,#17232470,#17232470);"
 				contenedorOpciones.style.display = "grid";
 				contenedorGridResponsivo.style.marginTop = "180px";
 				sombradesenfoque.classList.remove("sombra");
-				sombradesenfoque.style.borderRadius = "10px 10px 0px 0px";
-				botonOpciones.style.backgroundImage = "url(../img/opcionesOpen.svg)";
+				botonOpciones.style.backgroundImage = "url(img/opcionesOpen.svg)";
 				flag = false;
 			}else{
 				contenedorOpciones.style.display = "none";
 				contenedorGridResponsivo.style.marginTop = "60px";
 				sombradesenfoque.classList.add("sombra");
-				sombradesenfoque.style.borderRadius = "10px";
-				botonOpciones.style.backgroundImage = "url(../img/opcionesClose.svg)";
+				botonOpciones.style.backgroundImage = "url(img/opcionesClose.svg)";
 				flag = true;
 			}
 		}
@@ -73,21 +73,22 @@
 		// --------------------------------------
 		function guardarUser(){
 			guardarUsuario();
-			alert('salida del ajax: '+salidaUsuario);
 			if(salidaUsuario == 'true'){
-				alert('se creo el pinche usuario');
 				subirImg();
-				if(respuestaSubirIMG == 'NO'){
+				if(respuestaSubirIMG != 'NO'){
 					alert('Usuario registrado con exito 🤘.');
 				}else{
 					eliminarUsuario();
-					alert('se elimino el pinche usuario: ' + salidaUsuario);
 					if(eliminarUsuario == 'true'){
 						alert('error al registrar Usuario: ' + errorSubirIMG);
 					}
 				}
 			}
+			var correoNuevo = document.getElementById("correo").value;
+			this.cargarTarjetas('','1111');
+			cargarInfo(correoNuevo);
 		}
+		// --------------------------------------
 		// --------------------------------------
 	</script>
 	<title>Ingexis Labsoft - Usuarios</title>
@@ -103,25 +104,24 @@
 		<!-- 00000000000000000000000 -->
 		<div id="divUsuarios">
 			<div id="contenedorBuscador">
-					<div id="desenfoque" class="sombra"></div>
-					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,'1111')" placeholder="Buscar..." title="Type in a name"></input>
+					
+					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())" placeholder="Buscar..." title="Type in a name"></input>
 					<button id="opciones" onclick="mostrarOpciones()"></button>
 			</div> 
 			<div id="contenedorOpciones" class="sombra" style="display: none;">
-                                <div>
-                                        <div class="icoMenu" style="background-image:url(../img/icoAgregar.svg);background-size: 30px 30px;"></div>
+                                <div class="itemMenu" onclick="cargarRegistroUsuario()">
+                                        <div class="icoMenu" style="background-image:url(img/icoAgregar.svg);background-size: 30px 30px;" ></div>
                                         <p>Agregar usuario</p> 
                                 </div>
-                                <div>
-                                        <div class="icoMenu" style="background-image:url(../img/icoFiltro.svg);"></div>
+                                <div class="itemMenu">
+                                        <div class="icoMenu" style="background-image:url(img/icoFiltro.svg);"></div>
                                         <p>Filtrado</p>
-                                </div>
-                                <div>
+
                                         <div id="filtrado">
-                                                <div> <input checked type="checkbox" value="admon" id="admon"><p>Administrador</p></input></div>
-                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="jefe" id="jefe"><p>Jefe de Laboratorio</p></input></div>
-                                                <div> <input checked type="checkbox" value="lab1" id="lab1"><p>Laboratorista 1</p></input></div>
-                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="lab2" id="lab2"><p>Laboratorista 2</p></input></div>
+                                                <div> <input checked type="checkbox" value="admon" id="admon" onclick="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())"><p>Administrador</p></input></div>
+                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="jefe" id="jefe"  onclick="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())"><p>Jefe de Laboratorio</p></input></div>
+                                                <div> <input checked type="checkbox" value="lab1" id="lab1" onclick="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())"><p>Laboratorista 1</p></input></div>
+                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="lab2" id="lab2" onclick="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())"><p>Laboratorista 2</p></input></div>
                                         </div>
                                 </div>
             </div>

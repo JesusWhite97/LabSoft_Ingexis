@@ -76,6 +76,7 @@ function guardarUsuario(){
     });
 }
 //################################
+var salidaUsuarioEliminado ="";
 function eliminarUsuario(){
     postData = {
         metodo: "eliminarUsuario",
@@ -89,9 +90,40 @@ function eliminarUsuario(){
         success:function(response){
             console.log(response);
             var arrayResponse = JSON.parse(response);
-            salidaUsuario = arrayResponse[0].validacion;
+            salidaUsuarioEliminado = arrayResponse[0].validacion;
         }
     });
+}
+//################################
+function filtrado(){
+    var checkAdmon = document.getElementById("admon");
+    var checkJefe = document.getElementById("jefe");
+    var checkLab1 = document.getElementById("lab1");
+    var checkLab2 = document.getElementById("lab2");
+    var filtro = "";
+
+    if(checkJefe.checked == true){
+        filtro += "1";
+    }else{
+        filtro += "0";
+    }
+    if(checkAdmon.checked == true){
+        filtro += "1";
+    }else{
+        filtro += "0";
+    }
+    if(checkLab1.checked == true){
+        filtro += "1";
+    }else{
+        filtro += "0";
+    }
+    if(checkLab2.checked == true){
+        filtro += "1";
+    }else{
+        filtro += "0";
+    }
+    
+    return(filtro);
 }
 //################################
 //==============================================================

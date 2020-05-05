@@ -164,6 +164,7 @@ body{
     width: 90%;
     margin: 15px auto;
     font-family: $fuente;
+    background-image: $colorGradienteTarjetas;
 
 
     #buscarEntrada{
@@ -182,6 +183,7 @@ body{
         margin: 1% 8px;
         padding-left: 25px;
         border: 2px solid rgba(255, 255, 255, 0.6);
+        border-radius: 2px;
     }
     
     #opciones{
@@ -246,31 +248,24 @@ body{
                 p{
                     font-weight: 300; 
                     padding-left: 0px;
-                 }
+                }
                 input{
                     justify-self: center;
                     align-self: center;
-                 
-                    
                 }
-       
             }
-           
-
         }
     }
-    div:hover{
-        background-color: #00000070;
+    .itemMenu:hover{
+        background-color: rgba(70, 70, 70, 0.452);
+        box-shadow: $colorSombras;
     }
-    
 }
-
 .sombra{
     -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
     -moz-box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.46);
     box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.46);
 }
-
 
 #desenfoque{
     display: grid;
@@ -497,14 +492,16 @@ body{
         border-bottom: 2px solid $colorForm;
         width: 100%;
         font-family: $fuente;
-        font-weight: 800;
-        color: $colorTextoInput;
+        font-weight: 500;
+        color: white;
         margin-bottom: 1px;
+        text-align: center;
     }
     .registro{
         pointer-events: auto !important;
-        background-color: #eee !important;
+        background-color: rgba(66, 66, 66, 0.513) !important;
         border-bottom: 2px solid $colorForm;
+
     }
     .textoAyuda{
         z-index: 4;
@@ -530,6 +527,7 @@ body{
         color: whitesmoke;
         display: grid;
         grid-template-columns: 50% 50%;
+        grid-column-gap:5px;
     }
     .inputBoton{
         display: grid;
@@ -607,7 +605,7 @@ body{
             grid-column: 2/ span 1;
             grid-row: 1 / span 1;
             z-index: 4;
-            background-image: url("../img/upload.svg");
+            background-image: url("../img/upImg.svg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -663,12 +661,12 @@ body{
         border-radius: 10px;
         box-shadow: $colorSombras;
         margin: 0px;
+        color: white;
     }
     .inputTexto{
         grid-row: 2 / span 1;
         grid-column: 1 / span 1;
         border:0px;
-        border-bottom: 3px solid $colorForm;
         width: 500px;
         text-align: center;
         font-family: $fuente;
@@ -676,7 +674,9 @@ body{
         font-size: 27px;
         color:#2f303a;
         margin-bottom: 1px;
-        border-radius: 5px 5px 0px 0px;
+        background-color: rgba(54, 54, 54, 0.349);
+        backdrop-filter:  blur(50px);
+        -webkit-backdrop-filter:blur(50px);
         
         padding-bottom: 7px;
         box-shadow: $colorSombras;
@@ -800,7 +800,6 @@ body{
     background-position: top;
     }
     #telefono{
-       
         grid-row: 1 / span 1;
         grid-column: 3 /span 1;
         background-image: url("../img/ntelgris.svg");
@@ -817,11 +816,8 @@ body{
         background-repeat: no-repeat;
         background-size: 48px 48px;
         background-position: 0px 2px;
-        
     }
-
 }
-
 #contenedorGridResponsivo{
     margin-top: 60px;
     display: grid;
@@ -835,8 +831,6 @@ body{
     display: grid;
 
 }
-
-
 @media screen and (max-width:640px) {
     #divUsuarios{
 
@@ -1613,3 +1607,8 @@ body{
             }
                
         }
+       
+    
+
+ 
+    

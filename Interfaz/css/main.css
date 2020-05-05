@@ -191,6 +191,7 @@ body {
   margin: 1% 8px;
   padding-left: 25px;
   border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
 }
 
 #contenedorBuscador #opciones {
@@ -289,8 +290,10 @@ body {
       align-self: center;
 }
 
-#contenedorOpciones div:hover {
-  background-color: #00000070;
+#contenedorOpciones .itemMenu:hover {
+  background-color: rgba(70, 70, 70, 0.452);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
 }
 
 .sombra {
@@ -586,14 +589,15 @@ body {
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   width: 100%;
   font-family: "Segoe UI", sans-serif;
-  font-weight: 800;
-  color: #605A77;
+  font-weight: 500;
+  color: white;
   margin-bottom: 1px;
+  text-align: center;
 }
 
 .tarjetaBlanca .registro {
   pointer-events: auto !important;
-  background-color: #eee !important;
+  background-color: rgba(66, 66, 66, 0.513) !important;
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -626,6 +630,7 @@ body {
   display: grid;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
+  grid-column-gap: 5px;
 }
 
 .tarjetaBlanca .inputBoton {
@@ -735,7 +740,7 @@ body {
   -ms-grid-row-span: 1;
   grid-row: 1 / span 1;
   z-index: 4;
-  background-image: url("../img/upload.svg");
+  background-image: url("../img/upImg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -813,6 +818,7 @@ body {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
   margin: 0px;
+  color: white;
 }
 
 #tituloContenedor .inputTexto {
@@ -823,7 +829,6 @@ body {
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
   border: 0px;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.5);
   width: 500px;
   text-align: center;
   font-family: "Segoe UI", sans-serif;
@@ -831,7 +836,9 @@ body {
   font-size: 27px;
   color: #2f303a;
   margin-bottom: 1px;
-  border-radius: 5px 5px 0px 0px;
+  background-color: rgba(54, 54, 54, 0.349);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   padding-bottom: 7px;
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
