@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51" height="51" viewBox="0 0 51 51">
+  <defs>
+    <filter id="Rectángulo_120" x="0" y="0" width="51" height="51" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#272727" flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_121" x="0.5" y="4.5" width="46" height="42" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polígono_8" x="2.5" y="12.5" width="32" height="32" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polígono_9" x="10.5" y="18.5" width="34" height="26" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Elipse_21" x="18.5" y="9.5" width="23" height="23" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Boton_upImg" data-name="Boton upImg" transform="translate(5.5 4.5)">
+    <g transform="matrix(1, 0, 0, 1, -5.5, -4.5)" filter="url(#Rectángulo_120)">
+      <rect id="Rectángulo_120-2" data-name="Rectángulo 120" width="36" height="36" rx="5" transform="translate(5.5 4.5)" fill="rgba(23,35,36,0.69)"/>
+    </g>
+    <g id="img_icon" data-name="img icon" transform="translate(-29 -337)">
+      <g transform="matrix(1, 0, 0, 1, 23.5, 332.5)" filter="url(#Rectángulo_121)">
+        <g id="Rectángulo_121-2" data-name="Rectángulo 121" transform="translate(9.5 10.5)" fill="none" stroke="#fff" stroke-width="1">
+          <rect width="28" height="24" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="27" height="23" rx="1.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 23.5, 332.5)" filter="url(#Polígono_8)">
+        <g id="Polígono_8-2" data-name="Polígono 8" transform="translate(11.5 18.5)" fill="#fff">
+          <path d="M 13.19098567962646 13.50000095367432 L 0.8090159296989441 13.50000095367432 L 7.000000953674316 1.118030905723572 L 13.19098567962646 13.50000095367432 Z" stroke="none"/>
+          <path d="M 7.000000953674316 2.23607063293457 L 1.618036270141602 13.00000095367432 L 12.38196563720703 13.00000095367432 L 7.000000953674316 2.23607063293457 M 7.000000953674316 0.1236057281494141 C 7.035508632659912 0.1236057281494141 7.07101583480835 0.1420307159423828 7.089440822601318 0.1788806915283203 L 13.92764091491699 13.85528087615967 C 13.96088123321533 13.92177104949951 13.91253089904785 14.00000095367432 13.83820056915283 14.00000095367432 L 0.1618013381958008 14.00000095367432 C 0.08746051788330078 14.00000095367432 0.03911113739013672 13.92177104949951 0.07236099243164063 13.85528087615967 L 6.910561084747314 0.1788806915283203 C 6.928986072540283 0.1420307159423828 6.964493274688721 0.1236057281494141 7.000000953674316 0.1236057281494141 Z" stroke="none" fill="#fff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 23.5, 332.5)" filter="url(#Polígono_9)">
+        <g id="Polígono_9-2" data-name="Polígono 9" transform="translate(19.5 24.5)" fill="#fff">
+          <path d="M 14.79290008544922 7.499999046325684 L 1.207100033760071 7.499999046325684 L 8 0.7070990800857544 L 14.79290008544922 7.499999046325684 Z" stroke="none"/>
+          <path d="M 8 1.414218902587891 L 2.414219856262207 6.999999046325684 L 13.58578014373779 6.999999046325684 L 8 1.414218902587891 M 8 0.04142141342163086 C 8.025592803955078 0.04142141342163086 8.051185607910156 0.05118417739868164 8.070710182189941 0.070709228515625 L 15.82929039001465 7.829288959503174 C 15.89229011535645 7.892289161682129 15.84766960144043 7.999999046325684 15.75858020782471 7.999999046325684 L 0.241419792175293 7.999999046325684 C 0.1523303985595703 7.999999046325684 0.1077098846435547 7.892289161682129 0.1707096099853516 7.829288959503174 L 7.929289817810059 0.070709228515625 C 7.94881534576416 0.05118417739868164 7.974407196044922 0.04142141342163086 8 0.04142141342163086 Z" stroke="none" fill="#fff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 23.5, 332.5)" filter="url(#Elipse_21)">
+        <g id="Elipse_21-2" data-name="Elipse 21" transform="translate(27.5 15.5)" fill="#fff" stroke="#fff" stroke-width="1">
+          <circle cx="2.5" cy="2.5" r="2.5" stroke="none"/>
+          <circle cx="2.5" cy="2.5" r="2" fill="none"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

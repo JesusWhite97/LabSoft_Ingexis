@@ -14,6 +14,7 @@
 		crossorigin="anonymous">
 	</script>
 	<script src="js/usuarios.js"></script>
+	<script src="js/main.js"></script>
 	<script>
 		// --------------------------------------
 		window.onload = function(){
@@ -70,6 +71,12 @@
 			}
 		}
 		// --------------------------------------
+		function guardarUser(){
+			guardarUsuario();
+			console.log(salida);
+			alert(salida);
+		}
+		// --------------------------------------
 	</script>
 	<title>Ingexis Labsoft - Usuarios</title>
 </head>
@@ -89,8 +96,18 @@
 					<button id="opciones" onclick="mostrarOpciones()"></button>
 			</div> 
 			<div id="contenedorOpciones" clsass="sombra" style="display: none;">
-					<a href="">Agregar usuario</a>
-					<a href="">Filtrado</a>
+					<div onclick="cargarRegistroUsuario()">Agregar usuario</div>
+					<div>
+						<p>Filtrado</p>
+						<input type="checkbox" id= "jefe" name="jefe">
+						<label for="jefe">Jefe de Laboratorio</label><br>
+						<input type="checkbox" id="admon" name="admon">
+						<label for="todos">Administrador</label><br>
+						<input type="checkbox" id="lab1" name="lab1">
+						<label for="lab1">Laboratorista 1</label><br>
+						<input type="checkbox" id="lab2" name="lab2">
+						<label for="lab1">Laboratorista 2</label><br>
+					</div>
 			</div>
 			<div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
 			</div>

@@ -1,6 +1,6 @@
 <?php
             # definimos la carpeta destino
-            $carpetaDestino="../img/";
+            $carpetaDestino="../Usuarios/".$_POST['email']."/";
             # si hay algun archivo que subir
             if(isset($_FILES["archivo"]) && $_FILES["archivo"]["name"][0])
             {

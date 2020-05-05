@@ -95,4 +95,95 @@
         return $interfazInfoUsuario;
     }
     // ========================================================
+    function imprimir_registro_usuario(){
+        $interfazRegistroUsuario = '
+        <div class="contenedorCentradoResponsivo">
+                        <div id="tituloContenedor">
+                        <div id="editarImagen" style=" background-size: cover; background-position: center;">
+                        <form id="formImg">
+                            <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this);" value=""/>
+                        </form> 
+                        <label id="botonImg" for="inImg"></label>
+                        <div id="blah"> </div>
+                    </div>
+                    <input id="apodo" class="registro inputTexto mayus" style="color:white;" type="text">
+                    <p class="textoAyuda textoAyudaTitulo">Apodo</p>
+                        </div>
+                        <div class="tarjetaBlanca" style="margin-top: 0px;">        
+                            <select id="puesto" class="registro">
+                                    <option value="Administrador">Administrador</option>
+                                    <option value="Jefe de Laboratorio">Jefe de Laboratorio</option>
+                                    <option value="Laboratorista 1">Laboratorista 1</option>
+                                    <option value="Laboratorista 2">Laboratorista 2</option>
+                            </select>
+                        <p class="textoAyuda" style="text-align: center;">Puesto</p>
+                        </div>
+                        <!-- DatosPersonales ============================ -->
+                        <div class="tarjetaBlanca">
+                            <p class="titulo">Datos personales</p>
+                            <div class="inputEnLinea" >
+                                <input id="nom1" type="text" class="registro" placeholder="">
+                                <input id="nom2" type="text" class="registro" placeholder="">
+                            </div>
+                            <div class="inputEnLinea">
+                                <p class="textoAyuda">Primer Nombre</p>
+                                <p class="textoAyuda">Segundo Nombre</p>
+                            </div>
+                            <div class="inputEnLinea" >
+                                <input id="ape1" type="text" class="registro" placeholder="">
+                                <input id="ape2" type="text" class="registro" placeholder="">
+                            </div>
+                            <div class="inputEnLinea" >
+                                    <p class="textoAyuda">Apellido Paterno</p>
+                                    <p class="textoAyuda">Apellido Materno</p>
+                            </div>
+                            <input id="rfc" type="text"class="registro mayus" placeholder="" >
+                            <p class="textoAyuda" >RFC</p>
+                            <input id="curp" type="text"class="registro mayus" placeholder="">
+                            <p class="textoAyuda">CURP</p>
+                        </div>
+                        <!-- Datos de contacto=========================== -->
+                        <div class="tarjetaBlanca">
+                            <p class="titulo">Contacto</p>
+                            <input id="cel" type="text" class="registro" id="telefono" placeholder="">
+                            <p class="textoAyuda">Número celular</p>
+                            <input id="correo" type="text" class="registro" id="email" placeholder="">
+                            <p class="textoAyuda">Email</p>
+                            <input id="contra" type="text" class="registro" id="password"  placeholder="">
+                            <p class="textoAyuda" >Contraseña</p>
+                        </div>
+                        <!-- Datos De direccion========================== -->
+                        <div class="tarjetaBlanca">
+                            <p class="titulo">Dirección</p>
+                            <input id="calle" type="text" class="registro" placeholder="">
+                            <p class="textoAyuda">Calle</p>
+                            <input id="entre" type="text" class="registro" placeholder="">
+                            <p class="textoAyuda">Entre</p>
+                            <div class="inputEnLinea">
+                                <input id="num" type="text" class="registro" placeholder="">
+                                <input id="cp" type="text" class="registro" placeholder="">
+                            </div>
+                            <div class="inputEnLinea">
+                                <p class="textoAyuda">Número de casa</p>
+                                <p class="textoAyuda">Código Postal</p>
+                            </div>
+                            <div class="inputEnLinea">
+                                <input id="colonia" type="text" class="registro" placeholder="">
+                                <input id="ciudad" type="text" class="registro" placeholder="">
+                            </div>
+                            <div class="inputEnLinea">
+                                <p class="textoAyuda">Colonia</p>
+                                <p class="textoAyuda">Ciudad</p>
+                            </div>
+
+                        </div>
+                        <button id="footerGuardar_Boton" onclick = guardarUser()>Guardar</button>
+                    
+                </div>
+        ';
+        return $interfazRegistroUsuario;
+    }
+    // ========================================================
+    // ========================================================
+    // ========================================================
 ?>

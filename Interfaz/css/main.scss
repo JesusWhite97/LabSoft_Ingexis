@@ -457,14 +457,16 @@ body{
         border-bottom: 2px solid $colorForm;
         width: 100%;
         font-family: $fuente;
-        font-weight: 800;
-        color: $colorTextoInput;
+        font-weight: 500;
+        color: white;
         margin-bottom: 1px;
+        text-align: center;
     }
     .registro{
         pointer-events: auto !important;
-        background-color: #eee !important;
+        background-color: rgba(66, 66, 66, 0.513) !important;
         border-bottom: 2px solid $colorForm;
+
     }
     .textoAyuda{
         z-index: 4;
@@ -490,6 +492,7 @@ body{
         color: whitesmoke;
         display: grid;
         grid-template-columns: 50% 50%;
+        grid-column-gap:5px;
     }
     .inputBoton{
         display: grid;
@@ -567,7 +570,7 @@ body{
             grid-column: 2/ span 1;
             grid-row: 1 / span 1;
             z-index: 4;
-            background-image: url("../img/upload.svg");
+            background-image: url("../img/upImg.svg");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -623,12 +626,12 @@ body{
         border-radius: 10px;
         box-shadow: $colorSombras;
         margin: 0px;
+        color: white;
     }
     .inputTexto{
         grid-row: 2 / span 1;
         grid-column: 1 / span 1;
         border:0px;
-        border-bottom: 3px solid $colorForm;
         width: 500px;
         text-align: center;
         font-family: $fuente;
@@ -636,7 +639,9 @@ body{
         font-size: 27px;
         color:#2f303a;
         margin-bottom: 1px;
-        border-radius: 5px 5px 0px 0px;
+        background-color: rgba(54, 54, 54, 0.349);
+        backdrop-filter:  blur(50px);
+        -webkit-backdrop-filter:blur(50px);
         
         padding-bottom: 7px;
         box-shadow: $colorSombras;
