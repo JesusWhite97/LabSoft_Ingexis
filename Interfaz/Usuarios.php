@@ -30,14 +30,14 @@
 			let botonOpciones = document.getElementById("opciones");
 			if(flag == true){
 				contenedorOpciones.style.display = "grid";
-				contenedorGridResponsivo.style.marginTop = "175px";
+				contenedorGridResponsivo.style.marginTop = "180px";
 				sombradesenfoque.classList.remove("sombra");
 				sombradesenfoque.style.borderRadius = "10px 10px 0px 0px";
 				botonOpciones.style.backgroundImage = "url(../img/opcionesOpen.svg)";
 				flag = false;
 			}else{
 				contenedorOpciones.style.display = "none";
-				contenedorGridResponsivo.style.marginTop = "120px";
+				contenedorGridResponsivo.style.marginTop = "60px";
 				sombradesenfoque.classList.add("sombra");
 				sombradesenfoque.style.borderRadius = "10px";
 				botonOpciones.style.backgroundImage = "url(../img/opcionesClose.svg)";
@@ -73,8 +73,20 @@
 		// --------------------------------------
 		function guardarUser(){
 			guardarUsuario();
-			console.log(salida);
-			alert(salida);
+			alert('salida del ajax: '+salidaUsuario);
+			if(salidaUsuario == 'true'){
+				alert('se creo el pinche usuario');
+				subirImg();
+				if(respuestaSubirIMG == 'NO'){
+					alert('Usuario registrado con exito 🤘.');
+				}else{
+					eliminarUsuario();
+					alert('se elimino el pinche usuario: ' + salidaUsuario);
+					if(eliminarUsuario == 'true'){
+						alert('error al registrar Usuario: ' + errorSubirIMG);
+					}
+				}
+			}
 		}
 		// --------------------------------------
 	</script>
@@ -95,20 +107,25 @@
 					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,'1111')" placeholder="Buscar..." title="Type in a name"></input>
 					<button id="opciones" onclick="mostrarOpciones()"></button>
 			</div> 
-			<div id="contenedorOpciones" clsass="sombra" style="display: none;">
-					<div onclick="cargarRegistroUsuario()">Agregar usuario</div>
-					<div>
-						<p>Filtrado</p>
-						<input type="checkbox" id= "jefe" name="jefe">
-						<label for="jefe">Jefe de Laboratorio</label><br>
-						<input type="checkbox" id="admon" name="admon">
-						<label for="todos">Administrador</label><br>
-						<input type="checkbox" id="lab1" name="lab1">
-						<label for="lab1">Laboratorista 1</label><br>
-						<input type="checkbox" id="lab2" name="lab2">
-						<label for="lab1">Laboratorista 2</label><br>
-					</div>
+			<div id="contenedorOpciones" class="sombra" style="display: none;">
+                                <div>
+                                        <div class="icoMenu" style="background-image:url(/img/icoAgregar.svg);background-size: 30px 30px;" onclick="cargarRegistroUsuario()"></div>
+                                        <p>Agregar usuario</p> 
+                                </div>
+                                <div>
+                                        <div class="icoMenu" style="background-image:url(/img/icoFiltro.svg);"></div>
+                                        <p>Filtrado</p>
+                                </div>
+                                <div>
+                                        <div id="filtrado">
+                                                <div> <input checked type="checkbox" value="admon" id="admon"><p>Administrador</p></input></div>
+                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="jefe" id="jefe"><p>Jefe de Laboratorio</p></input></div>
+                                                <div> <input checked type="checkbox" value="lab1" id="lab1"><p>Laboratorista 1</p></input></div>
+                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="lab2" id="lab2"><p>Laboratorista 2</p></input></div>
+                                        </div>
+                                </div>
 			</div>
+					
 			<div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
 			</div>
 		</div>

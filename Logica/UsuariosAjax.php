@@ -49,6 +49,21 @@
             $jsonString = json_encode($json);
             echo $jsonString;
         }
+        //########################
+        if($_POST["metodo"] == "eliminarUsuario"){
+            //declaracion de variables--------------------------
+            $user = new Usuario();
+            $salida = "";
+            //Formular Respuesta--------------------------------
+            $salida = $user->Eliminar($_POST['correo']);
+            //salida--------------------------------------------
+            $json[] =  [
+                'validacion' => $salida
+            ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
     }
     // ========================================================
 ?>

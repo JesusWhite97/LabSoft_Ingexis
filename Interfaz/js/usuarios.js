@@ -38,7 +38,7 @@ function cargarRegistroUsuario(){
     });
 }
 //################################
-var salida ="";
+var salidaUsuario ="";
 function guardarUsuario(){
     var postData = {
         metodo: "guardarUsuario",
@@ -65,17 +65,33 @@ function guardarUsuario(){
         data:postData,
         url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
         type:"POST",
-        async:false,
-        success:function(response){ 
+        async: false,
+        success:function(response){
             console.log(response);
             var arrayResponse = JSON.parse(response);
             console.log(arrayResponse[0].validacion);
-            salida = arrayResponse[0].validacion;
-            console.log(salida);
+            salidaUsuario = arrayResponse[0].validacion;
+            console.log(salidaUsuario);
         }
     });
 }
 //################################
-
+function eliminarUsuario(){
+    postData = {
+        metodo: "eliminarUsuario",
+        correo: document.getElementById("correo").value,
+    };
+    $.ajax({
+        data: postData,
+        url: '/LabSoft_Ingexis/Logica/UsuariosAjax.php',
+        type: "POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            var arrayResponse = JSON.parse(response);
+            salidaUsuario = arrayResponse[0].validacion;
+        }
+    });
+}
 //################################
 //==============================================================

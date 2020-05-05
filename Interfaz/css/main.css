@@ -222,21 +222,75 @@ body {
   top: 115px;
   display: -ms-grid;
   display: grid;
-  grid-auto-rows: 28px;
-  padding-left: 0px;
+  grid-auto-rows: auto;
   background-image: -webkit-gradient(linear, left top, right top, from(#17232470), to(#17232470));
   background-image: linear-gradient(to right, #17232470, #17232470);
-  border-radius: 0px 0px 2px 2px;
 }
 
-#contenedorOpciones a {
-  padding-left: 10px;
+#contenedorOpciones div {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 28px auto;
+      grid-template-columns: 28px auto;
+  height: auto;
   text-decoration: none;
   color: whitesmoke;
   font-family: "Segoe UI", sans-serif;
 }
 
-#contenedorOpciones a:hover {
+#contenedorOpciones div .icoMenu {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
+
+#contenedorOpciones div p {
+  margin: 0px;
+  padding-left: 2px;
+  height: 28px;
+  padding-top: 3px;
+  font-weight: 500;
+}
+
+#contenedorOpciones div #filtrado {
+  margin-top: -5px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 33px 33px;
+      grid-template-rows: 33px 33px;
+  width: 100%;
+  font-weight: 200;
+}
+
+#contenedorOpciones div #filtrado div {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#contenedorOpciones div #filtrado div p {
+  font-weight: 300;
+  padding-left: 0px;
+}
+
+#contenedorOpciones div #filtrado div input {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#contenedorOpciones div:hover {
   background-color: #00000070;
 }
 

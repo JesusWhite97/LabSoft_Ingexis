@@ -206,7 +206,6 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
       var arrayOptions = document.getElementsByTagName("option");
       return arrayOptions[index].value;
     }
-    var respuestaSubirIMG = "";
 
     function modificarUsuario(img){
       var respuesta;
@@ -258,27 +257,28 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
     }
       return respuesta;
     }
-
+    // ==================================================================================
+    var respuestaSubirIMG = "";
+    var errorSubirIMG = "";
     function subirImg(){
       var postData = new FormData(document.getElementById("formImg"));
       console.log(postData);
       $.ajax({
         data:postData,
-        url:'../Logica/claseSubirImg.php',
+        url:'../../Logica/claseSubirImg.php',
         type:"POST",
         contentType:false,
         processData:false,
         async:false,
         success:function(response){ 
           var arrayResponse = JSON.parse(response);
-
           console.log(arrayResponse[0].respuesta);
           respuestaSubirIMG = arrayResponse[0].respuesta;
-          console.log(respuestaSubirIMG);
+          errorSubirIMG = arrayResponse[0].mensajeDatos;
         }
       });
   }
-
+  // ==================================================================================
   function registrarUsuario(){
     var respuesta;
       subirImg();

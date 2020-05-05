@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34.4" height="34.4" viewBox="0 0 34.4 34.4">
+  <defs>
+    <filter id="Línea_2" x="8" y="0" width="19.4" height="34.4" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Trazado_4" x="0" y="7.5" width="34.4" height="19.4" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Componente_2_1" data-name="Componente 2 – 1" transform="translate(9.7 6.7)">
+    <g transform="matrix(1, 0, 0, 1, -9.7, -6.7)" filter="url(#Línea_2)">
+      <line id="Línea_2-2" data-name="Línea 2" y2="15" transform="translate(17.7 6.7)" fill="none" stroke="rgba(255,255,255,0.61)" stroke-linecap="round" stroke-width="1.4"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -9.7, -6.7)" filter="url(#Trazado_4)">
+      <path id="Trazado_4-2" data-name="Trazado 4" d="M0,0H15" transform="translate(9.7 14.2)" fill="none" stroke="rgba(255,255,255,0.61)" stroke-linecap="round" stroke-width="1.4"/>
+    </g>
+  </g>
+</svg>
