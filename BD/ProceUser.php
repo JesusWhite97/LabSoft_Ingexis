@@ -1,5 +1,6 @@
 <?php
     // ========================================================
+    include '../Logica/CrearDirectorios.php';
     include 'conexion.php';
     header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================
@@ -78,12 +79,14 @@
             $codPost,   $ciudad
         ){
             //crea Conexion===============
+            $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL agregaUsuario('".$correo."', '".$contra."', '".$img."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."', '".$apodo."', '".$num."', '".$puesto."', '".$curp."', '".$rfc."', '".$calleP."', '".$entre."', '".$numCasas."', '".$col."', '".$codPost."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
+                $directorios->CrearDirectorioUsuario($correo);
                 return 'true';
             }else{
                 return "Error: ".$mysqli->error;
@@ -93,12 +96,14 @@
         //#####################################################
         public function EliminarUsuario($correo){
             //crea Conexion===============
+            $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL eliminar_usuario('".$correo."')";
             if($mysqli->query($query)===TRUE){
+                $directorios->EliminarDirectorioConContenido($correo);
                 return "true";
             }else{
                 return "Error: ".$mysqli->error;
@@ -388,7 +393,7 @@
     // $salida = $prueba->InfoLogin('meli@gmail.com');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
-    // $salida = $prueba->AgregarUsuario('Luis@gmail.com', '1234', 'noImg', 'Luis', 'Enrrique', 'Villavicencio', 'Lucero', '', '6128962147', 'Laboratorista 2', 'aaaa111111bccddd23', 'aaaa111111b2c', 'pitaya', 'mango,semilla', '564', 'indeco', '23071');
+    // $salida = $prueba->AgregarUsuario('Luis@gmail.com', '1234', 'user4.jpg', 'Luis', 'Enrrique', 'Villavicencio', 'Lucero', '', '6128962147', 'Laboratorista 2', 'aaaa111111bccddd23', 'aaaa111111b2c', 'pitaya', 'mango,semilla', '564', 'indeco', '23071', 'la paz');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
     // $salida = $prueba->EliminarUsuario('Luis@gmail.com');

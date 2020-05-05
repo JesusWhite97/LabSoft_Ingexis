@@ -12,7 +12,7 @@
                         <div class="contenedorTarjetaUsuario" onclick=cargarInfoUsuario("'. $arrayTajetas[$i]['correo'] .'")>
                             <div id="desenfoque" class="sombra"></div>
                             <a>
-                                <div class="imgUsuario" style="background-image: url('."'".$arrayTajetas[$i]['img']."'".');"></div>
+                                <div class="imgUsuario" style="background-image: url('."'../Usuarios/".$arrayTajetas[$i]['correo']."/".$arrayTajetas[$i]['img']."'".');"></div>
                                 <h2 class="tituloTarjetaUsuario"> '.$arrayTajetas[$i]['apodo'].' </h2>
                                 <h3 class="subtituloTarjetaUsuario">'.$arrayTajetas[$i]['puesto'].'</h3>
                             </a>
@@ -29,10 +29,9 @@
         $infoUsuario = $Usuario->VistaCompleta($correo);
         $imgUsuario = $Usuario->Info_Correo($correo);
         $interfazInfoUsuario = '
-        
         <div class="contenedorCentradoResponsivo">
                         <div id="tituloContenedor">
-                            <div id="tituloImagen" style="background-image: url('."'".$imgUsuario[1]."'".');"> </div>
+                            <div id="tituloImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".');"> </div>
                             <h3 id="tituloInfo">'.$infoUsuario['apodo'].'</h3>
                         </div>
                         <div class="tarjetaBlanca" style="margin-top: 0px;">        
