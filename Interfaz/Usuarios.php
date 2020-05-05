@@ -109,11 +109,11 @@
 			</div> 
 			<div id="contenedorOpciones" class="sombra" style="display: none;">
                                 <div>
-                                        <div class="icoMenu" style="background-image:url(/img/icoAgregar.svg);background-size: 30px 30px;" onclick="cargarRegistroUsuario()"></div>
+                                        <div class="icoMenu" style="background-image:url(../img/icoAgregar.svg);background-size: 30px 30px;"></div>
                                         <p>Agregar usuario</p> 
                                 </div>
                                 <div>
-                                        <div class="icoMenu" style="background-image:url(/img/icoFiltro.svg);"></div>
+                                        <div class="icoMenu" style="background-image:url(../img/icoFiltro.svg);"></div>
                                         <p>Filtrado</p>
                                 </div>
                                 <div>
@@ -124,7 +124,7 @@
                                                 <div style="margin-left: -15px;"> <input checked type="checkbox" value="lab2" id="lab2"><p>Laboratorista 2</p></input></div>
                                         </div>
                                 </div>
-			</div>
+            </div>
 					
 			<div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
 			</div>
