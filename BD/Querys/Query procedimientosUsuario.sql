@@ -116,7 +116,7 @@ use databaseingexis;
 -- begin
 --     declare id_usuario int;
 --     select id_by_correo(correo) into id_usuario;
---     update log_usuarios set log_usuarios.img_log = img where usuarios.id_usuario = id_usuario;
+--     update log_usuarios set log_usuarios.img_log = img where log_usuarios.id_usuario = id_usuario;
 -- end
 --======================================--
 -- create procedure Usuario_mod_direccion(

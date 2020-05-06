@@ -89,8 +89,20 @@
 			cargarInfo(correoNuevo);
 		}
 		// --------------------------------------
+		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
 		function modificarUser(){
-			
+			if(arregloCambios[8]){
+				subirImg();
+				if(respuestaSubirIMG == 'NO'){
+					arregloCambios[8] = 0;
+				}
+			}
+			modificarUsuario(arregloCambios);
+			alert(modificacionSalida);
+			arregloCambios = Array(0,0,0,0,0,0,0,0,0);
+			var correoNuevo = document.getElementById("correo").value;
+			this.cargarTarjetas('','1111');
+			cargarInfo(correoNuevo);
 		}
 		// --------------------------------------
 		function selectItem(seleccionado){

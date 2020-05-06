@@ -151,8 +151,7 @@
     }
     // ========================================================
     // $usuario = new Usuario();
-    // $puestos = '0110';
-    // $arregloEjemplo = $usuario->Buscar_tarjetas('', $puestos);
+    // $arregloEjemplo = $usuario->Modificar_Direccion('jesus120190240.8@gmail.com', 'aaaaaaaaaa', 'avellana y limon', '201', 'aaaaaa', '24058', 'La Paz');
     // var_dump($arregloEjemplo);
     // ========================================================
     // $usuario = new Usuario();

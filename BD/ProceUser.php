@@ -209,7 +209,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_puesto('".$correo."', '".$puesto."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -224,7 +224,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_nombre('".$correo."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -239,7 +239,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_curp('".$correo."', '".$curp."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -254,7 +254,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_rfc('".$correo."', '".$rfc."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -269,7 +269,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_apodo('".$correo."', '".$apodo."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -284,7 +284,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Telefono('".$correo."', '".$telefono."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -300,7 +300,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -309,13 +309,22 @@
         //#####################################################
         public function Modimg($correo, $img){
             //crea Conexion===============
+            $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
+            //============================
+            $imgAnte = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "select img_by_correo('".$correo."');");
+            $rows = $resultado->fetch_array();
+            $imgAnte = $rows[0];
+            $directorios->EliminarUnArchivo($correo, $imgAnte);
+            $resultado->free();
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existoso.";
+                return "Modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
             }     
@@ -429,13 +438,16 @@
     // $salida = $prueba->ModTelefono('Rtapiz@gmail.com', '6124587766');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
-    // $salida = $prueba->ModDireccion('Rtapiz@gmail.com', 'forjadores', 'tec y la terminal', '101', 'Progreso', '24058');
+    // $salida = $prueba->ModDireccion('jesus120190240.8@gmail.com', 'Piñon', 'avellana y limon', '201', 'indeco', '24058', 'La Paz');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
     // $salida = $prueba->Buscar_tarjetas_usuarios('s');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
     // $salida = $prueba->Filtro_tarjetas_puesto('jefe de laboratorio', 'administrador');
+    // var_dump($salida);
+    // $prueba = new procedimientos_User();
+    // $salida = $prueba->Modimg('tunas98@gmail.com', 'Perfil.png');
     // var_dump($salida);
     // ========================================================
 ?>

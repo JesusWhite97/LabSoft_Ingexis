@@ -29,3 +29,10 @@ use databaseingexis;
 --     return salida;
 -- end
 --======================================--
+-- CREATE FUNCTION img_by_correo(correo varchar(50)) returns varchar(100)
+-- BEGIN
+--     declare salida varchar(100);
+--     select log_usuarios.img_log into salida from log_usuarios where log_usuarios.correo = correo;
+--     return salida;
+-- end
+--======================================--

@@ -1,13 +1,11 @@
 <?php
     class CreacionDirectorios{
         //declaracion de variables
-        
         public function CrearDirectorioUsuario($correoUsuario)
         {
             mkdir ('..\\Usuarios\\'.$correoUsuario, 0700);
             return 'Usuarios\\'.$correoUsuario;
         }
-
         //#########################################################################################
         public function EliminarDirectorioConContenido($correoUsuario)
         {
@@ -26,10 +24,10 @@
             rmdir($carpeta);
         }
         //#########################################################################################
-
-        public function EliminarUnArchivo($Archivo)
+        public function EliminarUnArchivo($correo, $Archivo)
         {
-            unlink($Archivo);
+            $elimina =   '..\\Usuarios\\'. $correo .'\\'. $Archivo;
+            unlink($elimina);
         }
     }
 ?>

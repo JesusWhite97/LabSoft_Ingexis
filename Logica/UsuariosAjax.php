@@ -17,6 +17,7 @@
         if($_POST["metodo"]=="cargarInfo"){
             //declaracion de variables--------------------------
             $correo = $_POST['correo'];
+            $_SESSION['NuevoUser'] = $_POST['correo'];
             //salida--------------------------------------------
             //echo imprimir_info_usuario($correo);
             $json[] =  [
@@ -73,28 +74,28 @@
             $salida = "";
             //Formular Respuesta--------------------------------
             if($cambios[0] == 1){
-                $salida = $salida.$user->Modificar_Apodo($correo, $_POST['apodo'])."\n";
+                $salida = $salida.$user->Modificar_Apodo($correo, $_POST['apodo'])." para el campo Apodo \n";
             }            
             if($cambios[1] == 1){
-                $salida = $salida.$user->Modificar_puesto($correo, $_POST['puesto'])."\n";
+                $salida = $salida.$user->Modificar_puesto($correo, $_POST['puesto'])." para el campo Puesto \n";
             }            
             if($cambios[2] == 1){
-                $salida = $salida.$user->Modificar_Nombre($correo, $_POST['nom1'], $_POST['nom2'], $_POST['ape1'], $_POST['ape2'])."\n";
+                $salida = $salida.$user->Modificar_Nombre($correo, $_POST['nom1'], $_POST['nom2'], $_POST['ape1'], $_POST['ape2'])." para el campo Nombre \n";
             }            
             if($cambios[3] == 1){
-                $salida = $salida.$user->Modificar_RFC($correo, $_POST['rfc'])."\n";
+                $salida = $salida.$user->Modificar_RFC($correo, $_POST['rfc'])." para el campo rfc \n";
             }            
             if($cambios[4] == 1){
-                $salida = $salida.$user->Modificar_CURP($correo, $_POST['curp'])."\n";
+                $salida = $salida.$user->Modificar_CURP($correo, $_POST['curp'])." para el campo curp \n";
             }            
             if($cambios[5] == 1){
-                $salida = $salida.$user->Modificar_Telefono($correo, $_POST['cel'])."\n";
+                $salida = $salida.$user->Modificar_Telefono($correo, $_POST['cel'])." para el campo telefono \n";
             }
             if($cambios[6] == 1){
-                $salida = $salida.$user->Modificar_contra($correo, $_POST['contra1'], $_POST['contra2'])."\n";
+                $salida = $salida.$user->Modificar_contra($correo, $_POST['contra'], $_POST['contra2'])." para el campo contraseña \n";
             }
             if($cambios[7] == 1){
-                $salida = $salida.$user->Modificar_Direccion($correo, $_POST['calle'], $_POST['entre'], $_POST['num'], $_POST['colonia'], $_POST['cp'], $_POST['ciudad'])."\n";
+                $salida = $salida.$user->Modificar_Direccion($correo, $_POST['calle'], $_POST['entre'], $_POST['num'], $_POST['colonia'], $_POST['cp'], $_POST['ciudad'])." para los campos Direccion \n";
             }
             if($cambios[8] == 1){//pendiente###########################################################################################
                 $salida = $salida.$user->Modificar_img($correo, $_POST['img'])."\n";

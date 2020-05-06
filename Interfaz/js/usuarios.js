@@ -107,48 +107,47 @@ function eliminarUsuario(){
 }
 //################################
 var modificacionSalida = "";
-var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
-function modificarUsuario(){
+function modificarUsuario(cambios){
     var postData = {
         metodo: "modificarUsuario",
-        cambios: arregloCambios,
+        cambios: cambios,
         correo: document.getElementById("correo").value
     };
     //-----------------------------------------
-    if(arregloCambios[0]){
+    if(cambios[0]){
         postData.apodo = document.getElementById("apodo").value;
     }
-    if(arregloCambios[1]){
+    if(cambios[1]){
         postData.puesto = obtenerValorSelect(document.getElementById("puesto").selectedIndex);
     }
-    if(arregloCambios[2]){
+    if(cambios[2]){
         postData.nom1 = document.getElementById("nom1").value;
         postData.nom2 = document.getElementById("nom2").value;
         postData.ape1 = document.getElementById("ape1").value;
         postData.ape2 = document.getElementById("ape2").value;
     }
-    if(arregloCambios[3]){
-        postData.rfc = document.getElementById("rfc").value;   
+    if(cambios[3]){
+        postData.rfc = document.getElementById("rfc").value;
     }
-    if(arregloCambios[4]){
+    if(cambios[4]){
         postData.curp = document.getElementById("curp").value;
     }
-    if(arregloCambios[5]){
+    if(cambios[5]){
         postData.cel = document.getElementById("cel").value;
     }
-    if(arregloCambios[6]){
-        postData.contra1 = document.getElementById("contra1").value;
+    if(cambios[6]){
+        postData.contra = document.getElementById("password").value;
         postData.contra2 = document.getElementById("contra2").value;
     }
-    if(arregloCambios[7]){
+    if(cambios[7]){
         postData.calle = document.getElementById("calle").value;
         postData.entre = document.getElementById("entre").value;
-        postData.numCasa = document.getElementById("num").value;
+        postData.num = document.getElementById("num").value;
         postData.ciudad = document.getElementById("ciudad").value;
         postData.cp = document.getElementById("cp").value;
         postData.colonia = document.getElementById("colonia").value;
     }
-    if(arregloCambios[8]){
+    if(cambios[8]){
         postData.img = obtenerNombreArchivo();
     }
     //-----------------------------------------
@@ -160,6 +159,7 @@ function modificarUsuario(){
         success:function(response){
             console.log(response);
             var arrayResponse = JSON.parse(response);
+            modificacionSalida = arrayResponse[0].validacion;
         }
     });
 }

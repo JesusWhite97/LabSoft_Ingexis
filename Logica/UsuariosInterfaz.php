@@ -62,16 +62,16 @@
                         <div id="tituloContenedor">
                             <div id="editarImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".'); background-size: cover; background-position: center;">
                             <form id="formImg">
-                                <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this);" value=""/>
+                                <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this); arregloCambios[8]=1;" value=""/>
                             </form> 
                             <label id="botonImg" for="inImg" style="display:none;"></label>
                             <div id="blah"> </div>
                         </div>
-                        <input id="apodo" class="inputTexto mayus" style="color:white;" type="text" placeholder="'.$infoUsuario['apodo'].'" value="'.$infoUsuario['apodo'].'">
+                        <input id="apodo" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoUsuario['apodo'].'" onchange="arregloCambios[0]=1;">
                         <p class="textoAyuda textoAyudaTitulo">Apodo</p>
                             </div>
                         <div class="tarjetaBlanca" style="margin-top: 0px;">        
-                            <select id="puesto" class="registro">
+                            <select id="puesto" class="registro" onchange="arregloCambios[1]=1;">
                                 '.$optionsPuesto.'
                             </select>
                             <p class="textoAyuda" style="text-align: center; grid-row: 2/ span 1; grid-column: 1/ span 1;">Puesto</p>
@@ -80,53 +80,59 @@
                         <div class="tarjetaBlanca">
                             <p class="titulo">Datos personales</p>
                             <div class="inputEnLinea" >
-                                <input type="text"  placeholder="'.$infoUsuario['nom1'].'">
-                                <input type="text"  placeholder="'.$infoUsuario['nom2'].'">
+                                <input type="text" id="nom1" value="'.$infoUsuario['nom1'].'" onchange="arregloCambios[2]=1;">
+                                <input type="text" id="nom2" value="'.$infoUsuario['nom2'].'" onchange="arregloCambios[2]=1;">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Primer Nombre</p>
                                 <p class="textoAyuda">Segundo Nombre</p>
                             </div>
                             <div class="inputEnLinea" >
-                                <input type="text"  placeholder="'.$infoUsuario['ape1'].'">
-                                <input type="text"  placeholder="'.$infoUsuario['ape2'].'">
+                                <input type="text" id="ape1" value="'.$infoUsuario['ape1'].'" onchange="arregloCambios[2]=1;">
+                                <input type="text" id="ape2" value="'.$infoUsuario['ape2'].'" onchange="arregloCambios[2]=1;">
                             </div>
                             <div class="inputEnLinea" >
                                     <p class="textoAyuda">Apellido Paterno</p>
                                     <p class="textoAyuda">Apellido Materno</p>
                             </div>
-                            <input type="text" placeholder="'.$infoUsuario['rfc'].'" >
+                            <input type="text" id="rfc" value="'.$infoUsuario['rfc'].'" onchange="arregloCambios[3]=1;">
                             <p class="textoAyuda" >RFC</p>
-                            <input type="text" placeholder="'.$infoUsuario['curp'].'">
+                            <input type="text" id="curp" value="'.$infoUsuario['curp'].'" onchange="arregloCambios[4]=1;">
                             <p class="textoAyuda">CURP</p>
                         </div>
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input type="text"id="telefono" placeholder="'.$infoUsuario['telefono'].'">
+                            <input type="text"id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;">
                             <p class="textoAyuda">Número celular</p>
-                            <input type="text" id="correo" value="'.$infoUsuario['correo'].'" placeholder="'.$infoUsuario['correo'].'">
+                            <input type="text" id="correo" value="'.$infoUsuario['correo'].'">
                             <p class="textoAyuda">Email</p>
-                            <input type="text" id="password"  placeholder="'.$infoUsuario['contra'].'">
+                            <input type="text" id="password"  value="'.$infoUsuario['contra'].'" onchange="arregloCambios[6]=1;">
                             <p class="textoAyuda" >Contraseña</p>
                         </div>
                         <!-- Datos De direccion========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Dirección</p>
-                            <input type="text" placeholder="'.$infoUsuario['calle'].'">
+                            <input type="text" id="calle" value="'.$infoUsuario['calle'].'" onchange="arregloCambios[7]=1;">
                             <p class="textoAyuda">Calle</p>
-                            <input type="text" placeholder="'.$infoUsuario['entre'].'">
+                            <input type="text" id="entre" value="'.$infoUsuario['entre'].'" onchange="arregloCambios[7]=1;">
                             <p class="textoAyuda">Entre</p>
                             <div class="inputEnLinea">
-                                <input type="text" placeholder="'.$infoUsuario['ciudad'].'">
-                                <input type="text" placeholder="'.$infoUsuario['codPostal'].'">
+                                <input type="text" id="num" value="'.$infoUsuario['numCasa'].'"    onchange="arregloCambios[7]=1;">
+                                <input type="text" id="cp"  value="'.$infoUsuario['codPostal'].'"  onchange="arregloCambios[7]=1;">
                             </div>
                             <div class="inputEnLinea">
-                                <p class="textoAyuda">Ciudad</p>
+                                <p class="textoAyuda">Numero de casa</p>
                                 <p class="textoAyuda">Código Postal</p>
                             </div>
-                            <input type="text" placeholder="'.$infoUsuario['colonia'].'">
-                            <p class="textoAyuda">Colonia</p>
+                            <div class="inputEnLinea">
+                                <input type="text" id="colonia" value="'.$infoUsuario['colonia'].'" onchange="arregloCambios[7]=1;">
+                                <input type="text" id="ciudad" value="'.$infoUsuario['ciudad'].'" onchange="arregloCambios[7]=1;">
+                            </div>
+                            <div class="inputEnLinea">
+                                <p class="textoAyuda">Colonia</p>
+                                <p class="textoAyuda">ciudad</p>
+                            </div>
                         </div>
 
                         <div class="tarjetaBlanca centrar">
@@ -147,7 +153,7 @@
                                 ¿Desea ELIMINAR?
                             </p>
                             <button id ="botonEliminarModal"class="eliminarBotonModal" onclick=eliminarUsuario()>Eliminar</button>
-                            <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;">Modificar</button>
+                            <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=modificarUser()>Modificar</button>
                             <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
                         </div>
                 </div>
@@ -247,7 +253,6 @@
                                 <p class="textoAyuda">Colonia</p>
                                 <p class="textoAyuda">Ciudad</p>
                             </div>
-
                         </div>
                         <button id="footerGuardar_Boton" onclick = guardarUser()>Guardar</button>
                     
