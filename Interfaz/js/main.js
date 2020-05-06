@@ -41,7 +41,8 @@ function openNav() {
     flag = 0;
   } 
 }
-function openModal() {
+function openModal(item) {
+    document.getElementById("textoModalPregunta").innerHTML = "Desea eliminar usuario: <br><b>"+item+"?"
     document.getElementById("contenedorModal").style.height = "100%";
     window.addEventListener('scroll', noScrollModal);
 }
@@ -169,35 +170,9 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
       textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
     }
 
-    function cambiarPantallaInfo(item){
-
-      let arrayInputs = document.getElementsByTagName("input");
-      let arraySelects = document.getElementsByTagName("select");
-      let btnImg = document.getElementById("botonImg");
-      let btnGuardar = document.getElementById("botonGuardar");
-      let btnsDelPrint = document.getElementById("botonesDelPrint");
-      let btnEdit = document.getElementById("editar");
-      let textoModalPregunta = document.getElementById("textoModalPregunta");
-      let botonEliminarModal = document.getElementById("botonEliminarModal");
-      let botonGuardarModal = document.getElementById("botonGuardarModal");
-
-
-      for(let i = 0; i < arrayInputs.length;i++){
-        arrayInputs[i].classList.remove("registro");
-      }
-      for(let i = 0; i < arraySelects.length;i++){
-        arraySelects[i].classList.remove("registro");
-      }
-      btnImg.style.display = "none";
-      btnGuardar.style.display = "none";
-      btnsDelPrint.style.display = "block";
-      botonGuardarModal.style.display = "none";
-      btnEdit.style.display = "block";
-      botonEliminarModal.style.display = "block";
-      textoModalPregunta.innerHTML = "Desea eliminar " + item + " ?";
-      document.getElementById("contenedorModalEliminado").style.height = "0%";
-      window.removeEventListener('scroll', noScrollModal);
-
+    function cambiarPantallaInfo(){
+        cargarTarjetas("",filtrado());
+        cargarInfo("rtapiz@gmail.com");
     }
 
 

@@ -2,7 +2,7 @@
 	session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -89,6 +89,15 @@
 			cargarInfo(correoNuevo);
 		}
 		// --------------------------------------
+		function selectItem(seleccionado){
+			var arrayOptions = document.getElementsByTagName("option");
+			for(var i = 0;arrayOptions.length;i++){
+				if(arrayOptions[index].value== seleccionado){
+					arrayOptions[index].selected = true;
+				}
+			}
+      		
+		}
 		// --------------------------------------
 	</script>
 	<title>Ingexis Labsoft - Usuarios</title>
@@ -104,7 +113,7 @@
 		<!-- 00000000000000000000000 -->
 		<div id="divUsuarios">
 			<div id="contenedorBuscador">
-					
+					<div id="desenfoque" class="sombra"></div>
 					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())" placeholder="Buscar..." title="Type in a name"></input>
 					<button id="opciones" onclick="mostrarOpciones()"></button>
 			</div> 

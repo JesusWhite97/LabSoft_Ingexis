@@ -28,14 +28,52 @@
         $Usuario = new Usuario();
         $infoUsuario = $Usuario->VistaCompleta($correo);
         $imgUsuario = $Usuario->Info_Correo($correo);
+
+        $optionsPuesto = "";
+
+        if($infoUsuario["puesto"] == "Administrador"){
+           $optionsPuesto = '<option selected value="Administrador">Administrador</option>';
+        }else{
+            $optionsPuesto ='<option value="Administrador">Administrador</option>';
+        }
+
+        if($infoUsuario["puesto"] == "Jefe De Laboratorio"){
+           $optionsPuesto = $optionsPuesto.'<option selected value="Jefe De Laboratorio">Jefe De Laboratorio</option>';
+        }else{
+            $optionsPuesto =$optionsPuesto.'<option value="Jefe De Laboratorio">Jefe De Laboratorio</option>';
+        }
+
+        if($infoUsuario["puesto"] == "Laboratorista 1"){
+           $optionsPuesto = $optionsPuesto.'<option selected value="Laboratorista 1">Laboratorista 1</option>';
+        }else{
+            $optionsPuesto =$optionsPuesto.'<option value="Laboratorista 1">Laboratorista 1</option>';
+        }
+
+        if($infoUsuario["puesto"] == "Laboratorista 2"){
+           $optionsPuesto =$optionsPuesto.'<option selected value="Laboratorista 1">Laboratorista 2</option>';
+        }else{
+            $optionsPuesto =$optionsPuesto.'<option value="Laboratorista 2">Laboratorista 2</option>';
+        }
+            
+
+
         $interfazInfoUsuario = '
         <div class="contenedorCentradoResponsivo">
                         <div id="tituloContenedor">
-                            <div id="tituloImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".');"> </div>
-                            <h3 id="tituloInfo">'.$infoUsuario['apodo'].'</h3>
+                            <div id="editarImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".'); background-size: cover; background-position: center;">
+                            <form id="formImg">
+                                <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this);" value=""/>
+                            </form> 
+                            <label id="botonImg" for="inImg" style="display:none;"></label>
+                            <div id="blah"> </div>
                         </div>
+                        <input id="apodo" class="inputTexto mayus" style="color:white;" type="text" placeholder="'.$infoUsuario['apodo'].'" value="'.$infoUsuario['apodo'].'">
+                        <p class="textoAyuda textoAyudaTitulo">Apodo</p>
+                            </div>
                         <div class="tarjetaBlanca" style="margin-top: 0px;">        
-                            <input style="text-align: center; grid-row: 1/ span 1; grid-column: 1/ span 1;" type="text" placeholder="'.$infoUsuario['puesto'].'">
+                            <select id="puesto" class="registro">
+                                '.$optionsPuesto.'
+                             </select>
                             <p class="textoAyuda" style="text-align: center; grid-row: 2/ span 1; grid-column: 1/ span 1;">Puesto</p>
                         </div>
                         <!-- DatosPersonales ============================ -->
@@ -67,7 +105,7 @@
                             <p class="titulo">Contacto</p>
                             <input type="text"id="telefono" placeholder="'.$infoUsuario['telefono'].'">
                             <p class="textoAyuda">Número celular</p>
-                            <input type="text" id="email" placeholder="'.$infoUsuario['correo'].'">
+                            <input type="text" id="correo" value="'.$infoUsuario['correo'].'" placeholder="'.$infoUsuario['correo'].'">
                             <p class="textoAyuda">Email</p>
                             <input type="text" id="password"  placeholder="'.$infoUsuario['contra'].'">
                             <p class="textoAyuda" >Contraseña</p>
@@ -90,6 +128,40 @@
                             <input type="text" placeholder="'.$infoUsuario['colonia'].'">
                             <p class="textoAyuda">Colonia</p>
                         </div>
+
+                        <div class="tarjetaBlanca centrar">
+                        <div id="botonesDelPrint" class="botonesEliminarImprimer">
+                            <button class="footerImprimir_Boton" onclick=cambiarPantallaEditar(document.getElementById("correo").value)>Modificar</button>
+                            <button class="footerEliminar_Boton" onclick=openModal(document.getElementById("correo").value)>Eliminar Usuario</button>
+                        </div>
+                        <div id="botonGuardar" class="botonesEliminarImprimer" style="display:none;">
+                            <button id="footerGuardar_Boton" onclick=openModal(document.getElementById("correo").value) style="grid-column: 1 / span 2;">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="contenedorModal">
+                    <div id="fondoModal"></div>
+                        <div class="modal">
+                            <p id ="textoModalPregunta" class="textoModal">
+                                ¿Desea ELIMINAR?
+                            </p>
+                            <button id ="botonEliminarModal"class="eliminarBotonModal" onclick=eliminarUsuario()>Eliminar</button>
+                            <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;">Modificar</button>
+                            <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
+                        </div>
+                </div>
+
+
+                <div id="contenedorModalEliminado">
+                    <div id="fondoModal"></div>
+                        <div class="modal">
+                            <p class="textoModal" id="textoExito">
+                                Usuario eliminado
+                            </p>
+                            <button class="OK" onclick=cambiarPantallaInfo()>OK</button>
+                        </div>
+                        
                 </div>
         ';
         return $interfazInfoUsuario;
@@ -147,7 +219,7 @@
                             <p class="titulo">Contacto</p>
                             <input id="cel" type="text" class="registro" id="telefono" placeholder="">
                             <p class="textoAyuda">Número celular</p>
-                            <input id="correo" type="text" class="registro" id="email" placeholder="">
+                            <input id="correo" type="text" class="registro" id="correo" placeholder="">
                             <p class="textoAyuda">Email</p>
                             <input id="contra" type="text" class="registro" id="password"  placeholder="">
                             <p class="textoAyuda" >Contraseña</p>

@@ -291,14 +291,14 @@
             //============================
         }
         //#####################################################
-        public function ModDireccion($correo, $calle, $entre, $numCasa, $col, $codP)
+        public function ModDireccion($correo, $calle, $entre, $numCasa, $col, $codP, $ciudad) //agregar ciudad
         {
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
-            $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."')";
+            $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
                 return "Modificacion Existoso.";
             }else{

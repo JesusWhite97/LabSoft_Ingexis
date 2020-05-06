@@ -95,14 +95,16 @@
             return $respuesta;
         }
         //#####################################################
-        public function Modificar_Direccion($correo, $calle, $entre, $numCasa, $col, $codP){
+        public function Modificar_Direccion($correo, $calle, $entre, $numCasa, $col, $codP, $ciudad){
             $usuarioBD = new procedimientos_User();
-            $respuesta = $usuarioBD->ModDireccion($correo, $calle, $entre, $numCasa, $col, $codP);
+            $respuesta = $usuarioBD->ModDireccion($correo, $calle, $entre, $numCasa, $col, $codP, $ciudad);
             return $respuesta;
         }
         //#####################################################
         public function Modificar_img($correo, $img){
-            //pendiente por interfaz
+            $usuarioBD = new procedimientos_User();
+            $respuesta = $usuarioBD->Modimg($correo, $img);
+            return $respuesta;
         }
         //#####################################################
         public function Buscar_tarjetas($texto, $arregloPuestos){

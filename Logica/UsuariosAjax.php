@@ -65,6 +65,48 @@
             echo $jsonString;
         }
         //########################
+        if($_POST["metodo"] == "modificarUsuario"){
+            //declaracion de variables--------------------------
+            $user = new Usuario();
+            $cambios = $_POST['cambios']; //Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
+            $correo = $_POST['correo'];
+            $salida = "";
+            //Formular Respuesta--------------------------------
+            if($cambios[0] == 1){
+                $salida = $salida.$user->Modificar_Apodo($correo, $_POST['apodo'])."\n";
+            }            
+            if($cambios[1] == 1){
+                $salida = $salida.$user->Modificar_puesto($correo, $_POST['puesto'])."\n";
+            }            
+            if($cambios[2] == 1){
+                $salida = $salida.$user->Modificar_Nombre($correo, $_POST['nom1'], $_POST['nom2'], $_POST['ape1'], $_POST['ape2'])."\n";
+            }            
+            if($cambios[3] == 1){
+                $salida = $salida.$user->Modificar_RFC($correo, $_POST['rfc'])."\n";
+            }            
+            if($cambios[4] == 1){
+                $salida = $salida.$user->Modificar_CURP($correo, $_POST['curp'])."\n";
+            }            
+            if($cambios[5] == 1){
+                $salida = $salida.$user->Modificar_Telefono($correo, $_POST['cel'])."\n";
+            }
+            if($cambios[6] == 1){
+                $salida = $salida.$user->Modificar_contra($correo, $_POST['contra1'], $_POST['contra2'])."\n";
+            }
+            if($cambios[7] == 1){
+                $salida = $salida.$user->Modificar_Direccion($correo, $_POST['calle'], $_POST['entre'], $_POST['num'], $_POST['colonia'], $_POST['cp'], $_POST['ciudad'])."\n";
+            }
+            if($cambios[8] == 1){//pendiente###########################################################################################
+                $salida = $salida.$user->Modificar_img($correo, $_POST['img'])."\n";
+            }
+            //salida--------------------------------------------
+            $json[] =  [
+                'validacion' => $salida
+            ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
     }
     // ========================================================
 ?>

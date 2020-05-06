@@ -77,7 +77,9 @@ function guardarUsuario(){
 }
 //################################
 var salidaUsuarioEliminado ="";
+
 function eliminarUsuario(){
+    let correo = document.getElementById("correo").value
     postData = {
         metodo: "eliminarUsuario",
         correo: document.getElementById("correo").value,
@@ -91,6 +93,73 @@ function eliminarUsuario(){
             console.log(response);
             var arrayResponse = JSON.parse(response);
             salidaUsuarioEliminado = arrayResponse[0].validacion;
+            if(arrayResponse[0].validacion == "true"){
+                document.getElementById("textoExito").innerHTML = "El usuario <b>"+ correo +"</b> ha sido eliminado del sistema";   
+            }else{
+                document.getElementById("textoExito").innerHTML = "<b>Error:</b>"+arrayResponse[0].validacion;
+            }
+            
+            document.getElementById("contenedorModal").style.height = "0%";
+            document.getElementById("contenedorModalEliminado").style.height = "100%";
+            window.addEventListener('scroll', noScrollModal);
+        }
+    });
+}
+//################################
+var modificacionSalida = "";
+var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
+function modificarUsuario(){
+    var postData = {
+        metodo: "modificarUsuario",
+        cambios: arregloCambios,
+        correo: document.getElementById("correo").value
+    };
+    //-----------------------------------------
+    if(arregloCambios[0]){
+        postData.apodo = document.getElementById("apodo").value;
+    }
+    if(arregloCambios[1]){
+        postData.puesto = obtenerValorSelect(document.getElementById("puesto").selectedIndex);
+    }
+    if(arregloCambios[2]){
+        postData.nom1 = document.getElementById("nom1").value;
+        postData.nom2 = document.getElementById("nom2").value;
+        postData.ape1 = document.getElementById("ape1").value;
+        postData.ape2 = document.getElementById("ape2").value;
+    }
+    if(arregloCambios[3]){
+        postData.rfc = document.getElementById("rfc").value;   
+    }
+    if(arregloCambios[4]){
+        postData.curp = document.getElementById("curp").value;
+    }
+    if(arregloCambios[5]){
+        postData.cel = document.getElementById("cel").value;
+    }
+    if(arregloCambios[6]){
+        postData.contra1 = document.getElementById("contra1").value;
+        postData.contra2 = document.getElementById("contra2").value;
+    }
+    if(arregloCambios[7]){
+        postData.calle = document.getElementById("calle").value;
+        postData.entre = document.getElementById("entre").value;
+        postData.numCasa = document.getElementById("num").value;
+        postData.ciudad = document.getElementById("ciudad").value;
+        postData.cp = document.getElementById("cp").value;
+        postData.colonia = document.getElementById("colonia").value;
+    }
+    if(arregloCambios[8]){
+        postData.img = obtenerNombreArchivo();
+    }
+    //-----------------------------------------
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            var arrayResponse = JSON.parse(response);
         }
     });
 }
