@@ -32,25 +32,25 @@
         $optionsPuesto = "";
 
         if($infoUsuario["puesto"] == "Administrador"){
-           $optionsPuesto = '<option selected value="Administrador">Administrador</option>';
+            $optionsPuesto = '<option selected value="Administrador">Administrador</option>';
         }else{
             $optionsPuesto ='<option value="Administrador">Administrador</option>';
         }
 
         if($infoUsuario["puesto"] == "Jefe De Laboratorio"){
-           $optionsPuesto = $optionsPuesto.'<option selected value="Jefe De Laboratorio">Jefe De Laboratorio</option>';
+            $optionsPuesto = $optionsPuesto.'<option selected value="Jefe De Laboratorio">Jefe De Laboratorio</option>';
         }else{
             $optionsPuesto =$optionsPuesto.'<option value="Jefe De Laboratorio">Jefe De Laboratorio</option>';
         }
 
         if($infoUsuario["puesto"] == "Laboratorista 1"){
-           $optionsPuesto = $optionsPuesto.'<option selected value="Laboratorista 1">Laboratorista 1</option>';
+            $optionsPuesto = $optionsPuesto.'<option selected value="Laboratorista 1">Laboratorista 1</option>';
         }else{
             $optionsPuesto =$optionsPuesto.'<option value="Laboratorista 1">Laboratorista 1</option>';
         }
 
         if($infoUsuario["puesto"] == "Laboratorista 2"){
-           $optionsPuesto =$optionsPuesto.'<option selected value="Laboratorista 1">Laboratorista 2</option>';
+            $optionsPuesto =$optionsPuesto.'<option selected value="Laboratorista 1">Laboratorista 2</option>';
         }else{
             $optionsPuesto =$optionsPuesto.'<option value="Laboratorista 2">Laboratorista 2</option>';
         }
@@ -73,7 +73,7 @@
                         <div class="tarjetaBlanca" style="margin-top: 0px;">        
                             <select id="puesto" class="registro">
                                 '.$optionsPuesto.'
-                             </select>
+                            </select>
                             <p class="textoAyuda" style="text-align: center; grid-row: 2/ span 1; grid-column: 1/ span 1;">Puesto</p>
                         </div>
                         <!-- DatosPersonales ============================ -->

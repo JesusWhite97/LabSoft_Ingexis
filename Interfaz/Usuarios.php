@@ -89,6 +89,10 @@
 			cargarInfo(correoNuevo);
 		}
 		// --------------------------------------
+		function modificarUser(){
+			
+		}
+		// --------------------------------------
 		function selectItem(seleccionado){
 			var arrayOptions = document.getElementsByTagName("option");
 			for(var i = 0;arrayOptions.length;i++){
@@ -96,7 +100,6 @@
 					arrayOptions[index].selected = true;
 				}
 			}
-      		
 		}
 		// --------------------------------------
 	</script>
