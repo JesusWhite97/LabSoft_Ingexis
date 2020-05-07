@@ -1,14 +1,14 @@
 -- CREATE database databaseingexis;
---======================================--
-use databaseingexis;
---======================================--
+-- --======================================--
+-- use databaseingexis;
+-- --======================================--
 -- create table Log_usuarios(
 --     id_usuario      int             primary key     not null    AUTO_INCREMENT,
 --     correo          varchar(50)     unique,
 --     contra          varchar(20),
 --     img_log         VARCHAR(100)
 -- );
--- ======================================--
+-- -- ======================================--
 -- create table usuarios(
 --     id_usuario      int             not null,
 --     nombre1         varchar(20),
@@ -31,7 +31,7 @@ use databaseingexis;
 --     --ralaciones ETC------------
 --     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
 -- );
---======================================--
+-- --======================================--
 -- create table clientes(
 --     id_clientes     int             primary key     not null    AUTO_INCREMENT,
 --     titulo          varchar(60),

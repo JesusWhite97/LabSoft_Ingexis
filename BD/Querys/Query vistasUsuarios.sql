@@ -1,5 +1,5 @@
-use databaseingexis;
---======================================--
+-- use databaseingexis;
+-- --======================================--
 -- CREATE VIEW dat_tar_Usuarios AS
 -- select 
 --     log_usuarios.img_log as 'img',
@@ -12,7 +12,7 @@ use databaseingexis;
 --     log_usuarios, 
 --     usuarios 
 -- where log_usuarios.id_usuario = usuarios.id_usuario;
---======================================--
+-- --======================================--
 -- create view dat_usuarios AS 
 -- select 
 --     usuarios.apodo as 'apodo',

@@ -1,5 +1,5 @@
-use databaseingexis;
---======================================--
+-- use databaseingexis;
+-- --======================================--
 -- CREATE FUNCTION  correoExistente(correo varchar(50)) returns varchar(5)
 -- BEGIN
 --     DECLARE respuesta int;
@@ -10,7 +10,7 @@ use databaseingexis;
 --         return 'false';
 --     end if;
 -- END
---======================================--
+-- --======================================--
 -- CREATE FUNCTION verificaContra(correo varchar(50), contraseña varchar(20)) returns varchar(5)
 -- begin
 --     declare respuesta int;
@@ -21,18 +21,18 @@ use databaseingexis;
 --         return 'false';
 --     end if;
 -- end
---======================================--
+-- --======================================--
 -- create FUNCTION id_by_correo(correo varchar(50)) returns int
 -- begin
 --     declare salida int;
 --     select log_usuarios.id_usuario into salida from log_usuarios where log_usuarios.correo = correo;
 --     return salida;
 -- end
---======================================--
+-- --======================================--
 -- CREATE FUNCTION img_by_correo(correo varchar(50)) returns varchar(100)
 -- BEGIN
 --     declare salida varchar(100);
 --     select log_usuarios.img_log into salida from log_usuarios where log_usuarios.correo = correo;
 --     return salida;
 -- end
---======================================--
+-- --======================================--
