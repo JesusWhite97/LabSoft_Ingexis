@@ -1,5 +1,10 @@
 <?php   
 	session_start();
+	if($_SESSION['puesto'] != 'Administrador' && $_SESSION['puesto'] != 'Jefe De Laboratorio'){
+		echo "<script type='text/javascript'>";
+		echo "window.history.back(-1)";
+		echo "</script>";
+	}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,6 +20,7 @@
 	</script>
 	<script src="js/usuarios.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/interfaz.js"></script>
 	<script>
 		// --------------------------------------
 		window.onload = function(){
@@ -91,18 +97,23 @@
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
 		function modificarUser(){
-			if(arregloCambios[8]){
-				subirImg();
-				if(respuestaSubirIMG == 'NO'){
-					arregloCambios[8] = 0;
-				}
-			}
-			modificarUsuario(arregloCambios);
-			alert(modificacionSalida);
-			arregloCambios = Array(0,0,0,0,0,0,0,0,0);
 			var correoNuevo = document.getElementById("correo").value;
-			this.cargarTarjetas('','1111');
-			cargarInfo(correoNuevo);
+			if(arregloCambios.includes(1)){
+				if(arregloCambios[8]){
+					subirImg();
+					if(respuestaSubirIMG == 'NO'){
+						arregloCambios[8] = 0;
+					}
+				}
+				modificarUsuario(arregloCambios);
+				alert(modificacionSalida);
+				arregloCambios = Array(0,0,0,0,0,0,0,0,0);
+				this.cargarTarjetas('','1111');
+				cargarInfo(correoNuevo);
+			}else{
+				closeModal();
+				cargarInfo(correoNuevo);
+			}
 		}
 		// --------------------------------------
 		function selectItem(seleccionado){

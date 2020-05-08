@@ -36,3 +36,12 @@
 --     return salida;
 -- end
 -- --======================================--
+-- CREATE FUNCTION puesto_by_correo(correo varchar(50)) returns varchar(50)
+-- BEGIN
+--     declare salida varchar(100);
+--     declare id int;
+--     SELECT id_by_correo(correo) into id;
+--     select usuarios.puesto into salida from usuarios where usuarios.id_usuario = id;
+--     return salida;
+-- end
+-- --======================================--

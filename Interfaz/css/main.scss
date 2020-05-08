@@ -27,7 +27,6 @@ body{
     padding: 0%;
     margin: 0%;
     border: 0px;
-    overflow-x: hidden;
 }
 .fondoPantalla{
     z-index: -1;
@@ -493,6 +492,9 @@ body{
         color: white;
         margin-bottom: 1px;
         text-align: center;
+        option{
+            text-align: center;
+        }
     }
     .registro{
         pointer-events: auto !important;
@@ -583,6 +585,8 @@ body{
     font-family: $fuente;
     color: $colorFuenteEncabezado;
     box-shadow: $colorSombras;
+   
+
 
     #editarImagen{
         grid-column: 1 / span 1;
@@ -590,17 +594,93 @@ body{
         width: 100%;
         height: 100%;
         display:grid;
-        grid-template-columns:1fr 50px;
-        grid-template-rows: 50px 1fr;
+        grid-template-columns:50px 1fr  50px;
+        grid-template-rows: 50px  50px 1fr;
 
+        #botonEditar{
+            width: 35px;
+            height: 35px;
+            border:none;
+            margin: 5px;
+            padding: 10px;
+
+            grid-column: 1/ span 1;
+            grid-row: 1 / span 1;
+            z-index: 4;
+            background-color: rgba(22, 22, 22, 0.76);
+            box-shadow: $colorSombras;
+            background-image: url("../img/icoEdit.svg");
+            background-repeat: no-repeat;
+            background-size: 30px 25px;
+            background-position: center;
+            padding: 0px;
+            cursor: pointer;
+            border-radius: 5px;
+
+           
+            
+        }
+        #botonEditar:hover{
+                background-color: rgba(1, 9, 252, 0.76);
+
+            
+        }
+        #botonEliminar{
+            width: 35px;
+            height: 35px;
+            border:none;
+            margin: 5px;
+            padding: 10px;
+
+            grid-column: 3/ span 1;
+            grid-row: 1 / span 1;
+            z-index: 4;
+            background-color: rgba(22, 22, 22, 0.76);
+            box-shadow: $colorSombras;
+            background-image: url("../img/icoDelete.svg");
+            background-repeat: no-repeat;
+            background-size: 30px 25px;
+            background-position: center;
+            padding: 0px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #botonEliminar:hover{
+            content: "Eliminar";
+            background-color: rgba(246, 59, 59, 0.75);
+        }
+        #botonCancelar{
+            width: 35px;
+            height: 35px;
+            border:none;
+            margin: 5px;
+            padding: 10px;
+
+            grid-column: 1/ span 1;
+            grid-row: 1 / span 1;
+            z-index: 4;
+            background-color: rgba(22, 22, 22, 0.76);
+            box-shadow: $colorSombras;
+            background-image: url("../img/close.svg");
+            background-repeat: no-repeat;
+            background-size: 40px;
+            background-position: center;
+            padding: 0px;
+            cursor: pointer;
+            border:none;
+            border-radius: 5px;
+        }
+
+
+      
         .inputImg{
             display: none;
         }
         label{
 
             width: 50px;
-            grid-column: 2/ span 1;
-            grid-row: 1 / span 1;
+            grid-column: 1/ span 1;
+            grid-row: 2 / span 1;
             z-index: 4;
             background-image: url("../img/upImg.svg");
             background-repeat: no-repeat;
@@ -609,9 +689,11 @@ body{
             padding: 0px;
             cursor: pointer;
         }
+
+       
         div{
-            grid-column: 1/ span 2;
-            grid-row: 1 / span 2;
+            grid-column: 1/ span 3;
+            grid-row: 1 / span 3;
             width: 100%; 
             height: 100%;
             background-size: cover;
@@ -697,6 +779,16 @@ body{
         text-shadow: 2px 2px 4px #000000;
 
     }
+}
+.btnImgRegistro{
+    width:100% !important;
+     grid-column: 1/ span 3 !important;
+     grid-row: 1 / span 3 !important;
+    background-image: url("../img/regImg.svg") !important;
+   background-repeat: no-repeat !important;
+    background-size: 220px 220px !important;
+    background-position: top !important;
+    border-radius: 10px;
 }
 
 .contenedorTarjetaUsuario{
@@ -823,17 +915,23 @@ body{
     }
 }
 #contenedorGridResponsivo{
+    height: 95vh;
     margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
     grid-auto-rows: 120px;
+    overflow-y: scroll;
 }
 .contenedorCentradoResponsivo{
     margin-top: 50px;
     width: 100%;
-    height: 100%;
+    height: 95vh;
     display: grid;
+    overflow-y:scroll ;
 
+}
+::-webkit-scrollbar { 
+    display: none; 
 }
 @media screen and (max-width:640px) {
     #divUsuarios{
@@ -1149,7 +1247,7 @@ body{
         #tituloLogin{
             margin:10px auto;
             color:white;
-            text-align: center;s
+            text-align: center;
         }
         #imgUser{
             width: 200px;
@@ -1548,7 +1646,7 @@ body{
     }
     .contenedorPrincipal{
         display: grid;
-        grid-template-columns: 400px 1fr
+        grid-template-columns: 380px 1fr 300px;
         #divUsuarios{
             grid-column: 1 span 1;
             display: block;
@@ -1557,12 +1655,12 @@ body{
             background-image: $colorGradienteTarjetas;
             backdrop-filter:  blur(5px);
             -webkit-backdrop-filter:blur(5px);
+            overflow-y: visible;
         }
     }
     #divInfoUsuarios{
         grid-column: 2 span 1;
         display: block;
-        overflow-y: scroll;
     }
     #tituloContenedor{
         background-image: $colorGradienteTarjetas ;

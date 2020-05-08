@@ -92,7 +92,7 @@
                 $salida = $salida.$user->Modificar_Telefono($correo, $_POST['cel'])." para el campo telefono \n";
             }
             if($cambios[6] == 1){
-                $salida = $salida.$user->Modificar_contra($correo, $_POST['contra'], $_POST['contra2'])." para el campo contraseña \n";
+                $salida = $salida.$user->Modificar_contra($correo, $_POST['contra1'], $_POST['contra2'])." para el campo contraseña \n";
             }
             if($cambios[7] == 1){
                 $salida = $salida.$user->Modificar_Direccion($correo, $_POST['calle'], $_POST['entre'], $_POST['num'], $_POST['colonia'], $_POST['cp'], $_POST['ciudad'])." para los campos Direccion \n";

@@ -6,6 +6,23 @@
     // ========================================================
     class procedimientos_User{
         //#####################################################
+        public function PuestoByCorreo($correo){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion();
+            //============================
+            $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "select puesto_by_correo('".$correo."');";
+            $resultado=$mysqli->query($query);
+            $rows = $resultado->fetch_array();
+            $salida = $rows[0];
+            //============================
+            return $salida;
+            $resultado->free();
+            //============================
+        }
+        //#####################################################
         public function ExisteCorreo($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
@@ -389,6 +406,9 @@
         //#####################################################
     }
     // ========================================================
+    // $prueba = new procedimientos_User();
+    // $salida = $prueba->PuestoByCorreo('Rtapiz@gmail.com');
+    // var_dump($salida);
     // $prueba = new procedimientos_User();
     // $salida = $prueba->ExisteCorreo('Rtapiz@gmail.com');
     // var_dump($salida);

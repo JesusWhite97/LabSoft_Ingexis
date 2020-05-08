@@ -1,6 +1,6 @@
 <!-- ========================================================================================== -->
 <?php
-    session_start();
+    session_start();    
     if(!isset($_SESSION["correo"])){
         header('Location: /LabSoft_Ingexis/Interfaz/Login.php');
     }

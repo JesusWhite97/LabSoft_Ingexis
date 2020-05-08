@@ -65,13 +65,17 @@
                                 <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this); arregloCambios[8]=1;" value=""/>
                             </form> 
                             <label id="botonImg" for="inImg" style="display:none;"></label>
+                            <button id="botonEditar" onclick=verPantallaModificar(document.getElementById("correo").value)>
+                            <button id="botonEliminar" onclick=openModal(document.getElementById("correo").value)>
+                            <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) >
                             <div id="blah"> </div>
                         </div>
                         <input id="apodo" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoUsuario['apodo'].'" onchange="arregloCambios[0]=1;">
                         <p class="textoAyuda textoAyudaTitulo">Apodo</p>
                             </div>
-                        <div class="tarjetaBlanca" style="margin-top: 0px;">        
-                            <select id="puesto" class="registro" onchange="arregloCambios[1]=1;">
+                        <div class="tarjetaBlanca" style="margin-top: 0px;">
+                            <input type="text" id="puestoInput" class="selectInfo" style="text-align:center;" value="'.$infoUsuario['puesto'].'" onchange="arregloCambios[2]=1;">        
+                            <select id="puesto" class="registro" style="display:none;" onchange="arregloCambios[1]=1;">
                                 '.$optionsPuesto.'
                             </select>
                             <p class="textoAyuda" style="text-align: center; grid-row: 2/ span 1; grid-column: 1/ span 1;">Puesto</p>
@@ -107,8 +111,18 @@
                             <p class="textoAyuda">Número celular</p>
                             <input type="text" id="correo" value="'.$infoUsuario['correo'].'">
                             <p class="textoAyuda">Email</p>
-                            <input type="text" id="password"  value="'.$infoUsuario['contra'].'" onchange="arregloCambios[6]=1;">
-                            <p class="textoAyuda" >Contraseña</p>
+                        </div>
+                        <!-- Datos de contrseña=========================== -->
+                        <div id="inContras" style="display:none;"  class="tarjetaBlanca">
+                            <p class="titulo">Contraseña</p>
+                            <div  class="inputEnLinea">
+                            <input type="password" id="contra1" value=""    onchange="arregloCambios[7]=1;">
+                            <input type="password" id="contra2"  value=""  onchange="arregloCambios[7]=1;">
+                            </div>
+                            <div  class="inputEnLinea">
+                            <p class="textoAyuda">Contraseña nueva</p>
+                            <p class="textoAyuda">Confirmar contraseña nueva</p>
+                            </div>
                         </div>
                         <!-- Datos De direccion========================== -->
                         <div class="tarjetaBlanca">
@@ -136,12 +150,8 @@
                         </div>
 
                         <div class="tarjetaBlanca centrar">
-                        <div id="botonesDelPrint" class="botonesEliminarImprimer">
-                            <button class="footerImprimir_Boton" onclick=cambiarPantallaEditar(document.getElementById("correo").value)>Modificar</button>
-                            <button class="footerEliminar_Boton" onclick=openModal(document.getElementById("correo").value)>Eliminar Usuario</button>
-                        </div>
                         <div id="botonGuardar" class="botonesEliminarImprimer" style="display:none;">
-                            <button id="footerGuardar_Boton" onclick=openModal(document.getElementById("correo").value) style="grid-column: 1 / span 2;">Guardar</button>
+                            <button id="footerGuardar_Boton" onclick=openModal(document.getElementById("correo").value) style="grid-column: 1 / span 1;">Guardar</button>
                         </div>
                     </div>
                 </div>
@@ -181,7 +191,7 @@
                         <form id="formImg">
                             <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this);" value=""/>
                         </form> 
-                        <label id="botonImg" for="inImg"></label>
+                        <label id="botonImg" class="btnImgRegistro" for="inImg"></label>
                         <div id="blah"> </div>
                     </div>
                     <input id="apodo" class="registro inputTexto mayus" style="color:white;" type="text">
@@ -227,8 +237,18 @@
                             <p class="textoAyuda">Número celular</p>
                             <input id="correo" type="text" class="registro" id="correo" placeholder="">
                             <p class="textoAyuda">Email</p>
-                            <input id="contra" type="text" class="registro" id="password"  placeholder="">
-                            <p class="textoAyuda" >Contraseña</p>
+                        </div>
+                        <!-- Datos de contrseña=========================== -->
+                        <div id="inContras"  class="tarjetaBlanca">
+                            <p class="titulo">Contraseña</p>
+                            <div  class="inputEnLinea">
+                            <input type="password" id="contra" value=""  class="registro">
+                            <input type="password" id="contra"  value="" class="registro">
+                            </div>
+                            <div  class="inputEnLinea">
+                            <p class="textoAyuda">Contraseña nueva</p>
+                            <p class="textoAyuda">Confirmar contraseña nueva</p>
+                            </div>
                         </div>
                         <!-- Datos De direccion========================== -->
                         <div class="tarjetaBlanca">

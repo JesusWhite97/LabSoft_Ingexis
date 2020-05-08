@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11" height="18" viewBox="0 0 11 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="8" height="18" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_104" data-name="Grupo 104" transform="translate(-44 -106.147)">
+    <g id="Repetir_cuadrícula_19" data-name="Repetir cuadrícula 19" transform="translate(45.6 106.147)" clip-path="url(#clip-path)">
+      <g transform="translate(-3703 -96.5)">
+        <line id="Línea_18" data-name="Línea 18" y2="8" transform="translate(3704 102.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+      <g transform="translate(-3700 -96.5)">
+        <line id="Línea_18-2" data-name="Línea 18" y2="8" transform="translate(3704 102.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+      <g transform="translate(-3697 -96.5)">
+        <line id="Línea_18-3" data-name="Línea 18" y2="8" transform="translate(3704 102.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+      </g>
+    </g>
+    <g id="Rectángulo_92" data-name="Rectángulo 92" transform="translate(44 106.7)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="11" height="2" rx="0.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="10" height="1" fill="none"/>
+    </g>
+    <g id="Rectángulo_95" data-name="Rectángulo 95" transform="translate(44 109)" fill="none" stroke="#fff" stroke-width="1">
+      <rect width="11" height="15" rx="0.5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="10" height="14" fill="none"/>
+    </g>
+  </g>
+</svg>

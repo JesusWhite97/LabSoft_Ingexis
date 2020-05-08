@@ -1,6 +1,8 @@
 <?php
 	class conexionMySQLi{
 		//declaracion de variables
+		//agregar ususarios: login, jefeLAb, admin, lab1, lab2
+		//
 		//========================
 		function conexion()
 		{

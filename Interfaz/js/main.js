@@ -13,9 +13,13 @@ function readURL(input)
       {
         var field = document.getElementById('blah');
         field.style.backgroundImage = "url('"+evt.target.result+"')";
+        
       }
       reader.readAsDataURL(input.files[0]);
+      
   }
+  var label = document.getElementById("botonImg");
+  label.classList.remove("btnImgRegistro");
 }
 
 function isNumberKey(evt){

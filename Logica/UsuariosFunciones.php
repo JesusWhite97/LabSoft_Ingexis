@@ -4,6 +4,12 @@
     // ========================================================
     class Usuario{
         //#####################################################
+        public function Puesto($correo){
+            $usuarioBD = new procedimientos_User();
+            $respuesta = $usuarioBD->PuestoByCorreo($correo);
+            return $respuesta;
+        }
+        //#####################################################
         public function Existencia_de_correo($correo){
             $usuarioBD = new procedimientos_User();
             $respuesta = $usuarioBD->ExisteCorreo($correo);

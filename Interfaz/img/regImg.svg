@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="115" viewBox="0 0 115 115">
+  <defs>
+    <filter id="Rectángulo_120" x="0" y="0" width="115" height="115" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#272727" flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_121" x="5.5" y="27.5" width="83" height="83" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polígono_8" x="7.5" y="50.5" width="58" height="58" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Polígono_9" x="30.5" y="70.5" width="53" height="38" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Elipse_21" x="40.643" y="36.69" width="38" height="38" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Línea_20" x="79" y="4" width="20" height="43" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Línea_21" x="67" y="15" width="43" height="20" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Grupo_105" data-name="Grupo 105" transform="translate(-141.5 -332.5)">
+    <g transform="matrix(1, 0, 0, 1, 141.5, 332.5)" filter="url(#Rectángulo_120)">
+      <rect id="Rectángulo_120-2" data-name="Rectángulo 120" width="100" height="100" rx="5" transform="translate(5.5 4.5)" fill="rgba(23,35,36,0.69)"/>
+    </g>
+    <g id="img_icon" data-name="img icon" transform="translate(123 23)">
+      <g transform="matrix(1, 0, 0, 1, 18.5, 309.5)" filter="url(#Rectángulo_121)">
+        <g id="Rectángulo_121-2" data-name="Rectángulo 121" transform="translate(14.5 33.5)" fill="none" stroke="#fff" stroke-width="1">
+          <rect width="65" height="65" rx="2" stroke="none"/>
+          <rect x="0.5" y="0.5" width="64" height="64" rx="1.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 18.5, 309.5)" filter="url(#Polígono_8)">
+        <g id="Polígono_8-2" data-name="Polígono 8" transform="translate(16.5 56.5)" fill="#fff">
+          <path d="M 39.19098663330078 39.5 L 0.8090199828147888 39.5 L 19.99999809265137 1.118044257164001 L 39.19098663330078 39.5 Z" stroke="none"/>
+          <path d="M 20 2.236080169677734 L 1.618030548095703 39 L 38.38196563720703 39 L 20 2.236080169677734 M 20 0.1236076354980469 C 20.03550720214844 0.1236076354980469 20.07101440429688 0.1420326232910156 20.08943939208984 0.1788902282714844 L 39.92763900756836 39.85527801513672 C 39.96088027954102 39.92176818847656 39.91252899169922 40 39.83819961547852 40 L 0.1618003845214844 40 C 0.08745956420898438 40 0.03911972045898438 39.92176818847656 0.07236099243164063 39.85527801513672 L 19.91056060791016 0.1788902282714844 C 19.92898559570313 0.1420326232910156 19.96449279785156 0.1236076354980469 20 0.1236076354980469 Z" stroke="none" fill="#fff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 18.5, 309.5)" filter="url(#Polígono_9)">
+        <g id="Polígono_9-2" data-name="Polígono 9" transform="translate(39.5 76.5)" fill="#fff">
+          <path d="M 33.89811325073242 19.49999809265137 L 1.10188364982605 19.49999809265137 L 17.5 0.7592915296554565 L 33.89811325073242 19.49999809265137 Z" stroke="none"/>
+          <path d="M 17.5 1.518587112426758 L 2.203765869140625 18.99999809265137 L 32.79623031616211 18.99999809265137 L 17.5 1.518587112426758 M 17.5 0.05186080932617188 C 17.52766990661621 0.05186080932617188 17.55533981323242 0.06324386596679688 17.57526016235352 0.08600807189941406 L 34.85488128662109 19.83414840698242 C 34.91146087646484 19.89880752563477 34.86553955078125 19.99999809265137 34.77962112426758 19.99999809265137 L 0.2203712463378906 19.99999809265137 C 0.13446044921875 19.99999809265137 0.08853912353515625 19.89880752563477 0.1451187133789063 19.83414840698242 L 17.42473983764648 0.08600807189941406 C 17.44466018676758 0.06324386596679688 17.47233009338379 0.05186080932617188 17.5 0.05186080932617188 Z" stroke="none" fill="#fff"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 18.5, 309.5)" filter="url(#Elipse_21)">
+        <g id="Elipse_21-2" data-name="Elipse 21" transform="translate(49.64 42.69)" fill="#fff" stroke="#fff" stroke-width="1">
+          <circle cx="10" cy="10" r="10" stroke="none"/>
+          <circle cx="10" cy="10" r="9.5" fill="none"/>
+        </g>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 141.5, 332.5)" filter="url(#Línea_20)">
+      <line id="Línea_20-2" data-name="Línea 20" y2="25" transform="translate(89 10)" fill="none" stroke="#fff" stroke-width="2"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 141.5, 332.5)" filter="url(#Línea_21)">
+      <line id="Línea_21-2" data-name="Línea 21" x2="25" transform="translate(76 22)" fill="none" stroke="#fff" stroke-width="2"/>
+    </g>
+  </g>
+</svg>
