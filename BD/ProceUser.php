@@ -202,7 +202,7 @@
             //============================
         }
         //#####################################################
-        public function ModContra($correo, $anterior, $nueva){
+        public function ModContra_user($correo, $anterior, $nueva){
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion();
@@ -215,6 +215,22 @@
             //============================
             return $salida;
             $resultado->free();
+            //============================
+        }
+        //#####################################################
+        public function ModContra_admin($correo, $nueva){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion();
+            //============================
+            $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL Usuario_mod_contra_admin('".$correo."', '".$nueva."');";
+            if($mysqli->query($query)===TRUE){
+                return "Modificacion Existosa.";
+            }else{
+                return "NO se puedo Modificar el registro: ".$mysqli->error;
+            }   
             //============================
         }
         //#####################################################
@@ -437,7 +453,7 @@
     // $salida = $prueba->VistaPorUsuario('jesus120190240.8@gmail.com');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
-    // $salida = $prueba->ModContra('jesus120190240.8@gmail.com', 'holis', 'holaMundo');
+    // $salida = $prueba->ModContra_user('jesus120190240.8@gmail.com', 'holis', 'holaMundo');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
     // $salida = $prueba->ModPuesto('jesus120190240.8@gmail.com', 'Jefe De Laboratorio');

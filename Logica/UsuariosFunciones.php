@@ -59,9 +59,15 @@
             return $respuesta;
         }
         //#####################################################
-        public function Modificar_contra($correo, $actual, $nueva){
+        public function Modificar_contra_user($correo, $actual, $nueva){
             $usuarioBD = new procedimientos_User();
-            $respuesta = $usuarioBD->ModContra($correo, $actual, $nueva);
+            $respuesta = $usuarioBD->ModContra_user($correo, $actual, $nueva);
+            return $respuesta;
+        }
+        //#####################################################
+        public function Modificar_contra_admin($correo, $actual){
+            $usuarioBD = new procedimientos_User();
+            $respuesta = $usuarioBD->ModContra_admin($correo, $actual);
             return $respuesta;
         }
         //#####################################################

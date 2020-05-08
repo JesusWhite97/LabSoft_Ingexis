@@ -63,6 +63,11 @@
 --     end if;
 -- end
 -- --======================================--
+-- create PROCEDURE Usuario_mod_contra_admin(in correo varchar(50), in nueva varchar(20))
+-- begin 
+--     update log_usuarios set log_usuarios.contra = nueva where log_usuarios.correo = correo;
+-- end
+-- --======================================--
 -- create procedure Usuario_mod_puesto(in correo varchar(50), in puesto varchar(25))
 -- begin
 --     declare id_usuario int;
