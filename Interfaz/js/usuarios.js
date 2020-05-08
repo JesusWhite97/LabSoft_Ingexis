@@ -1,5 +1,8 @@
-//Funciones=====================================================
-//################################
+//variables========================================================================================
+var salidaUsuario ="";                  //agregar
+var salidaUsuarioEliminado ="";         //eliminado
+var modificacionSalida = "";            //modificado
+//Funciones========================================================================================
 function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
     const postData ={
         metodo:"cargarTarjetas", 
@@ -12,7 +15,7 @@ function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
         document.getElementById("contenedorGridResponsivo").innerHTML = arrayResponse[0].mensajeDatos;
     });
 }
-//################################
+//=================================================================================================
 function cargarInfo(correo){
     var salida = '';
     const postData = {
@@ -26,7 +29,7 @@ function cargarInfo(correo){
         document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
     });
 }
-//################################
+//=================================================================================================
 function cargarRegistroUsuario(){
     const postData = {
         metodo: "cargarRegistroUsuario",
@@ -37,8 +40,7 @@ function cargarRegistroUsuario(){
         document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].registroUsuario;
     });
 }
-//################################
-var salidaUsuario ="";
+//=================================================================================================
 function guardarUsuario(){
     var postData = {
         metodo: "guardarUsuario",
@@ -52,7 +54,7 @@ function guardarUsuario(){
         curp: document.getElementById("curp").value,
         cel: document.getElementById("cel").value,
         correo: document.getElementById("correo").value,
-        contra: document.getElementById("contra").value,
+        contra1: document.getElementById("contra1").value,
         calle: document.getElementById("calle").value,
         entre: document.getElementById("entre").value,
         numCasa: document.getElementById("num").value,
@@ -67,7 +69,6 @@ function guardarUsuario(){
         type:"POST",
         async: false,
         success:function(response){
-            console.log(response);
             var arrayResponse = JSON.parse(response);
             console.log(arrayResponse[0].validacion);
             salidaUsuario = arrayResponse[0].validacion;
@@ -75,9 +76,7 @@ function guardarUsuario(){
         }
     });
 }
-//################################
-var salidaUsuarioEliminado ="";
-
+//=================================================================================================
 function eliminarUsuario(){
     let correo = document.getElementById("correo").value
     postData = {
@@ -105,8 +104,7 @@ function eliminarUsuario(){
         }
     });
 }
-//################################
-var modificacionSalida = "";
+//=================================================================================================
 function modificarUsuario(cambios){
     var postData = {
         metodo: "modificarUsuario",
@@ -163,7 +161,7 @@ function modificarUsuario(cambios){
         }
     });
 }
-//################################
+//=================================================================================================
 function filtrado(){
     var checkAdmon = document.getElementById("admon");
     var checkJefe = document.getElementById("jefe");
@@ -194,5 +192,4 @@ function filtrado(){
     
     return(filtro);
 }
-//################################
-//==============================================================
+//=================================================================================================
