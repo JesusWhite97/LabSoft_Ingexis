@@ -42,7 +42,7 @@
             $user = new Usuario();
             $salida = "";
             //Formular Respuesta--------------------------------
-            $salida = $user->Insertar($_POST['correo'], $_POST['contra'], $_POST['img'], $_POST['nom1'], $_POST['nom2'], $_POST['ape1'], $_POST['ape2'], $_POST['apodo'], $_POST['cel'], $_POST['puesto'], $_POST['curp'], $_POST['rfc'], $_POST['calle'], $_POST['entre'], $_POST['numCasa'], $_POST['colonia'], $_POST['cp'], $_POST['ciudad']);
+            $salida = $user->Insertar($_POST['correo'], $_POST['contra1'], $_POST['img'], $_POST['nom1'], $_POST['nom2'], $_POST['ape1'], $_POST['ape2'], $_POST['apodo'], $_POST['cel'], $_POST['puesto'], $_POST['curp'], $_POST['rfc'], $_POST['calle'], $_POST['entre'], $_POST['numCasa'], $_POST['colonia'], $_POST['cp'], $_POST['ciudad']);
             $_SESSION['NuevoUser'] = $_POST['correo'];
             //salida--------------------------------------------
             $json[] =  [

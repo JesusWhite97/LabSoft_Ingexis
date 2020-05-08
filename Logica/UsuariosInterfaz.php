@@ -242,8 +242,8 @@
                         <div id="inContras"  class="tarjetaBlanca">
                             <p class="titulo">Contraseña</p>
                             <div  class="inputEnLinea">
-                            <input type="password" id="contra" value=""  class="registro">
-                            <input type="password" id="contra"  value="" class="registro">
+                            <input type="password" id="contra1" value=""  class="registro">
+                            <input type="password" id="contra2"  value="" class="registro">
                             </div>
                             <div  class="inputEnLinea">
                             <p class="textoAyuda">Contraseña nueva</p>
