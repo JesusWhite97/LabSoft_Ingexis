@@ -90,7 +90,7 @@
 		}
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
-		function modificarUser(){
+		function modificarUser(){//validar con el arreglo si no no hace nada ==========================================================================================================
 			if(arregloCambios[8]){
 				subirImg();
 				if(respuestaSubirIMG == 'NO'){
