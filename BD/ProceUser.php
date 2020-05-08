@@ -9,7 +9,7 @@
         public function PuestoByCorreo($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion('login');
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -26,7 +26,7 @@
         public function ExisteCorreo($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion('login');
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -43,7 +43,7 @@
         public function ConfirmarContraseña($correo, $contraseña){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion('login');
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -74,7 +74,7 @@
         public function InfoLogin($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion('login');
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -98,7 +98,7 @@
             //crea Conexion===============
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL agregaUsuario('".$correo."', '".$contra."', '".$img."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."', '".$apodo."', '".$num."', '".$puesto."', '".$curp."', '".$rfc."', '".$calleP."', '".$entre."', '".$numCasas."', '".$col."', '".$codPost."', '".$ciudad."')";
@@ -115,7 +115,7 @@
             //crea Conexion===============
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL eliminar_usuario('".$correo."')";
@@ -131,7 +131,7 @@
         public function ListaTarjetasUsuarios(){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -153,7 +153,7 @@
         public function TrajetaEspecifica($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -173,7 +173,7 @@
         public function VistaPorUsuario($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -205,7 +205,7 @@
         public function ModContra_user($correo, $anterior, $nueva){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -221,7 +221,7 @@
         public function ModContra_admin($correo, $nueva){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -237,7 +237,7 @@
         public function ModPuesto($correo, $puesto){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_puesto('".$correo."', '".$puesto."')";
@@ -252,7 +252,7 @@
         public function ModNombre($correo, $nom1, $nom2, $ape1, $ape2){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_nombre('".$correo."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."')";
@@ -267,7 +267,7 @@
         public function Modcurp($correo, $curp){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_curp('".$correo."', '".$curp."')";
@@ -282,7 +282,7 @@
         public function ModRFC($correo, $rfc){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_rfc('".$correo."', '".$rfc."')";
@@ -297,7 +297,7 @@
         public function ModApodo($correo, $apodo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_apodo('".$correo."', '".$apodo."')";
@@ -312,7 +312,7 @@
         public function ModTelefono($correo, $telefono){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Telefono('".$correo."', '".$telefono."')";
@@ -328,7 +328,7 @@
         {
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."', '".$ciudad."')";
@@ -344,7 +344,7 @@
             //crea Conexion===============
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $imgAnte = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -368,7 +368,7 @@
         {
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -390,7 +390,7 @@
         public function Filtro_tarjetas_puesto($puesto1, $puesto2 = null, $puesto3 = null, $puesto4 = null){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             //============================
             $salida = array();

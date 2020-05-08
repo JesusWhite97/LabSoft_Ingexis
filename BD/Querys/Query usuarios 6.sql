@@ -1,62 +1,83 @@
 use databaseingexis;
--- ==============================================
--- CREATE user 'login'@'localhost' IDENTIFIED by 'login';
--- CREATE user 'Admin'@'localhost' IDENTIFIED by 'Admin';
--- CREATE user 'JefeLAb'@'localhost' IDENTIFIED by 'JefeLAb';
--- CREATE user 'Lab1'@'localhost' IDENTIFIED by 'Lab1';
--- CREATE user 'Lab2'@'localhost' IDENTIFIED by 'Lab2';
--- ==============================================
--- -- permisos para usuario login
--- GRANT select on databaseingexis.log_usuarios to  'login'@'localhost';
--- GRANT select on databaseingexis.usuarios to      'login'@'localhost';
--- ==============================================
+-- -- ==============================================
+-- DROP USER 'login'@'localhost';
+-- DROP USER 'Administrador'@'localhost';
+-- DROP USER 'Jefe De Laboratorio'@'localhost';
+-- DROP USER 'Laboratorista 1'@'localhost';
+-- DROP USER 'Laboratorista 2'@'localhost';
+-- -- ==============================================
+-- CREATE user 'login'@'localhost'                  IDENTIFIED by 'login';
+-- CREATE user 'Administrador'@'localhost'          IDENTIFIED by 'Administrador';
+-- CREATE user 'Jefe De Laboratorio'@'localhost'    IDENTIFIED by 'Jefe De Laboratorio';
+-- CREATE user 'Laboratorista 1'@'localhost'        IDENTIFIED by 'Laboratorista 1';
+-- CREATE user 'Laboratorista 2'@'localhost'        IDENTIFIED by 'Laboratorista 2';
+-- -- ==============================================
+-- permisos para usuario login
+-- GRANT select on databaseingexis.log_usuarios to         'login'@'localhost';
+-- GRANT select on databaseingexis.usuarios to             'login'@'localhost';
+-- GRANT SHOW VIEW on databaseingexis.dat_tar_usuarios to  'login'@'localhost';
+-- GRANT SHOW VIEW on databaseingexis.dat_usuarios to      'login'@'localhost';
+-- GRANT EXECUTE ON *.* TO                                 'login'@'localhost';
+-- -- ==============================================
 -- -- permisos para administrador
--- GRANT select on databaseingexis.log_usuarios to  'Admin'@'localhost';
--- GRANT select on databaseingexis.usuarios to      'Admin'@'localhost';
--- GRANT select on databaseingexis.clientes to      'Admin'@'localhost';
+-- GRANT select on databaseingexis.log_usuarios to          'Administrador'@'localhost';
+-- GRANT select on databaseingexis.usuarios to              'Administrador'@'localhost';
+-- GRANT select on databaseingexis.clientes to              'Administrador'@'localhost';
+-- GRANT SHOW VIEW on databaseingexis.dat_tar_usuarios to   'Administrador'@'localhost';
+-- GRANT SHOW VIEW on databaseingexis.dat_usuarios to       'Administrador'@'localhost';
 -- -- ++++++
--- GRANT DELETE on databaseingexis.log_usuarios to  'Admin'@'localhost';
--- GRANT DELETE on databaseingexis.usuarios to      'Admin'@'localhost';
--- GRANT DELETE on databaseingexis.clientes to      'Admin'@'localhost';
--- -- ++++++
--- GRANT INSERT on databaseingexis.log_usuarios to  'Admin'@'localhost';
--- GRANT INSERT on databaseingexis.usuarios to      'Admin'@'localhost';
--- GRANT INSERT on databaseingexis.clientes to      'Admin'@'localhost';
--- -- ++++++
--- GRANT UPDATE on databaseingexis.log_usuarios to  'Admin'@'localhost';
--- GRANT UPDATE on databaseingexis.usuarios to      'Admin'@'localhost';
--- GRANT UPDATE on databaseingexis.clientes to      'Admin'@'localhost';
--- ==============================================
+-- GRANT DELETE on databaseingexis.log_usuarios to          'Administrador'@'localhost';
+-- GRANT DELETE on databaseingexis.usuarios to              'Administrador'@'localhost';
+-- GRANT DELETE on databaseingexis.clientes to              'Administrador'@'localhost';
+-- -- ++++++        
+-- GRANT INSERT on databaseingexis.log_usuarios to          'Administrador'@'localhost';
+-- GRANT INSERT on databaseingexis.usuarios to              'Administrador'@'localhost';
+-- GRANT INSERT on databaseingexis.clientes to              'Administrador'@'localhost';
+-- -- ++++++  
+-- GRANT UPDATE on databaseingexis.log_usuarios to          'Administrador'@'localhost';
+-- GRANT UPDATE on databaseingexis.usuarios to              'Administrador'@'localhost';
+-- GRANT UPDATE on databaseingexis.clientes to              'Administrador'@'localhost';
+-- -- ++++++  
+-- GRANT EXECUTE ON *.* TO                                  'Administrador'@'localhost';
+-- -- ==============================================
 -- -- permisos para jefe de la boratorio
--- GRANT select on databaseingexis.log_usuarios to  'JefeLAb'@'localhost';
--- GRANT select on databaseingexis.usuarios to      'JefeLAb'@'localhost';
--- GRANT select on databaseingexis.clientes to      'JefeLAb'@'localhost';
+-- GRANT select on databaseingexis.log_usuarios to          'Jefe De Laboratorio'@'localhost';
+-- GRANT select on databaseingexis.usuarios to              'Jefe De Laboratorio'@'localhost';
+-- GRANT select on databaseingexis.clientes to              'Jefe De Laboratorio'@'localhost';
+-- GRANT SHOW VIEW on databaseingexis.dat_tar_usuarios to   'Jefe De Laboratorio'@'localhost';
+-- GRANT SHOW VIEW on databaseingexis.dat_usuarios to       'Jefe De Laboratorio'@'localhost';
 -- -- ++++++
--- GRANT DELETE on databaseingexis.log_usuarios to  'JefeLAb'@'localhost';
--- GRANT DELETE on databaseingexis.usuarios to      'JefeLAb'@'localhost';
--- GRANT DELETE on databaseingexis.clientes to      'JefeLAb'@'localhost';
--- -- ++++++
--- GRANT INSERT on databaseingexis.log_usuarios to  'JefeLAb'@'localhost';
--- GRANT INSERT on databaseingexis.usuarios to      'JefeLAb'@'localhost';
--- GRANT INSERT on databaseingexis.clientes to      'JefeLAb'@'localhost';
--- -- ++++++
--- GRANT UPDATE on databaseingexis.log_usuarios to  'JefeLAb'@'localhost';
--- GRANT UPDATE on databaseingexis.usuarios to      'JefeLAb'@'localhost';
--- GRANT UPDATE on databaseingexis.clientes to      'JefeLAb'@'localhost';
--- ==============================================
+-- GRANT DELETE on databaseingexis.log_usuarios to          'Jefe De Laboratorio'@'localhost';
+-- GRANT DELETE on databaseingexis.usuarios to              'Jefe De Laboratorio'@'localhost';
+-- GRANT DELETE on databaseingexis.clientes to              'Jefe De Laboratorio'@'localhost';
+-- -- ++++++    
+-- GRANT INSERT on databaseingexis.log_usuarios to          'Jefe De Laboratorio'@'localhost';
+-- GRANT INSERT on databaseingexis.usuarios to              'Jefe De Laboratorio'@'localhost';
+-- GRANT INSERT on databaseingexis.clientes to              'Jefe De Laboratorio'@'localhost';
+-- -- ++++++        
+-- GRANT UPDATE on databaseingexis.log_usuarios to          'Jefe De Laboratorio'@'localhost';
+-- GRANT UPDATE on databaseingexis.usuarios to              'Jefe De Laboratorio'@'localhost';
+-- GRANT UPDATE on databaseingexis.clientes to              'Jefe De Laboratorio'@'localhost';
+-- -- ++++++  
+-- GRANT EXECUTE ON *.* TO                                  'Jefe De Laboratorio'@'localhost';
+-- -- ==============================================
 -- -- permisos para lab1
--- GRANT select on databaseingexis.log_usuarios to  'Lab1'@'localhost';
--- GRANT select on databaseingexis.usuarios to      'Lab1'@'localhost';
--- GRANT select on databaseingexis.clientes to      'Lab1'@'localhost';
+-- GRANT select on databaseingexis.log_usuarios to  'Laboratorista 1'@'localhost';
+-- GRANT select on databaseingexis.usuarios to      'Laboratorista 1'@'localhost';
+-- GRANT select on databaseingexis.clientes to      'Laboratorista 1'@'localhost';
 -- -- ++++++
--- GRANT UPDATE on databaseingexis.log_usuarios to  'Lab1'@'localhost';
--- GRANT UPDATE on databaseingexis.usuarios to      'Lab1'@'localhost';
--- ==============================================
+-- GRANT UPDATE on databaseingexis.log_usuarios to  'Laboratorista 1'@'localhost';
+-- GRANT UPDATE on databaseingexis.usuarios to      'Laboratorista 1'@'localhost';
+-- -- ++++++  
+-- GRANT EXECUTE ON *.* TO                          'Laboratorista 1'@'localhost';
+-- -- ==============================================
 -- -- permisos para lab2
--- GRANT select on databaseingexis.log_usuarios to  'Lab2'@'localhost';
--- GRANT select on databaseingexis.usuarios to      'Lab2'@'localhost';
--- GRANT select on databaseingexis.clientes to      'Lab2'@'localhost';
+-- GRANT select on databaseingexis.log_usuarios to  'Laboratorista 2'@'localhost';
+-- GRANT select on databaseingexis.usuarios to      'Laboratorista 2'@'localhost';
+-- GRANT select on databaseingexis.clientes to      'Laboratorista 2'@'localhost';
 -- -- ++++++
--- GRANT UPDATE on databaseingexis.log_usuarios to  'Lab2'@'localhost';
--- GRANT UPDATE on databaseingexis.usuarios to      'Lab2'@'localhost';
--- ==============================================
+-- GRANT UPDATE on databaseingexis.log_usuarios to  'Laboratorista 2'@'localhost';
+-- GRANT UPDATE on databaseingexis.usuarios to      'Laboratorista 2'@'localhost';
+-- -- ++++++  
+-- GRANT EXECUTE ON *.* TO                          'Laboratorista 2'@'localhost';
+-- -- ==============================================

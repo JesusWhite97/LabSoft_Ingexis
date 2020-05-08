@@ -14,7 +14,7 @@
             //Formular Respuesta--------------------------------
             if($usuario->Existencia_de_correo($correo) == 'true'){
                 $infoUser = $usuario->Info_Correo($correo);
-                $Respuesta = 'Bienvenido '. $infoUser[0] .'.';
+                $Respuesta = 'Bienvenido '. $infoUser[0] .' 👋.';
                 $_SESSION["correo"]     = $correo;
                 $_SESSION["apodo"]      = $infoUser[0];
                 $_SESSION["imgUsuario"] = $infoUser[1];
