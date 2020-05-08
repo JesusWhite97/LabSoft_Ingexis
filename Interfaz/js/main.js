@@ -11,7 +11,7 @@ function readURL(input)
       var reader = new FileReader();
       reader.onload = function(evt)
       {
-        var field = document.getElementById('blah');
+        var field = document.getElementById('editarImagen');
         field.style.backgroundImage = "url('"+evt.target.result+"')";
         
       }

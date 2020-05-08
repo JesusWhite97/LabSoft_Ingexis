@@ -175,7 +175,7 @@
                             <p class="textoModal" id="textoExito">
                                 Usuario eliminado
                             </p>
-                            <button class="OK" onclick=cambiarPantallaInfo()>OK</button>
+                            <button class="OK" onclick=verPantallaInfo()>OK</button>
                         </div>
                         
                 </div>
