@@ -66,7 +66,7 @@
                             </form> 
                             <label id="botonImg" for="inImg" style="display:none;"></label>
                             <button id="botonEditar" onclick=verPantallaModificar(document.getElementById("correo").value)>
-                            <button id="botonEliminar" onclick=openModal(document.getElementById("correo").value)>
+                            <button id="botonEliminar" onclick=verModalEliminar(document.getElementById("correo").value)>
                             <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) >
                             <div id="blah"> </div>
                         </div>
@@ -148,11 +148,7 @@
                                 <p class="textoAyuda">ciudad</p>
                             </div>
                         </div>
-
-                        <div class="tarjetaBlanca centrar">
-                        <div id="botonGuardar" class="botonesEliminarImprimer" style="display:none;">
-                            <button id="footerGuardar_Boton" onclick=openModal(document.getElementById("correo").value) style="grid-column: 1 / span 1;">Guardar</button>
-                        </div>
+                            <button id="footerGuardar_Boton" onclick=verModalModificar(document.getElementById("correo").value)>Guardar</button>
                     </div>
                 </div>
                 
@@ -160,7 +156,7 @@
                     <div id="fondoModal"></div>
                         <div class="modal">
                             <p id ="textoModalPregunta" class="textoModal">
-                                ¿Desea ELIMINAR?
+                                ¿Desea?
                             </p>
                             <button id ="botonEliminarModal"class="eliminarBotonModal" onclick=eliminarUsuario()>Eliminar</button>
                             <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=modificarUser()>Modificar</button>
@@ -274,9 +270,32 @@
                                 <p class="textoAyuda">Ciudad</p>
                             </div>
                         </div>
-                        <button id="footerGuardar_Boton" onclick = guardarUser()>Guardar</button>
+                        <button id="footerGuardar_Boton" onclick = verModalGuardar(document.getElementById("correo").value)>Guardar</button>
                     
                 </div>
+
+                <div id="contenedorModal">
+                <div id="fondoModal"></div>
+                    <div class="modal">
+                        <p id ="textoModalPregunta" class="textoModal">
+                            ¿Desea?
+                        </p>
+                        <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=guardarUser()>Guardar</button>
+                        <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
+                    </div>
+            </div>
+
+
+            <div id="contenedorModalEliminado">
+                <div id="fondoModal"></div>
+                    <div class="modal">
+                        <p class="textoModal" id="textoExito">
+
+                        </p>
+                        <button class="OK" onclick=verPantallaInfo()>OK</button>
+                    </div>
+                    
+            </div>
         ';
         return $interfazRegistroUsuario;
     }

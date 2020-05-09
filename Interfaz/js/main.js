@@ -46,7 +46,6 @@ function openNav() {
   } 
 }
 function openModal(item) {
-    document.getElementById("textoModalPregunta").innerHTML = "Desea eliminar usuario: <br><b>"+item+"?"
     document.getElementById("contenedorModal").style.height = "100%";
     window.addEventListener('scroll', noScrollModal);
 }

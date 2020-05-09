@@ -29,6 +29,43 @@ function verPantallaModificar(item){
 
 }
 //===================================================================================================
+ function verModalEliminar(item){
+   
+  let textoModalPregunta = document.getElementById("textoModalPregunta");
+  let botonEliminarModal = document.getElementById("botonEliminarModal");
+  let botonGuardarModal = document.getElementById("botonGuardarModal");
+
+  botonGuardarModal.style.display = "none";
+  botonEliminarModal.style.display = "block";
+  textoModalPregunta.innerHTML = "Desea eliminar <br><b>" + item + "</b> ?";
+  openModal();
+  
+ }
+//===================================================================================================
+ function verModalModificar(item){
+   
+  let textoModalPregunta = document.getElementById("textoModalPregunta");
+  let botonEliminarModal = document.getElementById("botonEliminarModal");
+  let botonGuardarModal = document.getElementById("botonGuardarModal");
+
+  botonGuardarModal.style.display = "block";
+  botonEliminarModal.style.display = "none";
+  textoModalPregunta.innerHTML = "Desea modificar <br><b>" + item + "</b> ?";
+  openModal();
+
+ }
+//===================================================================================================
+ function verModalGuardar(item){
+   
+  let textoModalPregunta = document.getElementById("textoModalPregunta");
+  let botonGuardarModal = document.getElementById("botonGuardarModal");
+
+  botonGuardarModal.style.display = "block";
+  textoModalPregunta.innerHTML = "Desea Guardar <br><b>" + item + "</b> ?";
+  openModal();
+
+ }
+//===================================================================================================
 function verPantallaInfo(correo){
     cargarTarjetas("",filtrado());
     cargarInfo(correo);

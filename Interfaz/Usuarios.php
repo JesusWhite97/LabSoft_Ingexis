@@ -97,6 +97,9 @@
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
 		function modificarUser(){
+			
+
+
 			var correoNuevo = document.getElementById("correo").value;
 			if(arregloCambios.includes(1)){
 				if(arregloCambios[8]){
