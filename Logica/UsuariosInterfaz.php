@@ -116,8 +116,8 @@
                         <div id="inContras" style="display:none;"  class="tarjetaBlanca">
                             <p class="titulo">Contraseña</p>
                             <div  class="inputEnLinea">
-                            <input type="password" id="contra1" value=""    onchange="arregloCambios[7]=1;">
-                            <input type="password" id="contra2"  value=""  onchange="arregloCambios[7]=1;">
+                            <input type="password" id="contra1" value=""    onchange="arregloCambios[6]=1;">
+                            <input type="password" id="contra2"  value=""   onchange="arregloCambios[6]=1;">
                             </div>
                             <div  class="inputEnLinea">
                             <p class="textoAyuda">Contraseña nueva</p>

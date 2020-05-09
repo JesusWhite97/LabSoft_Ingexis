@@ -134,7 +134,7 @@ function modificarUsuario(cambios){
         postData.cel = document.getElementById("cel").value;
     }
     if(cambios[6]){
-        postData.contra = document.getElementById("contra1").value;
+        postData.contra1 = document.getElementById("contra1").value;
         postData.contra2 = document.getElementById("contra2").value;
     }
     if(cambios[7]){

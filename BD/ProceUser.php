@@ -423,6 +423,9 @@
     }
     // ========================================================
     // $prueba = new procedimientos_User();
+    // $salida = $prueba->ModContra_admin('yo@gmail.com', '12345');
+    // var_dump($salida);
+    // $prueba = new procedimientos_User();
     // $salida = $prueba->PuestoByCorreo('Rtapiz@gmail.com');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
