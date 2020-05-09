@@ -1,3 +1,6 @@
+//===================================================================================================
+// Función para que una cambiar a una pantalla con campos modificables
+
 function verPantallaModificar(item){
 
     let arrayInputs = document.getElementsByTagName("input");
@@ -28,7 +31,16 @@ function verPantallaModificar(item){
       textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
 
 }
+
 //===================================================================================================
+  function infoModal(claseBoton, textoModal, textoBoton, metodo){
+    let scriptModal = '<div id="fondoModal"></div><div class="modal"><p id ="textoModalPregunta" class="textoModal">'+textoModal+'</p><button id ="botonEliminarModal"class="'+claseBoton+'" onclick="'+metodo+'">'+textoBoton+'</button><button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button></div>';
+    let cotenendorModal = document.getElementById("contenedorModal");
+    cotenendorModal.innerHTML = scriptModal;
+    openModal();
+  }
+//===================================================================================================
+// Función para mostrar un modal con el boton de eliminar
  function verModalEliminar(item){
    
   let textoModalPregunta = document.getElementById("textoModalPregunta");
@@ -42,6 +54,7 @@ function verPantallaModificar(item){
   
  }
 //===================================================================================================
+// Función para mostrar un modal con el boton de modificar
  function verModalModificar(item){
    
   let textoModalPregunta = document.getElementById("textoModalPregunta");
@@ -55,6 +68,7 @@ function verPantallaModificar(item){
 
  }
 //===================================================================================================
+// Función para mostrar un modal con el boton de modificar
  function verModalGuardar(item){
    
   let textoModalPregunta = document.getElementById("textoModalPregunta");
@@ -66,11 +80,13 @@ function verPantallaModificar(item){
 
  }
 //===================================================================================================
+// Función para que una cambiar a una pantalla donde se muestra información sin campos modificables
 function verPantallaInfo(correo){
     cargarTarjetas("",filtrado());
     cargarInfo(correo);
 }
 //===================================================================================================
+// Función para que un select sea seleccionable
 function selectModificar(){
       var arrayInputInfo = document.getElementsByClassName("selectInfo");
       var arraySelects =  document.getElementsByTagName("select");
