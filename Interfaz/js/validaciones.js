@@ -36,7 +36,7 @@ function validateRFC(rfc) {
     if (rfc.match(patternPM) || rfc.match(patternPF)) {
         return true;
     } else {
-        alert("La estructura de la clave de RFC es incorrecta.");
+        // alert("La estructura de la clave de RFC es incorrecta.");
         return false;
     }
 }

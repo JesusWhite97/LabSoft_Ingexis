@@ -21,6 +21,7 @@
 	<script src="js/usuarios.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/interfaz.js"></script>
+	<script src="js/validaciones.js"></script>
 	<script>
 		// --------------------------------------
 		window.onload = function(){
@@ -78,21 +79,35 @@
 		}
 		// --------------------------------------
 		function guardarUser(){
-			guardarUsuario();
-			if(salidaUsuario == 'true'){
-				subirImg();
-				if(respuestaSubirIMG != 'NO'){
-					alert('Usuario registrado con exito 🤘.');
-				}else{
-					eliminarUsuario();
-					if(eliminarUsuario == 'true'){
-						alert('error al registrar Usuario: ' + errorSubirIMG);
+			var ValidaContra = validaCoincideContra(document.getElementById("contra1").value, document.getElementById("contra2").value);
+			var ValidaCurp = curpValida(document.getElementById("curp").value);
+			var ValidaRfc = validateRFC(document.getElementById("rfc").value);
+			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true)
+			{
+				guardarUsuario();
+				if(salidaUsuario == 'true'){
+					subirImg();
+					if(respuestaSubirIMG != 'NO'){
+						alert('Usuario registrado con exito 🤘.');
+					}else{
+						eliminarUsuario();
+						if(eliminarUsuario == 'true'){
+							alert('error al registrar Usuario: ' + errorSubirIMG);
+						}
 					}
 				}
+				var correoNuevo = document.getElementById("correo").value;
+				this.cargarTarjetas('','1111');
+				cargarInfo(correoNuevo);
 			}
-			var correoNuevo = document.getElementById("correo").value;
-			this.cargarTarjetas('','1111');
-			cargarInfo(correoNuevo);
+			else{
+				var alerta = 		   'Error en los siguientes campos:\n' + 
+				(ValidaContra 	? '' : 'Las contraseñas no coinciden\n') +
+				(ValidaCurp 	? '' : 'El curp no tiene el formato correcto\n') +
+				(ValidaRfc 		? '' : 'El rfsc no tiene el formato correcto \n');
+				closeModal();
+				alert(alerta);
+			}
 		}
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG

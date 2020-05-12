@@ -162,6 +162,14 @@ function modificarUsuario(cambios){
     });
 }
 //=================================================================================================
+function validaCoincideContra(contra1, contra2){
+    if(contra1 == contra2){
+        return true;
+    }else{
+        return false;
+    }
+}
+//=================================================================================================
 function filtrado(){
     var checkAdmon = document.getElementById("admon");
     var checkJefe = document.getElementById("jefe");
