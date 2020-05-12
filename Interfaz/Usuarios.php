@@ -80,9 +80,11 @@
 		// --------------------------------------
 		function guardarUser(){
 			var ValidaContra = validaCoincideContra(document.getElementById("contra1").value, document.getElementById("contra2").value);
+			var validaContraForm = validaContraFormat(document.getElementById("contra1").value);
 			var ValidaCurp = curpValida(document.getElementById("curp").value);
 			var ValidaRfc = validateRFC(document.getElementById("rfc").value);
-			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true)
+			var ValidaCorreo = validaCorreoValido(document.getElementById("correo").value);
+			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true && ValidaCorreo == true && validaContraForm ==true)
 			{
 				guardarUsuario();
 				if(salidaUsuario == 'true'){
@@ -101,11 +103,12 @@
 				cargarInfo(correoNuevo);
 			}
 			else{
-				var alerta = 		   'Error en los siguientes campos:\n' + 
-				(ValidaContra 	? '' : 'Las contraseñas no coinciden\n') +
-				(ValidaCurp 	? '' : 'El curp no tiene el formato correcto\n') +
-				(ValidaRfc 		? '' : 'El rfsc no tiene el formato correcto \n');
 				closeModal();
+				var alerta = 		   'Error en los siguientes campos:\n' + 
+				(ValidaContra 	? validaContraForm ? '' : 'El formato para lo contraseña es incorreco.\n' : 'Las contraseñas no coinciden.\n') +
+				(ValidaCurp 	? '' : 'El curp no tiene el formato correcto.\n') +
+				(ValidaRfc 		? '' : 'El rfc no tiene el formato correcto.\n') +
+				(ValidaCorreo	? '' : 'El Correo no tiene el formato correcto.\n');
 				alert(alerta);
 			}
 		}
