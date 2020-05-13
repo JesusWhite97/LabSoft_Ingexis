@@ -421,7 +421,6 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
 //   return respuesta;
 // }
 //################################################
-
 function obtenerNombreArchivo(){
   var x = document.getElementById("inImg");
   var txt = "";
@@ -435,11 +434,8 @@ function obtenerNombreArchivo(){
         if ('name' in file) {
           txt =  file.name;
         }
-
       }
     }
   }
   return txt; 
 }
-
-  

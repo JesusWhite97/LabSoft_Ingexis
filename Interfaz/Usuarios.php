@@ -1,9 +1,10 @@
 <?php   
 	session_start();
 	if($_SESSION['puesto'] != 'Administrador' && $_SESSION['puesto'] != 'Jefe De Laboratorio'){
-		echo "<script type='text/javascript'>";
-		echo "window.history.back(-1)";
-		echo "</script>";
+		header('Location: /LabSoft_Ingexis/Interfaz/Login.php');
+		// echo "<script type='text/javascript'>";
+		// echo "window.history.back(-1)";
+		// echo "</script>";
 	}
 	$_SESSION['carpeta'] = 'Usuarios';
 ?>
