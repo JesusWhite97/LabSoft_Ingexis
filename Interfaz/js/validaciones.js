@@ -52,9 +52,9 @@ function validaCorreoValido(correo){
 }
 //======================================================================================================
 function validaContraFormat(Contra){
-    contraRegex = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+    var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,16}$/;
     //Se muestra un texto a modo de ejemplo, luego va a ser un icono
-    if (contraRegex.test(correo)) {
+    if (Contra.match(regex)) {
         return true;
     } else {
         return false;

@@ -1,6 +1,13 @@
 --======================================--
 use databaseingexis;
 --======================================--
+-- CREATE PROCEDURE verCliente(in correo varchar(50))
+-- begin
+--     declare id_cliente int;
+--     select id_by_correo_Clientes(correo) into id_cliente;
+--     SELECT * from clientes WHERE clientes.id_clientes = id_cliente;
+-- end
+--======================================--
 -- create procedure insertarCliente(
 --     in titulo           varchar(60),
 --     in nom_empr         varchar(60),

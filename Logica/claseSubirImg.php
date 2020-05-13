@@ -1,7 +1,7 @@
 <?php
     session_start();
     # definimos la carpeta destino
-    $carpetaDestino="../Usuarios/".$_SESSION['NuevoUser']."/";
+    $carpetaDestino="../".$_SESSION['carpeta']."/".$_SESSION['NuevoUser']."/";
     # si hay algun archivo que subir
     if(isset($_FILES["archivo"]) && $_FILES["archivo"]["name"][0])
     {

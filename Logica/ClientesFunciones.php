@@ -15,6 +15,12 @@
             return $respuesta;
         }
         //#####################################################
+        public function Info($correo){
+            $cliente = new procedimientos_Clientes();
+            $respuesta = $cliente->VerCliente($correo);
+            return $respuesta;
+        }
+        //#####################################################
         public function Eliminar($correo){
             $cliente = new procedimientos_Clientes();
             $respuesta = $cliente->Eliminar_clientes($correo);

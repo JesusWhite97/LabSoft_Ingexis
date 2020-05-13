@@ -5,6 +5,7 @@
 		echo "window.history.back(-1)";
 		echo "</script>";
 	}
+	$_SESSION['carpeta'] = 'Clientes';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,6 +27,7 @@
 		// --------------------------------------
 		window.onload = function(){
 			cargarTarjetas('');
+			cargarInfo(cliente1);
 		}
         // --------------------------------------
 	</script>
@@ -42,28 +44,27 @@
 		<div id="divUsuarios">
 			<div id="contenedorBuscador">
 					<div id="desenfoque" class="sombra"></div>
-					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())" placeholder="Buscar..." title="Type in a name"></input>
-					<button id="opciones" onclick="mostrarOpciones()"></button>
+					<input type="text" id="buscarEntrada" onkeyup="" placeholder="Buscar..." title="Type in a name"></input>
+					<button id="opciones" onclick=""></button>
 			</div> 
 			<div id="contenedorOpciones" class="sombra" style="display: none;">
-                                <div class="itemMenu" onclick="">
-                                        <div class="icoMenu" style="background-image:url(img/icoAgregar.svg);background-size: 30px 30px;" ></div>
-                                        <p>Agregar Cliente</p> 
-                                </div>
-                                <div class="itemMenu">
-                                        <div class="icoMenu" style="background-image:url(img/icoFiltro.svg);"></div>
-                                        <p>Filtrado</p>
-
-                                        <div id="filtrado">
-                                                <div> <input checked type="checkbox" value="admon" id="admon"><p>Administrador</p></input></div>
-                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="jefe" id="jefe"><p>Jefe de Laboratorio</p></input></div>
-                                                <div> <input checked type="checkbox" value="lab1" id="lab1"><p>Laboratorista 1</p></input></div>
-                                                <div style="margin-left: -15px;"> <input checked type="checkbox" value="lab2" id="lab2"><p>Laboratorista 2</p></input></div>
-                                        </div>
-                                </div>
+				<div class="itemMenu" onclick="">
+					<div class="icoMenu" style="background-image:url(img/icoAgregar.svg);background-size: 30px 30px;" ></div>
+					<p>Agregar Cliente</p> 
+				</div>
+				<div class="itemMenu">
+					<div class="icoMenu" style="background-image:url(img/icoFiltro.svg);"></div>
+					<p>Filtrado</p>
+					<div id="filtrado">
+						<div> <input checked type="checkbox" value="admon" id="admon"><p>Administrador</p></input></div>
+						<div style="margin-left: -15px;"> <input checked type="checkbox" value="jefe" id="jefe"><p>Jefe de Laboratorio</p></input></div>
+						<div> <input checked type="checkbox" value="lab1" id="lab1"><p>Laboratorista 1</p></input></div>
+						<div style="margin-left: -15px;"> <input checked type="checkbox" value="lab2" id="lab2"><p>Laboratorista 2</p></input></div>
+					</div>
+				</div>
             </div>
-					
-			<div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
+			<div id="contenedorGridResponsivo" onload="cargarTarjetas('')">
+				
 			</div>
 		</div>
 		<!-- 11111111111111111111111 -->

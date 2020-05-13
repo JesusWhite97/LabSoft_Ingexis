@@ -84,7 +84,7 @@
                         <div class="tarjetaBlanca">
                             <p class="titulo">Datos personales</p>
                             <div class="inputEnLinea" >
-                                <input type="text" id="nom1" value="'.$infoUsuario['nom1'].'" onchange="arregloCambios[2]=1;">
+                                <input required type="text" id="nom1" value="'.$infoUsuario['nom1'].'" onchange="arregloCambios[2]=1;">
                                 <input type="text" id="nom2" value="'.$infoUsuario['nom2'].'" onchange="arregloCambios[2]=1;">
                             </div>
                             <div class="inputEnLinea">
@@ -92,7 +92,7 @@
                                 <p class="textoAyuda">Segundo Nombre</p>
                             </div>
                             <div class="inputEnLinea" >
-                                <input type="text" id="ape1" value="'.$infoUsuario['ape1'].'" onchange="arregloCambios[2]=1;">
+                                <input required type="text" id="ape1" value="'.$infoUsuario['ape1'].'" onchange="arregloCambios[2]=1;">
                                 <input type="text" id="ape2" value="'.$infoUsuario['ape2'].'" onchange="arregloCambios[2]=1;">
                             </div>
                             <div class="inputEnLinea" >
@@ -101,15 +101,15 @@
                             </div>
                             <input type="text" id="rfc" value="'.$infoUsuario['rfc'].'" onchange="arregloCambios[3]=1;">
                             <p class="textoAyuda" >RFC</p>
-                            <input type="text" id="curp" value="'.$infoUsuario['curp'].'" onchange="arregloCambios[4]=1;">
+                            <input required type="text" id="curp" value="'.$infoUsuario['curp'].'" onchange="arregloCambios[4]=1;">
                             <p class="textoAyuda">CURP</p>
                         </div>
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input type="text"id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;">
+                            <input required type="tel"id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;">
                             <p class="textoAyuda">Número celular</p>
-                            <input type="text" id="correo" value="'.$infoUsuario['correo'].'">
+                            <input required type="email" id="correo" value="'.$infoUsuario['correo'].'">
                             <p class="textoAyuda">Email</p>
                         </div>
                         <!-- Datos de contrseña=========================== -->

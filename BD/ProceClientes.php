@@ -5,6 +5,34 @@
     // ========================================================
     class procedimientos_Clientes{
         //#####################################################
+        public function VerCliente($correo){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "call verCliente('".$correo."');");
+            $rows = $resultado->fetch_assoc();
+            $salida['titulo']           = $rows['titulo'];
+            $salida['nom_empr']         = $rows['nom_empr'];
+            $salida['rfc']              = $rows['rfc'];
+            $salida['direc']            = $rows['direc'];
+            $salida['cod_pos']          = $rows['cod_pos'];
+            $salida['colonia']          = $rows['colonia'];
+            $salida['ciudad']           = $rows['ciudad'];
+            $salida['nombre_contac']    = $rows['nombre_contac'];
+            $salida['numero_contac']    = $rows['numero_contac'];
+            $salida['email']            = $rows['email'];
+            $salida['nota']             = $rows['nota'];
+            $salida['img']              = $rows['img'];
+            $salida['fecha_reg']        = $rows['fecha_reg'];
+            //============================
+            return $salida;
+            $resultado->free();
+            //============================
+        }
+        //#####################################################
         public function Insertar_cliente(
             $titulo,    $Nom_emp,       $rfc,
             $direc,     $cod_post,      $colonia,

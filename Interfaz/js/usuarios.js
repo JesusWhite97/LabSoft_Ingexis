@@ -44,14 +44,14 @@ function cargarRegistroUsuario(){
 function guardarUsuario(){
     var postData = {
         metodo: "guardarUsuario",
-        apodo:document.getElementById("apodo").value,
+        apodo:document.getElementById("apodo").value.toUpperCase(),
         puesto: obtenerValorSelect(document.getElementById("puesto").selectedIndex),
-        nom1:document.getElementById("nom1").value,
+        nom1:document.getElementById("nom1").value[0].toUpperCase() + document.getElementById("nom1").value.slice(1),
         nom2:document.getElementById("nom2").value,
         ape1:document.getElementById("ape1").value,
         ape2:document.getElementById("ape2").value,
-        rfc: document.getElementById("rfc").value,
-        curp: document.getElementById("curp").value,
+        rfc: document.getElementById("rfc").value.toUpperCase(),
+        curp: document.getElementById("curp").value.toUpperCase(),
         cel: document.getElementById("cel").value,
         correo: document.getElementById("correo").value,
         contra1: document.getElementById("contra1").value,

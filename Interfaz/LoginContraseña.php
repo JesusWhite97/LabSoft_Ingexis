@@ -27,7 +27,7 @@
 
     <div id="contenedorLogin">
         <div id="contenedorTituloLogin">
-            <div id="imgUser"></div>
+            <div id="imgUser" style="background-image: url('../Usuarios/<?php echo $_SESSION['correo'];?>/<?php echo $_SESSION['imgUsuario'];?>')"></div>
             <h2 id="tituloLogin"> <?php echo $_SESSION['apodo']; ?></h2>
         </div>
         <div id="contenedorInputLogin">
@@ -35,6 +35,5 @@
             <button id="footerGuardar_Boton" style="margin:00px auto;" onclick=clickIniciar()>Iniciar sesión</button>
         </div>
     </div>
-
 </html>
 <!-- ========================================================================================== -->

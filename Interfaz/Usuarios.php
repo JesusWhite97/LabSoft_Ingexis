@@ -5,6 +5,7 @@
 		echo "window.history.back(-1)";
 		echo "</script>";
 	}
+	$_SESSION['carpeta'] = 'Usuarios';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -81,11 +82,12 @@
 		function guardarUser(){
 			var ValidaContra = validaCoincideContra(document.getElementById("contra1").value, document.getElementById("contra2").value);
 			var validaContraForm = validaContraFormat(document.getElementById("contra1").value);
-			var ValidaCurp = curpValida(document.getElementById("curp").value);
-			var ValidaRfc = validateRFC(document.getElementById("rfc").value);
+			var ValidaCurp = curpValida(document.getElementById("curp").value.toUpperCase());
+			var ValidaRfc = validateRFC(document.getElementById("rfc").value.toUpperCase());
 			var ValidaCorreo = validaCorreoValido(document.getElementById("correo").value);
 			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true && ValidaCorreo == true && validaContraForm ==true)
 			{
+				//----------------------------------------------------------------
 				guardarUsuario();
 				if(salidaUsuario == 'true'){
 					subirImg();
@@ -101,6 +103,7 @@
 				var correoNuevo = document.getElementById("correo").value;
 				this.cargarTarjetas('','1111');
 				cargarInfo(correoNuevo);
+				//----------------------------------------------------------------
 			}
 			else{
 				closeModal();
