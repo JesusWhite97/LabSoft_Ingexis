@@ -13,7 +13,7 @@
         ){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             //============================
             $fecha = date("Y-m-d");
@@ -30,7 +30,7 @@
         public function Eliminar_clientes($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL eliminar_cliente('".$correo."')";
             if($mysqli->query($query)===TRUE){
@@ -44,7 +44,7 @@
         public function Tarjetas_clientes(){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -67,7 +67,7 @@
         public function Mod_nota($correo, $nota){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_nota('".$correo."', '".$nota."')";
             if($mysqli->query($query)===TRUE){
@@ -81,7 +81,7 @@
         public function Mod_contacto($correo, $nombreContac, $numeroContac){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_Contacto('".$correo."', '".$nombreContac."', '".$numeroContac."')";
             if($mysqli->query($query)===TRUE){
@@ -95,7 +95,7 @@
         public function Mod_datosBasicos($correo, $titulo, $nomEmpresa, $RFC){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_Dbasicos('".$correo."', '".$titulo."', '".$nomEmpresa."', '".$RFC."')";
             if($mysqli->query($query)===TRUE){
@@ -109,7 +109,7 @@
         public function Mod_direccion($correo, $direccion, $cod_post, $colonia, $ciudad){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_direccion('".$correo."', '".$direccion."', '".$cod_post."', '".$colonia."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
@@ -123,7 +123,7 @@
         public function Mod_img($correo, $img){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
@@ -137,7 +137,7 @@
         public function Buscar_tarjetas($texto){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
