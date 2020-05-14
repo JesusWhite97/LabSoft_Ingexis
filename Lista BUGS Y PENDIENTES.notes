@@ -1,0 +1,24 @@
+========================TAREAS========================
+
+POR HACER:
+===========>TAPIZ<=============
+[ ] Validación subir imagen
+[ ] Transición OK
+[ ] Botón #GUARDAR# en Info Usuarios
+[ ] Scroll de tarjetas
+
+===========>JESUS WHITE<=============
+[ ] Cambiar id de campos en pantalla clientes #tarjetas#
+[ ] Cambiar id de campos en pantalla clientes #infoCliente#
+[ ] Campo buscar en clientes
+[ ] agregar funcion guardar clientes
+[ ] agregar funcion modificar clientes
+[ ] agregar funcion eliminar clientes
+
+
+!!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
+BUGS:
+[]Cargar una foto muy grande se rompe el sistema pero no muestra ningun error.
+
+
+//con el comando Alt + l se marcan tareas.
