@@ -53,9 +53,6 @@
         }else{
             $optionsPuesto =$optionsPuesto.'<option value="Laboratorista 2">Laboratorista 2</option>';
         }
-            
-
-
         $interfazInfoUsuario = '
         <div class="contenedorCentradoResponsivo">
                         <div id="tituloContenedor">

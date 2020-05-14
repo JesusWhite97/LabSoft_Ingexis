@@ -27,7 +27,6 @@ function cargarInfo(correo){
         console.log(response);
         let arrayResponse = JSON.parse(response);
         console.log(arrayResponse[0].infoUsuario);
-        
         document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
     });
 }
