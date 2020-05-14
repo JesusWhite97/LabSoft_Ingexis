@@ -18,6 +18,7 @@ function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
 //=================================================================================================
 function cargarInfo(correo){
     var salida = '';
+    tarjetaUser = document.getElementById("correo");
     const postData = {
         metodo: "cargarInfo",
         correo: correo
@@ -26,6 +27,7 @@ function cargarInfo(correo){
         console.log(response);
         let arrayResponse = JSON.parse(response);
         console.log(arrayResponse[0].infoUsuario);
+        tarjetaUser.style.border = "1px solid #fff"
         document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
     });
 }

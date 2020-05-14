@@ -10,6 +10,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<!-- ========================Con esto evitamos la cache (Quitar despues)======================== -->
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Last-Modified" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<!-- =========================================================================================== -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,7 +35,32 @@
 			cargarTarjetas('');
 			cargarInfo(cliente1);
 		}
-        // --------------------------------------
+		// --------------------------------------
+		var flag = true;
+		function mostrarOpciones(){
+			let contenedorBuscador = document.getElementById("contenedorBuscador");
+			let contenedorOpciones = document.getElementById("contenedorOpciones");
+			let contenedorGridResponsivo = document.getElementById("contenedorGridResponsivo");
+			let sombradesenfoque = document.getElementById("desenfoque");
+			let botonOpciones = document.getElementById("opciones");
+			if(flag == true){
+				contenedorBuscador.style.backgroundImage = ":linear-gradient(to right,#17232470,#17232470);"
+				contenedorOpciones.style.display = "grid";
+				contenedorGridResponsivo.style.marginTop = "80px";
+				sombradesenfoque.classList.remove("sombra");
+				botonOpciones.style.backgroundImage = "url(img/opcionesOpen.svg)";
+				flag = false;
+			}else{
+				contenedorOpciones.style.display = "none";
+				contenedorGridResponsivo.style.marginTop = "60px";
+				sombradesenfoque.classList.add("sombra");
+				botonOpciones.style.backgroundImage = "url(img/opcionesClose.svg)";
+				flag = true;
+			}
+		}
+		// --------------------------------------
+		// --------------------------------------
+		// --------------------------------------
 	</script>
 	<title>Ingexis Labsoft - Clientes</title>
 </head>
@@ -44,23 +75,13 @@
 		<div id="divUsuarios">
 			<div id="contenedorBuscador">
 					<div id="desenfoque" class="sombra"></div>
-					<input type="text" id="buscarEntrada" onkeyup="" placeholder="Buscar..." title="Type in a name"></input>
-					<button id="opciones" onclick=""></button>
+					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value);" placeholder="Buscar..." title="Type in a name"></input>
+					<button id="opciones" onclick="mostrarOpciones()"></button>
 			</div> 
 			<div id="contenedorOpciones" class="sombra" style="display: none;">
 				<div class="itemMenu" onclick="">
 					<div class="icoMenu" style="background-image:url(img/icoAgregar.svg);background-size: 30px 30px;" ></div>
 					<p>Agregar Cliente</p> 
-				</div>
-				<div class="itemMenu">
-					<div class="icoMenu" style="background-image:url(img/icoFiltro.svg);"></div>
-					<p>Filtrado</p>
-					<div id="filtrado">
-						<div> <input checked type="checkbox" value="admon" id="admon"><p>Administrador</p></input></div>
-						<div style="margin-left: -15px;"> <input checked type="checkbox" value="jefe" id="jefe"><p>Jefe de Laboratorio</p></input></div>
-						<div> <input checked type="checkbox" value="lab1" id="lab1"><p>Laboratorista 1</p></input></div>
-						<div style="margin-left: -15px;"> <input checked type="checkbox" value="lab2" id="lab2"><p>Laboratorista 2</p></input></div>
-					</div>
 				</div>
             </div>
 			<div id="contenedorGridResponsivo" onload="cargarTarjetas('')">
@@ -68,7 +89,7 @@
 			</div>
 		</div>
 		<!-- 11111111111111111111111 -->
-		<div id="divInfoUsuarios">
+		<div id="divInfoClientes">
 			
 		</div>
 		<!-- 22222222222222222222222 -->

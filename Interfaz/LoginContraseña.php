@@ -32,7 +32,7 @@
         </div>
         <div id="contenedorInputLogin">
             <input type="password" name="password" id="inputLogin" placeholder="Contraseña">
-            <button id="footerGuardar_Boton" style="margin:00px auto;" onclick=clickIniciar()>Iniciar sesión</button>
+            <button id="footerGuardar_Boton" style="margin:00px auto; display:block;" onclick=clickIniciar()>Iniciar sesión</button>
         </div>
     </div>
 </html>

@@ -11,6 +11,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<!-- ========================Con esto evitamos la cache (Quitar despues)======================== -->
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Last-Modified" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<!-- =========================================================================================== -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -56,27 +62,26 @@
 		// --------------------------------------
 		function cargarInfoUsuario(email){
 			if (screen.width >= 800) {
-			let divUsuarios = document.getElementById("divUsuarios");
-			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-			divUsuarios.style.display = "block";
-			divInfoUsuarios.style.display = "block";
+				let divUsuarios = document.getElementById("divUsuarios");
+				let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+				divUsuarios.style.display = "block";
+				divInfoUsuarios.style.display = "block";
 			}
-
 			if (screen.width < 800) {
-			let divUsuarios = document.getElementById("divUsuarios");
-			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-			divUsuarios.style.display = "none";
-			divInfoUsuarios.style.display = "block";
+				let divUsuarios = document.getElementById("divUsuarios");
+				let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+				divUsuarios.style.display = "none";
+				divInfoUsuarios.style.display = "block";
 			}
 			cargarInfo(email);
 		}
 		// --------------------------------------
 		function goBack(){
 			if (screen.width < 800) {
-			let divUsuarios = document.getElementById("divUsuarios");
-			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-			divUsuarios.style.display = "block";
-			divInfoUsuarios.style.display = "none";
+				let divUsuarios = document.getElementById("divUsuarios");
+				let divInfoUsuarios = document.getElementById("divInfoUsuarios");
+				divUsuarios.style.display = "block";
+				divInfoUsuarios.style.display = "none";
 			}
 		}
 		// --------------------------------------

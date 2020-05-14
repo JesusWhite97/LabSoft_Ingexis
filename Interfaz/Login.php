@@ -31,7 +31,7 @@
         <div id="contenedorInputLogin">
             <input type="email" name="email" id="inputLogin" placeholder="Correo Electronico">
             <script>var email = document.getElementById("inputLogin").value;</script>
-            <button id="footerGuardar_Boton" style="margin:00px auto;" onclick=clickIniciar()>Iniciar sesión</button>
+            <button id="footerGuardar_Boton" style="margin:00px auto; display:block;" onclick=clickIniciar()>Iniciar sesión</button>
         </div>
     </div>
 </body>

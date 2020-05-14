@@ -33,7 +33,7 @@ function cargarInfo(correo){
         success:function(response){
             console.log(response);
             let arrayResponse = JSON.parse(response);
-            document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].mensajeDatos;
+            document.getElementById("divInfoClientes").innerHTML = arrayResponse[0].mensajeDatos;
         }
     });
 }

@@ -452,6 +452,7 @@ body {
 }
 
 #footerGuardar_Boton {
+  display: none;
   -ms-grid-column-align: center;
       justify-self: center;
   text-align: center;
@@ -1139,7 +1140,7 @@ body {
 }
 
 #contenedorGridResponsivo {
-  height: 95vh;
+  height: 85vh;
   margin-top: 60px;
   display: -ms-grid;
   display: grid;

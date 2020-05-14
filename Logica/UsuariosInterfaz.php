@@ -9,7 +9,7 @@
         $Tarjetas = '';
         for($i = 0; $i<count($arrayTajetas); $i++){
             $Tarjetas = $Tarjetas . '
-                        <div class="contenedorTarjetaUsuario" onclick=cargarInfoUsuario("'. $arrayTajetas[$i]['correo'] .'")>
+                        <div id="'. $arrayTajetas[$i]['correo'] .'" class="contenedorTarjetaUsuario" onclick=cargarInfoUsuario("'. $arrayTajetas[$i]['correo'] .'")>
                             <div id="desenfoque" class="sombra"></div>
                             <a>
                                 <div class="imgUsuario" style="background-image: url('."'../Usuarios/".$arrayTajetas[$i]['correo']."/".$arrayTajetas[$i]['img']."'".');"></div>
@@ -158,13 +158,11 @@
                             <p id ="textoModalPregunta" class="textoModal">
                                 ¿Desea?
                             </p>
-                            <button id ="botonEliminarModal"class="eliminarBotonModal" onclick=eliminarUsuario()>Eliminar</button>
+                            <button id ="botonEliminarModal"class="eliminarBotonModal" onclick=eliminarUsuario();>Eliminar</button>
                             <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=modificarUser()>Modificar</button>
                             <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
                         </div>
                 </div>
-
-
                 <div id="contenedorModalEliminado">
                     <div id="fondoModal"></div>
                         <div class="modal">
@@ -195,10 +193,10 @@
                         </div>
                         <div class="tarjetaBlanca" style="margin-top: 0px;">        
                             <select id="puesto" class="registro">
-                                    <option value="Administrador">Administrador</option>
-                                    <option value="Jefe de Laboratorio">Jefe de Laboratorio</option>
-                                    <option value="Laboratorista 1">Laboratorista 1</option>
-                                    <option value="Laboratorista 2">Laboratorista 2</option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Jefe de Laboratorio">Jefe de Laboratorio</option>
+                                <option value="Laboratorista 1">Laboratorista 1</option>
+                                <option value="Laboratorista 2">Laboratorista 2</option>
                             </select>
                         <p class="textoAyuda" style="text-align: center;">Puesto</p>
                         </div>
@@ -271,30 +269,25 @@
                             </div>
                         </div>
                         <button id="footerGuardar_Boton" onclick = verModalGuardar(document.getElementById("correo").value)>Guardar</button>
-                    
                 </div>
-
                 <div id="contenedorModal">
                 <div id="fondoModal"></div>
-                    <div class="modal">
-                        <p id ="textoModalPregunta" class="textoModal">
-                            ¿Desea?
-                        </p>
-                        <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=guardarUser()>Guardar</button>
-                        <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
-                    </div>
+                <div class="modal">
+                    <p id ="textoModalPregunta" class="textoModal">
+                        ¿Desea?
+                    </p>
+                    <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=guardarUser()>Guardar</button>
+                    <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
+                </div>
             </div>
-
-
             <div id="contenedorModalEliminado">
                 <div id="fondoModal"></div>
-                    <div class="modal">
-                        <p class="textoModal" id="textoExito">
+                <div class="modal">
+                    <p class="textoModal" id="textoExito">
 
-                        </p>
-                        <button class="OK" onclick=verPantallaInfo()>OK</button>
-                    </div>
-                    
+                    </p>
+                    <button class="OK" onclick=verPantallaInfo()>OK</button>
+                </div>
             </div>
         ';
         return $interfazRegistroUsuario;

@@ -5,6 +5,7 @@ function verPantallaModificar(item){
 
     let arrayInputs = document.getElementsByTagName("input");
     let btnImg = document.getElementById("botonImg");
+    let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
     let btnGuardar = document.getElementById("botonGuardar");
     let btnEdit = document.getElementById("botonEditar");
     let btnDel = document.getElementById("botonEliminar");
@@ -24,11 +25,12 @@ function verPantallaModificar(item){
       btnImg.style.display = "block";
       divContras.style.display = "block";
       btnCancel.style.display = "block";
-      btnGuardar.style.display = "block";
       botonGuardarModal.style.display = "block";
       btnEdit.style.display = "none";
       botonEliminarModal.style.display = "none";
+      btnFooterGuardar.style.display = "block";
       textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
+      
 
 }
 
