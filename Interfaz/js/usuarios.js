@@ -29,6 +29,7 @@ function cargarInfo(correo){
         metodo: "cargarInfo",
         correo: correo
     };
+<<<<<<< HEAD
     $.ajax({
         data:postData,
         url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
@@ -41,6 +42,13 @@ function cargarInfo(correo){
             
             document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
         }
+=======
+    $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
+        console.log(response);
+        let arrayResponse = JSON.parse(response);
+        console.log(arrayResponse[0].infoUsuario);
+        document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
+>>>>>>> e1fd6648a296e6379480ba2eb6777a93205fe2f6
     });
     
 }
