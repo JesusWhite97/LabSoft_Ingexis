@@ -3,7 +3,7 @@ function iniciarSesion(correo){
     var respuesta = "";
     const postData = {
         metodo: "iniciarSesion",
-        correo: correo
+        correo: correo.toLowerCase()
     };
     $.post('/LabSoft_Ingexis/Logica/LoginAjax.php', postData, function(response){
         console.log(response);
