@@ -40,6 +40,7 @@
             $correo,    $nota,          $img
         ){
             //crea Conexion===============
+            $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -48,6 +49,7 @@
             //============================
             $query = "CALL insertarCliente('".$titulo."', '".$Nom_emp."', '".$rfc."', '".$direc."', '".$cod_post."', '".$colonia."', '".$ciudad."', '".$nom_contacto."', '".$nun_contacto."', '".$correo."', '".$nota."', '".$img."', '".$fecha."')";
             if($mysqli->query($query)===TRUE){
+                $directorios->CrearDirectorioClientes($correo);
                 return "Registro Existoso.";
             }else{
                 return "NO se puedo hacer el registro: ".$mysqli->error;

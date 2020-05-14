@@ -6,7 +6,7 @@
     }
     //-------------------------------------------
     unset($_SESSION['carpeta']);
-    unset($_SESSION['NuevoUser']);
+    unset($_SESSION['Nuevo']);
     unset($_SESSION['Client1']);
     var_dump($_SESSION);
     //-------------------------------------------

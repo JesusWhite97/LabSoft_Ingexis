@@ -1,7 +1,7 @@
 <?php
     session_start();
     # definimos la carpeta destino
-    $carpetaDestino="../".$_SESSION['carpeta']."/".$_SESSION['NuevoUser']."/";
+    $carpetaDestino="../".$_SESSION['carpeta']."/".$_SESSION['Nuevo']."/";
     # si hay algun archivo que subir
     if(isset($_FILES["archivo"]) && $_FILES["archivo"]["name"][0])
     {
@@ -50,7 +50,7 @@
             ]; 
 
     }
-    unset($_SESSION['NuevoUser']);
+    unset($_SESSION['Nuevo']);
     //#########################################################################################
     $jsonString = json_encode($json);
     echo $jsonString;

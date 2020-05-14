@@ -59,6 +59,19 @@
 			}
 		}
 		// --------------------------------------
+		function guardarClient(){
+			guardarCliente();
+			if(salidaGuardar == 'true'){
+				if(respuestaSubirIMG != 'NO'){
+					alert('Usuario registrado con exito 🤘.');
+				}else{
+					alert('imagen no guardada 😿.');
+				}
+			}
+			var ClienteNuevo = document.getElementById('email');
+			cargarTarjetas('');
+			cargarInfo(ClienteNuevo);
+		}
 		// --------------------------------------
 		// --------------------------------------
 	</script>

@@ -165,7 +165,7 @@
                     <p id ="textoModalPregunta" class="textoModal">
                         ¿Desea?
                     </p>
-                    <button id ="botonGuardarModal" class="guardarBotonModal" style="display:none;" onclick="">Guardar</button> <!-- aqui va el evento guardar-->
+                    <button id ="botonGuardarModal" class="guardarBotonModal" style="display:none;" onclick="guardarClient()">Guardar</button>
                     <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
                 </div>
             </div>

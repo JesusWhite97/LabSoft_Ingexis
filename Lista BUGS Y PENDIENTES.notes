@@ -9,15 +9,18 @@ POR HACER:
 [ ] Agregar a #clientes# campo notas
 [ ] Responsividad de pantallas #Usuarios# y #Clientes# 
 [ ] Marcar tarjeta seleccionada #Usuarios# y #Clientes#
+[ ] Agregar Ver contraseña en pantalla agregar usuario
 
 ===========>JESUS WHITE<=============
 [√] Cambiar id de campos en pantalla clientes #tarjetas#
 [√] Cambiar id de campos en pantalla clientes #infoCliente#
 [√] Campo buscar en clientes
 [√] Boton agregar en pantalla #Clientes#
+[ ] Edicion de los campos en agregar cliente en pantalla #clientes#
 [ ] agregar funcion guardar clientes
 [ ] agregar funcion modificar clientes
 [ ] agregar funcion eliminar clientes
+[ ] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
 
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
@@ -26,6 +29,6 @@ BUGS:
 [ ] No sale del modal al eliminar un !usuario!
 
 ------------------->RECORDATORIOS<--------------------
-[ ] Eliminar 
+[ ] Eliminar codigo que evita que se guarde el cache
 
 //con el comando Alt + l se marcan tareas.

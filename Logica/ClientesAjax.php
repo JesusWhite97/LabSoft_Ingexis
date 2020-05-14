@@ -37,6 +37,21 @@
                 echo $jsonString;
         }
         //########################
+        if($_POST["metodo"] == "guardarCliente"){
+            //declaracion de variables--------------------------
+            $cliente = new Cliente();
+            $salida = '';
+            //Formular Respuesta--------------------------------
+            $salida = $cliente->Insertar($_POST['titulo'], $_POST['nom_empr'], $_POST['rfc'], $_POST['direc'], $_POST['cod_pos'], $_POST['colonia'], $_POST['ciudad'], $_POST['nombre_contac'], $_POST['numero_contac'], $_POST['email'], "aqui va la nota", $_POST['img']);
+            $_SESSION['Nuevo'] = $_POST['email'];
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'mensajeDatos'   => $salida
+                ];
+                $jsonString = json_encode($json);
+                echo $jsonString;
+        }
         //########################
         //########################
         //########################
