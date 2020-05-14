@@ -9,10 +9,16 @@ function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
         busqueda: cadenaBuscar, 
         filtro: cadenaFiltrado
     };
-    $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
-        console.log(response);
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
         let arrayResponse = JSON.parse(response);
         document.getElementById("contenedorGridResponsivo").innerHTML = arrayResponse[0].mensajeDatos;
+        }
     });
 }
 //=================================================================================================
@@ -23,13 +29,20 @@ function cargarInfo(correo){
         metodo: "cargarInfo",
         correo: correo
     };
-    $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
-        console.log(response);
-        let arrayResponse = JSON.parse(response);
-        console.log(arrayResponse[0].infoUsuario);
-        
-        document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            console.log(arrayResponse[0].infoUsuario);
+            
+            document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
+        }
     });
+    
 }
 //=================================================================================================
 function cargarRegistroUsuario(){

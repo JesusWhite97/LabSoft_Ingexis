@@ -1,25 +1,25 @@
-use databaseingexis;
--- -- ==============================================
--- DROP USER 'login'@'localhost';
--- DROP USER 'Administrador'@'localhost';
--- DROP USER 'Jefe De Laboratorio'@'localhost';
--- DROP USER 'Laboratorista 1'@'localhost';
--- DROP USER 'Laboratorista 2'@'localhost';
--- -- ==============================================
+-- use databaseingexis;
+-- -- -- ==============================================
+-- -- DROP USER 'login'@'localhost';
+-- -- DROP USER 'Administrador'@'localhost';
+-- -- DROP USER 'Jefe De Laboratorio'@'localhost';
+-- -- DROP USER 'Laboratorista 1'@'localhost';
+-- -- DROP USER 'Laboratorista 2'@'localhost';
+-- -- -- ==============================================
 -- CREATE user 'login'@'localhost'                  IDENTIFIED by 'login';
 -- CREATE user 'Administrador'@'localhost'          IDENTIFIED by 'Administrador';
 -- CREATE user 'Jefe De Laboratorio'@'localhost'    IDENTIFIED by 'Jefe De Laboratorio';
 -- CREATE user 'Laboratorista 1'@'localhost'        IDENTIFIED by 'Laboratorista 1';
 -- CREATE user 'Laboratorista 2'@'localhost'        IDENTIFIED by 'Laboratorista 2';
--- -- -- ==============================================
--- -- permisos para usuario login
+-- -- -- -- ==============================================
+-- -- -- permisos para usuario login
 -- GRANT select on databaseingexis.log_usuarios to         'login'@'localhost';
 -- GRANT select on databaseingexis.usuarios to             'login'@'localhost';
 -- GRANT SHOW VIEW on databaseingexis.dat_tar_usuarios to  'login'@'localhost';
 -- GRANT SHOW VIEW on databaseingexis.dat_usuarios to      'login'@'localhost';
 -- GRANT EXECUTE ON *.* TO                                 'login'@'localhost';
--- -- -- ==============================================
--- -- -- permisos para administrador
+-- -- -- -- ==============================================
+-- -- -- -- permisos para administrador
 -- GRANT select on databaseingexis.log_usuarios to          'Administrador'@'localhost';
 -- GRANT select on databaseingexis.usuarios to              'Administrador'@'localhost';
 -- GRANT select on databaseingexis.clientes to              'Administrador'@'localhost';
@@ -39,8 +39,8 @@ use databaseingexis;
 -- GRANT UPDATE on databaseingexis.clientes to              'Administrador'@'localhost';
 -- -- -- ++++++  
 -- GRANT EXECUTE ON *.* TO                                  'Administrador'@'localhost';
--- -- -- ==============================================
--- -- -- permisos para jefe de la boratorio
+-- -- -- -- ==============================================
+-- -- -- -- permisos para jefe de la boratorio
 -- GRANT select on databaseingexis.log_usuarios to          'Jefe De Laboratorio'@'localhost';
 -- GRANT select on databaseingexis.usuarios to              'Jefe De Laboratorio'@'localhost';
 -- GRANT select on databaseingexis.clientes to              'Jefe De Laboratorio'@'localhost';
@@ -60,8 +60,8 @@ use databaseingexis;
 -- GRANT UPDATE on databaseingexis.clientes to              'Jefe De Laboratorio'@'localhost';
 -- -- -- ++++++  
 -- GRANT EXECUTE ON *.* TO                                  'Jefe De Laboratorio'@'localhost';
--- -- -- ==============================================
--- -- -- permisos para lab1
+-- -- -- -- ==============================================
+-- -- -- -- permisos para lab1
 -- GRANT select on databaseingexis.log_usuarios to  'Laboratorista 1'@'localhost';
 -- GRANT select on databaseingexis.usuarios to      'Laboratorista 1'@'localhost';
 -- GRANT select on databaseingexis.clientes to      'Laboratorista 1'@'localhost';
@@ -70,8 +70,8 @@ use databaseingexis;
 -- GRANT UPDATE on databaseingexis.usuarios to      'Laboratorista 1'@'localhost';
 -- -- ++++++  
 -- GRANT EXECUTE ON *.* TO                          'Laboratorista 1'@'localhost';
--- -- -- ==============================================
--- -- -- permisos para lab2
+-- -- -- -- ==============================================
+-- -- -- -- permisos para lab2
 -- GRANT select on databaseingexis.log_usuarios to  'Laboratorista 2'@'localhost';
 -- GRANT select on databaseingexis.usuarios to      'Laboratorista 2'@'localhost';
 -- GRANT select on databaseingexis.clientes to      'Laboratorista 2'@'localhost';
