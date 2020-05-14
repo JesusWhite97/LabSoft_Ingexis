@@ -79,7 +79,7 @@
 					<button id="opciones" onclick="mostrarOpciones()"></button>
 			</div> 
 			<div id="contenedorOpciones" class="sombra" style="display: none;">
-				<div class="itemMenu" onclick="">
+				<div class="itemMenu" onclick="cargarAgregar()">
 					<div class="icoMenu" style="background-image:url(img/icoAgregar.svg);background-size: 30px 30px;" ></div>
 					<p>Agregar Cliente</p> 
 				</div>

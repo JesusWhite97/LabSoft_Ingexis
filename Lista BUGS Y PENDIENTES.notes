@@ -14,7 +14,7 @@ POR HACER:
 [√] Cambiar id de campos en pantalla clientes #tarjetas#
 [√] Cambiar id de campos en pantalla clientes #infoCliente#
 [√] Campo buscar en clientes
-[ ] Boton agregar en pantalla #Clientes#
+[√] Boton agregar en pantalla #Clientes#
 [ ] agregar funcion guardar clientes
 [ ] agregar funcion modificar clientes
 [ ] agregar funcion eliminar clientes

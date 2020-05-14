@@ -99,7 +99,18 @@ function selectModificar(){
       }
 }
 //===================================================================================================
+ function tarjetaSeleccionada(item){
+  arrayTarjetasUsuarios = document.getElementsByClassName("contenedorTarjetaUsuario");
 
+  for(let i = 0; i < arrayTarjetasUsuarios.length;i++){
+      arrayTarjetasUsuarios[i].style.border = "0px";
+      arrayTarjetasUsuarios[i].style["boxShadow"] = "0px 5px 4px 0px rgba(0,0,0,0.46)";
+  }
+  tarjetaUser = document.getElementById(item);
+  tarjetaUser.style.border = "1px solid #fff";
+  tarjetaUser.style["boxShadow"] = "0px 5px 4px 0px #fff";
+
+ }
 //===================================================================================================
 
 //===================================================================================================

@@ -101,7 +101,6 @@ body{
     border: 0px;
     padding: 0px;
     margin: 0px;
-
     #titulo{
         height: auto;
         margin: 0px;
@@ -211,7 +210,6 @@ body{
             padding-top: 3px;
             font-weight: 500;
         }
-
         #filtrado{
             margin-top: -5px;
             grid-column: 2/3;
@@ -245,7 +243,7 @@ body{
     box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.46);
 }
 
-#desenfoque{
+.desenfoque{
     display: grid;
     z-index: 1;
     grid-column: 1 / -1;
@@ -255,10 +253,7 @@ body{
     background-image: $colorGradienteTarjetas;
     backdrop-filter:  blur(50px);
     -webkit-backdrop-filter:blur(50px);
-   
-
     border-radius: 0px;
-
 }
 #oscuro{
     z-index: 2;
@@ -267,7 +262,6 @@ body{
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.144);
-    
 }
 #contenedorPrincipal{
     grid-column: 1 / span 1;
@@ -282,9 +276,6 @@ body{
     justify-items: center;
     margin:0%;
     margin-top: 30px;
-   
-    
-
     .principal{
         border:0px;
         z-index: 1;
@@ -338,7 +329,6 @@ body{
         padding-left: 20px;
         box-shadow:0px 3px 6px rgba(0, 0, 0, 0.451);
     }
-
 }
 .botonesEliminarImprimer{
     display: grid;
@@ -379,7 +369,6 @@ body{
     margin: 20px 20px;
     box-shadow:0px 3px 6px rgba(12, 19, 255, 0.451);
 }
-
 .footerEliminar_Boton {
     justify-self: center;
     align-self: center;
@@ -410,29 +399,21 @@ body{
     justify-content: stretch;
     justify-items: stretch;
     align-content: stretch;
-    
-   
     font-family: $fuente;
     box-shadow: $colorSombras;
     background-image: $colorGradienteTarjetas;
     backdrop-filter:  blur(50px);
     -webkit-backdrop-filter:blur(50px);
     color: rgba(255, 255, 255, 0);
-
     margin-top: 25px;
-
     .tituloPagina{
         margin: 10px auto;
         color: #575757;
-
-
     }
     .subtituloPagina{
         margin: 10px auto;
         color: #848484;
-
     }
-
     .titulo{
         z-index: 5;
         width: 100%;
@@ -444,7 +425,6 @@ body{
         margin-bottom: 10px;
         padding-left: 10px;
         padding-top: 5px;
-
     }
     input{
         z-index: 5;
@@ -458,8 +438,6 @@ body{
         margin-bottom: 1px;
         background-color: transparent;
         padding: 0px;
-
-     
     }
     input::placeholder {
         color: white;
@@ -782,8 +760,11 @@ body{
     margin: 10px auto;
     padding: 5px;
     font-family: $fuente;
-    background-color: transparent;
-    border-radius: 10px;
+    background-image: $colorGradienteTarjetas;
+    backdrop-filter:  blur(50px);
+    -webkit-backdrop-filter:blur(50px);
+    border-radius: 0px;
+    box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.46);
     a{
     z-index: 2;
     text-decoration: none;

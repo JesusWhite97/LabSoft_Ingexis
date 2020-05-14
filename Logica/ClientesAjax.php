@@ -28,6 +28,14 @@
                 echo $jsonString;
         }
         //########################
+        if($_POST["metodo"] == "cargarAgregar"){
+            $json[] =   
+                [
+                    'mensajeDatos'   => imprimir_registro_cliente()
+                ];
+                $jsonString = json_encode($json);
+                echo $jsonString;
+        }
         //########################
         //########################
         //########################

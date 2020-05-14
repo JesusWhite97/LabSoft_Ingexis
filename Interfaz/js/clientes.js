@@ -38,4 +38,20 @@ function cargarInfo(correo){
     });
 }
 //=================================================================================================
+function cargarAgregar(){
+    var postData = {
+        metodo: "cargarAgregar"
+    }
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ClientesAjax.php',
+        type:"POST",
+        async: true,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            document.getElementById("divInfoClientes").innerHTML = arrayResponse[0].mensajeDatos;
+        }
+    });
+}
 //=================================================================================================

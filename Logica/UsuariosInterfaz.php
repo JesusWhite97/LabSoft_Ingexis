@@ -9,8 +9,7 @@
         $Tarjetas = '';
         for($i = 0; $i<count($arrayTajetas); $i++){
             $Tarjetas = $Tarjetas . '
-                        <div id="'. $arrayTajetas[$i]['correo'] .'" class="contenedorTarjetaUsuario" onclick=cargarInfoUsuario("'. $arrayTajetas[$i]['correo'] .'")>
-                            <div id="desenfoque" class="sombra"></div>
+                        <div  id="'. $arrayTajetas[$i]['correo'] .'" class="contenedorTarjetaUsuario" onclick=cargarInfoUsuario("'. $arrayTajetas[$i]['correo'] .'")>
                             <a>
                                 <div class="imgUsuario" style="background-image: url('."'../Usuarios/".$arrayTajetas[$i]['correo']."/".$arrayTajetas[$i]['img']."'".');"></div>
                                 <h2 class="tituloTarjetaUsuario"> '.$arrayTajetas[$i]['apodo'].' </h2>
