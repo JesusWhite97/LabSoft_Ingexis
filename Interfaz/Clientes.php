@@ -66,7 +66,10 @@
 				if(respuestaSubirIMG != 'NO'){
 					alert('Usuario registrado con exito 🤘.');
 				}else{
-					alert('imagen no guardada 😿.');
+					eliminarCliente();
+					if(eliminarCliente == 'true'){
+						alert('error al registrar Usuario: ' + errorSubirIMG);
+					}
 				}
 			}
 			var ClienteNuevo = document.getElementById('emailReg').value;
@@ -74,6 +77,16 @@
 			cargarInfo(ClienteNuevo);
 		}
 		// --------------------------------------
+		function eliminarClient(){
+			eliminarCliente();
+			if(eliminarCliente == 'true'){
+				alert("cliente eliminado correctamente 🤘.");
+			}else{
+				alert("cliente no eliminado");
+			}
+			cargarTarjetas('');
+			cargarInfo(cliente1);
+		}
 		// --------------------------------------
 	</script>
 	<title>Ingexis Labsoft - Clientes</title>

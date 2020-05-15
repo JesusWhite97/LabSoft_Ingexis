@@ -54,7 +54,17 @@
         }
         //########################
         if($_POST["metodo"] == "eliminarCliente"){
-            
+            $cliente = new Cliente();
+            $salida = '';
+            //Formular Respuesta--------------------------------
+            $salida = $cliente->Eliminar($_POST['emailReg']);
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'mensajeDatos'   => $salida
+                ];
+                $jsonString = json_encode($json);
+                echo $jsonString;
         }
         //########################
         //########################

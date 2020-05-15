@@ -112,7 +112,6 @@ function eliminarUsuario(){
             }else{
                 document.getElementById("textoExito").innerHTML = "<b>Error:</b>"+arrayResponse[0].validacion;
             }
-            
             document.getElementById("contenedorModal").style.height = "0%";
             document.getElementById("contenedorModalEliminado").style.height = "100%";
             window.addEventListener('scroll', noScrollModal);

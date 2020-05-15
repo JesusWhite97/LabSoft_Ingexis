@@ -60,11 +60,13 @@
         //#####################################################
         public function Eliminar_clientes($correo){
             //crea Conexion===============
+            $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL eliminar_cliente('".$correo."')";
             if($mysqli->query($query)===TRUE){
+                $directorios->EliminarDirectorioConContenido($correo);
                 return "true";
             }else{
                 return "NO se puedo eliminar el registro: ".$mysqli->error;

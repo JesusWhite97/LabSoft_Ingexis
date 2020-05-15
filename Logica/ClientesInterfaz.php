@@ -37,11 +37,11 @@
                             </form> 
                             <label id="botonImg" for="inImg" style="display:none;"></label>
                             <button id="botonEditar" onclick="">
-                            <button id="botonEliminar" onclick="">
+                            <button id="botonEliminar" onclick="eliminarClient();">
                             <button id="botonCancelar" style="display:none"  onclick="">
                             <div id="blah"> </div>
                         </div>
-                        <input id="titulo" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoCliente['titulo'].'" onchange="">
+                        <input id="tituloReg" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoCliente['titulo'].'" onchange="">
                         <p class="textoAyuda textoAyudaTitulo">Titulo</p>
                             </div>
                         <!-- DatosPersonales ============================ -->
@@ -59,7 +59,7 @@
                             <p class="titulo">Contacto</p>
                             <input required type="tel"id="numero_contac" value="'.$infoCliente['numero_contac'].'" onchange="">
                             <p class="textoAyuda">Número celular</p>
-                            <input required type="email" id="email" value="'.$infoCliente['email'].'">
+                            <input required type="email" id="emailReg" value="'.$infoCliente['email'].'">
                             <p class="textoAyuda">Email</p>
                         </div>
                         <!-- Datos De direccion========================== -->

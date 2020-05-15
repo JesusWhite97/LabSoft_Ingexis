@@ -11,6 +11,7 @@ POR HACER:
 [ ] Responsividad de pantallas #Usuarios# y #Clientes# 
 [ ] Marcar tarjeta seleccionada #Usuarios# y #Clientes#
 [ ] Agregar Ver contraseña en pantalla agregar usuario
+[ ] agregar modal eliminar al boton en #clinetes#
 
 ===========>JESUS WHITE<=============
 [√] Cambiar id de campos en pantalla clientes #tarjetas#
@@ -19,7 +20,7 @@ POR HACER:
 [√] Boton agregar en pantalla #Clientes#
 [√] Edicion de los campos en agregar cliente en pantalla #clientes#
 [√] agregar funcion guardar clientes
-[ ] agregar funcion eliminar clientes
+[√] agregar funcion eliminar clientes
 [ ] agregar funcion modificar clientes
 [ ] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
 
