@@ -2,7 +2,6 @@
 // Función para que una cambiar a una pantalla con campos modificables
 
 function verPantallaModificar(item){
-
     let arrayInputs = document.getElementsByTagName("input");
     let btnImg = document.getElementById("botonImg");
     let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
@@ -15,25 +14,46 @@ function verPantallaModificar(item){
     let botonGuardarModal = document.getElementById("botonGuardarModal");
     let divContras = document.getElementById("inContras");
     let correo = document.getElementById("correo");
-
     selectModificar();
-
-      for(let i = 0; i < arrayInputs.length;i++){
-        arrayInputs[i].classList.add("registro");
-      }
-      correo.classList.remove("registro");
-      btnImg.style.display = "block";
-      divContras.style.display = "block";
-      btnCancel.style.display = "block";
-      botonGuardarModal.style.display = "block";
-      btnEdit.style.display = "none";
-      botonEliminarModal.style.display = "none";
-      btnFooterGuardar.style.display = "block";
-      textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
-      
-
+    for(let i = 0; i < arrayInputs.length;i++){
+      arrayInputs[i].classList.add("registro");
+    }
+    correo.classList.remove("registro");
+    btnImg.style.display = "block";
+    divContras.style.display = "block";
+    btnCancel.style.display = "block";
+    botonGuardarModal.style.display = "block";
+    btnEdit.style.display = "none";
+    botonEliminarModal.style.display = "none";
+    btnFooterGuardar.style.display = "block";
+    textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
 }
-
+//===================================================================================================
+//clon de la funcion anterior namas que para clientes
+function verPantallaEditar(item){
+  let arrayInputs = document.getElementsByTagName("input");
+    let btnImg = document.getElementById("botonImg");
+    let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
+    let btnGuardar = document.getElementById("botonGuardar");
+    let btnEdit = document.getElementById("botonEditar");
+    let btnDel = document.getElementById("botonEliminar");
+    let btnCancel = document.getElementById("botonCancelar");
+    let textoModalPregunta = document.getElementById("textoModalPregunta");
+    let botonEliminarModal = document.getElementById("botonEliminarModal");
+    let botonGuardarModal = document.getElementById("botonGuardarModal");
+    let correo = document.getElementById("emailReg");
+    selectModificar();
+    for(let i = 0; i < arrayInputs.length;i++){
+      arrayInputs[i].classList.add("registro");
+    }
+    btnImg.style.display = "block";
+    btnCancel.style.display = "block";
+    botonGuardarModal.style.display = "block";
+    btnEdit.style.display = "none";
+    botonEliminarModal.style.display = "none";
+    btnFooterGuardar.style.display = "block";
+    textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
+}
 //===================================================================================================
   function infoModal(claseBoton, textoModal, textoBoton, metodo){
     let scriptModal = '<div id="fondoModal"></div><div class="modal"><p id ="textoModalPregunta" class="textoModal">'+textoModal+'</p><button id ="botonEliminarModal"class="'+claseBoton+'" onclick="'+metodo+'">'+textoBoton+'</button><button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button></div>';

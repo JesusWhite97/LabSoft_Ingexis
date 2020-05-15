@@ -39,9 +39,9 @@
             return $respuesta;
         }
         //#####################################################
-        public function Modificar_contacto($correo, $Nombre, $numero){
+        public function Modificar_contacto($correoA, $correoN, $Nombre, $numero){
             $cliente = new procedimientos_Clientes();
-            $respuesta = $cliente->Mod_contacto($correo, $Nombre, $numero);
+            $respuesta = $cliente->Mod_contacto($correoA, $correoN, $Nombre, $numero);
             return $respuesta;
         }
         //#####################################################

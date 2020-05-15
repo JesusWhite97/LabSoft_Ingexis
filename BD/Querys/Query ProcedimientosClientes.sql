@@ -52,13 +52,13 @@ use databaseingexis;
 --     update clientes set clientes.nota = nota where clientes.id_clientes = id_cliente;
 -- end
 --======================================--
--- create procedure Clientes_mod_Contacto(in correo varchar(50), in nom_contac varchar(100), in num_contac varchar(30))
+-- create procedure Clientes_mod_Contacto(in correoAc varchar(50), in correoN varchar(50), in nom_contac varchar(100), in num_contac varchar(30))
 -- begin
 --     declare id_cliente int;
---     select id_by_correo_Clientes(correo) into id_cliente;
+--     select id_by_correo_Clientes(correoAc) into id_cliente;
 --     update clientes 
 --     set 
---         clientes.email = correo,
+--         clientes.email = correoN,
 --         clientes.nombre_contac = nom_contac,
 --         clientes.numero_contac = num_contac
 --     where

@@ -2,6 +2,8 @@
 var cliente1;           //salida de cargarTarjetas
 var salidaGuardar;     //salida de guardarCliente
 var eliminarCliente;    //salida de eliminaCiente
+var modificacionCliente;    //salida de la modificacion
+var correoActivo;
 //Funciones========================================================================================
 function cargarTarjetas(texto){
     var postData = {
@@ -23,6 +25,7 @@ function cargarTarjetas(texto){
 }
 //=================================================================================================
 function cargarInfo(correo){
+    correoActivo = correo;
     var postData = {
         metodo: "cargarInfo",
         correo: correo
@@ -104,5 +107,45 @@ function eliminarCliente(){
     });
 }
 //=================================================================================================
+function modificarCliente(cambios){
+    var postData = {
+        metodo: "modificarCliente",
+        cambios: cambios,
+        emailReg: document.getElementById('emailReg').value
+    };
+    if(cambios[0]){
+        //pendiente para notassssssssssssssssssssssssssssssssssssssssssssss
+    }
+    if(cambios[1]){
+        postData.correoA = correoActivo, 
+        postData.nombre_contac = document.getElementById('nombre_contac').value;
+        postData.numero_contac = document.getElementById('numero_contac').value;
+    }
+    if(cambios[2]){
+        postData.titulo = document.getElementById('titulo').value;
+        postData.nom_empr = document.getElementById('nom_empr').value;
+        postData.rfc = document.getElementById('rfc').value;
+    }
+    if(cambios[3]){
+        postData.direc = document.getElementById('direc').value;
+        postData.cod_pos = document.getElementById('cod_pos').value;
+        postData.colonia = document.getElementById('colonia').value;
+        postData.ciudad = document.getElementById('ciudad').value;
+    }
+    if(cambios[4]){
+        postData.img = obtenerNombreArchivo();
+    }
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ClientesAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            modificacionCliente = arrayResponse[0].mensajeDatos;
+        }
+    });
+}
 //=================================================================================================
 //=================================================================================================

@@ -111,13 +111,16 @@
             //============================
         }
         //#####################################################
-        public function Mod_contacto($correo, $nombreContac, $numeroContac){
+        public function Mod_contacto($correoA, $correoN, $nombreContac, $numeroContac){
             //crea Conexion===============
+            $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
-            $query = "CALL Clientes_mod_Contacto('".$correo."', '".$nombreContac."', '".$numeroContac."')";
+            $query = "CALL Clientes_mod_Contacto('".$correoA."', '".$correoN."', '".$nombreContac."', '".$numeroContac."')";
             if($mysqli->query($query)===TRUE){
+                if($correoA != $correoN)
+                    $directorios->CambiarNameDirec($correoA, $correoN);
                 return "modificacion Existosa.";
             }else{
                 return "NO se puedo Modificar el registro: ".$mysqli->error;
@@ -155,9 +158,19 @@
         //#####################################################
         public function Mod_img($correo, $img){
             //crea Conexion===============
+            $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
+            $imgAnte = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "select img_Client_by_correo('".$correo."');");
+            $rows = $resultado->fetch_array();
+            $imgAnte = $rows[0];
+            $directorios->EliminarUnArchivo($correo, $imgAnte);
+            $resultado->free();
+            //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Clientes_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
                 return "modificacion Existosa.";

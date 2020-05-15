@@ -7,3 +7,9 @@ use databaseingexis;
 --     return salida;
 -- end
 --======================================--
+-- CREATE FUNCTION img_Client_by_correo(correo varchar(50)) returns varchar(100)
+-- BEGIN
+--     declare salida varchar(100);
+--     select clientes.img into salida from clientes where clientes.email = correo;
+--     return salida;
+-- end

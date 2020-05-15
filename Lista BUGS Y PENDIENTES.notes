@@ -9,7 +9,7 @@ POR HACER:
 [ ] ver la edicion de correo en #clientes#
 [ ] Agregar a #clientes# campo notas
 [ ] Responsividad de pantallas #Usuarios# y #Clientes# 
-[ ] Marcar tarjeta seleccionada #Usuarios# y #Clientes#
+[ ] Marcar tarjeta seleccionada  #Clientes#
 [ ] Agregar Ver contraseña en pantalla agregar usuario
 [ ] agregar modal eliminar al boton en #clinetes#
 
@@ -22,6 +22,7 @@ POR HACER:
 [√] agregar funcion guardar clientes
 [√] agregar funcion eliminar clientes
 [ ] agregar funcion modificar clientes
+[ ] modificar orden de modificacion por #paradoja de modificacion#
 [ ] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
 
 

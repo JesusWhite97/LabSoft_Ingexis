@@ -14,6 +14,10 @@
             return 'Clientes\\'.$correoCliente;
         }
         //#########################################################################################
+        public function CambiarNameDirec($correoA, $correoN){
+            rename('..\\Clientes\\'.$correoA, '..\\Clientes\\'.$correoN);
+        }
+        //#########################################################################################
         public function EliminarDirectorioConContenido($correoUsuario)
         {
             $cd = new CreacionDirectorios();

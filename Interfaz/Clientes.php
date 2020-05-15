@@ -88,6 +88,30 @@
 			cargarInfo(cliente1);
 		}
 		// --------------------------------------
+		var arregloCambios = Array(0,0,0,0,0); //-----nota--Contacto--datosBasicos--direccion--img
+		function ModificarClient(){
+			var correoNuevo = document.getElementById("emailReg").value;
+			if(arregloCambios.includes(1)){
+				if(arregloCambios[4]){
+					subirImg();
+					if(respuestaSubirIMG == 'NO'){
+						arregloCambios[4] = 0;
+					}
+				}
+				modificarCliente(arregloCambios);
+				alert(modificacionCliente);
+				arregloCambios = Array(0,0,0,0,0);
+				correoNuevo = document.getElementById("emailReg").value;
+				cargarTarjetas('');
+				cargarInfo(correoNuevo);
+			}else{
+				alert("Modificacion Existosa.");
+				closeModal();
+				cargarInfo(correoNuevo);
+			}
+		}
+		// --------------------------------------
+		// --------------------------------------
 	</script>
 	<title>Ingexis Labsoft - Clientes</title>
 </head>

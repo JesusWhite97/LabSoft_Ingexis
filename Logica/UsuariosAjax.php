@@ -72,6 +72,7 @@
             $cambios = $_POST['cambios']; //Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
             $correo = $_POST['correo'];
             $salida = "";
+            $_SESSION['Nuevo'] = $_POST['correo'];
             //Formular Respuesta--------------------------------
             if($cambios[0] == 1){
                 $salida = $salida.$user->Modificar_Apodo($correo, $_POST['apodo'])." para el campo Apodo \n";
