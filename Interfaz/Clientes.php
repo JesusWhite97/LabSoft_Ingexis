@@ -62,13 +62,14 @@
 		function guardarClient(){
 			guardarCliente();
 			if(salidaGuardar == 'true'){
+				subirImg();
 				if(respuestaSubirIMG != 'NO'){
 					alert('Usuario registrado con exito 🤘.');
 				}else{
 					alert('imagen no guardada 😿.');
 				}
 			}
-			var ClienteNuevo = document.getElementById('email');
+			var ClienteNuevo = document.getElementById('emailReg').value;
 			cargarTarjetas('');
 			cargarInfo(ClienteNuevo);
 		}

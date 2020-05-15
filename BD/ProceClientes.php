@@ -1,5 +1,6 @@
 <?php
     // ========================================================
+    include '../Logica/CrearDirectorios.php';
     include 'conexion.php';
     header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================
@@ -50,7 +51,7 @@
             $query = "CALL insertarCliente('".$titulo."', '".$Nom_emp."', '".$rfc."', '".$direc."', '".$cod_post."', '".$colonia."', '".$ciudad."', '".$nom_contacto."', '".$nun_contacto."', '".$correo."', '".$nota."', '".$img."', '".$fecha."')";
             if($mysqli->query($query)===TRUE){
                 $directorios->CrearDirectorioClientes($correo);
-                return "Registro Existoso.";
+                return "true";
             }else{
                 return "NO se puedo hacer el registro: ".$mysqli->error;
             }     
@@ -64,7 +65,7 @@
             //============================
             $query = "CALL eliminar_cliente('".$correo."')";
             if($mysqli->query($query)===TRUE){
-                return "eliminacion Existosa.";
+                return "true";
             }else{
                 return "NO se puedo eliminar el registro: ".$mysqli->error;
             }     

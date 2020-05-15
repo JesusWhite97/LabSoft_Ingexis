@@ -120,44 +120,44 @@
                                 <label id="botonImg" class="btnImgRegistro" for="inImg"></label>
                                 <div id="blah"> </div>
                             </div>
-                            <input id="titulo" class="inputTexto mayus" style="color:white;" type="text" value="" onchange="">
+                            <input id="tituloReg" class="inputTexto mayus registro" style="color:white;" type="text">
                             <p class="textoAyuda textoAyudaTitulo">Titulo</p>
                         </div>
                         <!-- DatosPersonales ============================ -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Datos personales</p>
-                            <input required type="text" id="nom_empr" value="" onchange="">
+                            <input required type="text" id="nom_empr" class="registro" onchange="">
                             <p class="textoAyuda">Nombre de la empresa</p>
-                            <input required type="text" id="nombre_contac" value="" onchange="">
+                            <input required type="text" id="nombre_contac" class="registro" onchange="">
                             <p class="textoAyuda">Nombre del contacto</p>
-                            <input type="text" id="rfc" value="" onchange="">
+                            <input type="text" id="rfc" class="registro" onchange="">
                             <p class="textoAyuda" >RFC</p>
                         </div>
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input required type="tel"id="numero_contac" value="" onchange="">
+                            <input required type="tel"id="numero_contac" class="registro" onchange="">
                             <p class="textoAyuda">Número celular</p>
-                            <input required type="email" id="email" value="">
+                            <input required type="email" id="emailReg" class="registro">
                             <p class="textoAyuda">Email</p>
                         </div>
                         <!-- Datos De direccion========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Dirección</p>
-                            <input type="text" id="direc" value="" onchange="">
+                            <input type="text" id="direc" class="registro" onchange="">
                             <p class="textoAyuda">Direcccion</p>
-                            <input type="text" id="cod_pos"  value=""  onchange="">
+                            <input type="text" id="cod_pos" class="registro" onchange="">
                             <p class="textoAyuda">Código Postal</p>
                             <div class="inputEnLinea">
-                                <input type="text" id="colonia" value="" onchange="">
-                                <input type="text" id="ciudad" value="" onchange="">
+                                <input type="text" class="registro" id="colonia" onchange="">
+                                <input type="text" class="registro" id="ciudad" onchange="">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Colonia</p>
                                 <p class="textoAyuda">ciudad</p>
                             </div>
                         </div>
-                        <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick = verModalGuardar(document.getElementById("correo").value)>Guardar</button>
+                        <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick = verModalGuardar(document.getElementById("emailReg").value)>Guardar</button>
                 </div>
                 <div id="contenedorModal">
                 <div id="fondoModal"></div>
@@ -175,7 +175,7 @@
                     <p class="textoModal" id="textoExito">
 
                     </p>
-                    <button class="OK" onclick=verPantallaInfo()>OK</button>
+                    <button class="OK" onclick=verPantallaInfoCliente("document.getElementById("emailReg").value")>OK</button>
                 </div>
             </div>
         ';

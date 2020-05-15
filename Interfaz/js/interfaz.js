@@ -88,6 +88,11 @@ function verPantallaInfo(correo){
     cargarInfo(correo);
 }
 //===================================================================================================
+function verPantallaInfoCliente(correo){
+  cargarTarjetas("");
+  cargarInfo(correo);
+}
+//===================================================================================================
 // Función para que un select sea seleccionable
 function selectModificar(){
       var arrayInputInfo = document.getElementsByClassName("selectInfo");

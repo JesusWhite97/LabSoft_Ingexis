@@ -6,6 +6,7 @@ POR HACER:
 [ ] Transición OK
 [√] Botón #GUARDAR# en Info Usuarios
 [√] Scroll de tarjetas
+[ ] ver la edicion de correo en #clientes#
 [ ] Agregar a #clientes# campo notas
 [ ] Responsividad de pantallas #Usuarios# y #Clientes# 
 [ ] Marcar tarjeta seleccionada #Usuarios# y #Clientes#
@@ -16,10 +17,10 @@ POR HACER:
 [√] Cambiar id de campos en pantalla clientes #infoCliente#
 [√] Campo buscar en clientes
 [√] Boton agregar en pantalla #Clientes#
-[ ] Edicion de los campos en agregar cliente en pantalla #clientes#
-[ ] agregar funcion guardar clientes
-[ ] agregar funcion modificar clientes
+[√] Edicion de los campos en agregar cliente en pantalla #clientes#
+[√] agregar funcion guardar clientes
 [ ] agregar funcion eliminar clientes
+[ ] agregar funcion modificar clientes
 [ ] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
 
 
