@@ -30,6 +30,26 @@
         $cliente = new Cliente();
         $infoCliente = $cliente->Info($correo);
         //=====================================
+
+        //=========DATOS MODAL=================
+        $tipoModal = "'confirmar'";
+        $item = "'".$correo."'";
+
+        //=========DATOS MODAL MODIFICAR=================
+        $textoModificar = "'Desea modificar cliente: '";
+        $funcionModificar = "'ModificarClient()'";
+        $textoBotonModificar = "'Modificar'";
+        $claseBotonModificar = "'guardarBotonModal'";
+
+      
+        //=========DATOS MODAL ELIMINAR=================
+        $textoEliminar = "'Desea eliminar cliente: '";
+        $funcionEliminar = "'eliminarClient()'";
+        $textoBotonEliminar = "'Eliminar'";
+        $claseBotonEliminar = "'eliminarBotonModal'";
+
+
+        //===============================================
         $interfazInfoUsuario = '
         <div class="contenedorCentradoResponsivo">
                 <div id="tituloContenedor">
@@ -39,7 +59,7 @@
                     </form> 
                     <label id="botonImg" for="inImg" style="display:none;"></label>
                     <button id="botonEditar" onclick=verPantallaModificar('."'".$infoCliente['email']."'".');>
-                    <button id="botonEliminar" onclick="eliminarClient();">
+                    <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
                     <button id="botonCancelar" style="display:none"  onclick="verPantallaInfoCliente('."'".$infoCliente['email']."'".')">
                     <div id="blah"> </div>
                 </div>
@@ -86,14 +106,7 @@
                     <textarea id="nota" onchange="arregloCambios[3] = 0;" disabled>'.$infoCliente['nota'].'</textarea>
                 </div>
                 <!-- Boton Final============================ -->
-                <button id="footerGuardar_Boton" onclick="infoModal(' 
-                    . "'" .     "confirmar"                                 . "'" . ',' 
-                    . "'" .     "Desea modificar el usuario: "              . "'" .',' 
-                    . "'" .     "ModificarClient()"                         . "'" . ',' 
-                    . "'" .     "Modificar"                                 . "'" . ',' 
-                    . "'" .     "document.getElementById('emailReg').value" . "'" . ',' 
-                    . "'" .     "guardarBotonModal"                         . "'" . ',' 
-                .');" style="margin:20px auto;">Guardar</button>
+                <button id="footerGuardar_Boton" onclick="infoModal('.$tipoModal.','.$textoModificar.','.$funcionModificar.','.$textoBotonModificar.','.$item.','.$claseBotonModificar.')" style="margin:20px auto;">Guardar</button>
                 <!-- ======================================= -->
             </div>
         </div>
