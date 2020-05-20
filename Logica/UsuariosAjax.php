@@ -98,7 +98,7 @@
             if($cambios[7] == 1){
                 $salida = $salida.$user->Modificar_Direccion($correo, $_POST['calle'], $_POST['entre'], $_POST['num'], $_POST['colonia'], $_POST['cp'], $_POST['ciudad']).", <b>Direccion</b>";
             }
-            if($cambios[8] == 1){//pendiente###########################################################################################
+            if($cambios[8] == 1){
                 $salida = $salida.$user->Modificar_img($correo, $_POST['img']).", <b>Imagen</b>";
             }
             //salida--------------------------------------------

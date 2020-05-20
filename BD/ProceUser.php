@@ -351,7 +351,8 @@
             $resultado = mysqli_query($mysqli, "select img_by_correo('".$correo."');");
             $rows = $resultado->fetch_array();
             $imgAnte = $rows[0];
-            $directorios->EliminarUnArchivo($correo, $imgAnte);
+            if($imgAnte != '')
+                $directorios->EliminarUnArchivo($correo, $imgAnte);
             $resultado->free();
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
