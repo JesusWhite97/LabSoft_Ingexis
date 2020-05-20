@@ -131,7 +131,7 @@
                         <div id="inContras" style="display:none;"  class="tarjetaBlanca">
                             <p class="titulo">Contraseña</p>
                             <div  class="inputEnLinea">
-                            <input type="password" id="contra1" value=""    onchange="arregloCambios[6]=1;">
+                            <input type="password" title="Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?&" id="contra1" value=""    onchange="arregloCambios[6]=1;">
                             <input type="password" id="contra2"  value=""   onchange="arregloCambios[6]=1;">
                             </div>
                             <div  class="inputEnLinea">
@@ -177,6 +177,7 @@
     function imprimir_registro_usuario(){
         $interfazRegistroUsuario = '
         <div class="contenedorCentradoResponsivo">
+                        <form action="" autocomplete="on">
                         <div id="tituloContenedor">
                         <div id="editarImagen" style=" background-size: cover; background-position: center;">
                         <form id="formImg">
@@ -233,7 +234,7 @@
                         <div id="inContras"  class="tarjetaBlanca">
                             <p class="titulo">Contraseña</p>
                             <div  class="inputEnLinea">
-                            <input type="password" id="contra1" value=""  class="registro">
+                            <input type="password" id="contra1" value="" title="Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?&" class="registro">
                             <input type="password" id="contra2"  value="" class="registro">
                             </div>
                             <div  class="inputEnLinea">
@@ -266,6 +267,7 @@
                             </div>
                         </div>
                         <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick="guardarUser()">Guardar</button>
+                        </form>
                 </div>
                 <div id="contenedorModal">
                 <div id="fondoModal"></div>

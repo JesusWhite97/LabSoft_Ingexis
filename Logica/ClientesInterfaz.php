@@ -78,7 +78,12 @@
                                 <p class="textoAyuda">ciudad</p>
                             </div>
                         </div>
-                            <button id="footerGuardar_Boton" onclick=verModalModificar(document.getElementById("emailReg").value)>Guardar</button>
+                        <!-- Datos De Notas========================== -->
+                        <div class="tarjetaBlanca">
+                            <label class="titulo">No hay notas</label>
+                            <textarea id="nota"></textarea>
+                        </div>
+                        <button id="footerGuardar_Boton" onclick=verModalModificar(document.getElementById("emailReg").value)>Guardar</button>
                     </div>
                 </div>
                 <!-- Modales========================== -->
@@ -154,8 +159,13 @@
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Colonia</p>
-                                <p class="textoAyuda">ciudad</p>
+                                <p class="textoAyuda">Ciudad</p>
                             </div>
+                        </div>
+                        <!-- Datos De Notas========================== -->
+                        <div class="tarjetaBlanca">
+                            <label class="titulo">No hay notas</label>
+                            <textarea id="nota"></textarea>
                         </div>
                         <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick = verModalGuardar(document.getElementById("emailReg").value)>Guardar</button>
                 </div>

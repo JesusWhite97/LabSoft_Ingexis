@@ -174,7 +174,7 @@ function modificarUsuario(cambios){
         url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
         type:"POST",
         async: false,
-        success:function(response){
+         success:function(response){
             console.log(response);
             var arrayResponse = JSON.parse(response);
             modificacionSalida = arrayResponse[0].validacion;
