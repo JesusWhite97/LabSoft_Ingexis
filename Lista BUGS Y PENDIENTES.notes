@@ -76,6 +76,12 @@ POR HACER:
 [√] modificar orden de modificacion por #paradoja de modificacion#
 [√] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
 [√] cambiar tamaño en BD de imagen, calle y numero de contacto
+[ ] crear tabla #obras#
+[ ] crear table #pruebas#
+[ ] crear table #muestras#
+[ ] crear paquete procedimientos completos para #obras#
+[ ] crear vistas para #obras y muestras#
+[ ] crear funciones para modificacion por id con referencia
 
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
