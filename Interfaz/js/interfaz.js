@@ -10,63 +10,36 @@ function verPantallaModificar(item){
     btnImg.style.display = "block";
     btnCancel.style.display = "block";
     btnEdit.style.display = "none";
-<<<<<<< HEAD
+
 
     // Validación por si existe  los campos contraseña los muestre
-    if (document.getElementById(divId)){
+    if (document.getElementById("inContras")){
       let divContras = document.getElementById("inContras");
       divContras.style.display = "block";
     }
-    
-    // Metodo para que se active cualquiere select que se tenga
-=======
-    btnFooterGuardar.style.display = "block";
-}
-//===================================================================================================
-//clon de la funcion anterior namas que para clientes
-function verPantallaEditar(item){
-  let arrayInputs = document.getElementsByTagName("input");
-    let btnImg = document.getElementById("botonImg");
-    let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
-    let btnGuardar = document.getElementById("botonGuardar");
-    let btnEdit = document.getElementById("botonEditar");
-    let btnDel = document.getElementById("botonEliminar");
-    let btnCancel = document.getElementById("botonCancelar");
-    let textoModalPregunta = document.getElementById("textoModalPregunta");
-    let botonEliminarModal = document.getElementById("botonEliminarModal");
-    let botonGuardarModal = document.getElementById("botonGuardarModal");
-    let correo = document.getElementById("emailReg");
-    let nota = document.getElementById("nota");
->>>>>>> f9cc4e7237e748c2993b9235c4fd488ec81efd53
-    selectModificar();
-
-
+      
     //Muestra recorre los arreglos de los tags input y textarea para agregar la clase registro y sean editables.
     let arrayInputs = document.getElementsByTagName("input");
     let arrayTextArea = document.getElementsByTagName("textArea");
     for(let i = 0; i < arrayInputs.length;i++){
       arrayInputs[i].classList.add("registro");
     }
-<<<<<<< HEAD
+
     for(let i = 0; i < arrayTextArea.length;i++){
-      arrayTextArea[i].classList.add("registro");
+      arrayTextArea[i].disabled = false;
     }
 
     //Quita la clase registro para que no se pueda modificar
     let correo = document.getElementById("correo");
     correo.classList.remove("registro");
+   
+   
+    
+    // Metodo para que se active cualquiere select que se tenga
+    selectModificar();
 
-    //Muestra boton de guardar en la parte inferior
-    let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
-=======
-    nota.classList.add("registro");
-    nota.disabled = false;
-    btnImg.style.display = "block";
-    btnCancel.style.display = "block";
-    botonGuardarModal.style.display = "block";
-    btnEdit.style.display = "none";
-    botonEliminarModal.style.display = "none";
->>>>>>> f9cc4e7237e748c2993b9235c4fd488ec81efd53
+     //Muestra boton de guardar en la parte inferior
+     let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
     btnFooterGuardar.style.display = "block";
 }
 //===================================================================================================

@@ -38,7 +38,7 @@
                         <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this); arregloCambios[4] = 1" value=""/>
                     </form> 
                     <label id="botonImg" for="inImg" style="display:none;"></label>
-                    <button id="botonEditar" onclick="verPantallaEditar('."'".$infoCliente['email']."'".');">
+                    <button id="botonEditar" onclick=verPantallaModificar('."'".$infoCliente['email']."'".');>
                     <button id="botonEliminar" onclick="eliminarClient();">
                     <button id="botonCancelar" style="display:none"  onclick="verPantallaInfoCliente('."'".$infoCliente['email']."'".')">
                     <div id="blah"> </div>
