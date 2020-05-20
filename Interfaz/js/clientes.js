@@ -114,7 +114,7 @@ function modificarCliente(cambios){
         emailReg: document.getElementById('emailReg').value
     };
     if(cambios[0]){
-        //pendiente para notassssssssssssssssssssssssssssssssssssssssssssss
+        postData.nota = document.getElementById('nota').nota;
     }
     if(cambios[1]){
         postData.correoA = correoActivo, 

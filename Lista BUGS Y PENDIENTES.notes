@@ -53,17 +53,19 @@ POR HACER:
 [√] agregar funcion eliminar clientes
 [√] agregar funcion modificar clientes
 [√] modificar orden de modificacion por #paradoja de modificacion#
-[ ] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
-[ ] cambiar tamaño en BD de imagen, calle y numero de contacto
+[√] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
+[√] cambiar tamaño en BD de imagen, calle y numero de contacto
 
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
 BUGS:
 [ ] Cargar una foto muy grande se rompe el sistema pero no muestra ningun error.
-[ ] No sale del modal al eliminar un !usuario!
+[√] No sale del modal al eliminar un !usuario!
 
 ------------------->RECORDATORIOS<--------------------
 [ ] Eliminar codigo que evita que se guarde el cache
 [ ] Quitar console.log
-
+!!!!!!!!!!!!!!!!!!!!!elemento y obserbaciones de la obra que se esta registrando
+!carga en kilos por cm Cuadrado!
+!ver obras anteriores del cliente!
 //con el comando Alt + l se marcan tareas.

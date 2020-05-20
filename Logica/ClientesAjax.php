@@ -43,7 +43,7 @@
             $cliente = new Cliente();
             $salida = '';
             //Formular Respuesta--------------------------------
-            $salida = $cliente->Insertar($_POST['tituloReg'], $_POST['nom_empr'], $_POST['rfc'], $_POST['direc'], $_POST['cod_pos'], $_POST['colonia'], $_POST['ciudad'], $_POST['nombre_contac'], $_POST['numero_contac'], $_POST['emailReg'], "aqui va la nota", $_POST['img']);
+            $salida = $cliente->Insertar($_POST['tituloReg'], $_POST['nom_empr'], $_POST['rfc'], $_POST['direc'], $_POST['cod_pos'], $_POST['colonia'], $_POST['ciudad'], $_POST['nombre_contac'], $_POST['numero_contac'], $_POST['emailReg'], $_POST['nota'], $_POST['img']);
             $_SESSION['Nuevo'] = $_POST['emailReg'];
             //salida--------------------------------------------
             $json[] =   
@@ -76,7 +76,7 @@
             $salida = '';
             //Formular Respuesta--------------------------------
             if($cambios[0]==1){
-                $salida = $salida.$cliente->Modificar_nota($correo, "aqui va nota");
+                $salida = $salida.$cliente->Modificar_nota($correo, $_POST["nota"]);
             }
             if($cambios[2]==1){
                 $salida = $salida.$cliente->Modificar_datosBasicos($correo, $_POST["titulo"], $_POST["nom_empr"], $_POST["rfc"]);

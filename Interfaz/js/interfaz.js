@@ -42,10 +42,13 @@ function verPantallaEditar(item){
     let botonEliminarModal = document.getElementById("botonEliminarModal");
     let botonGuardarModal = document.getElementById("botonGuardarModal");
     let correo = document.getElementById("emailReg");
+    let nota = document.getElementById("nota");
     selectModificar();
     for(let i = 0; i < arrayInputs.length;i++){
       arrayInputs[i].classList.add("registro");
     }
+    nota.classList.add("registro");
+    nota.disabled = false;
     btnImg.style.display = "block";
     btnCancel.style.display = "block";
     botonGuardarModal.style.display = "block";
@@ -63,8 +66,7 @@ function verPantallaEditar(item){
   }
 //===================================================================================================
 // Función para mostrar un modal con el boton de eliminar
- function verModalEliminar(item){
-   
+function verModalEliminar(item){
   let textoModalPregunta = document.getElementById("textoModalPregunta");
   let botonEliminarModal = document.getElementById("botonEliminarModal");
   let botonGuardarModal = document.getElementById("botonGuardarModal");
@@ -74,25 +76,21 @@ function verPantallaEditar(item){
   textoModalPregunta.innerHTML = "Desea eliminar <br><b>" + item + "</b> ?";
   openModal();
   
- }
+}
 //===================================================================================================
 // Función para mostrar un modal con el boton de modificar
- function verModalModificar(item){
-   
+function verModalModificar(item){
   let textoModalPregunta = document.getElementById("textoModalPregunta");
   let botonEliminarModal = document.getElementById("botonEliminarModal");
   let botonGuardarModal = document.getElementById("botonGuardarModal");
-
   botonGuardarModal.style.display = "block";
   botonEliminarModal.style.display = "none";
   textoModalPregunta.innerHTML = "Desea modificar <br><b>" + item + "</b> ?";
-  openModal();
-
- }
+  openModal("contenedorModal");
+}
 //===================================================================================================
 // Función para mostrar un modal con el boton de modificar
- function verModalGuardar(item){
-   
+function verModalGuardar(item){
   let textoModalPregunta = document.getElementById("textoModalPregunta");
   let botonGuardarModal = document.getElementById("botonGuardarModal");
 
@@ -100,7 +98,7 @@ function verPantallaEditar(item){
   textoModalPregunta.innerHTML = "Desea Guardar <br><b>" + item + "</b> ?";
   openModal();
 
- }
+}
 //===================================================================================================
 // Función para que una cambiar a una pantalla donde se muestra información sin campos modificables
 function verPantallaInfo(correo){
@@ -124,7 +122,7 @@ function selectModificar(){
       }
 }
 //===================================================================================================
- function tarjetaSeleccionada(item){
+function tarjetaSeleccionada(item){
   arrayTarjetasUsuarios = document.getElementsByClassName("contenedorTarjetaUsuario");
 
   for(let i = 0; i < arrayTarjetasUsuarios.length;i++){
@@ -135,7 +133,7 @@ function selectModificar(){
   tarjetaUser.style.border = "1px solid #fff";
   tarjetaUser.style["boxShadow"] = "0px 5px 4px 0px #fff";
 
- }
+}
 //===================================================================================================
 function infoModal(tipo,texto,funcion,textoBoton,item,claseBoton){
   let modal = document.getElementById('contenedorModal');
