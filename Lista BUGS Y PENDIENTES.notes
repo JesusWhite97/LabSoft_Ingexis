@@ -11,11 +11,16 @@ POR HACER:
         [ ] Responsividad FIX!!!!!
         [ ] Cargar HEADER desde php
         [ ] Quitar tarjeta usuario logueado y mostrar apodo y img en HEADER
+        [ ] Diseño de barra lateral de navegación tipo TO-DO
+        [ ] HTML Barra lateral de navegación
+        [ ] CSS Barra lateral de navegación
+        [ ] JS Barra lateral de navegación
+        [ ] Input quitar borde al seleccionar
 
     -->Validaciones
         [ ] Validación subir imagen (TAMAÑO)
         [ ] Formato número contacto " (612)-121-1723 " -->50%
-        [ ] Validación numero contacto(14 digitos, solo números)
+        [√] Validación numero contacto(14 digitos, solo números)
         [ ] Tip de contraseña  " Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?& "
         [√] Indicación casilla campo formato correcto: (onkeyup)
                     ->contraseña
@@ -29,9 +34,25 @@ POR HACER:
                     ->curp,
                     ->número contacto, 
                     ->correo
-                    [ ] ->Puesto:vdialogar funcionamiento de validación
+                    [ ] ->Puesto: option vacía para que el usuario tenga que seleccionar un puesto.
         [√] Indicar campos erroneos en interfaz (borde sombra color rojo)
         [√] No poder eliminar usuario logueado
+        [ ] MaxLenght campos
+                    [ ] ->Apodo                   60
+                    [ ] ->1er nombrev             20
+                    [ ] ->2do                     20  
+                    [ ] ->1er apellido            30
+                    [ ] ->2do apellido            30
+                    [ ] ->RFC                     13
+                    [ ] ->CURP                    18
+                    [ ] ->Telefono                14
+                    [ ] ->Correo                  50
+                    [ ] ->Calle Principal         50
+                    [ ] ->Calle entre             50
+                    [ ] ->Número de casa          10
+                    [ ] ->Código Postal           10
+                    [ ] ->Colonia                 50
+                    [ ] ->Ciudad                  50
 
 
 ===>Clientes

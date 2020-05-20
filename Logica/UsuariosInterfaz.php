@@ -75,7 +75,7 @@
         $interfazInfoUsuario = '
         <div class="contenedorCentradoResponsivo">
                         <div id="tituloContenedor">
-                            <div id="editarImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".'); background-size: cover; background-position: center;">
+                            <div id="editarImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".');">
                             <form id="formImg">
                                 <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this); arregloCambios[8]=1;" value=""/>
                             </form> 
@@ -225,7 +225,7 @@
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input id="cel" type="tel" class="registro required" id="telefono" placeholder="" onkeypress="javascript:return isNumberKey(event)" onkeyup=telNumberFormat("cel")>
+                            <input id="cel" type="tel" class="registro required" id="telefono" placeholder="" onkeypress="javascript:return isNumberKey(event)" onkeyup=telNumberFormat("cel") maxlength="14">
                             <p class="textoAyuda">*Número celular</p>
                             <input id="correo" type="text" class="registro required" id="correo" placeholder="" onkeyup=campoOK("correo",validaCorreoValido(document.getElementById("correo").value))>
                             <p class="textoAyuda">*Email</p>

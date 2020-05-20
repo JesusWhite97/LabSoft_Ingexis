@@ -5,13 +5,8 @@ function verPantallaModificar(item){
     let arrayInputs = document.getElementsByTagName("input");
     let btnImg = document.getElementById("botonImg");
     let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
-    let btnGuardar = document.getElementById("botonGuardar");
     let btnEdit = document.getElementById("botonEditar");
-    let btnDel = document.getElementById("botonEliminar");
     let btnCancel = document.getElementById("botonCancelar");
-    let textoModalPregunta = document.getElementById("textoModalPregunta");
-    let botonEliminarModal = document.getElementById("botonEliminarModal");
-    let botonGuardarModal = document.getElementById("botonGuardarModal");
     let divContras = document.getElementById("inContras");
     let correo = document.getElementById("correo");
     selectModificar();
@@ -22,11 +17,8 @@ function verPantallaModificar(item){
     btnImg.style.display = "block";
     divContras.style.display = "block";
     btnCancel.style.display = "block";
-    //botonGuardarModal.style.display = "block";
     btnEdit.style.display = "none";
-    //botonEliminarModal.style.display = "none";
     btnFooterGuardar.style.display = "block";
-    //textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
 }
 //===================================================================================================
 //clon de la funcion anterior namas que para clientes
