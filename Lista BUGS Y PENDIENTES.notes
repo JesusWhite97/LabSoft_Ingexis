@@ -9,6 +9,8 @@ POR HACER:
         [√] Botón #GUARDAR# en Info Usuarios
         [√] Scroll de tarjetas
         [ ] Responsividad FIX!!!!!
+        [ ] Cargar HEADER desde php
+        [ ] Quitar tarjeta usuario logueado y mostrar apodo y img en HEADER
 
     -->Validaciones
         [ ] Validación subir imagen (TAMAÑO)
@@ -24,6 +26,7 @@ POR HACER:
                     ->número contacto, 
                     ->correo
         [ ] Indicar campos erroneos en interfaz (borde sombra color rojo)
+        [ ] No poder eliminar usuario logueado
 
 
 ===>Clientes
