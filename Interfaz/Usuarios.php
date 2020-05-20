@@ -94,8 +94,7 @@
 			var ValidaCurp = curpValida(document.getElementById("curp").value.toUpperCase());
 			var ValidaRfc = validateRFC(document.getElementById("rfc").value.toUpperCase());
 			var ValidaCorreo = validaCorreoValido(document.getElementById("correo").value);
-			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true && ValidaCorreo == true && validaContraForm ==true)
-			{
+			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true && ValidaCorreo == true && validaContraForm ==true){
 				//----------------------------------------------------------------
 				infoModal('confirmar','Desea guardar el usuario:','guardarUser2()','Guardar',document.getElementById("correo").value,'guardarBotonModal');
 				//----------------------------------------------------------------
