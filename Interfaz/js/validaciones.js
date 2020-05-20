@@ -52,6 +52,7 @@ function validaCorreoValido(correo){
 }
 //======================================================================================================
 function validaContraFormat(Contra){
+    if(Contra != "" || Contra != null){
     var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,16}$/;
     //Se muestra un texto a modo de ejemplo, luego va a ser un icono
     if (Contra.match(regex)) {
@@ -60,4 +61,39 @@ function validaContraFormat(Contra){
         return false;
     }
 }
+}
+//======================================================================================================
+function camposRequeridos(){
+    var ok = true;
+    var requireds = document.getElementsByClassName("required");
+
+    for(var i = 0; i <  requireds.length; i++){
+              if(requireds[i].value == "" || requireds == null){
+                    ok = false;
+                    requireds[i].style.border = "1px solid #8B0000";
+                }else{
+                    requireds[i].style.border = "0px";
+                    requireds[i].style["border-bottom"]= "2px solid rgba(255, 255, 255, 0.5)";
+                }
+    }
+    return ok;
+}
+//======================================================================================================
+function isNumberKey(evt){
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode != 46 && charCode > 31 
+    && (charCode < 48 || charCode > 57))
+    return false;
+    return true;
+  } 
+
+//======================================================================================================
+function validaCoincideContra(contra1, contra2){
+    if(contra1 == contra2){
+        return true;
+    }else{
+        return false;
+    }
+}
+//======================================================================================================
 //======================================================================================================

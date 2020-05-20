@@ -99,7 +99,7 @@
                         <div class="tarjetaBlanca">
                             <p class="titulo">Datos personales</p>
                             <div class="inputEnLinea" >
-                                <input required type="text" id="nom1" value="'.$infoUsuario['nom1'].'" onchange="arregloCambios[2]=1;">
+                                <input  type="text" id="nom1" class="required" value="'.$infoUsuario['nom1'].'" onchange="arregloCambios[2]=1;">
                                 <input type="text" id="nom2" value="'.$infoUsuario['nom2'].'" onchange="arregloCambios[2]=1;">
                             </div>
                             <div class="inputEnLinea">
@@ -107,7 +107,7 @@
                                 <p class="textoAyuda">Segundo Nombre</p>
                             </div>
                             <div class="inputEnLinea" >
-                                <input required type="text" id="ape1" value="'.$infoUsuario['ape1'].'" onchange="arregloCambios[2]=1;">
+                                <input required type="text" id="ape1" class="required" value="'.$infoUsuario['ape1'].'" onchange="arregloCambios[2]=1;">
                                 <input type="text" id="ape2" value="'.$infoUsuario['ape2'].'" onchange="arregloCambios[2]=1;">
                             </div>
                             <div class="inputEnLinea" >
@@ -116,7 +116,7 @@
                             </div>
                             <input type="text" id="rfc" value="'.$infoUsuario['rfc'].'" onchange="arregloCambios[3]=1;">
                             <p class="textoAyuda" >RFC</p>
-                            <input required type="text" id="curp" value="'.$infoUsuario['curp'].'" onchange="arregloCambios[4]=1;">
+                            <input  type="text" id="curp" class="required" value="'.$infoUsuario['curp'].'" onchange="arregloCambios[4]=1;">
                             <p class="textoAyuda">CURP</p>
                         </div>
                         <!-- Datos de contacto=========================== -->
@@ -124,15 +124,15 @@
                             <p class="titulo">Contacto</p>
                             <input required type="tel" id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;">
                             <p class="textoAyuda">Número celular</p>
-                            <input required type="email" id="correo" value="'.$infoUsuario['correo'].'">
+                            <input required type="email" id="correo" class="required" value="'.$infoUsuario['correo'].'">
                             <p class="textoAyuda">Email</p>
                         </div>
                         <!-- Datos de contrseña=========================== -->
                         <div id="inContras" style="display:none;"  class="tarjetaBlanca">
                             <p class="titulo">Contraseña</p>
                             <div  class="inputEnLinea">
-                            <input type="password" title="Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?&" id="contra1" value=""    onchange="arregloCambios[6]=1;">
-                            <input type="password" id="contra2"  value=""   onchange="arregloCambios[6]=1;">
+                            <input type="password" title="Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?&" id="contra1" class="required" value=""    onchange="arregloCambios[6]=1;">
+                            <input type="password" id="contra2"c lass="required"  value=""   onchange="arregloCambios[6]=1;">
                             </div>
                             <div  class="inputEnLinea">
                             <p class="textoAyuda">Contraseña nueva</p>
@@ -196,50 +196,50 @@
                                 <option value="Laboratorista 1">Laboratorista 1</option>
                                 <option value="Laboratorista 2">Laboratorista 2</option>
                             </select>
-                        <p class="textoAyuda" style="text-align: center;">Puesto</p>
+                        <p class="textoAyuda" style="text-align: center;">*Puesto</p>
                         </div>
                         <!-- DatosPersonales ============================ -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Datos personales</p>
                             <div class="inputEnLinea" >
-                                <input id="nom1" type="text" class="registro" placeholder="">
+                                <input id="nom1" type="text" class="registro required" placeholder="">
                                 <input id="nom2" type="text" class="registro" placeholder="">
                             </div>
                             <div class="inputEnLinea">
-                                <p class="textoAyuda">Primer Nombre</p>
+                                <p class="textoAyuda">*Primer Nombre</p>
                                 <p class="textoAyuda">Segundo Nombre</p>
                             </div>
                             <div class="inputEnLinea" >
-                                <input id="ape1" type="text" class="registro" placeholder="">
+                                <input id="ape1" type="text" class="registro required" placeholder="">
                                 <input id="ape2" type="text" class="registro" placeholder="">
                             </div>
                             <div class="inputEnLinea" >
-                                    <p class="textoAyuda">Apellido Paterno</p>
+                                    <p class="textoAyuda">*Apellido Paterno</p>
                                     <p class="textoAyuda">Apellido Materno</p>
                             </div>
-                            <input id="rfc" type="text"class="registro mayus" placeholder="" >
+                            <input id="rfc" type="text"class="registro mayus" placeholder="" onkeyup=campoOK("rfc",validateRFC(document.getElementById("rfc").value))>
                             <p class="textoAyuda" >RFC</p>
-                            <input id="curp" type="text"class="registro mayus" placeholder="">
-                            <p class="textoAyuda">CURP</p>
+                            <input id="curp" type="text"class="registro mayus required" placeholder="" onkeyup=campoOK("curp",curpValida(document.getElementById("curp").value))>
+                            <p class="textoAyuda">*CURP</p>
                         </div>
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input id="cel" type="tel" class="registro" id="telefono" placeholder="">
-                            <p class="textoAyuda">Número celular</p>
-                            <input id="correo" type="text" class="registro" id="correo" placeholder="">
-                            <p class="textoAyuda">Email</p>
+                            <input id="cel" type="tel" class="registro required" id="telefono" placeholder="" onkeypress="javascript:return isNumberKey(event)" onkeyup=telNumberFormat("cel")>
+                            <p class="textoAyuda">*Número celular</p>
+                            <input id="correo" type="text" class="registro required" id="correo" placeholder="" onkeyup=campoOK("correo",validaCorreoValido(document.getElementById("correo").value))>
+                            <p class="textoAyuda">*Email</p>
                         </div>
                         <!-- Datos de contrseña=========================== -->
                         <div id="inContras"  class="tarjetaBlanca">
                             <p class="titulo">Contraseña</p>
                             <div  class="inputEnLinea">
-                            <input type="password" id="contra1" value="" title="Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?&" class="registro">
-                            <input type="password" id="contra2"  value="" class="registro">
+                            <input type="password" id="contra1" value="" onkeyup=campoOK("contra1",validaContraFormat(document.getElementById("contra1").value)) class="registro required">
+                            <input type="password" id="contra2"  value="" onkeyup=campoOK("contra2",validaCoincideContra(document.getElementById("contra1").value,document.getElementById("contra2").value)) class="registro required">
                             </div>
                             <div  class="inputEnLinea">
-                            <p class="textoAyuda">Contraseña nueva</p>
-                            <p class="textoAyuda">Confirmar contraseña nueva</p>
+                            <p class="textoAyuda">*Contraseña nueva</p>
+                            <p class="textoAyuda">*Confirmar contraseña nueva</p>
                             </div>
                         </div>
                         <!-- Datos De direccion========================== -->

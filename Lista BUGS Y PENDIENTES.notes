@@ -14,19 +14,24 @@ POR HACER:
 
     -->Validaciones
         [ ] Validación subir imagen (TAMAÑO)
-        [ ] Formato número contacto " (612)-121-1723 "
+        [ ] Formato número contacto " (612)-121-1723 " -->50%
         [ ] Validación numero contacto(14 digitos, solo números)
         [ ] Tip de contraseña  " Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?& "
-        [ ] Indicación casilla contraseña contraseña correcta (onkeyup)
+        [√] Indicación casilla campo formato correcto: (onkeyup)
+                    ->contraseña
+                    ->email
+                    ->curp
+                    ->rfc
         [ ] Quitar apodo en Mayus
-        [ ] Required: 
+        [√] Required: 
                     ->1er nombre, 
                     ->1er apellido, 
                     ->curp,
                     ->número contacto, 
                     ->correo
-        [ ] Indicar campos erroneos en interfaz (borde sombra color rojo)
-        [ ] No poder eliminar usuario logueado
+                    [ ] ->Puesto:vdialogar funcionamiento de validación
+        [√] Indicar campos erroneos en interfaz (borde sombra color rojo)
+        [√] No poder eliminar usuario logueado
 
 
 ===>Clientes

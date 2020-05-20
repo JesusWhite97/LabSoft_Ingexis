@@ -182,3 +182,33 @@ function noScrollModal() {
   window.scrollTo(y1, y2);
 }
 //===================================================================================================
+function campoOK(id,ok){
+  campo = document.getElementById(id);
+  
+  if(ok==false){
+     campo.style.border = "1px solid #8B0000";
+  }else{
+     campo.style.border = "1px solid #008000";
+  }
+}
+//===================================================================================================
+ var noMasNumeros = '';
+function telNumberFormat(id){
+   let numeroTel = document.getElementById(id);
+    
+  
+  if(numeroTel.value.length == 10){
+    numeroTel.value = '('+numeroTel.value.slice(0,-7)+')-'+numeroTel.value.slice(3,-4)+'-'+numeroTel.value.slice(6);
+    noMasNumeros = numeroTel.value;
+  }
+  if(numeroTel.value.length > 13){
+    numeroTel.value = noMasNumeros;
+  }
+  
+
+
+
+  
+
+}
+//===================================================================================================

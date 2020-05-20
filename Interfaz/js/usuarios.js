@@ -98,7 +98,13 @@ function guardarUsuario(){
 }
 //=================================================================================================
 function eliminarUsuario(){
+    let correoLOG = usuarioLog();
     let correo = document.getElementById("correo").value
+
+    if(correo == correoLOG){
+    infoModal('respuesta','No se puede eliminar el usuario que inicio sesión:',"closeModal('contenedorModal')",'OK','"'+correo+'"','ninguna');
+    }else{
+
     let respuestaServidor = "No contesto";
     postData = {
         metodo: "eliminarUsuario",
@@ -123,6 +129,7 @@ function eliminarUsuario(){
     })
     var correoScript = usuarioLog();
     infoModal('respuesta',respuestaServidor,"cargarInterfazUsuarios('','1111','"+correoScript+"')",'OK','"'+correo+'"','ninguna');
+}
 }
 //=================================================================================================
 function modificarUsuario(cambios){
@@ -183,13 +190,7 @@ function modificarUsuario(cambios){
 
 }
 //=================================================================================================
-function validaCoincideContra(contra1, contra2){
-    if(contra1 == contra2){
-        return true;
-    }else{
-        return false;
-    }
-}
+
 //=================================================================================================
 function filtrado(){
     var checkAdmon = document.getElementById("admon");

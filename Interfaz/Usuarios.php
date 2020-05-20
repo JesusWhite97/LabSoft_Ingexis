@@ -89,6 +89,9 @@
 		}
 		// --------------------------------------
 		function guardarUser(){
+			if(camposRequeridos()== false){
+				infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+    		}else{
 			var ValidaContra = validaCoincideContra(document.getElementById("contra1").value, document.getElementById("contra2").value);
 			var validaContraForm = validaContraFormat(document.getElementById("contra1").value);
 			var ValidaCurp = curpValida(document.getElementById("curp").value.toUpperCase());
@@ -107,6 +110,7 @@
 				(ValidaCorreo	? '' : 'El Correo no tiene el formato correcto.<br>');
 				infoModal('respuesta',alerta,"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
 			}
+		}
 		}
 		function guardarUser2(){
 			correoNuevo = document.getElementById("correo").value;
