@@ -2,49 +2,42 @@
 // Función para que una cambiar a una pantalla con campos modificables
 
 function verPantallaModificar(item){
+
+ // muestra botones opciones parte superior
+    let btnEdit = document.getElementById("botonEditar");
+    let btnCancel = document.getElementById("botonCancelar");
+    let btnImg = document.getElementById("botonImg");
+    btnImg.style.display = "block";
+    btnCancel.style.display = "block";
+    btnEdit.style.display = "none";
+
+    // Validación por si existe  los campos contraseña los muestre
+    if (document.getElementById(divId)){
+      let divContras = document.getElementById("inContras");
+      divContras.style.display = "block";
+    }
+    
+    // Metodo para que se active cualquiere select que se tenga
+    selectModificar();
+
+
+    //Muestra recorre los arreglos de los tags input y textarea para agregar la clase registro y sean editables.
     let arrayInputs = document.getElementsByTagName("input");
-    let btnImg = document.getElementById("botonImg");
-    let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
-    let btnEdit = document.getElementById("botonEditar");
-    let btnCancel = document.getElementById("botonCancelar");
-    let divContras = document.getElementById("inContras");
+    let arrayTextArea = document.getElementsByTagName("textArea");
+    for(let i = 0; i < arrayInputs.length;i++){
+      arrayInputs[i].classList.add("registro");
+    }
+    for(let i = 0; i < arrayTextArea.length;i++){
+      arrayTextArea[i].classList.add("registro");
+    }
+
+    //Quita la clase registro para que no se pueda modificar
     let correo = document.getElementById("correo");
-    selectModificar();
-    for(let i = 0; i < arrayInputs.length;i++){
-      arrayInputs[i].classList.add("registro");
-    }
     correo.classList.remove("registro");
-    btnImg.style.display = "block";
-    divContras.style.display = "block";
-    btnCancel.style.display = "block";
-    btnEdit.style.display = "none";
-    btnFooterGuardar.style.display = "block";
-}
-//===================================================================================================
-//clon de la funcion anterior namas que para clientes
-function verPantallaEditar(item){
-  let arrayInputs = document.getElementsByTagName("input");
-    let btnImg = document.getElementById("botonImg");
+
+    //Muestra boton de guardar en la parte inferior
     let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
-    let btnGuardar = document.getElementById("botonGuardar");
-    let btnEdit = document.getElementById("botonEditar");
-    let btnDel = document.getElementById("botonEliminar");
-    let btnCancel = document.getElementById("botonCancelar");
-    let textoModalPregunta = document.getElementById("textoModalPregunta");
-    let botonEliminarModal = document.getElementById("botonEliminarModal");
-    let botonGuardarModal = document.getElementById("botonGuardarModal");
-    let correo = document.getElementById("emailReg");
-    selectModificar();
-    for(let i = 0; i < arrayInputs.length;i++){
-      arrayInputs[i].classList.add("registro");
-    }
-    btnImg.style.display = "block";
-    btnCancel.style.display = "block";
-    botonGuardarModal.style.display = "block";
-    btnEdit.style.display = "none";
-    botonEliminarModal.style.display = "none";
     btnFooterGuardar.style.display = "block";
-    textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
 }
 //===================================================================================================
   function infoModal(claseBoton, textoModal, textoBoton, metodo){
