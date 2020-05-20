@@ -105,7 +105,7 @@
 				cargarTarjetas('');
 				cargarInfo(correoNuevo);
 			}else{
-				alert("Modificacion Existosa.");
+				alert("<br>- Modificado");
 				closeModal();
 				cargarInfo(correoNuevo);
 			}

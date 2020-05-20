@@ -104,9 +104,9 @@
             //============================
             $query = "CALL Clientes_mod_nota('".$correo."', '".$nota."')";
             if($mysqli->query($query)===TRUE){
-                return "modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -121,9 +121,9 @@
             if($mysqli->query($query)===TRUE){
                 if($correoA != $correoN)
                     $directorios->CambiarNameDirec($correoA, $correoN);
-                return "modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -135,9 +135,9 @@
             //============================
             $query = "CALL Clientes_mod_Dbasicos('".$correo."', '".$titulo."', '".$nomEmpresa."', '".$RFC."')";
             if($mysqli->query($query)===TRUE){
-                return "modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -149,9 +149,9 @@
             //============================
             $query = "CALL Clientes_mod_direccion('".$correo."', '".$direccion."', '".$cod_post."', '".$colonia."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
-                return "modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -173,9 +173,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Clientes_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
-                return "modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }

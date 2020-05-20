@@ -227,9 +227,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_contra_admin('".$correo."', '".$nueva."');";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }   
             //============================
         }
@@ -242,9 +242,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_puesto('".$correo."', '".$puesto."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -257,9 +257,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_nombre('".$correo."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -272,9 +272,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_curp('".$correo."', '".$curp."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -287,9 +287,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_rfc('".$correo."', '".$rfc."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -302,9 +302,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_apodo('".$correo."', '".$apodo."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -317,9 +317,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Telefono('".$correo."', '".$telefono."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -333,9 +333,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -357,9 +357,9 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }

@@ -265,7 +265,7 @@
                                 <p class="textoAyuda">Ciudad</p>
                             </div>
                         </div>
-                        <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick = verModalGuardar(document.getElementById("correo").value)>Guardar</button>
+                        <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick="guardarUser()">Guardar</button>
                 </div>
                 <div id="contenedorModal">
                 <div id="fondoModal"></div>

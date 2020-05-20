@@ -120,8 +120,8 @@ function eliminarUsuario(){
             }
 
         }
-    });
-    infoModal('respuesta',respuestaServidor,"cargarInterfazUsuarios('','1111','<?php echo $_SESSION['correo'] ?>')",'OK','"'+correoNuevo+"'",'ninguna');
+    })
+    infoModal('respuesta',respuestaServidor,"cargarInterfazUsuarios('','1111',<?php echo $_SESSION['correo'] ?>)",'OK','"'+correo+'"','ninguna');
 }
 //=================================================================================================
 function modificarUsuario(cambios){

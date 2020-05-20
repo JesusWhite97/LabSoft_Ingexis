@@ -36,6 +36,10 @@
 			cargarInterfazUsuarios('','1111','<?php echo $_SESSION['correo'] ?>');
 		}
 		// --------------------------------------
+		function usuarioLog(){
+			return '<?php echo $_SESSION['correo'] ?>';
+		}
+		// --------------------------------------
 		var flag = true;
 		function mostrarOpciones(){
 			let contenedorBuscador = document.getElementById("contenedorBuscador");
@@ -93,32 +97,34 @@
 			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true && ValidaCorreo == true && validaContraForm ==true)
 			{
 				//----------------------------------------------------------------
-				guardarUsuario();
-				if(salidaUsuario == 'true'){
-					subirImg();
-					if(respuestaSubirIMG != 'NO'){
-						alert('Usuario registrado con exito 🤘.');
-					}else{
-						eliminarUsuario();
-						if(eliminarUsuario == 'true'){
-							alert('error al registrar Usuario: ' + errorSubirIMG);
-						}
-					}
-				}
-				var correoNuevo = document.getElementById("correo").value;
-				this.cargarTarjetas('','1111');
-				cargarInfo(correoNuevo);
+				infoModal('confirmar','Desea guardar el usuario:','guardarUser2()','Guardar',document.getElementById("correo").value,'guardarBotonModal');
 				//----------------------------------------------------------------
 			}
 			else{
-				closeModal();
-				var alerta = 		   'Error en los siguientes campos:\n' + 
-				(ValidaContra 	? validaContraForm ? '' : 'El formato para lo contraseña es incorreco.\n' : 'Las contraseñas no coinciden.\n') +
-				(ValidaCurp 	? '' : 'El curp no tiene el formato correcto.\n') +
-				(ValidaRfc 		? '' : 'El rfc no tiene el formato correcto.\n') +
-				(ValidaCorreo	? '' : 'El Correo no tiene el formato correcto.\n');
-				alert(alerta);
+				var alerta = 		   '<b>Error en los siguientes campos:</b><br>' + 
+				(ValidaContra 	? validaContraForm ? '' : 'El formato para lo contraseña es incorreco.<br>' : 'Las contraseñas no coinciden.<br>') +
+				(ValidaCurp 	? '' : 'El curp no tiene el formato correcto.<br>') +
+				(ValidaRfc 		? '' : 'El rfc no tiene el formato correcto.<br>') +
+				(ValidaCorreo	? '' : 'El Correo no tiene el formato correcto.<br>');
+				infoModal('respuesta',alerta,"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
 			}
+		}
+		function guardarUser2(){
+			correoNuevo = document.getElementById("correo").value;
+			guardarUsuario();
+				if(salidaUsuario == 'true'){
+					subirImg();
+					if(respuestaSubirIMG != 'NO'){
+						infoModal('respuesta','Usuario registrado con exito 🤘.',"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK',correoNuevo,'ninguna');
+					}else{
+						eliminarUsuario();
+						if(eliminarUsuario == 'true'){
+							infoModal('respuesta','error al registrar Usuario: ' + errorSubirIMG,"closeModal('contenedorModal')",'OK',correoNuevo,'ninguna');
+						}
+					}
+				}else{
+					infoModal('respuesta',salidaUsuario,"closeModal('contenedorModal')",'OK','No hay registro','ninguna');
+				}
 		}
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
