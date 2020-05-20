@@ -2,16 +2,36 @@
 
 POR HACER:
 ========================>TAPIZ<=======================
-[ ] Validación subir imagen
-[√] Transición OK
-[√] Botón #GUARDAR# en Info Usuarios
-[√] Scroll de tarjetas
-[ ] ver la edicion de correo en #clientes#
-[ ] Agregar a #clientes# campo notas
-[ ] Responsividad de pantallas #Usuarios# y #Clientes# 
-[ ] Marcar tarjeta seleccionada  #Clientes#
-[ ] Agregar Ver contraseña en pantalla agregar usuario
-[ ] agregar modal eliminar al boton en #clinetes#
+
+===>Usuarios
+    -->Interfaz
+        [√] Transición OK
+        [√] Botón #GUARDAR# en Info Usuarios
+        [√] Scroll de tarjetas
+
+    -->Validaciones
+        [ ] Validación subir imagen (TAMAÑO)
+        [ ] Formato número contacto " (612)-121-1723 "
+        [ ] Validación numero contacto(14 digitos, solo números)
+        [ ] Tip de contraseña  " Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?& "
+        [ ] Indicación casilla contraseña contraseña correcta (onkeyup)
+        [ ] Quitar apodo en Mayus
+        [ ] Required: 
+                    ->1er nombre, 
+                    ->1er apellido, 
+                    ->curp, número contacto, 
+                    ->correo
+        [ ] Indicar campos erroneos en interfaz (borde sobra color rojo)
+
+
+===>Clientes
+        [ ] ver la edicion de correo en #clientes#
+        [ ] Agregar a #clientes# campo notas
+        [ ] Responsividad de pantallas #Usuarios# y #Clientes# 
+        [ ] Marcar tarjeta seleccionada  #Clientes#
+        [ ] Agregar Ver contraseña en pantalla agregar usuario
+        [ ] agregar modal eliminar al boton en #clinetes#
+
 
 =====================>JESUS WHITE<====================
 [√] Cambiar id de campos en pantalla clientes #tarjetas#
@@ -24,6 +44,7 @@ POR HACER:
 [√] agregar funcion modificar clientes
 [√] modificar orden de modificacion por #paradoja de modificacion#
 [ ] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
+[ ] cambiar tamaño en BD de imagen, calle y numero de contacto
 
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!

@@ -122,7 +122,7 @@
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input required type="tel"id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;">
+                            <input required type="tel" id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;">
                             <p class="textoAyuda">Número celular</p>
                             <input required type="email" id="correo" value="'.$infoUsuario['correo'].'">
                             <p class="textoAyuda">Email</p>
@@ -225,7 +225,7 @@
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input id="cel" type="text" class="registro" id="telefono" placeholder="">
+                            <input id="cel" type="tel" class="registro" id="telefono" placeholder="">
                             <p class="textoAyuda">Número celular</p>
                             <input id="correo" type="text" class="registro" id="correo" placeholder="">
                             <p class="textoAyuda">Email</p>
