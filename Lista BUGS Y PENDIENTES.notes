@@ -8,6 +8,7 @@ POR HACER:
         [√] Transición OK
         [√] Botón #GUARDAR# en Info Usuarios
         [√] Scroll de tarjetas
+        [ ] Responsividad FIX!!!!!
 
     -->Validaciones
         [ ] Validación subir imagen (TAMAÑO)
@@ -19,9 +20,10 @@ POR HACER:
         [ ] Required: 
                     ->1er nombre, 
                     ->1er apellido, 
-                    ->curp, número contacto, 
+                    ->curp,
+                    ->número contacto, 
                     ->correo
-        [ ] Indicar campos erroneos en interfaz (borde sobra color rojo)
+        [ ] Indicar campos erroneos en interfaz (borde sombra color rojo)
 
 
 ===>Clientes
@@ -54,5 +56,6 @@ BUGS:
 
 ------------------->RECORDATORIOS<--------------------
 [ ] Eliminar codigo que evita que se guarde el cache
+[ ] Quitar console.log
 
 //con el comando Alt + l se marcan tareas.
