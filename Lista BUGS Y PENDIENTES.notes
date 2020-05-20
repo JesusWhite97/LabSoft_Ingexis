@@ -11,10 +11,10 @@ POR HACER:
         [ ] Responsividad FIX!!!!!
         [ ] Cargar HEADER desde php
         [ ] Quitar tarjeta usuario logueado y mostrar apodo y img en HEADER
-        [ ] Diseño de barra lateral de navegación tipo TO-DO
-        [ ] HTML Barra lateral de navegación
-        [ ] CSS Barra lateral de navegación
-        [ ] JS Barra lateral de navegación
+        [ ] Diseño de barra superior de navegación tipo Facebook
+        [ ] HTML Barra  de navegación
+        [ ] CSS Barra de navegación
+        [ ] JS Barra de navegación
         [ ] Input quitar borde al seleccionar
 
     -->Validaciones

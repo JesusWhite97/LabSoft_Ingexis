@@ -30,17 +30,17 @@ function verPantallaModificar(item){
     }
 
     //Quita la clase registro para que no se pueda modificar
-    let correo = document.getElementById("correo");
-    correo.classList.remove("registro");
-   
-   
+    if(document.getElementById("correo")){
+      let correo = document.getElementById("correo");
+      correo.classList.remove("registro");
+    }
     
     // Metodo para que se active cualquiere select que se tenga
     selectModificar();
 
      //Muestra boton de guardar en la parte inferior
      let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
-    btnFooterGuardar.style.display = "block";
+      btnFooterGuardar.style.display = "block";
 }
 //===================================================================================================
   function infoModal(claseBoton, textoModal, textoBoton, metodo){

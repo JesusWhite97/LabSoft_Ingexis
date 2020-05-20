@@ -698,6 +698,10 @@ body {
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
 }
 
+textarea:focus, input:focus {
+  outline: none;
+}
+
 #tituloContenedor {
   -ms-grid-row-align: center;
       align-self: center;

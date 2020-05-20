@@ -533,6 +533,9 @@ body{
         box-shadow: $colorSombras;
     }
 }
+textarea:focus, input:focus{
+    outline: none;
+}
 #tituloContenedor{
 
     align-self: center;
