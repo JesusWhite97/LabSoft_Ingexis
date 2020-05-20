@@ -94,7 +94,7 @@
                         </div>
                 </div>
                 <!-- Modales========================== -->
-                <div id="contenedorModalEliminado">
+                <div id="contenedorModal">
                     <div id="fondoModal"></div>
                         <div class="modal">
                             <p class="textoModal" id="textoExito">
@@ -169,7 +169,7 @@
                     <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
                 </div>
             </div>
-            <div id="contenedorModalEliminado">
+            <div id="contenedorModal">
                 <div id="fondoModal"></div>
                 <div class="modal">
                     <p class="textoModal" id="textoExito">

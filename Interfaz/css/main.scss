@@ -1428,7 +1428,7 @@ body{
     pointer-events: none;
 }
 /* ======================================================== */
-#contenedorModal, #contenedorModalEliminado{
+#contenedorModal{
     position: fixed;
     top:450px;
     display: grid;
@@ -1483,12 +1483,13 @@ body{
         text-align: center;
     }
     .eliminarBotonModal{
+        display: block;
         grid-column: 1 / span 1;
         grid-row: 2 / span 1;
         width: 95px;
         height: 31px;
         text-align: center;
-        font-family: Lato;
+        font-family: $fuente;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -1500,12 +1501,13 @@ body{
         border:  0px;
     }
     .guardarBotonModal{
+        display: block;
         grid-column: 1 / span 1;
         grid-row: 2 / span 1;
         width: 95px;
         height: 31px;
         text-align: center;
-        font-family: Lato;
+        font-family: $fuente;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -1517,6 +1519,7 @@ body{
         border:  0px;
         }
     .cancelarBotonModal{
+        display: block;
         grid-column: 2 / span 1;
         grid-row: 2 / span 1;
         color: rgba(238,0,0,1);
@@ -1529,6 +1532,7 @@ body{
         box-shadow: 0px 3px 6px rgba(80, 6, 6, 0.451);
     }
     .OK{
+        display: block;
         grid-column: 1 / span 2;
         grid-row: 2 / span 1;
         font-size: 24px;

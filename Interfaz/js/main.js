@@ -45,25 +45,10 @@ function openNav() {
     flag = 0;
   } 
 }
-function openModal(item) {
-    document.getElementById("contenedorModal").style.height = "100%";
-    window.addEventListener('scroll', noScrollModal);
-}
-
-function closeModal(){
-  document.getElementById("contenedorModal").style.height = "0%";
-  window.removeEventListener('scroll', noScrollModal);
-} 
 
 
-function noScroll() {
-  window.scrollTo(0, 0);
-}
-function noScrollModal() {
-  var y1 = document.getElementById("contenedorModal").offsetTop;
-  var y2 = y1 + document.getElementById("contenedorModal").height;
-  window.scrollTo(y1, y2);
-}
+
+
 
 function mostrarInput(dias,contenedorBtn,btnReg){
   var input = document.getElementById(dias);
@@ -137,7 +122,7 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
 //       let arrayResponse = JSON.parse(response);
 //       document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
 //       document.getElementById("contenedorModal").style.height = "0%";
-//       document.getElementById("contenedorModalEliminado").style.height = "100%";
+//       document.getElementById("contenedorModal").style.height = "100%";
 //       window.addEventListener('scroll', noScrollModal);
 
 //     });
@@ -222,14 +207,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
     //     let arrayResponse = JSON.parse(response);
     //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
     //     document.getElementById("contenedorModal").style.height = "0%";
-    //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+    //     document.getElementById("contenedorModal").style.height = "100%";
     //     window.addEventListener('scroll', noScrollModal);
   
     //   });
     // }else{
     //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
     //   document.getElementById("contenedorModal").style.height = "0%";
-    //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+    //   document.getElementById("contenedorModal").style.height = "100%";
     //   window.addEventListener('scroll', noScrollModal);
 
     // }
@@ -289,14 +274,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
   //     let arrayResponse = JSON.parse(response);
   //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
   //     document.getElementById("contenedorModal").style.height = "0%";
-  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     document.getElementById("contenedorModal").style.height = "100%";
   //     window.addEventListener('scroll', noScrollModal);
 
   //   });
   // }else{
   //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
   //   document.getElementById("contenedorModal").style.height = "0%";
-  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   document.getElementById("contenedorModal").style.height = "100%";
   //   window.addEventListener('scroll', noScrollModal);
 
   // }
@@ -330,14 +315,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
   //     let arrayResponse = JSON.parse(response);
   //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
   //     document.getElementById("contenedorModal").style.height = "0%";
-  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     document.getElementById("contenedorModal").style.height = "100%";
   //     window.addEventListener('scroll', noScrollModal);
 
   //   });
   // }else{
   //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
   //   document.getElementById("contenedorModal").style.height = "0%";
-  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   document.getElementById("contenedorModal").style.height = "100%";
   //   window.addEventListener('scroll', noScrollModal);
 
   // }
@@ -378,14 +363,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
   //     let arrayResponse = JSON.parse(response);
   //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
   //     document.getElementById("contenedorModal").style.height = "0%";
-  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     document.getElementById("contenedorModal").style.height = "100%";
   //     window.addEventListener('scroll', noScrollModal);
 
   //   });
   // }else{
   //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
   //   document.getElementById("contenedorModal").style.height = "0%";
-  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   document.getElementById("contenedorModal").style.height = "100%";
   //   window.addEventListener('scroll', noScrollModal);
 
   // }
@@ -400,7 +385,7 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
 //       let arrayResponse = JSON.parse(response);
 //       document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
 //       document.getElementById("contenedorModal").style.height = "0%";
-//       document.getElementById("contenedorModalEliminado").style.height = "100%";
+//       document.getElementById("contenedorModal").style.height = "100%";
 //       window.addEventListener('scroll', noScrollModal);
 
 //     });
@@ -414,7 +399,7 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
 //     let arrayResponse = JSON.parse(response);
 //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
 //     document.getElementById("contenedorModal").style.height = "0%";
-//     document.getElementById("contenedorModalEliminado").style.height = "100%";
+//     document.getElementById("contenedorModal").style.height = "100%";
 //     window.addEventListener('scroll', noScrollModal);
 
 //   });

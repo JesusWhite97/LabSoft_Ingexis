@@ -26,9 +26,28 @@
     function imprimir_info_usuario($correo){
         $Usuario = new Usuario();
         $infoUsuario = $Usuario->VistaCompleta($correo);
-        $imgUsuario = $Usuario->Info_Correo($correo);
 
+        $imgUsuario = $Usuario->Info_Correo($correo);
         $optionsPuesto = "";
+
+        //=========DATOS MODAL=================
+        $tipoModal = "'confirmar'";
+        $item = "'".$correo."'";
+
+        //=========DATOS MODAL MODIFICAR=================
+        $textoModificar = "'Desea modificar usuario: '";
+        $funcionModificar = "'modificarUser()'";
+        $textoBotonModificar = "'Modificar'";
+        $claseBotonModificar = "'guardarBotonModal'";
+
+      
+        //=========DATOS MODAL ELIMINAR=================
+        $textoEliminar = "'Desea eliminar usuario: '";
+        $funcionEliminar = "'eliminarUsuario()'";
+        $textoBotonEliminar = "'Eliminar'";
+        $claseBotonEliminar = "'eliminarBotonModal'";
+
+     
 
         if($infoUsuario["puesto"] == "Administrador"){
             $optionsPuesto = '<option selected value="Administrador">Administrador</option>';
@@ -62,7 +81,7 @@
                             </form> 
                             <label id="botonImg" for="inImg" style="display:none;"></label>
                             <button id="botonEditar" onclick=verPantallaModificar(document.getElementById("correo").value)>
-                            <button id="botonEliminar" onclick=verModalEliminar(document.getElementById("correo").value)>
+                            <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
                             <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) >
                             <div id="blah"> </div>
                         </div>
@@ -144,31 +163,13 @@
                                 <p class="textoAyuda">ciudad</p>
                             </div>
                         </div>
-                            <button id="footerGuardar_Boton" onclick=verModalModificar(document.getElementById("correo").value)>Guardar</button>
+                            <button id="footerGuardar_Boton" onclick="infoModal('.$tipoModal.','.$textoModificar.','.$funcionModificar.','.$textoBotonModificar.','.$item.','.$claseBotonModificar.')">Guardar</button>
                     </div>
                 </div>
                 
                 <div id="contenedorModal">
-                    <div id="fondoModal"></div>
-                        <div class="modal">
-                            <p id ="textoModalPregunta" class="textoModal">
-                                ¿Desea?
-                            </p>
-                            <button id ="botonEliminarModal"class="eliminarBotonModal" onclick=eliminarUsuario();>Eliminar</button>
-                            <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=modificarUser()>Modificar</button>
-                            <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
-                        </div>
                 </div>
-                <div id="contenedorModalEliminado">
-                    <div id="fondoModal"></div>
-                        <div class="modal">
-                            <p class="textoModal" id="textoExito">
-                                Usuario eliminado
-                            </p>
-                            <button class="OK" onclick=verPantallaInfo()>OK</button>
-                        </div>
-                        
-                </div>
+
         ';
         return $interfazInfoUsuario;
     }
@@ -276,7 +277,7 @@
                     <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
                 </div>
             </div>
-            <div id="contenedorModalEliminado">
+            <div id="contenedorModal">
                 <div id="fondoModal"></div>
                 <div class="modal">
                     <p class="textoModal" id="textoExito">

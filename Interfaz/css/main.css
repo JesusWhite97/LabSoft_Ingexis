@@ -1819,7 +1819,7 @@ body {
 }
 
 /* ======================================================== */
-#contenedorModal, #contenedorModalEliminado {
+#contenedorModal {
   position: fixed;
   top: 450px;
   display: -ms-grid;
@@ -1839,7 +1839,7 @@ body {
   overflow-y: hidden;
 }
 
-#contenedorModal #fondoModal, #contenedorModalEliminado #fondoModal {
+#contenedorModal #fondoModal {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
@@ -1854,7 +1854,7 @@ body {
   -webkit-backdrop-filter: blur(50px);
 }
 
-#contenedorModal .modal, #contenedorModalEliminado .modal {
+#contenedorModal .modal {
   z-index: 21;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
@@ -1888,7 +1888,7 @@ body {
   text-align: center;
 }
 
-#contenedorModal .textoModal, #contenedorModalEliminado .textoModal {
+#contenedorModal .textoModal {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -1905,7 +1905,8 @@ body {
   text-align: center;
 }
 
-#contenedorModal .eliminarBotonModal, #contenedorModalEliminado .eliminarBotonModal {
+#contenedorModal .eliminarBotonModal {
+  display: block;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
@@ -1915,7 +1916,7 @@ body {
   width: 95px;
   height: 31px;
   text-align: center;
-  font-family: Lato;
+  font-family: "Segoe UI", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -1927,7 +1928,8 @@ body {
   border: 0px;
 }
 
-#contenedorModal .guardarBotonModal, #contenedorModalEliminado .guardarBotonModal {
+#contenedorModal .guardarBotonModal {
+  display: block;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
@@ -1937,7 +1939,7 @@ body {
   width: 95px;
   height: 31px;
   text-align: center;
-  font-family: Lato;
+  font-family: "Segoe UI", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -1949,7 +1951,8 @@ body {
   border: 0px;
 }
 
-#contenedorModal .cancelarBotonModal, #contenedorModalEliminado .cancelarBotonModal {
+#contenedorModal .cancelarBotonModal {
+  display: block;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / span 1;
@@ -1966,7 +1969,8 @@ body {
   box-shadow: 0px 3px 6px rgba(80, 6, 6, 0.451);
 }
 
-#contenedorModal .OK, #contenedorModalEliminado .OK {
+#contenedorModal .OK {
+  display: block;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;

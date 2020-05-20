@@ -33,8 +33,7 @@
 	<script>
 		// --------------------------------------
 		window.onload = function(){
-			this.cargarTarjetas('','1111');
-			cargarInfo('<?php echo $_SESSION['correo'] ?>');
+			cargarInterfazUsuarios('','1111','<?php echo $_SESSION['correo'] ?>');
 		}
 		// --------------------------------------
 		var flag = true;
@@ -133,12 +132,10 @@
 					}
 				}
 				modificarUsuario(arregloCambios);
-				alert(modificacionSalida);
+				infoModal('respuesta',modificacionSalida,"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK','"'+correoNuevo+"'",'ninguna');
 				arregloCambios = Array(0,0,0,0,0,0,0,0,0);
-				this.cargarTarjetas('','1111');
-				cargarInfo(correoNuevo);
 			}else{
-				closeModal();
+				closeModal('contenedorModal');
 				cargarInfo(correoNuevo);
 			}
 		}
@@ -188,7 +185,7 @@
                                 </div>
             </div>
 					
-			<div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
+			<div id="contenedorGridResponsivo"> 
 			</div>
 		</div>
 		<!-- 11111111111111111111111 -->

@@ -22,11 +22,11 @@ function verPantallaModificar(item){
     btnImg.style.display = "block";
     divContras.style.display = "block";
     btnCancel.style.display = "block";
-    botonGuardarModal.style.display = "block";
+    //botonGuardarModal.style.display = "block";
     btnEdit.style.display = "none";
-    botonEliminarModal.style.display = "none";
+    //botonEliminarModal.style.display = "none";
     btnFooterGuardar.style.display = "block";
-    textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
+    //textoModalPregunta.innerHTML = "Desea modificar " + item + " ?";
 }
 //===================================================================================================
 //clon de la funcion anterior namas que para clientes
@@ -137,5 +137,48 @@ function selectModificar(){
 
  }
 //===================================================================================================
+function infoModal(tipo,texto,funcion,textoBoton,item,claseBoton){
+  let modal = document.getElementById('contenedorModal');
+  let tipoModal = 'imprimir_modal_'+tipo;
 
+  postData = {
+      metodo: tipoModal,
+      texto: texto,
+      funcion: funcion,
+      textoBoton: textoBoton,
+      item: item,
+      claseBoton: claseBoton,
+  };
+  $.ajax({
+      data: postData,
+      url: '/LabSoft_Ingexis/Logica/ModalInterfaz.php',
+      type: "POST",
+      async: false,
+      success:function(response){
+          console.log(response);
+          var arrayResponse = JSON.parse(response);
+          modal.innerHTML = arrayResponse[0].scriptHTML; 
+      }
+  });
+  openModal("contenedorModal");
+}
+//===================================================================================================
+function openModal(item) {
+  document.getElementById(item).style.height = "100%";
+  window.addEventListener('scroll', noScrollModal);
+}
+
+function closeModal(item){
+document.getElementById(item).style.height = "0%";
+window.removeEventListener('scroll', noScrollModal);
+} 
+//===================================================================================================
+function noScroll() {
+  window.scrollTo(0, 0);
+}
+function noScrollModal() {
+  var y1 = document.getElementById("contenedorModal").offsetTop;
+  var y2 = y1 + document.getElementById("contenedorModal").height;
+  window.scrollTo(y1, y2);
+}
 //===================================================================================================

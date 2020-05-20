@@ -3,6 +3,11 @@ var salidaUsuario ="";                  //agregar
 var salidaUsuarioEliminado ="";         //eliminado
 var modificacionSalida = "";            //modificado
 //Funciones========================================================================================
+function cargarInterfazUsuarios(busqueda,filtro,correo){
+    this.cargarTarjetas(busqueda,filtro);
+    cargarInfo(correo);
+}
+//=================================================================================================
 function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
     const postData ={
         metodo:"cargarTarjetas", 
@@ -94,6 +99,7 @@ function guardarUsuario(){
 //=================================================================================================
 function eliminarUsuario(){
     let correo = document.getElementById("correo").value
+    let respuestaServidor = "No contesto";
     postData = {
         metodo: "eliminarUsuario",
         correo: document.getElementById("correo").value,
@@ -108,15 +114,14 @@ function eliminarUsuario(){
             var arrayResponse = JSON.parse(response);
             salidaUsuarioEliminado = arrayResponse[0].validacion;
             if(arrayResponse[0].validacion == "true"){
-                document.getElementById("textoExito").innerHTML = "El usuario <b>"+ correo +"</b> ha sido eliminado del sistema";   
+                respuestaServidor = "Eliminado del sistema: ";   
             }else{
-                document.getElementById("textoExito").innerHTML = "<b>Error:</b>"+arrayResponse[0].validacion;
+                respuestaServidor = "<b>Error:</b>"+arrayResponse[0].validacion;
             }
-            document.getElementById("contenedorModal").style.height = "0%";
-            document.getElementById("contenedorModalEliminado").style.height = "100%";
-            window.addEventListener('scroll', noScrollModal);
+
         }
     });
+    infoModal('respuesta',respuestaServidor,"cargarInterfazUsuarios('','1111','<?php echo $_SESSION['correo'] ?>')",'OK','"'+correoNuevo+"'",'ninguna');
 }
 //=================================================================================================
 function modificarUsuario(cambios){
@@ -174,6 +179,7 @@ function modificarUsuario(cambios){
             modificacionSalida = arrayResponse[0].validacion;
         }
     });
+
 }
 //=================================================================================================
 function validaCoincideContra(contra1, contra2){
