@@ -6,7 +6,7 @@
 --     id_usuario      int             primary key     not null    AUTO_INCREMENT,
 --     correo          varchar(50)     unique,
 --     contra          varchar(20),
---     img_log         VARCHAR(100)
+--     img_log         VARCHAR(200)
 -- );
 -- -- ======================================--
 -- create table usuarios(
@@ -22,10 +22,10 @@
 --     Curp            varchar(18)     primary key, -- 4 letras, 6 numeros, 1 letra, 2 letras, 3 letras, 1 num o letra, 1 numero
 --     rfc             varchar(13), -- 4 0 3 letras, 6 numeros, 3 num o letras
 --     --direccion-----------------
---     calleP          varchar(20),
+--     calleP          varchar(50),
 --     Entrecalles     varchar(50),
 --     numero          varchar(10),
---     colonia         varchar(20),
+--     colonia         varchar(50),
 --     cod_postal      varchar(10),
 --     ciudad          varchar(50),
 --     --ralaciones ETC------------
@@ -37,7 +37,7 @@
 --     titulo          varchar(60),
 --     nom_empr        varchar(60),
 --     rfc             varchar(13), -- 4 0 3 letras, 6 numeros, 3 num o letras
---     direc           varchar(100),
+--     direc           text,
 --     cod_pos         varchar(10),
 --     colonia         varchar(20),
 --     ciudad          varchar(30),
@@ -48,5 +48,5 @@
 --     img             varchar(100),
 --     fecha_reg       date
 -- );
---======================================--
+-- -- ======================================--
 
