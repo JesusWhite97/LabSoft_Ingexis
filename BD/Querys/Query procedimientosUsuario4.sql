@@ -6,7 +6,7 @@
 -- create PROCEDURE agregaUsuario(
 --     in correo       varchar(50), 
 --     in contra       varchar(20), 
---     in img          varchar(100),
+--     in img          varchar(200),
 --     -------------------------
 --     in nom1         varchar(20),
 --     in nom2         varchar(20),
@@ -17,10 +17,10 @@
 --     in puest        varchar(25),
 --     in curp         varchar(18),
 --     in rfc          varchar(13),
---     in calleP       varchar(20),
+--     in calleP       varchar(50),
 --     in entre        varchar(50),
 --     in numcasa      varchar(10),
---     in colonia      varchar(20),
+--     in colonia      varchar(50),
 --     in codPostal    varchar(20),
 --     in ciudad       varchar(50)
 -- )
@@ -117,7 +117,7 @@
 --     update usuarios set usuarios.Num_contacto = telefono where usuarios.id_usuario = id_usuario;
 -- end
 -- --======================================--
--- create procedure Usuario_mod_Img(in correo varchar(50), in img varchar(100))
+-- create procedure Usuario_mod_Img(in correo varchar(50), in img varchar(200))
 -- begin
 --     declare id_usuario int;
 --     select id_by_correo(correo) into id_usuario;
@@ -126,10 +126,10 @@
 -- --======================================--
 -- create procedure Usuario_mod_direccion(
 --     in correo varchar(50),
---     in calle varchar(20), 
+--     in calle varchar(50), 
 --     in entre varchar(50), 
 --     in numCasa varchar(10), 
---     in col varchar(20), 
+--     in col varchar(50), 
 --     in codigoP varchar(10),
 --     in ciudad varchar(50)
 --     )
@@ -168,24 +168,24 @@
 --         dat_tar_usuarios.puesto like concat('%', puesto3, '%') or
 --         dat_tar_usuarios.puesto like concat('%', puesto4, '%');
 -- end
---======================================--
--- pendientes:
---      informacion de logeo                                                ✓✓✓✓✓✓✓✓✓
---      filtro por tipo de user varios al mismo tiempo (like por tipo user) ✓✓✓✓✓✓✓✓✓
---      agregar usuarios                                                    ✓✓✓✓✓✓✓✓✓
---      eliminar usuarios                                                   ✓✓✓✓✓✓✓✓✓
---      datos para tajetas usuarios                                         ✓✓✓✓✓✓✓✓✓
---      buscador tarjetas usuarios                                          ✓✓✓✓✓✓✓✓✓
---      datos especifico para tarjeta                                       ✓✓✓✓✓✓✓✓✓
---      datos del usuario especifico                                        ✓✓✓✓✓✓✓✓✓
---      modificar usuarios (por seccion)                                    ✓✓✓✓✓✓✓✓✓
---          +contraseña         ✓
---          +puesto             ✓
---          +datos_Nombre       ✓
---          +curp               ✓
---          +RFC                ✓
---          +telefono           ✓
---          +direccion          ✓
---          +apodo              ✓
---          +img                ✓
---======================================--
+-- -- ======================================--
+-- -- pendientes:
+-- --      informacion de logeo                                                ✓✓✓✓✓✓✓✓✓
+-- --      filtro por tipo de user varios al mismo tiempo (like por tipo user) ✓✓✓✓✓✓✓✓✓
+-- --      agregar usuarios                                                    ✓✓✓✓✓✓✓✓✓
+-- --      eliminar usuarios                                                   ✓✓✓✓✓✓✓✓✓
+-- --      datos para tajetas usuarios                                         ✓✓✓✓✓✓✓✓✓
+-- --      buscador tarjetas usuarios                                          ✓✓✓✓✓✓✓✓✓
+-- --      datos especifico para tarjeta                                       ✓✓✓✓✓✓✓✓✓
+-- --      datos del usuario especifico                                        ✓✓✓✓✓✓✓✓✓
+-- --      modificar usuarios (por seccion)                                    ✓✓✓✓✓✓✓✓✓
+-- --          +contraseña         ✓
+-- --          +puesto             ✓
+-- --          +datos_Nombre       ✓
+-- --          +curp               ✓
+-- --          +RFC                ✓
+-- --          +telefono           ✓
+-- --          +direccion          ✓
+-- --          +apodo              ✓
+-- --          +img                ✓
+-- -- ======================================--

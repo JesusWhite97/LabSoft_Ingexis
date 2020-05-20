@@ -36,4 +36,4 @@
 --     log_usuarios,
 --     usuarios
 -- where usuarios.id_usuario = log_usuarios.id_usuario;
---======================================--
+-- -- ======================================--

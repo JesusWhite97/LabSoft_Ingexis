@@ -29,9 +29,9 @@
 --     return salida;
 -- end
 -- --======================================--
--- CREATE FUNCTION img_by_correo(correo varchar(50)) returns varchar(100)
+-- CREATE FUNCTION img_by_correo(correo varchar(50)) returns varchar(200)
 -- BEGIN
---     declare salida varchar(100);
+--     declare salida varchar(200);
 --     select log_usuarios.img_log into salida from log_usuarios where log_usuarios.correo = correo;
 --     return salida;
 -- end

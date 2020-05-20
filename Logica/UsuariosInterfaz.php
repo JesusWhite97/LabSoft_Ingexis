@@ -166,7 +166,6 @@
                             <button id="footerGuardar_Boton" onclick="infoModal('.$tipoModal.','.$textoModificar.','.$funcionModificar.','.$textoBotonModificar.','.$item.','.$claseBotonModificar.')">Guardar</button>
                     </div>
                 </div>
-                
                 <div id="contenedorModal">
                 </div>
 

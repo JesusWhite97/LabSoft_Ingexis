@@ -1,18 +1,18 @@
---======================================--
-use databaseingexis;
---======================================--
+-- -- ======================================--
+-- use databaseingexis;
+-- -- ======================================--
 -- CREATE PROCEDURE verCliente(in correo varchar(50))
 -- begin
 --     declare id_cliente int;
 --     select id_by_correo_Clientes(correo) into id_cliente;
 --     SELECT * from clientes WHERE clientes.id_clientes = id_cliente;
 -- end
---======================================--
+-- -- ======================================--
 -- create procedure insertarCliente(
 --     in titulo           varchar(60),
 --     in nom_empr         varchar(60),
 --     in rfc              varchar(13),
---     in direc            varchar(100),
+--     in direc            text,
 --     in cod_pos          varchar(10),
 --     in colonia          varchar(20),
 --     in ciudad           varchar(30),
@@ -27,14 +27,14 @@ use databaseingexis;
 --     insert clientes(titulo, nom_empr, rfc, direc, cod_pos, colonia, ciudad, nombre_contac, numero_contac, email, nota, img, fecha_reg)
 --     values (titulo, nom_empr, rfc, direc, cod_pos, colonia, ciudad, nombre_contac, numero_contac, email, nota, img, fecha_reg);
 -- end
---======================================--
+-- -- ======================================--
 -- create procedure eliminar_cliente(in correo varchar(50))
 -- begin
 --     declare id int;
 --     SELECT id_by_correo_Clientes(correo) into id;
 --     delete from clientes where clientes.email = correo;
 -- end
---======================================--
+-- -- ======================================--
 -- create procedure tarjetas_clientes()
 --     select 
 --         clientes.img as 'img', 
@@ -44,14 +44,14 @@ use databaseingexis;
 --         clientes.numero_contac as 'numeroContac', 
 --         clientes.email as 'correo'
 --     from clientes;
---======================================--
+-- -- ======================================--
 -- create procedure Clientes_mod_nota(in correo varchar(50), in nota text)
 -- begin
 --     declare id_cliente int;
 --     select id_by_correo_Clientes(correo) into id_cliente;
 --     update clientes set clientes.nota = nota where clientes.id_clientes = id_cliente;
 -- end
---======================================--
+-- -- ======================================--
 -- create procedure Clientes_mod_Contacto(in correoAc varchar(50), in correoN varchar(50), in nom_contac varchar(100), in num_contac varchar(30))
 -- begin
 --     declare id_cliente int;
@@ -64,7 +64,7 @@ use databaseingexis;
 --     where
 --         clientes.id_clientes = id_cliente;
 -- end 
---======================================--
+-- -- ======================================--
 -- create procedure Clientes_mod_Dbasicos(in correo varchar(50), in titulo varchar(60), in nombreE varchar(60), in RFC varchar(13))
 -- begin 
 --     declare id_cliente int;
@@ -78,8 +78,8 @@ use databaseingexis;
 --     WHERE 
 --         clientes.id_clientes = id_cliente;
 -- end
---======================================--
--- create procedure Clientes_mod_direccion(in correo varchar(50), in direccion varchar(100), in cod_pos varchar(10), in colonia varchar(20), in ciudad varchar(30))
+-- -- ======================================--
+-- create procedure Clientes_mod_direccion(in correo varchar(50), in direccion text, in cod_pos varchar(10), in colonia varchar(20), in ciudad varchar(30))
 -- begin
 --     declare id_cliente int;
 --     select id_by_correo_Clientes(correo) into id_cliente;
@@ -93,14 +93,14 @@ use databaseingexis;
 --     WHERE 
 --         clientes.id_clientes = id_cliente;
 -- end
---======================================--
+-- -- ======================================--
 -- create procedure Clientes_mod_Img(in correo varchar(50), in Img varchar(100))
 -- begin   
 --     declare id_cliente int;
 --     select id_by_correo_Clientes(correo) into id_cliente;
 --     update clientes set clientes.img = Img where clientes.id_clientes = id_cliente;
 -- end
---======================================--
+-- -- ======================================--
 -- create procedure buscar_tar_Cliente(in texto varchar(100))
 -- begin
 -- 	select 
@@ -118,15 +118,15 @@ use databaseingexis;
 -- 		clientes.email like concat('%', texto, '%') or
 -- 		clientes.nom_empr like concat('%', texto, '%');
 -- end
---======================================--
--- pendientes
---     insertar clientes                ✓✓✓✓✓
---     Busqueda                         ✓✓✓✓✓
---     eliminar clientes                ✓✓✓✓✓
---     lista de tarjetas de clientes    ✓✓✓✓✓
---     Modificacion especifica          ✓✓✓✓✓ 
---         +nota                ✓
---         +datos de contacto   ✓
---         +datos basicos       ✓
---         +direccion           ✓ 
--- 		   +img                 ✓
+-- -- ======================================--
+-- -- pendientes
+-- --     insertar clientes                ✓✓✓✓✓
+-- --     Busqueda                         ✓✓✓✓✓
+-- --     eliminar clientes                ✓✓✓✓✓
+-- --     lista de tarjetas de clientes    ✓✓✓✓✓
+-- --     Modificacion especifica          ✓✓✓✓✓ 
+-- --         +nota                ✓
+-- --         +datos de contacto   ✓
+-- --         +datos basicos       ✓
+-- --         +direccion           ✓ 
+-- -- 		   +img                 ✓
