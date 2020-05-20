@@ -1,7 +1,7 @@
 ========================TAREAS========================
 
 POR HACER:
-===========>TAPIZ<=============
+========================>TAPIZ<=======================
 [ ] Validación subir imagen
 [ ] Transición OK
 [√] Botón #GUARDAR# en Info Usuarios
@@ -13,7 +13,7 @@ POR HACER:
 [ ] Agregar Ver contraseña en pantalla agregar usuario
 [ ] agregar modal eliminar al boton en #clinetes#
 
-===========>JESUS WHITE<=============
+=====================>JESUS WHITE<====================
 [√] Cambiar id de campos en pantalla clientes #tarjetas#
 [√] Cambiar id de campos en pantalla clientes #infoCliente#
 [√] Campo buscar en clientes
@@ -21,8 +21,8 @@ POR HACER:
 [√] Edicion de los campos en agregar cliente en pantalla #clientes#
 [√] agregar funcion guardar clientes
 [√] agregar funcion eliminar clientes
-[ ] agregar funcion modificar clientes
-[ ] modificar orden de modificacion por #paradoja de modificacion#
+[√] agregar funcion modificar clientes
+[√] modificar orden de modificacion por #paradoja de modificacion#
 [ ] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
 
 
