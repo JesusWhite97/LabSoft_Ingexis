@@ -31,7 +31,7 @@ function verPantallaModificar(item){
 
     //Quita la clase registro para que no se pueda modificar
     if(document.getElementById("correo")){
-      let correo = document.getElementById("correo");
+    let correo = document.getElementById("correo");
       correo.classList.remove("registro");
     }
     
@@ -39,7 +39,7 @@ function verPantallaModificar(item){
     selectModificar();
 
      //Muestra boton de guardar en la parte inferior
-     let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
+      let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
       btnFooterGuardar.style.display = "block";
 }
 //===================================================================================================

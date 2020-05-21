@@ -41,7 +41,6 @@
         $textoBotonModificar = "'Modificar'";
         $claseBotonModificar = "'guardarBotonModal'";
 
-      
         //=========DATOS MODAL ELIMINAR=================
         $textoEliminar = "'Desea eliminar cliente: '";
         $funcionEliminar = "'eliminarClient()'";
