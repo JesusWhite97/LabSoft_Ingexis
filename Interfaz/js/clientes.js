@@ -24,7 +24,13 @@ function cargarTarjetas(texto){
     });
 }
 //=================================================================================================
+function iniciarInterfazClientes(){
+    cargarTarjetas('');
+    cargarInfo(cliente1);
+}
+//=================================================================================================
 function cargarInfo(correo){
+    tarjetaSeleccionada(correo);
     correoActivo = correo;
     var postData = {
         metodo: "cargarInfo",
@@ -105,6 +111,7 @@ function eliminarCliente(){
             eliminarCliente = arrayResponse[0].mensajeDatos;
         }
     });
+    infoModal('respuesta',eliminarCliente,"iniciarInterfazClientes()",'OK','"'+emailReg+'"','ninguna');
 }
 //=================================================================================================
 function modificarCliente(cambios){
@@ -122,7 +129,7 @@ function modificarCliente(cambios){
         postData.numero_contac = document.getElementById('numero_contac').value;
     }
     if(cambios[2]){
-        postData.titulo = document.getElementById('titulo').value;
+        postData.titulo = document.getElementById('tituloReg').value;
         postData.nom_empr = document.getElementById('nom_empr').value;
         postData.rfc = document.getElementById('rfc').value;
     }
