@@ -70,31 +70,11 @@
         //########################
         if($_POST["metodo"] == "modificarCliente"){
             $cliente = new Cliente();
-<<<<<<< HEAD
-            $correoN = $_POST['emailReg'];
-           
-=======
             $correoA = $_POST["correoA"];
->>>>>>> 7260b60d1bea9bebb162c2a8fbe075416cdcecce
             $cambios = $_POST["cambios"];
             $salida = '';
             //Formular Respuesta--------------------------------
             if($cambios[0]==1){
-<<<<<<< HEAD
-                $salida = $salida.$cliente->Modificar_nota($correoN, $_POST["nota"]);
-            }
-            if($cambios[2]==1){
-                $salida = $salida.$cliente->Modificar_datosBasicos($correoN, $_POST["titulo"], $_POST["nom_empr"], $_POST["rfc"]);
-            }
-            if($cambios[3]==1){
-                $salida = $salida.$cliente->Modificar_direccion($correoN, $_POST["direc"], $_POST["cod_pos"], $_POST["colonia"], $_POST["ciudad"]);
-            }
-            if($cambios[4]==1){
-                $salida = $salida.$cliente->Modificar_img($correoN, $_POST["img"]);
-            }
-            if($cambios[1]==1){
-                $correoA = $_POST["correoA"];
-=======
                 $salida = $salida.$cliente->Modificar_nota($correoA, $_POST["nota"]);
             }
             if($cambios[2]==1){
@@ -108,7 +88,6 @@
             }
             if($cambios[1]==1){
                 $correoN = $_POST['emailReg'];
->>>>>>> 7260b60d1bea9bebb162c2a8fbe075416cdcecce
                 $salida = $salida.$cliente->Modificar_contacto($correoA, $correoN, $_POST["nombre_contac"], $_POST["numero_contac"]);
             }
             //salida--------------------------------------------

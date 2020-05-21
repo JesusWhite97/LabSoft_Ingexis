@@ -117,11 +117,7 @@ function modificarCliente(cambios){
         postData.nota = document.getElementById('nota').nota;
     }
     if(cambios[1]){
-<<<<<<< HEAD
-        postData.correoA = correoActivo;
-=======
         postData.emailReg = document.getElementById('emailReg').value;
->>>>>>> 7260b60d1bea9bebb162c2a8fbe075416cdcecce
         postData.nombre_contac = document.getElementById('nombre_contac').value;
         postData.numero_contac = document.getElementById('numero_contac').value;
     }
