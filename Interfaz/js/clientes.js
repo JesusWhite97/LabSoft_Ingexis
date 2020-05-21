@@ -3,7 +3,7 @@ var cliente1;           //salida de cargarTarjetas
 var salidaGuardar;     //salida de guardarCliente
 var eliminarCliente;    //salida de eliminaCiente
 var modificacionCliente;    //salida de la modificacion
-var correoActivo;
+var correoActivo;       //salida de cargar Info
 //Funciones========================================================================================
 function cargarTarjetas(texto){
     var postData = {
@@ -111,13 +111,13 @@ function modificarCliente(cambios){
     var postData = {
         metodo: "modificarCliente",
         cambios: cambios,
-        emailReg: document.getElementById('emailReg').value
+        correoA: correoActivo
     };
     if(cambios[0]){
         postData.nota = document.getElementById('nota').nota;
     }
     if(cambios[1]){
-        postData.correoA = correoActivo, 
+        postData.emailReg = document.getElementById('emailReg').value;
         postData.nombre_contac = document.getElementById('nombre_contac').value;
         postData.numero_contac = document.getElementById('numero_contac').value;
     }
