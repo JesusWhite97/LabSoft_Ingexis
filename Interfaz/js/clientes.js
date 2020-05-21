@@ -117,7 +117,7 @@ function modificarCliente(cambios){
         postData.nota = document.getElementById('nota').nota;
     }
     if(cambios[1]){
-        postData.correoA = correoActivo, 
+        postData.correoA = correoActivo;
         postData.nombre_contac = document.getElementById('nombre_contac').value;
         postData.numero_contac = document.getElementById('numero_contac').value;
     }
