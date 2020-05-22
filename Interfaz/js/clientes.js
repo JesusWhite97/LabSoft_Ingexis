@@ -24,7 +24,13 @@ function cargarTarjetas(texto){
     });
 }
 //=================================================================================================
+function iniciarInterfazClientes(){
+    cargarTarjetas('');
+    cargarInfo(cliente1);
+}
+//=================================================================================================
 function cargarInfo(correo){
+    tarjetaSeleccionada(correo);
     correoActivo = correo;
     var postData = {
         metodo: "cargarInfo",
@@ -105,6 +111,7 @@ function eliminarCliente(){
             eliminarCliente = arrayResponse[0].mensajeDatos;
         }
     });
+    infoModal('respuesta',eliminarCliente,"iniciarInterfazClientes()",'OK','"'+emailReg+'"','ninguna');
 }
 //=================================================================================================
 function modificarCliente(cambios){
