@@ -122,7 +122,7 @@ function modificarCliente(cambios){
         postData.numero_contac = document.getElementById('numero_contac').value;
     }
     if(cambios[2]){
-        postData.titulo = document.getElementById('titulo').value;
+        postData.titulo = document.getElementById('tituloReg').value;
         postData.nom_empr = document.getElementById('nom_empr').value;
         postData.rfc = document.getElementById('rfc').value;
     }
