@@ -45,6 +45,6 @@ use databaseingexis;
 -- =================================================
 -- create procedure ElemMues_Modificar_Muestra(in ud_muestra int, in correo_user varchar(50), in ident varchar(10), in resultado varchar(50), fecha)
 -- begin 
-
+    
 -- end
 -- =================================================

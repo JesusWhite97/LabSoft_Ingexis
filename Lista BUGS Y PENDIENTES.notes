@@ -1,8 +1,6 @@
 ========================TAREAS========================
-
 POR HACER:
 ========================>TAPIZ<=======================
-
 ===>Usuarios
     -->Interfaz
         [√] Transición OK
@@ -81,6 +79,10 @@ POR HACER:
 [√] crear table #pruebas#
 [√] crear paquete procedimientos completos para #obras#
 [ ] crear vistas para #obras y muestras#
+[ ] diseñar enum para las acciones en la tabla log
+[ ] tabla #log activity# para todos 
+[ ] crear procedimientos para log
+[ ] agregar log a todas las actividades
 
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
