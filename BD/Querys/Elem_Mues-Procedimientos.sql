@@ -1,0 +1,45 @@
+use databaseingexis;
+-- =================================================
+-- create procedure ElemMues_agregar(
+--     in id_obra int,
+--     in id_usuario int,
+--     in nombre varchar(50),
+--     in observaciones text,
+--     in fecha_reg date,
+--     ------------------------------
+--     in iden1 varchar(10),
+--     in iden2 varchar(10),
+--     in iden3 varchar(10)
+-- )
+-- begin
+--     insert elemento(elemento.id_obra, elemento.id_usuario, elemento.nombre, elemento.observaciones, elemento.fecha_reg)
+--         values (id_obra, id_usuario, nombre, observaciones, fecha_reg);
+--     ------------------------------
+--     insert into id_elem values(last_insert_id());
+--     ------------------------------
+--     INSERT muestra(muestra.id_elemento, muestra.identificador) values (id_elem, iden1);
+--     ------------------------------
+--     INSERT muestra(muestra.id_elemento, muestra.identificador) values (id_elem, iden1);
+--     ------------------------------
+--     INSERT muestra(muestra.id_elemento, muestra.identificador) values (id_elem, iden1);
+-- end
+-- =================================================
+-- create procedure ElemMues_Eleminar(in id_elemento int)
+-- begin
+--     DELETE mu from elemento as el inner join muestra as mu on el.id_elemento = mu.id_elemento where el.id_elemento = id_elemento;   
+--     DELETE from elemento where elemento.id_elemento = id_elemento;
+-- end
+-- =================================================
+-- create procedure ElemMues_Modificar(in id_elemento int, in correo_user varchar(50), in nombre varchar(50), in observaciones text)
+-- begin 
+--     update elemento 
+--     SET 
+--         elemento.id_usuario = id_by_correo(correo_user),
+--         elemento.nombre = nombre,
+--         elemento.observaciones = observaciones
+--     WHERE 
+--         elemento.id_elemento = id_elemento;
+-- end
+-- =================================================
+
+-- =================================================

@@ -49,4 +49,37 @@
 --     fecha_reg       date
 -- );
 -- -- ======================================--
-
+-- create table Obras(
+--     id_obra         INT         PRIMARY KEY     not NULL    AUTO_INCREMENT,
+--     id_clientes     int,
+--     nombre          VARCHAR(50),
+--     direccion       text,
+--     anotaciones     text,
+--     --ralaciones ETC------------
+--     FOREIGN key(id_clientes) REFERENCES clientes(id_clientes)
+-- );
+-- -- ======================================--
+-- create table Elemento(
+--     id_elemento     int         PRIMARY key     NOT NULL    AUTO_INCREMENT,
+--     id_obra         int,
+--     id_usuario      int,
+--     nombre          VARCHAR(50),
+--     observaciones   text,
+--     fecha_reg       date,
+--     --ralaciones ETC------------
+--     FOREIGN key(id_obra) REFERENCES Obras(id_obra),
+--     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
+-- );
+-- -- -- ======================================--
+-- create table Muestra(
+--     id_muestra      int         PRIMARY key     not NULL    AUTO_INCREMENT,
+--     id_elemento     int,
+--     id_usuario      int,
+--     identificador   varchar(10),
+--     resultado       varchar(50),
+--     fecha_prog      date,
+--     --ralaciones ETC------------    
+--     FOREIGN key(id_elemento) REFERENCES Elemento(id_elemento),
+--     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
+-- );
+-- -- ======================================--
