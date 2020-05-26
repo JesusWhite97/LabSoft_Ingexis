@@ -2,7 +2,7 @@
 //Función para validar una CURP La entrada tiene que ser toda en mayusculas 
 function curpValida(curp) {
     var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
-        validado = curp.match(re);
+        validado = curp.toUpperCase().match(re);
     if (!validado)  //Coincide con el formato general?
         return false;
     //Validar que coincida el dígito verificador
@@ -33,7 +33,7 @@ function validateRFC(rfc) {
         "(([A-ZÑ&]{4})([02468][048]|[13579][26])[0][2]([0][1-9]|[12][\\d])([A-Z0-9]{3}))|" +
         "(([A-ZÑ&]{4})([0-9]{2})[0][2]([0][1-9]|[1][0-9]|[2][0-8])([A-Z0-9]{3}))$";
 
-    if (rfc.match(patternPM) || rfc.match(patternPF)) {
+    if (rfc.toUpperCase().match(patternPM) || rfc.toUpperCase().match(patternPF)) {
         return true;
     } else {
         // alert("La estructura de la clave de RFC es incorrecta.");

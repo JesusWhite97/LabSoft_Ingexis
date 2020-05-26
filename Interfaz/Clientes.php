@@ -98,12 +98,10 @@
 						arregloCambios[4] = 0;
 					}
 				}
-				modificarCliente(arregloCambios);
-				alert(modificacionCliente);
+				modificarCliente(arregloCambios);																														
 				arregloCambios = Array(0,0,0,0,0);
 				correoNuevo = document.getElementById("emailReg").value;
-				cargarTarjetas('');
-				cargarInfo(correoNuevo);
+				infoModal('respuesta',modificacionCliente,"iniciarInterfazClientes()",'OK','"'+correoNuevo+"'",'ninguna');
 			}else{
 				alert("<br>- Modificado");
 				closeModal();

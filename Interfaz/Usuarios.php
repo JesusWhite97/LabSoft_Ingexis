@@ -91,27 +91,17 @@
 		function guardarUser(){
 			if(camposRequeridos()== false){
 				infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
-    		}else{
-			var ValidaContra = validaCoincideContra(document.getElementById("contra1").value, document.getElementById("contra2").value);
-			var validaContraForm = validaContraFormat(document.getElementById("contra1").value);
-			var ValidaCurp = curpValida(document.getElementById("curp").value.toUpperCase());
-			var ValidaRfc = validateRFC(document.getElementById("rfc").value.toUpperCase());
-			var ValidaCorreo = validaCorreoValido(document.getElementById("correo").value);
-			if(ValidaContra == true && ValidaCurp == true && ValidaRfc == true && ValidaCorreo == true && validaContraForm ==true){
-				//----------------------------------------------------------------
-				infoModal('confirmar','Desea guardar el usuario:','guardarUser2()','Guardar',document.getElementById("correo").value,'guardarBotonModal');
-				//----------------------------------------------------------------
 			}
 			else{
-				var alerta = 		   '<b>Error en los siguientes campos:</b><br>' + 
-				(ValidaContra 	? validaContraForm ? '' : 'El formato para lo contraseña es incorreco.<br>' : 'Las contraseñas no coinciden.<br>') +
-				(ValidaCurp 	? '' : 'El curp no tiene el formato correcto.<br>') +
-				(ValidaRfc 		? '' : 'El rfc no tiene el formato correcto.<br>') +
-				(ValidaCorreo	? '' : 'El Correo no tiene el formato correcto.<br>');
-				infoModal('respuesta',alerta,"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+				if(errores() == false){
+					infoModal('confirmar','Desea guardar el usuario:','guardarUser2()','Guardar',document.getElementById("correo").value,'guardarBotonModal');
+				}
+				else{
+					infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+				}
 			}
 		}
-		}
+
 		function guardarUser2(){
 			correoNuevo = document.getElementById("correo").value;
 			guardarUsuario();
@@ -119,21 +109,39 @@
 					subirImg();
 					if(respuestaSubirIMG != 'NO'){
 						infoModal('respuesta','Usuario registrado con exito 🤘.',"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK',correoNuevo,'ninguna');
-					}else{
+					}
+					else{
 						eliminarUsuario();
 						if(eliminarUsuario == 'true'){
 							infoModal('respuesta','error al registrar Usuario: ' + errorSubirIMG,"closeModal('contenedorModal')",'OK',correoNuevo,'ninguna');
 						}
 					}
-				}else{
+				}
+				else{
 					infoModal('respuesta',salidaUsuario,"closeModal('contenedorModal')",'OK','No hay registro','ninguna');
 				}
 		}
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
 		function modificarUser(){
-			var correoNuevo = document.getElementById("correo").value;
 			if(arregloCambios.includes(1)){
+				if(camposRequeridos()== false){
+							infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+				}
+				else{
+						if(errores() == false){
+								infoModal('confirmar','Desea guardar el usuario:','modificarUser2()','Modificar',document.getElementById("correo").value,'guardarBotonModal');
+						}
+						else{
+								infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+						}
+					}
+			}else{
+				infoModal('respuesta','El sistema no detecta cambios en ningún campo.<br>','cargarInfo(document.getElementById("correo").value)','OK','No se registro ninguna modificación.','ninguna');
+			}
+		}
+		function modificarUser2(){
+			var correoNuevo = document.getElementById("correo").value;
 				if(arregloCambios[8]){
 					subirImg();
 					if(respuestaSubirIMG == 'NO'){
@@ -143,10 +151,6 @@
 				modificarUsuario(arregloCambios);
 				infoModal('respuesta',modificacionSalida,"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK','"'+correoNuevo+"'",'ninguna');
 				arregloCambios = Array(0,0,0,0,0,0,0,0,0);
-			}else{
-				closeModal('contenedorModal');
-				cargarInfo(correoNuevo);
-			}
 		}
 		// --------------------------------------
 		function selectItem(seleccionado){

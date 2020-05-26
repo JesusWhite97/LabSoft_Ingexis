@@ -1,4 +1,6 @@
 //===================================================================================================
+var CamposErroneos = [];
+
 // Función para que una cambiar a una pantalla con campos modificables
 
 function verPantallaModificar(item){
@@ -170,8 +172,35 @@ function campoOK(id,ok){
   
   if(ok==false){
      campo.style.border = "1px solid #8B0000";
+     if(CamposErroneos.indexOf(id) == -1){
+       CamposErroneos.push(id);
+     }
   }else{
      campo.style.border = "1px solid #008000";
+     if(CamposErroneos.indexOf(id) != null){
+      CamposErroneos.splice(CamposErroneos.indexOf(id),1);
+    }
+     
+  }
+}
+//===================================================================================================
+function errores(){
+  let cadena = '';
+  if(CamposErroneos.length == 0){
+    return false;
+  }else{
+    for(i=0;i<CamposErroneos.length;i++){
+      if(CamposErroneos[i] == "contra1"){
+        cadena =cadena + '<br>Formato incorecto en CONTRASEÑA';
+      }else{
+        if(CamposErroneos[i] == "contra2"){
+          cadena =cadena + '<br>CONTRASEÑAS no coinciden';
+        }else{
+          cadena =cadena + '<br>Formato incorrecto en: '+CamposErroneos[i].toUpperCase();
+        }
+      }
+    }
+    return cadena;
   }
 }
 //===================================================================================================
