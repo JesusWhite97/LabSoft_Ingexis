@@ -12,17 +12,19 @@ use databaseingexis;
 --     in iden3 varchar(10)
 -- )
 -- begin
+--     DECLARE id_elem int;
 --     insert elemento(elemento.id_obra, elemento.id_usuario, elemento.nombre, elemento.observaciones, elemento.fecha_reg)
 --         values (id_obra, id_usuario, nombre, observaciones, fecha_reg);
 --     ------------------------------
---     insert into id_elem values(last_insert_id());
+--     SELECT last_insert_id() into id_elem;
 --     ------------------------------
---     INSERT muestra(muestra.id_elemento, muestra.identificador) values (id_elem, iden1);
+--     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, iden1, '??', DATE_ADD(fecha_reg, interval 7 day));
 --     ------------------------------
---     INSERT muestra(muestra.id_elemento, muestra.identificador) values (id_elem, iden1);
+--     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, iden2, '??', DATE_ADD(fecha_reg, interval 14 day));
 --     ------------------------------
---     INSERT muestra(muestra.id_elemento, muestra.identificador) values (id_elem, iden1);
+--     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, iden3, '??', DATE_ADD(fecha_reg, interval 28 day));
 -- end
+-- call ElemMues_agregar(3,1,'prueba de dias', 'ver si jala esta verga', '2020-01-01', '20', '21', '22');
 -- =================================================
 -- create procedure ElemMues_Eleminar(in id_elemento int)
 -- begin
@@ -30,7 +32,7 @@ use databaseingexis;
 --     DELETE from elemento where elemento.id_elemento = id_elemento;
 -- end
 -- =================================================
--- create procedure ElemMues_Modificar(in id_elemento int, in correo_user varchar(50), in nombre varchar(50), in observaciones text)
+-- create procedure ElemMues_Modificar_Elemento(in id_elemento int, in correo_user varchar(50), in nombre varchar(50), in observaciones text)
 -- begin 
 --     update elemento 
 --     SET 
@@ -41,5 +43,8 @@ use databaseingexis;
 --         elemento.id_elemento = id_elemento;
 -- end
 -- =================================================
+-- create procedure ElemMues_Modificar_Muestra(in ud_muestra int, in correo_user varchar(50), in ident varchar(10), in resultado varchar(50), fecha)
+-- begin 
 
+-- end
 -- =================================================
