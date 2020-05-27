@@ -18,11 +18,11 @@ use databaseingexis;
 --     ------------------------------
 --     SELECT last_insert_id() into id_elem;
 --     ------------------------------
---     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, iden1, '??', DATE_ADD(fecha_reg, interval 7 day));
+--     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, concat(date_format(now(), '%Y-'), iden1), '??', DATE_ADD(fecha_reg, interval 7 day));
 --     ------------------------------
---     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, iden2, '??', DATE_ADD(fecha_reg, interval 14 day));
+--     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, concat(date_format(now(), '%Y-'), iden2), '??', DATE_ADD(fecha_reg, interval 14 day));
 --     ------------------------------
---     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, iden3, '??', DATE_ADD(fecha_reg, interval 28 day));
+--     INSERT muestra(muestra.id_elemento, muestra.identificador, muestra.resultado, muestra.fecha_prog) values (id_elem, concat(date_format(now(), '%Y-'), iden3), '??', DATE_ADD(fecha_reg, interval 28 day));
 -- end
 -- call ElemMues_agregar(3,1,'prueba de dias', 'ver si jala esta verga', '2020-01-01', '20', '21', '22');
 -- =================================================
@@ -43,8 +43,16 @@ use databaseingexis;
 --         elemento.id_elemento = id_elemento;
 -- end
 -- =================================================
--- create procedure ElemMues_Modificar_Muestra(in ud_muestra int, in correo_user varchar(50), in ident varchar(10), in resultado varchar(50), fecha)
+-- create procedure ElemMues_Modificar_Muestra(in id_muestra int, in correo_user varchar(50), in ident varchar(10), in resultado varchar(50))
 -- begin 
-    
+--     declare id_user int;
+--     SELECT id_by_correo(correo_user) into id_user;
+--     update muestra
+--     SET
+--         muestra.id_usuario = id_user,
+--         muestra.identificador = concat(date_format(now(), '%Y-'), ident),
+--         muestra.resultado = resultado
+--     where 
+--         muestra.id_muestra = id_muestra;
 -- end
 -- =================================================
