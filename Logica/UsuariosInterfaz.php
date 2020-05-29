@@ -249,8 +249,8 @@
                             <input id="entre" type="text" class="registro" placeholder="" maxlength="50">
                             <p class="textoAyuda">Entre</p>
                             <div class="inputEnLinea">
-                                <input id="num" type="text" class="registro" placeholder="" maxlength="10">
-                                <input id="cp" type="text" class="registro" placeholder="" maxlength="10">
+                                <input id="num" type="text" class="registro" placeholder="" onkeypress="javascript:return isNumberKey(event)" maxlength="10">
+                                <input id="cp" type="text" class="registro" placeholder="" onkeypress="javascript:return isNumberKey(event)" maxlength="10">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Número de casa</p>

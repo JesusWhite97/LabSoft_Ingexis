@@ -60,6 +60,20 @@
 		}
 		// --------------------------------------
 		function guardarClient(){
+			if(camposRequeridos()== false){
+				infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+			}
+			else{
+				if(errores() == false){
+					infoModal('confirmar','Desea guardar el usuario:','guardarClient2()','Guardar',document.getElementById("nom_empr").value,'guardarBotonModal');
+				}
+				else{
+					infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+				}
+			}
+			
+		}
+		function guardarClient2(){
 			guardarCliente();
 			if(salidaGuardar == 'true'){
 				subirImg();
@@ -75,23 +89,34 @@
 			var ClienteNuevo = document.getElementById('emailReg').value;
 			cargarTarjetas('');
 			cargarInfo(ClienteNuevo);
+
 		}
 		// --------------------------------------
 		function eliminarClient(){
-			eliminarCliente();
-			if(eliminarCliente == 'true'){
-				alert("cliente eliminado correctamente 🤘.");
-			}else{
-				alert("cliente no eliminado");
-			}
-			cargarTarjetas('');
-			cargarInfo(cliente1);
+			infoModal('confirmar','Desea guardar el usuario:','eliminarCliente()','Eliminar',document.getElementById("nom_empr").value,'guardarBotonModal');
 		}
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0); //-----nota--Contacto--datosBasicos--direccion--img
 		function ModificarClient(){
-			var correoNuevo = document.getElementById("emailReg").value;
 			if(arregloCambios.includes(1)){
+				if(camposRequeridos()== false){
+							infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+				}
+				else{
+						if(errores() == false){
+								infoModal('confirmar','Desea modificar cliente:','ModificarClient2()','Modificar',document.getElementById("nom_empr").value,'guardarBotonModal');
+						}
+						else{
+								infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+						}
+					}
+			}else{
+				infoModal('respuesta','El sistema no detecta cambios en ningún campo.<br>','cargarInfo(document.getElementById("emailReg").value)','OK','No se registro ninguna modificación.','ninguna');
+			}
+			
+		}
+		function ModificarClient2(){
+			var correoNuevo = document.getElementById("emailReg").value;
 				if(arregloCambios[4]){
 					subirImg();
 					if(respuestaSubirIMG == 'NO'){
@@ -102,11 +127,6 @@
 				arregloCambios = Array(0,0,0,0,0);
 				correoNuevo = document.getElementById("emailReg").value;
 				infoModal('respuesta',modificacionCliente,"iniciarInterfazClientes()",'OK','"'+correoNuevo+"'",'ninguna');
-			}else{
-				alert("<br>- Modificado");
-				closeModal();
-				cargarInfo(correoNuevo);
-			}
 		}
 		// --------------------------------------
 		// --------------------------------------
