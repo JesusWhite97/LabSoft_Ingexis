@@ -1,25 +1,33 @@
 ========================TAREAS========================
 
 POR HACER:
-========================>TAPIZ<=======================
+
+
+========================TAPIZ==================================================================================================================================================================
+TAPIZ:
+
+===>GENERAL
+    [ ] Responsividad de pantallas.
+    [ ] Diseñar y implemetar Tooltip generico para el sistema 
+    [ ] Cargar HEADER desde php
+    [ ] Diseño de barra superior de navegación tipo Facebook
+    [ ] HTML Barra  de navegación
+    [ ] CSS Barra de navegación
+    [ ] JS Barra de navegación
+    [ ] Input quitar borde al seleccionar
 
 ===>Usuarios
+
     -->Interfaz
         [√] Transición OK
         [√] Botón #GUARDAR# en Info Usuarios
         [√] Scroll de tarjetas
-        [ ] Responsividad FIX!!!!!
-        [ ] Cargar HEADER desde php
         [ ] Quitar tarjeta usuario logueado y mostrar apodo y img en HEADER
-        [ ] Diseño de barra superior de navegación tipo Facebook
-        [ ] HTML Barra  de navegación
-        [ ] CSS Barra de navegación
-        [ ] JS Barra de navegación
-        [ ] Input quitar borde al seleccionar
+
 
     -->Validaciones
         [ ] Validación subir imagen (TAMAÑO)
-        [ ] Formato número contacto " (612)-121-1723 " -->50%
+        [x] Formato número contacto " (612)-121-1723 " -->50%
         [√] Validación numero contacto(14 digitos, solo números)
         [ ] Tip de contraseña  " Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?& "
         [√] Indicación casilla campo formato correcto: (onkeyup)
@@ -27,7 +35,6 @@ POR HACER:
                     ->email
                     ->curp
                     ->rfc
-        [ ] Quitar apodo en Mayus
         [√] Required: 
                     ->1er nombre, 
                     ->1er apellido, 
@@ -37,23 +44,23 @@ POR HACER:
                     [ ] ->Puesto: option vacía para que el usuario tenga que seleccionar un puesto.
         [√] Indicar campos erroneos en interfaz (borde sombra color rojo)
         [√] No poder eliminar usuario logueado
-        [ ] MaxLenght campos
-                    [ ] ->Apodo                   60
-                    [ ] ->1er nombrev             20
-                    [ ] ->2do                     20  
-                    [ ] ->1er apellido            30
-                    [ ] ->2do apellido            30
-                    [ ] ->RFC                     13
-                    [ ] ->CURP                    18
-                    [ ] ->Telefono                14
-                    [ ] ->Correo                  50
-                    [ ] ->Calle Principal         50
-                    [ ] ->Calle entre             50
-                    [ ] ->Número de casa          10
-                    [ ] ->Código Postal           10
-                    [ ] ->Colonia                 50
-                    [ ] ->Ciudad                  50
-
+        [√] MaxLenght campos
+                Usuarios
+                    [√] ->Apodo                   60
+                    [√] ->1er nombrev             20
+                    [√] ->2do                     20  
+                    [√] ->1er apellido            30
+                    [√] ->2do apellido            30
+                    [√] ->RFC                     13
+                    [√] ->CURP                    18
+                    [√] ->Telefono                14
+                    [√] ->Correo                  50
+                    [√] ->Calle Principal         50
+                    [√] ->Calle entre             50
+                    [√] ->Número de casa          10
+                    [√] ->Código Postal           10
+                    [√] ->Colonia                 50
+                    [√] ->Ciudad                  50
 
 ===>Clientes
         [ ] ver la edicion de correo en #clientes#
@@ -62,6 +69,40 @@ POR HACER:
         [ ] Marcar tarjeta seleccionada  #Clientes#
         [ ] Agregar Ver contraseña en pantalla agregar usuario
         [ ] agregar modal eliminar al boton en #clinetes#
+
+
+    -->Validaciones
+        [ ] Validación subir imagen (TAMAÑO)
+        [x] Formato número contacto " (612)-121-1723 " -->50%
+        [ ] Validación numero contacto(14 digitos, solo números)
+        [ ] Tip de contraseña  " Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?& "
+        [ ] Indicación casilla campo formato correcto: (onkeyup)
+                    ->contraseña
+                    ->email
+                    ->curp
+                    ->rfc
+        [ ] Required: 
+                    ->1er nombre, 
+                    ->1er apellido, 
+                    ->curp,
+                    ->número contacto, 
+                    ->correo
+                    [ ] ->Puesto: option vacía para que el usuario tenga que seleccionar un puesto.
+        [ ] Indicar campos erroneos en interfaz (borde sombra color rojo)
+        [ ] No poder eliminar usuario logueado
+        [ ] MaxLenght campos
+
+===>Obras
+
+    -->Interfaz:
+        [ ] Diseño
+        [ ] HTML
+        [ ] CSS
+        [ ] Responsividad
+        [ ] Implementación PHP
+
+
+====================================================================================================><==========================================================================================
 
 
 =====================>JESUS WHITE<====================

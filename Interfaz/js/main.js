@@ -8,6 +8,7 @@ function readURL(input)
   flagImg = 1;
   if (input.files && input.files[0]) 
   {
+    if(input.files[0].size < 1000000){
       var reader = new FileReader();
       reader.onload = function(evt)
       {
@@ -16,10 +17,14 @@ function readURL(input)
         
       }
       reader.readAsDataURL(input.files[0]);
-      
+      var label = document.getElementById("botonImg");
+      label.classList.remove("btnImgRegistro");
+      label.style["grid-row"] = "1 / span 1";
+  }else{
+        infoModal('respuesta','El tamaño de la imagen es muy grande.',"closeModal('contenedorModal')",'OK','Elige una imagen con un tamaño menor.','ninguna'); 
+      }
+  
   }
-  var label = document.getElementById("botonImg");
-  label.classList.remove("btnImgRegistro");
 }
 
 
@@ -218,8 +223,10 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
     var respuestaSubirIMG = "";
     var errorSubirIMG = "";
     function subirImg(){
+
       var postData = new FormData(document.getElementById("formImg"));
       console.log(postData);
+
       $.ajax({
         data:postData,
         url:'../Logica/claseSubirImg.php',
@@ -234,6 +241,8 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
           errorSubirIMG = arrayResponse[0].mensajeDatos;
         }
       });
+
+
   }
   // ==================================================================================
   // function registrarUsuario(){

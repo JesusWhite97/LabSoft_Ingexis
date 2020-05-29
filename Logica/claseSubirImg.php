@@ -8,7 +8,11 @@
         # recorremos todos los arhivos que se han subido
         for($i=0;$i<count($_FILES["archivo"]["name"]);$i++)
         {
-            # si es un formato de imagen
+            #si el tamaño del archivo es correcto
+            if ($_FILES["fileToUpload"]["size"] < 500000) {
+
+              
+             # si es un formato de imagen
             if($_FILES["archivo"]["type"][$i]=="image/jpeg" || $_FILES["archivo"]["type"][$i]=="image/pjpeg" || $_FILES["archivo"]["type"][$i]=="image/gif" || $_FILES["archivo"]["type"][$i]=="image/png")
             {
                 # si exsite la carpeta o se ha creado
@@ -42,7 +46,14 @@
                     'mensajeDatos'   =>  $_FILES["archivo"]["name"][$i]." - NO es imagen jpg, png o gif"
                     ]; 
             }
+        }else{
+            $json[] =   [
+                'respuesta'   =>  "NO",
+                'mensajeDatos'   =>  "Archivo muy grande"
+                ]; 
+
         }
+    
     }else{
         $json[] =   [
             'respuesta'   =>  "NO",
