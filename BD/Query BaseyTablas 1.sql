@@ -83,3 +83,12 @@
 --     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
 -- );
 -- -- ======================================--
+-- create table registro_log(
+--     id_log          int         PRIMARY key     not null    AUTO_INCREMENT,
+--     id_usuario      int,
+--     accion          text,
+--     fecha           datetime,
+--     --ralaciones ETC------------  
+--     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
+-- );
+-- -- ======================================--

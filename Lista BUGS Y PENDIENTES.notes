@@ -1,6 +1,6 @@
 ========================TAREAS========================
-
 POR HACER:
+<<<<<<< HEAD
 
 
 ========================TAPIZ==================================================================================================================================================================
@@ -16,6 +16,9 @@ TAPIZ:
     [ ] JS Barra de navegación
     [ ] Input quitar borde al seleccionar
 
+=======
+========================>TAPIZ<=======================
+>>>>>>> bf0839831baebcb67fddd1105af07c00b603887e
 ===>Usuarios
 
     -->Interfaz
@@ -122,6 +125,10 @@ TAPIZ:
 [√] crear table #pruebas#
 [√] crear paquete procedimientos completos para #obras#
 [ ] crear vistas para #obras y muestras#
+[ ] diseñar enum para las acciones en la tabla log
+[ ] tabla #log activity# para todos 
+[ ] crear procedimientos para log
+[ ] agregar log a todas las actividades
 
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
