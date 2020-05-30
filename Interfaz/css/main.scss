@@ -1,6 +1,6 @@
 $fuente: 'Segoe UI', sans-serif;
 $colorFuenteEncabezado:white;
-$colorFondoEncabezado: rgb(1,9,252);
+$colorFondoEncabezado:#2D2B36;
 $colorFondoGradienteEncabezado: linear-gradient(127deg, rgba(1,9,252,1) 35%, rgba(12,149,255,1) 100%);
 $colorSombras:0px 3px 6px rgba(0, 0, 0, 0.451);
 $bordeCerrarSesión: 1px solid #FB3C4F;
@@ -91,9 +91,9 @@ body{
     top: 0px;
     z-index: 100;
     display: grid;
-    grid-template-columns: 50px auto 50px;
+    grid-template-columns: 50px auto 50px 70px;
     background:$colorFondoEncabezado;
-    background: $colorFondoGradienteEncabezado;
+    //background: $colorFondoGradienteEncabezado;
     color:$colorFuenteEncabezado;
     font-family:$fuente;
     height: 50px;
@@ -101,6 +101,7 @@ body{
     border: 0px;
     padding: 0px;
     margin: 0px;
+    border-bottom: $colorSombras;
     #titulo{
         height: auto;
         margin: 0px;
@@ -120,14 +121,61 @@ body{
         background-position: center;
     }
     #regresar{
-        background-image: url("../img/back.svg");
+        justify-self: center;
+        align-self: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: rgb(243, 243, 243);
+        background-image: url("../img/LOGO_INGEXIS_Trans.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:    40PX ;
         cursor: pointer;
     }
-    #menu{
-        background-image: url("../img/menu.svg");
+    #imgUsuarioLogin{
+        justify-self: center;
+        align-self: center;
+        width: 30px;
+        height: 30px;
         cursor: pointer;
         transition: 0.5s;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
     }
+    #nombreUsuarioLogin{
+        justify-self: start;
+        align-self: center;
+        color: #f2f2f2;
+        text-align: start;
+
+    }
+    #menuNavegacion{
+        display: grid;
+        grid-template-columns: 70px 70px 70px 70px;
+        grid-template-rows: 50px;
+        justify-self: center;
+        .item{
+            color:white;
+            width: 70px;
+            height: 50px;
+            border-radius: 5px;
+            background-position: center;
+            background-size: 40px 40px;
+            background-image: url("../img/menu.svg");
+            background-repeat: no-repeat;
+            
+        }
+        .item:hover{
+            
+            
+            background-color: rgba(255, 255, 255, 0.219);
+        }
+
+    }
+
 }
 #contenedorBuscador{
     position: fixed;
@@ -1627,7 +1675,7 @@ textarea:focus, input:focus{
     }
     .contenedorPrincipal{
         display: grid;
-        grid-template-columns: 380px 1fr 300px;
+        grid-template-columns: 380px 1fr 380px;
         #divUsuarios{
             grid-column: 1 span 1;
             display: block;

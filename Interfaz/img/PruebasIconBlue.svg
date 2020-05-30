@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1938" height="108" viewBox="0 0 1938 108">
+  <defs>
+    <filter id="Trazado_39" x="0" y="0" width="1938" height="108" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.018" x2="0.857" y2="0.767" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0109fc"/>
+      <stop offset="1" stop-color="#0a92fc"/>
+    </linearGradient>
+    <filter id="Unión_1" x="1346" y="23.226" width="58" height="30" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.471"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Unión_2" x="1346" y="51.226" width="58" height="30" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.561"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-3" x1="0.018" y1="1" x2="1.701" y2="0.597" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eaeaf3"/>
+      <stop offset="1" stop-color="#404b54"/>
+    </linearGradient>
+    <filter id="Rectángulo_161" x="1361" y="36.226" width="28" height="32" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="PruebasIconBlue" transform="translate(27 6.226)">
+    <g transform="matrix(1, 0, 0, 1, -27, -6.23)" filter="url(#Trazado_39)">
+      <path id="Trazado_39-2" data-name="Trazado 39" d="M0,0V90H1920V0H0Z" transform="translate(9 6)" fill="#2d2b36"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -27, -6.23)" filter="url(#Unión_1)">
+      <path id="Unión_1-2" data-name="Unión 1" d="M14.667,8.4H18V1.8H0V0H40V1.8H22V8.4h3.334L20,12Z" transform="translate(1355 29.23)" fill="url(#linear-gradient)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -27, -6.23)" filter="url(#Unión_2)">
+      <path id="Unión_2-2" data-name="Unión 2" d="M14.667,8.4H18V1.8H0V0H40V1.8H22V8.4h3.334L20,12Z" transform="translate(1395 69.23) rotate(-180)" fill="url(#linear-gradient)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -27, -6.23)" filter="url(#Rectángulo_161)">
+      <rect id="Rectángulo_161-2" data-name="Rectángulo 161" width="10" height="14" transform="translate(1370 42.23)" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>

@@ -56,7 +56,7 @@ body {
   display: grid;
   -ms-grid-columns: auto 60px;
       grid-template-columns: auto 60px;
-  background: #0109fc;
+  background: #2D2B36;
   background: linear-gradient(127deg, #0109fc 35%, #0c95ff 100%);
   color: white;
   font-family: "Segoe UI", sans-serif;
@@ -99,10 +99,9 @@ body {
   z-index: 100;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px auto 50px;
-      grid-template-columns: 50px auto 50px;
-  background: #0109fc;
-  background: linear-gradient(127deg, #0109fc 35%, #0c95ff 100%);
+  -ms-grid-columns: 50px auto 50px 70px;
+      grid-template-columns: 50px auto 50px 70px;
+  background: #2D2B36;
   color: white;
   font-family: "Segoe UI", sans-serif;
   height: 50px;
@@ -110,6 +109,7 @@ body {
   border: 0px;
   padding: 0px;
   margin: 0px;
+  border-bottom: 0px 3px 6px rgba(0, 0, 0, 0.451);
 }
 
 #encabezadoBotones #titulo {
@@ -135,15 +135,73 @@ body {
 }
 
 #encabezadoBotones #regresar {
-  background-image: url("../img/back.svg");
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  background-image: url("../img/LOGO_INGEXIS_Trans.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40PX;
   cursor: pointer;
 }
 
-#encabezadoBotones #menu {
-  background-image: url("../img/menu.svg");
+#encabezadoBotones #imgUsuarioLogin {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#encabezadoBotones #nombreUsuarioLogin {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #f2f2f2;
+  text-align: start;
+}
+
+#encabezadoBotones #menuNavegacion {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70px 70px 70px 70px;
+      grid-template-columns: 70px 70px 70px 70px;
+  -ms-grid-rows: 50px;
+      grid-template-rows: 50px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#encabezadoBotones #menuNavegacion .item {
+  color: white;
+  width: 70px;
+  height: 50px;
+  border-radius: 5px;
+  background-position: center;
+  background-size: 40px 40px;
+  background-image: url("../img/menu.svg");
+  background-repeat: no-repeat;
+}
+
+#encabezadoBotones #menuNavegacion .item:hover {
+  background-color: rgba(255, 255, 255, 0.219);
 }
 
 #contenedorBuscador {
@@ -2082,8 +2140,8 @@ textarea:focus, input:focus {
   .contenedorPrincipal {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 380px 1fr 300px;
-        grid-template-columns: 380px 1fr 300px;
+    -ms-grid-columns: 380px 1fr 380px;
+        grid-template-columns: 380px 1fr 380px;
   }
   .contenedorPrincipal #divUsuarios {
     grid-column: 1 span 1;

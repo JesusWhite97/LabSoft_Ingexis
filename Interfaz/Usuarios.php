@@ -168,10 +168,17 @@
 <body >
 	<div class="fondoPantalla"></div>
 	<header id="encabezadoBotones">
-	<button id="regresar" onclick="goBack()"></button>
-	<h2 id="titulo">Usuarios</h2>
-	<button id="menu"></button>
-	</header>
+            <button id="regresar">
+            </button>
+            <div id="menuNavegacion">
+                <div class="item" id="itemHome"  style='background-image: url("img/HomeIcon.svg");' onclick=selectItemMenu("itemHome","img/HomeIconBlue.svg");></div>
+                <div class="item" id="itemObras" style='background-image: url("img/ObrasIcon.svg");' onclick=selectItemMenu("itemObras","img/ObrasIconBlue.svg");></div>
+                <div class="item" id="itemMuestras" style='background-image: url("img/MuestraIcon.svg");' onclick=selectItemMenu("itemMuestras","img/MuestraIconBlue.svg");></div>
+                <div class="item" id="itemPruebas" style='background-image: url("img/PruebaIcon.svg");'  onclick=selectItemMenu("itemPruebas","img/PruebaIconBlue.svg");></div>
+            </div>
+            <div id="imgUsuarioLogin" style='background-image: url("../Usuarios/<?php echo $_SESSION['correo'];?>/<?php echo $_SESSION['imgUsuario'];?>");'></div>
+                <div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
+        </header>   
 	<div class="contenedorPrincipal">
 		<!-- 00000000000000000000000 -->
 		<div id="divUsuarios">
@@ -206,5 +213,7 @@
 			
 		</div>
 		<!-- 22222222222222222222222 -->
+
+		<!-- 33333333333333333333333 -->
 	</div>
 </body>

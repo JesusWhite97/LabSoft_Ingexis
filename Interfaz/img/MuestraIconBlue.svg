@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46" height="56.989" viewBox="0 0 46 56.989">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.018" y1="1" x2="1.701" y2="0.597" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eaeaf3"/>
+      <stop offset="1" stop-color="#404b54"/>
+    </linearGradient>
+    <filter id="Trazado_48" x="9.418" y="0" width="27.164" height="35.641" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-2" x1="0.018" x2="0.857" y2="0.767" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0109fc"/>
+      <stop offset="1" stop-color="#0a92fc"/>
+    </linearGradient>
+    <filter id="Rectángulo_138" x="5.167" y="16.989" width="36" height="37.857" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Trazado_47" x="0" y="36.846" width="46" height="20.143" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Unión_7" x="2" y="11.641" width="40.999" height="27.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="MuestraIconBlue" transform="translate(-1415 -15.359)">
+    <g transform="matrix(1, 0, 0, 1, 1415, 15.36)" filter="url(#Trazado_48)">
+      <path id="Trazado_48-2" data-name="Trazado 48" d="M4.058,2.928c.18-1.114,1.567-1.3,1.883,0A58,58,0,0,0,7.029,12.26a13.032,13.032,0,0,0,2.494,5.434c.233.959-.25,1.968-.942,1.968H1.419c-.692,0-1.174-1.009-.942-1.968,0,0,1.384-1.078,2.28-4.77A75.965,75.965,0,0,0,4.058,2.928Z" transform="translate(18 3.98)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Grupo_119" data-name="Grupo 119" transform="translate(1424 38.348)">
+      <g transform="matrix(1, 0, 0, 1, -9, -22.99)" filter="url(#Rectángulo_138)">
+        <rect id="Rectángulo_138-2" data-name="Rectángulo 138" width="18" height="19.857" transform="translate(14.17 22.99)" fill="url(#linear-gradient-2)"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -9, -22.99)" filter="url(#Trazado_47)">
+        <path id="Trazado_47-2" data-name="Trazado 47" d="M0,0H28V2.143H0Z" transform="translate(9 42.85)" fill="url(#linear-gradient-2)"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1415, 15.36)" filter="url(#Unión_7)">
+      <path id="Unión_7-2" data-name="Unión 7" d="M2208.69-7885.825a5.682,5.682,0,0,1-3,.825,5.57,5.57,0,0,1-3.394-1.1,6,6,0,0,1-4.82,2.1c-3.024,0-5.476-1.791-5.476-4s2.451-4,5.476-4a6.619,6.619,0,0,1,3.843,1.15,5.165,5.165,0,0,1,4.371-2.15,4.79,4.79,0,0,1,4.832,3.2,3.562,3.562,0,0,1,1.193-.2,3.152,3.152,0,0,1,3.285,3,3.152,3.152,0,0,1-3.285,3A3.307,3.307,0,0,1,2208.69-7885.825Z" transform="translate(-2181 7910.64)" fill="url(#linear-gradient)"/>
+    </g>
+    <rect id="Rectángulo_162" data-name="Rectángulo 162" width="40" height="40" transform="translate(1417 21)" fill="none"/>
+  </g>
+</svg>

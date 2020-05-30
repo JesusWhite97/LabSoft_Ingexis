@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="41.599" viewBox="0 0 40 41.599">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.018" y1="1" x2="0.857" y2="0.233" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0109fc"/>
+      <stop offset="1" stop-color="#0a92fc"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-12" x1="0.018" y1="1" x2="1.701" y2="0.597" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eaeaf3"/>
+      <stop offset="1" stop-color="#404b54"/>
+    </linearGradient>
+  </defs>
+  <g id="ObrasIconBlue" transform="translate(-1251 -23.401)">
+    <rect id="Rectángulo_147" data-name="Rectángulo 147" width="40" height="41" transform="translate(1251 24)" fill="none"/>
+    <g id="Rectángulo_148" data-name="Rectángulo 148" transform="translate(1255 40)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_149" data-name="Rectángulo 149" transform="translate(1264 40)" stroke="#5e5454" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_151" data-name="Rectángulo 151" transform="translate(1273 40)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_150" data-name="Rectángulo 150" transform="translate(1269 46)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_152" data-name="Rectángulo 152" transform="translate(1278 46)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_153" data-name="Rectángulo 153" transform="translate(1255 52)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_154" data-name="Rectángulo 154" transform="translate(1260 46)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_155" data-name="Rectángulo 155" transform="translate(1264 52)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_157" data-name="Rectángulo 157" transform="translate(1260 35)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_158" data-name="Rectángulo 158" transform="translate(1269 35)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <g id="Rectángulo_156" data-name="Rectángulo 156" transform="translate(1273 52)" stroke="#5e5454" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)">
+      <rect width="10" height="6" stroke="none"/>
+      <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
+    </g>
+    <path id="Unión_5" data-name="Unión 5" d="M2197.612-7874.466l-.095-9.33a1,1,0,0,1,1.5-.877l3.533,2.04,2.815-4.875-.512-.295,3-5.2,2.6,1.5-3,5.2-.356-.206-2.814,4.875,2.96,1.709a1,1,0,0,1-.01,1.737l-8.127,4.583a.99.99,0,0,1-.49.13A1,1,0,0,1,2197.612-7874.466Z" transform="translate(-924.513 7916.402)" fill="url(#linear-gradient-12)"/>
+  </g>
+</svg>

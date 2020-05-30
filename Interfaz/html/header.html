@@ -6,16 +6,44 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="../css/main.css">
     <script src="../js/main.js"></script>
+    <script>
+        function selectItemMenu(itemSelected,img){
+            document.getElementById("itemHome").style["background-image"] = 'url("../img/HomeIcon.svg")';
+            document.getElementById("itemHome").style["border-radius"] = "5px";
+            document.getElementById("itemHome").style["border-bottom"]= "none";
+
+            document.getElementById("itemObras").style["background-image"] = 'url("../img/ObrasIcon.svg")';
+            document.getElementById("itemObras").style["border-radius"] = "5px";
+            document.getElementById("itemObras").style["border-bottom"]= "none";
+
+            document.getElementById("itemMuestras").style["background-image"] = 'url("../img/MuestraIcon.svg")';
+            document.getElementById("itemMuestras").style["border-radius"] = "5px";
+            document.getElementById("itemMuestras").style["border-bottom"]= "none";
+
+            document.getElementById("itemPruebas").style["background-image"] = 'url("../img/PruebaIcon.svg")';
+            document.getElementById("itemPruebas").style["border-radius"] = "5px";
+            document.getElementById("itemPruebas").style["border-bottom"]= "none";
+
+            item = document.getElementById(itemSelected);
+            item.style["background-image"] = 'url('+img+')';
+            item.style["border-radius"] = "0px";
+            item.style["border-bottom"]= "4px solid #0109FC";
+            
+        }
+    </script>
     </head>
     <body>
         <header id="encabezadoBotones">
             <button id="regresar">
             </button>
-            <h2 id="titulo">
-                    Titulo
-            </h2>
-            <button id="menu">
-            </button>
+            <div id="menuNavegacion">
+                <div class="item" id="itemHome"  style='background-image: url("../img/HomeIcon.svg");' onclick=selectItemMenu("itemHome","../img/HomeIconBlue.svg");></div>
+                <div class="item" id="itemObras" style='background-image: url("../img/ObrasIcon.svg");' onclick=selectItemMenu("itemObras","../img/ObrasIconBlue.svg");></div>
+                <div class="item" id="itemMuestras" style='background-image: url("../img/MuestraIcon.svg");' onclick=selectItemMenu("itemMuestras","../img/MuestraIconBlue.svg");></div>
+                <div class="item" id="itemPruebas" style='background-image: url("../img/PruebaIcon.svg");'  onclick=selectItemMenu("itemPruebas","../img/PruebaIconBlue.svg");></div>
+            </div>
+            <div id="imgUsuarioLogin" style='background-image: url("../img/user.jpg");'></div>
+                <div id="nombreUsuarioLogin">Obed</div>
         </header>     
     </body>
 </html>

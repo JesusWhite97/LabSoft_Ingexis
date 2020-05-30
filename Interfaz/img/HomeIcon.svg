@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60.219" height="57.699" viewBox="0 0 60.219 57.699">
+  <defs>
+    <filter id="union_home" x="0" y="0" width="60.219" height="57.699" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="HomeIcon" transform="translate(1708.935 1.373)">
+    <g transform="matrix(1, 0, 0, 1, -1708.93, -1.37)" filter="url(#union_home)">
+      <path id="union_home-2" data-name="union home" d="M16.626,38.192H5.371V21.749H.536A.5.5,0,0,1,.175,20.9L20.017.148a.5.5,0,0,1,.723,0L40.582,20.9a.5.5,0,0,1-.361.846H35.388V38.191H24.132V29.857a3.752,3.752,0,1,0-7.5,0v8.335h0Z" transform="translate(9.73 6.76)" fill="none" stroke="#f2f2f2" stroke-width="1.5"/>
+    </g>
+    <rect id="Rectángulo_145" data-name="Rectángulo 145" width="41" height="38" transform="translate(-1699.537 11)" fill="none"/>
+  </g>
+</svg>

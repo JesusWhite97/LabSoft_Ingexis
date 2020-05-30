@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <filter id="Rectángulo_138" x="5.167" y="0" width="50" height="57.857" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Trazado_47" x="0" y="37.857" width="60" height="22.143" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="MuestraIcon" transform="translate(-981 -17)">
+    <g transform="matrix(1, 0, 0, 1, 981, 17)" filter="url(#Rectángulo_138)">
+      <rect id="Rectángulo_138-2" data-name="Rectángulo 138" width="30" height="37.857" transform="translate(15.17 7)" fill="none" stroke="#c8c8c8" stroke-linecap="round" stroke-width="2"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 981, 17)" filter="url(#Trazado_47)">
+      <g id="Trazado_47-2" data-name="Trazado 47" transform="translate(10 44.86)" fill="#c8c8c8" stroke-linecap="round">
+        <path d="M 40.5 2.642823696136475 L 40 2.642823696136475 L 0 2.642823696136475 L -0.5 2.642823696136475 L -0.5 2.142823696136475 L -0.5 3.63620756616001e-06 L -0.5 -0.4999963641166687 L 0 -0.4999963641166687 L 40 -0.4999963641166687 L 40.5 -0.4999963641166687 L 40.5 3.63620756616001e-06 L 40.5 2.142823696136475 L 40.5 2.642823696136475 Z" stroke="none"/>
+        <path d="M 0 3.576278686523438e-06 L 0 2.142823696136475 L 40 2.142823696136475 L 40 3.576278686523438e-06 L 0 3.576278686523438e-06 M -1 -0.9999964237213135 L 0 -0.9999964237213135 L 40 -0.9999964237213135 L 41 -0.9999964237213135 L 41 3.576278686523438e-06 L 41 2.142823696136475 L 41 3.142823696136475 L 40 3.142823696136475 L 0 3.142823696136475 L -1 3.142823696136475 L -1 2.142823696136475 L -1 3.576278686523438e-06 L -1 -0.9999964237213135 Z" stroke="none" fill="#c8c8c8"/>
+      </g>
+    </g>
+  </g>
+</svg>
