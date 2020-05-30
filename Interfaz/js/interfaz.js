@@ -241,6 +241,14 @@ function selectItemMenu(itemSelected,img){
   document.getElementById("itemPruebas").style["border-radius"] = "5px";
   document.getElementById("itemPruebas").style["border-bottom"]= "none";
 
+  document.getElementById("itemUsers").style["background-image"] = 'url("img/UserIcon.svg")';
+  document.getElementById("itemUsers").style["border-radius"] = "5px";
+  document.getElementById("itemUsers").style["border-bottom"]= "none";
+
+  document.getElementById("itemClients").style["background-image"] = 'url("img/ClientesIcon.svg")';
+  document.getElementById("itemClients").style["border-radius"] = "5px";
+  document.getElementById("itemClients").style["border-bottom"]= "none";
+
   item = document.getElementById(itemSelected);
   item.style["background-image"] = 'url('+img+')';
   item.style["border-radius"] = "0px";

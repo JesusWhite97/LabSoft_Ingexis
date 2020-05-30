@@ -1,90 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43.938" height="47.598" viewBox="0 0 43.938 47.598">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="41.599" viewBox="0 0 40 41.599">
   <defs>
-    <filter id="Polígono_13" x="7.487" y="7.451" width="34.758" height="34.026" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectángulo_159" x="17.817" y="4.683" width="23.232" height="25.062" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-2"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-2"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
-    <filter id="Rectángulo_160" x="20.34" y="0" width="23.598" height="24.696" filterUnits="userSpaceOnUse">
-      <feOffset dy="3" input="SourceAlpha"/>
-      <feGaussianBlur stdDeviation="3" result="blur-3"/>
-      <feFlood flood-opacity="0.161"/>
-      <feComposite operator="in" in2="blur-3"/>
-      <feComposite in="SourceGraphic"/>
-    </filter>
+    <linearGradient id="linear-gradient" x1="0.018" y1="1" x2="1.701" y2="0.597" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eaeaf3"/>
+      <stop offset="1" stop-color="#f2f2f2"/>
+    </linearGradient>
   </defs>
-  <g id="ObrasIcon" transform="translate(-1251 -17.402)">
+  <g id="ObrasIcon" transform="translate(-1251 -23.401)">
     <rect id="Rectángulo_147" data-name="Rectángulo 147" width="40" height="41" transform="translate(1251 24)" fill="none"/>
-    <g id="Rectángulo_148" data-name="Rectángulo 148" transform="translate(1255 40)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_148" data-name="Rectángulo 148" transform="translate(1255 40)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_149" data-name="Rectángulo 149" transform="translate(1264 40)" fill="none" stroke="#f2f2f2" stroke-width="1">
+    <g id="Rectángulo_149" data-name="Rectángulo 149" transform="translate(1264 40)" fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_151" data-name="Rectángulo 151" transform="translate(1273 40)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_151" data-name="Rectángulo 151" transform="translate(1273 40)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_150" data-name="Rectángulo 150" transform="translate(1269 46)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_150" data-name="Rectángulo 150" transform="translate(1269 46)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_152" data-name="Rectángulo 152" transform="translate(1278 46)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_152" data-name="Rectángulo 152" transform="translate(1278 46)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_153" data-name="Rectángulo 153" transform="translate(1255 52)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_153" data-name="Rectángulo 153" transform="translate(1255 52)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_154" data-name="Rectángulo 154" transform="translate(1260 46)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_154" data-name="Rectángulo 154" transform="translate(1260 46)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_155" data-name="Rectángulo 155" transform="translate(1264 52)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_155" data-name="Rectángulo 155" transform="translate(1264 52)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_157" data-name="Rectángulo 157" transform="translate(1260 35)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_157" data-name="Rectángulo 157" transform="translate(1260 35)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_158" data-name="Rectángulo 158" transform="translate(1269 35)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_158" data-name="Rectángulo 158" transform="translate(1269 35)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g id="Rectángulo_156" data-name="Rectángulo 156" transform="translate(1273 52)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
+    <g id="Rectángulo_156" data-name="Rectángulo 156" transform="translate(1273 52)" fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1">
       <rect width="10" height="6" stroke="none"/>
       <rect x="0.5" y="0.5" width="9" height="5" fill="none"/>
     </g>
-    <g transform="matrix(1, 0, 0, 1, 1251, 17.4)" filter="url(#Polígono_13)">
-      <g id="Polígono_13-2" data-name="Polígono 13" transform="translate(27.75 29.48) rotate(-150)" fill="#f2f2f2">
-        <path d="M 11.24755001068115 10.50000190734863 L 1.752450466156006 10.50000190734863 C 1.490380525588989 10.50000190734863 1.361450433731079 10.32363224029541 1.318180441856384 10.247802734375 C 1.274910449981689 10.17198276519775 1.188660502433777 9.97125244140625 1.321980476379395 9.74564266204834 L 6.069530487060547 1.711312294006348 C 6.200540542602539 1.489612340927124 6.414210319519043 1.46568238735199 6.500000476837158 1.46568238735199 C 6.585780620574951 1.46568238735199 6.799460411071777 1.489612340927124 6.93047046661377 1.71132230758667 L 11.67802047729492 9.745632171630859 C 11.81134033203125 9.97125244140625 11.72509002685547 10.17198276519775 11.6818208694458 10.247802734375 C 11.63855075836182 10.32363224029541 11.50962066650391 10.50000190734863 11.24755001068115 10.50000190734863 Z" stroke="none"/>
-        <path d="M 6.500000476837158 1.965682029724121 L 1.752442359924316 9.999998092651367 C 1.752443313598633 10 1.752444267272949 10.00000095367432 1.752445220947266 10.00000190734863 C 1.752447128295898 10.00000190734863 1.752449035644531 10.00000190734863 1.752450942993164 10.00000190734863 L 11.24755096435547 10.00000190734863 L 6.50001049041748 1.965692520141602 C 6.500008583068848 1.965688705444336 6.500006675720215 1.965685844421387 6.500004768371582 1.965682029724121 C 6.500003337860107 1.965682029724121 6.500001907348633 1.965682029724121 6.500000476837158 1.965682029724121 M 6.499996662139893 0.9656801223754883 C 6.833695411682129 0.9656801223754883 7.16739559173584 1.129437446594238 7.360930442810059 1.456952095031738 L 12.10848045349121 9.49127197265625 C 12.50239086151123 10.15788269042969 12.0218505859375 11.00000190734863 11.24755096435547 11.00000190734863 L 1.752450942993164 11.00000190734863 C 0.9781503677368164 11.00000190734863 0.4976100921630859 10.15788269042969 0.8915205001831055 9.49127197265625 L 5.639070510864258 1.456952095031738 C 5.832600593566895 1.129437446594238 6.166297912597656 0.9656801223754883 6.499996662139893 0.9656801223754883 Z" stroke="none" fill="#f2f2f2"/>
-      </g>
-    </g>
-    <g transform="matrix(1, 0, 0, 1, 1251, 17.4)" filter="url(#Rectángulo_159)">
-      <g id="Rectángulo_159-2" data-name="Rectángulo 159" transform="translate(28.55 17.74) rotate(-150)" fill="#f2f2f2" stroke="#f2f2f2" stroke-width="0.5">
-        <rect width="2" height="7" stroke="none"/>
-        <rect x="0.25" y="0.25" width="1.5" height="6.5" fill="none"/>
-      </g>
-    </g>
-    <g transform="matrix(1, 0, 0, 1, 1251, 17.4)" filter="url(#Rectángulo_160)">
-      <g id="Rectángulo_160-2" data-name="Rectángulo 160" transform="translate(31.94 12.7) rotate(-150)" fill="#f2f2f2" stroke="#f2f2f2" stroke-width="0.5">
-        <rect width="3" height="6" rx="1" stroke="none"/>
-        <rect x="0.25" y="0.25" width="2.5" height="5.5" rx="0.75" fill="none"/>
-      </g>
+    <g id="Unión_5" data-name="Unión 5" transform="translate(-924.513 7916.402)" stroke-miterlimit="10" fill="url(#linear-gradient)">
+      <path d="M 2198.614013671875 -7873.9736328125 L 2198.613037109375 -7873.9736328125 C 2198.374755859375 -7873.9736328125 2198.115478515625 -7874.1640625 2198.1123046875 -7874.47119140625 L 2198.017333984375 -7883.80029296875 C 2198.015380859375 -7883.97412109375 2198.09326171875 -7884.08935546875 2198.15869140625 -7884.15576171875 C 2198.254638671875 -7884.25244140625 2198.38623046875 -7884.30810546875 2198.519287109375 -7884.30810546875 C 2198.605224609375 -7884.30810546875 2198.6884765625 -7884.28515625 2198.766845703125 -7884.23974609375 L 2202.299560546875 -7882.2001953125 L 2202.732666015625 -7881.9501953125 L 2202.982666015625 -7882.38330078125 L 2205.79736328125 -7887.2578125 L 2206.047607421875 -7887.69091796875 L 2205.614013671875 -7887.94091796875 L 2205.53564453125 -7887.98583984375 L 2208.036376953125 -7892.3173828125 L 2209.767578125 -7891.31640625 L 2207.268310546875 -7886.986328125 L 2206.912353515625 -7887.19189453125 L 2206.662353515625 -7886.7587890625 L 2203.84814453125 -7881.8837890625 L 2203.59814453125 -7881.45068359375 L 2204.03125 -7881.20068359375 L 2206.991455078125 -7879.49169921875 C 2207.218017578125 -7879.3603515625 2207.241455078125 -7879.142578125 2207.24072265625 -7879.05517578125 C 2207.240234375 -7878.96826171875 2207.21435546875 -7878.75146484375 2206.986083984375 -7878.623046875 L 2198.8583984375 -7874.03955078125 C 2198.781005859375 -7873.99560546875 2198.69873046875 -7873.9736328125 2198.614013671875 -7873.9736328125 Z" stroke="none"/>
+      <path d="M 2198.6123046875 -7874.474609375 L 2198.61279296875 -7874.47509765625 L 2206.74072265625 -7879.05908203125 C 2206.74072265625 -7879.05908203125 2206.74072265625 -7879.05908203125 2206.74072265625 -7879.05908203125 C 2206.74072265625 -7879.05908203125 2206.74072265625 -7879.05908203125 2206.74072265625 -7879.05908203125 L 2203.78125 -7880.767578125 L 2202.91552734375 -7881.267578125 L 2202.91552734375 -7881.26708984375 L 2202.049560546875 -7881.76708984375 L 2198.517578125 -7883.806640625 C 2198.517578125 -7883.80615234375 2198.517333984375 -7883.80615234375 2198.517333984375 -7883.80615234375 C 2198.517333984375 -7883.80615234375 2198.517333984375 -7883.8056640625 2198.517333984375 -7883.8056640625 L 2198.6123046875 -7874.4765625 C 2198.6123046875 -7874.4755859375 2198.6123046875 -7874.47509765625 2198.6123046875 -7874.474609375 C 2198.6123046875 -7874.474609375 2198.6123046875 -7874.474609375 2198.6123046875 -7874.474609375 M 2207.08544921875 -7887.66943359375 L 2209.084716796875 -7891.13330078125 L 2208.21923828125 -7891.6337890625 L 2206.218994140625 -7888.16943359375 L 2206.730712890625 -7887.87451171875 L 2206.730712890625 -7887.8740234375 L 2207.08544921875 -7887.66943359375 M 2198.613037109375 -7873.4736328125 C 2198.09375 -7873.4736328125 2197.618408203125 -7873.88720703125 2197.6123046875 -7874.4658203125 L 2197.517333984375 -7883.79541015625 C 2197.51123046875 -7884.38427734375 2197.993408203125 -7884.80810546875 2198.519287109375 -7884.80810546875 C 2198.685546875 -7884.80810546875 2198.85595703125 -7884.765625 2199.016845703125 -7884.6728515625 L 2202.549560546875 -7882.63330078125 L 2205.3642578125 -7887.5078125 L 2204.8525390625 -7887.802734375 L 2207.853515625 -7893.00048828125 L 2210.450439453125 -7891.4990234375 L 2207.451416015625 -7886.30322265625 L 2207.095458984375 -7886.5087890625 L 2204.28125 -7881.6337890625 L 2207.241455078125 -7879.9248046875 C 2207.910888671875 -7879.53662109375 2207.906982421875 -7878.56787109375 2207.2314453125 -7878.1875 L 2199.10400390625 -7873.60400390625 C 2198.945068359375 -7873.51416015625 2198.77734375 -7873.4736328125 2198.614013671875 -7873.4736328125 C 2198.61376953125 -7873.4736328125 2198.61328125 -7873.4736328125 2198.613037109375 -7873.4736328125 Z" stroke="none" fill="#f2f2f2"/>
     </g>
   </g>
 </svg>

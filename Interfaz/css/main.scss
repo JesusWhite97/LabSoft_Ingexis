@@ -154,10 +154,11 @@ body{
     }
     #menuNavegacion{
         display: grid;
-        grid-template-columns: 70px 70px 70px 70px;
+        grid-template-columns: repeat(70px);
         grid-template-rows: 50px;
         justify-self: center;
         .item{
+            grid-row: 1 / span 1;
             color:white;
             width: 70px;
             height: 50px;
