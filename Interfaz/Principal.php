@@ -58,22 +58,20 @@
 </head>
 <body>
 <div class="fondoPantalla"></div>
-	<header id="encabezadoBotones">
-            <button id="regresar">
-            </button>
-            <div id="menuNavegacion">
-                <div class="item" id="itemHome"  style='background-image: url("img/HomeIcon.svg");' onclick=selectItemMenu("itemHome","img/HomeIconBlue.svg");></div>
-                <div class="item" id="itemObras" style='background-image: url("img/ObrasIcon.svg");' onclick=selectItemMenu("itemObras","img/ObrasIconBlue.svg");></div>
-                <div class="item" id="itemMuestras" style='background-image: url("img/MuestraIcon.svg");' onclick=selectItemMenu("itemMuestras","img/MuestraIconBlue.svg");></div>
-                <div class="item" id="itemPruebas" style='background-image: url("img/PruebaIcon.svg");'  onclick=selectItemMenu("itemPruebas","img/PruebaIconBlue.svg");></div>
-                <div class="item" id="itemUsers" style='background-image: url("img/UserIcon.svg");'  onclick=selectItemMenu("itemUsers","img/UserIconBlue.svg");></div>
-                <div class="item" id="itemClients" style='background-image: url("img/ClientesIcon.svg");'  onclick=selectItemMenu("itemClients","img/ClientesIconBlue.svg");></div>
-            </div>
-            <div id="imgUsuarioLogin" style='background-image: url("../Usuarios/<?php echo $_SESSION['correo'];?>/<?php echo $_SESSION['imgUsuario'];?>");'></div>
-                <div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
-        </header>   
-	
-    
+    <header id="encabezadoBotones"> 
+        <button id="regresar">
+        </button>
+        <div id="menuNavegacion">
+            <div class="item" id="itemHome"  style='background-image: url("img/HomeIcon.svg");' onclick=selectItemMenu("itemHome","img/HomeIconBlue.svg");></div>
+            <div class="item" id="itemObras" style='background-image: url("img/ObrasIcon.svg");' onclick=selectItemMenu("itemObras","img/ObrasIconBlue.svg");></div>
+            <div class="item" id="itemMuestras" style='background-image: url("img/MuestraIcon.svg");' onclick=selectItemMenu("itemMuestras","img/MuestraIconBlue.svg");></div>
+            <div class="item" id="itemPruebas" style='background-image: url("img/PruebaIcon.svg");'  onclick=selectItemMenu("itemPruebas","img/PruebaIconBlue.svg");></div>
+            <div class="item" id="itemUsers" style='background-image: url("img/UserIcon.svg");'  onclick=selectItemMenu("itemUsers","img/UserIconBlue.svg");></div>
+            <div class="item" id="itemClients" style='background-image: url("img/ClientesIcon.svg");'  onclick=selectItemMenu("itemClients","img/ClientesIconBlue.svg");></div>
+        </div>
+        <div id="imgUsuarioLogin" style='background-image: url("../Usuarios/<?php echo $_SESSION['correo'];?>/<?php echo $_SESSION['imgUsuario'];?>");'></div>
+        <div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
+    </header> 
 </body>
 </html>
 <br>
