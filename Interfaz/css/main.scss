@@ -45,7 +45,7 @@ body{
         filter: brightness(60%);
         overflow: hidden;
 }
-.contenedorPrincipal{
+#contenedorPrincipal{
     display: grid;
 }
 .mayus{
@@ -178,11 +178,22 @@ body{
     }
 
 }
+#tituloPag{
+    z-index: 5;
+    width: 100%;
+    font-family: $fuente;
+    font-size: 32px;
+    font-weight: 500;
+    color:rgb(255, 255, 255);
+    margin: 0px;
+    margin-bottom: 10px;
+    padding-left: 5%;
+    padding-top: 5px;
+}
 #contenedorBuscador{
     position: fixed;
     left: 5%;
     z-index: 2;
-    top:50px;
     display: grid;
     grid-template-columns: auto 42px;
     align-items: center;
@@ -190,7 +201,7 @@ body{
     font-family: 'Segoe UI', sans-serif;
     height: 50px;
     width: 90%;
-    margin: 15px auto;
+    margin: 10px auto;
     font-family: $fuente;
     background-image: $colorGradienteTarjetas;
     #buscarEntrada{
@@ -589,10 +600,9 @@ textarea:focus, input:focus{
 
     align-self: center;
     display: grid;
-    max-width: 600px;
-    min-width: 600px;
+    width: 100%;
     height: 300px;
-    margin: 0px auto;
+    grid-template-columns: auto;
     grid-template-rows: 1fr 50px;
     justify-items: center;
     font-family: $fuente;
@@ -604,6 +614,7 @@ textarea:focus, input:focus{
         grid-column: 1 / span 1;
         grid-row: 1 / span 3;
         width: 100%;
+        max-width: 100%;
         height: 100%;
         display:grid;
         grid-template-columns:50px 1fr  50px;
@@ -723,15 +734,15 @@ textarea:focus, input:focus{
         }
 
        
-        div{
-            grid-column: 1/ span 3;
-            grid-row: 1 / span 3;
-            width: 100%; 
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            border:0px;
-        }
+        // div{
+        //     grid-column: 1/ span 3;
+        //     grid-row: 1 / span 3;
+        //     width: 100%; 
+        //     height: 100%;
+        //     background-size: cover;
+        //     background-position: center;
+        //     border:0px;
+        // }
 
 
     }
@@ -785,7 +796,7 @@ textarea:focus, input:focus{
         grid-row: 2 / span 1;
         grid-column: 1 / span 1;
         border:0px;
-        width: 500px;
+        width: 100%;
         text-align: center;
         font-family: $fuente;
         font-weight: 600;
@@ -943,7 +954,7 @@ textarea:focus, input:focus{
 }
 #contenedorGridResponsivo{
     height: 85vh;
-    margin-top: 60px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
     grid-auto-rows: 120px;
@@ -960,13 +971,13 @@ textarea:focus, input:focus{
     display: none; 
 }
 @media screen and (max-width:640px) {
-    #divUsuarios{
+    #divTarjetas{
         display: block;
     }
-    #divInfoUsuarios{
+    #divInfo{
         display: none;
     }
-    #contenedorPrincipal{
+    .contenedorPrincipal{
         margin-top: 80px;
         grid-gap: 15px;
     #cerrarSesion {
@@ -1618,11 +1629,11 @@ textarea:focus, input:focus{
 }
 /* ======================================================== */
 @media screen and (min-width:640px){
-    .contenedorPrincipal{
+    #contenedorPrincipal{
         display: grid;
         grid-template-columns: 50% 50%;
     }
-    .divUsuarios{
+    #divTarjetas{
         grid-column: 1 span 1;
         display: block;
         font-family: $fuente;
@@ -1631,7 +1642,7 @@ textarea:focus, input:focus{
         backdrop-filter:  blur(50px);
         -webkit-backdrop-filter:blur(50px);
     }
-    .divInfoUsuarios{
+    #divInfo{
         grid-column: 2 span 1;
         display: none;
         overflow-y: scroll;
@@ -1645,18 +1656,16 @@ textarea:focus, input:focus{
         left: 0px;
     }
     .contenedorCentradoResponsivo{
-        margin-top: 50px;
+        margin-top: 10px;
         width: 100%;
     }
     #tituloContenedor{
         margin-left: auto;
         margin-right: auto;
         min-width: 80%;
-        width: 94%;
-        max-width: 94%;
-        padding-right:0px;
-        padding-left: 0px;
-        padding: 0px;
+        width: 90%;
+        max-width: 90%;
+        padding: 2%;
     }
     .tarjetaBlanca{
         margin-left: auto;
@@ -1674,21 +1683,26 @@ textarea:focus, input:focus{
         backdrop-filter:  blur(50px);
         -webkit-backdrop-filter:blur(50px);
     }
-    .contenedorPrincipal{
+    #contenedorPrincipal{
         display: grid;
+        margin-top: 50px;
         grid-template-columns: 380px 1fr 380px;
-        #divUsuarios{
-            grid-column: 1 span 1;
-            display: block;
-            font-family: $fuente;
-            box-shadow: $colorSombras;
-            background-image: $colorGradienteTarjetas;
-            backdrop-filter:  blur(5px);
-            -webkit-backdrop-filter:blur(5px);
-            overflow-y: visible;
-        }
+        grid-template-rows: 1fr;
+
     }
-    #divInfoUsuarios{
+    #divTarjetas{
+        grid-column: 1 span 1;
+        display: block;
+        width: 100%;
+        font-family: $fuente;
+        box-shadow: $colorSombras;
+        background-image: $colorGradienteTarjetas;
+        backdrop-filter:  blur(5px);
+        -webkit-backdrop-filter:blur(5px);
+        overflow-y: visible;
+    }
+    #divInfo{
+        margin-top: 10px;
         grid-column: 2 span 1;
         display: block;
     }
@@ -1704,5 +1718,8 @@ textarea:focus, input:focus{
             height: 280px;
             border-radius: 20px;
         }
+    }
+    #divInfo{
+        justify-self: stretch;
     }
 }

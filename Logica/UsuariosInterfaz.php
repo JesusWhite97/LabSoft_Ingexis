@@ -9,7 +9,7 @@
         $Tarjetas = '';
         for($i = 0; $i<count($arrayTajetas); $i++){
             $Tarjetas = $Tarjetas . '
-                        <div  id="'. $arrayTajetas[$i]['correo'] .'" class="contenedorTarjetaUsuario" onclick=cargarInfoUsuario("'. $arrayTajetas[$i]['correo'] .'")>
+                        <div  id="'. $arrayTajetas[$i]['correo'] .'" class="contenedorTarjetaUsuario" onclick=cargarInfoU("'. $arrayTajetas[$i]['correo'] .'")>
                             <a>
                                 <div class="imgUsuario" style="background-image: url('."'../Usuarios/".$arrayTajetas[$i]['correo']."/".$arrayTajetas[$i]['img']."'".');"></div>
                                 <h2 class="tituloTarjetaUsuario"> '.$arrayTajetas[$i]['apodo'].' </h2>
@@ -82,11 +82,14 @@
                             <label id="botonImg" for="inImg" style="display:none;"></label>
                             <button id="botonEditar" onclick=verPantallaModificar(document.getElementById("correo").value)>
                             <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
-                            <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) >
+                            <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
                             <div id="blah"> </div>
+
+                            
                         </div>
-                        <input id="apodo" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoUsuario['apodo'].'" onchange="arregloCambios[0]=1;" maxlength="60">
-                        <p class="textoAyuda textoAyudaTitulo">Apodo</p>
+                        <input id="apodo tituloInfo" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoUsuario['apodo'].'" onchange="arregloCambios[0]=1;" maxlength="60">
+                            <p class="textoAyuda textoAyudaTitulo">Apodo</p>
+                     
                             </div>
                         <div class="tarjetaBlanca" style="margin-top: 0px;">
                             <input type="text" id="puestoInput" class="selectInfo" style="text-align:center;" value="'.$infoUsuario['puesto'].'" onchange="arregloCambios[2]=1;">        

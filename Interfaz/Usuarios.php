@@ -32,6 +32,9 @@
 	<script src="js/validaciones.js"></script>
 	<script>
 		// --------------------------------------
+		window.onload = function(){
+			cargarInterfazUsuarios("",'1111',usuarioLog());
+		}
 		// --------------------------------------
 		function usuarioLog(){
 			return '<?php echo $_SESSION['correo'] ?>';
@@ -62,26 +65,26 @@
 		// --------------------------------------
 		function cargarInfoUsuario(email){
 			if (screen.width >= 800) {
-				let divUsuarios = document.getElementById("divUsuarios");
-				let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-				divUsuarios.style.display = "block";
-				divInfoUsuarios.style.display = "block";
+				let divTarjetas = document.getElementById("divTarjetas");
+				let divInfo = document.getElementById("divInfo");
+				divTarjetas.style.display = "block";
+				divInfo.style.display = "block";
 			}
 			if (screen.width < 800) {
-				let divUsuarios = document.getElementById("divUsuarios");
-				let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-				divUsuarios.style.display = "none";
-				divInfoUsuarios.style.display = "block";
+				let divTarjetas = document.getElementById("divTarjetas");
+				let divInfo = document.getElementById("divInfo");
+				divTarjetas.style.display = "none";
+				divInfo.style.display = "block";
 			}
 			cargarInfo(email);
 		}
 		// --------------------------------------
 		function goBack(){
 			if (screen.width < 800) {
-				let divUsuarios = document.getElementById("divUsuarios");
-				let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-				divUsuarios.style.display = "block";
-				divInfoUsuarios.style.display = "none";
+				let divTarjetas = document.getElementById("divTarjetas");
+				let divInfo = document.getElementById("divInfo");
+				divTarjetas.style.display = "block";
+				divInfo.style.display = "none";
 			}
 		}
 		// --------------------------------------
@@ -178,9 +181,9 @@
             <div id="imgUsuarioLogin" style='background-image: url("../Usuarios/<?php echo $_SESSION['correo'];?>/<?php echo $_SESSION['imgUsuario'];?>");'></div>
                 <div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
         </header>   
-	<div class="contenedorPrincipal">
+	<div id="contenedorPrincipal">
 		<!-- 00000000000000000000000 -->
-		<div id="divUsuarios">
+		<div id="divTarjetas">
 			<div id="contenedorBuscador">
 					<div id="desenfoque" class="sombra"></div>
 					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())" placeholder="Buscar..." title="Type in a name"></input>
@@ -208,7 +211,7 @@
 			</div>
 		</div>
 		<!-- 11111111111111111111111 -->
-		<div id="divInfoUsuarios">
+		<div id="divInfo">
 			
 		</div>
 		<!-- 22222222222222222222222 -->

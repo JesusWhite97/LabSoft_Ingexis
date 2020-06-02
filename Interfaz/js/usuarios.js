@@ -4,11 +4,11 @@ var salidaUsuarioEliminado ="";         //eliminado
 var modificacionSalida = "";            //modificado
 //Funciones========================================================================================
 function cargarInterfazUsuarios(busqueda,filtro,correo){
-    this.cargarTarjetas(busqueda,filtro);
-    cargarInfo(correo);
+    this.cargarTarjetasU(busqueda,filtro);
+    cargarInfoU(correo);
 }
 //=================================================================================================
-function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
+function cargarTarjetasU(cadenaBuscar, cadenaFiltrado){
     const postData ={
         metodo:"cargarTarjetas", 
         busqueda: cadenaBuscar, 
@@ -27,7 +27,7 @@ function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
     });
 }
 //=================================================================================================
-function cargarInfo(correo){
+function cargarInfoU(correo){
     var salida = '';
     tarjetaSeleccionada(correo);
     const postData = {
@@ -44,7 +44,7 @@ function cargarInfo(correo){
             let arrayResponse = JSON.parse(response);
             console.log(arrayResponse[0].infoUsuario);
             
-            document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
+            document.getElementById("divInfo").innerHTML = arrayResponse[0].infoUsuario;
         }
     });
     
@@ -57,7 +57,7 @@ function cargarRegistroUsuario(){
     $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
         let arrayResponse = JSON.parse(response);
         console.log(arrayResponse[0].registroUsuario);
-        document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].registroUsuario;
+        document.getElementById("divInfo").innerHTML = arrayResponse[0].registroUsuario;
     });
 }
 //=================================================================================================
