@@ -3,7 +3,10 @@
     include '../Logica/CrearDirectorios.php';
     include 'conexion.php';
     header("Content-Type: text/html;charset=utf-8"); 
-    // ========================================================
+    // ========================================================================================================================
+    // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+    // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+    // ========================================================================================================================
     class procedimientos_Obra{
         //#####################################################
         public function Agregar($id_client, $nombre, $direccion, $anotaciones){
@@ -138,8 +141,10 @@
         }
         //#####################################################
     }
+    // ========================================================================================================================
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+    // ========================================================================================================================
     class procedimientos_elementos_muestra{
         //#####################################################
         public function Agregar($id_obra, $id_usuario, $nombre){
@@ -147,9 +152,74 @@
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
-            
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL ElemMues_agregar('".$id_obra."', '".$id_usuario."', '".$nombre."')";
+            if($mysqli->query($query)===TRUE){
+                return 'true';
+            }else{
+                return "Error: ".$mysqli->error;
+            } 
+        }
+        //#####################################################
+        public function Fechas_identificadores($correoUser, $id_elemento, $fecha_muestreo, $id_mues1, $id_mues2, $id_mues3, $iden1, $iden2, $iden3){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL ElemMues_Fechas_ident('".$correoUser."', '".$id_elemento."', '".$fecha_muestreo."', '".$id_mues1."', '".$id_mues2."', '".$id_mues3."', '".$iden1."', '".$iden2."', '".$iden3."')";
+            if($mysqli->query($query)===TRUE){
+                return 'true';
+            }else{
+                return "Error: ".$mysqli->error;
+            } 
+        }
+        //#####################################################
+        public function eliminarElemento($id_elemento){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL ElemMues_Eleminar('".$id_elemento."')";
+            if($mysqli->query($query)===TRUE){
+                return 'true';
+            }else{
+                return "Error: ".$mysqli->error;
+            } 
+        }
+        //#####################################################
+        public function modificarElemento($id_elemento, $correoUser, $nombre, $observaciones, $fachaMestreo){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL ElemMues_Modificar_Elemento('".$id_elemento."', '".$correoUser."', '".$nombre."', '".$observaciones."', '".$fachaMestreo."')";
+            if($mysqli->query($query)===TRUE){
+                return 'true';
+            }else{
+                return "Error: ".$mysqli->error;
+            } 
+        }
+        //#####################################################
+        public function modificarMuestra($id_muestra, $correoUser, $iden, $resultado){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL ElemMues_Modificar_Muestra('".$id_muestra."', '".$correoUser."', '".$iden."', '".$resultado."')";
+            if($mysqli->query($query)===TRUE){
+                return 'true';
+            }else{
+                return "Error: ".$mysqli->error;
+            } 
         }
         //#####################################################
     }
-    // ========================================================
+    // ========================================================================================================================
+    // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+    // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
+    // ========================================================================================================================
 ?>

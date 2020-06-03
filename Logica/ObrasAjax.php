@@ -72,7 +72,7 @@
             $cambios = $_POST["cambios"];
             $salida = '';
             //Formular Respuesta--------------------------------
-
+            $salida = $cliente->Eliminar();
             //salida--------------------------------------------
             $json[] =   
                 [
