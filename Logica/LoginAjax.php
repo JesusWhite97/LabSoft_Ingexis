@@ -14,7 +14,7 @@
             //Formular Respuesta--------------------------------
             if($usuario->Existencia_de_correo($correo) == 'true'){
                 $infoUser = $usuario->Info_Correo($correo);
-                $Respuesta = 'Bienvenido '. $infoUser[0] .'.';
+                $Respuesta = 'Bienvenido '. $infoUser[0] .' 👋.';
                 $_SESSION["correo"]     = $correo;
                 $_SESSION["apodo"]      = $infoUser[0];
                 $_SESSION["imgUsuario"] = $infoUser[1];
@@ -41,8 +41,9 @@
             $contra = $_POST['contra'];
             //Formular Respuesta--------------------------------
             if($usuario->Validar_contra($_SESSION["correo"], $contra) == 'true'){
+                $_SESSION['puesto'] = $usuario->Puesto($_SESSION["correo"]);
                 $Respuesta = 'A Trabajar '. $_SESSION["apodo"] .' 👍.';
-                $Salida = '/LabSoft_Ingexis/Interfaz/html/principal.html';
+                $Salida = '/LabSoft_Ingexis/Interfaz/Principal.php';
             }
             else{
                 $Respuesta = 'Contraseña Incorrecta.';                

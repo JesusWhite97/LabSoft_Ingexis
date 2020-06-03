@@ -1,0 +1,47 @@
+-- use databaseingexis;
+-- --======================================--
+-- CREATE FUNCTION  correoExistente(correo varchar(50)) returns varchar(5)
+-- BEGIN
+--     DECLARE respuesta int;
+--     select log_usuarios.id_usuario into respuesta from log_usuarios where log_usuarios.correo = correo;
+--     if respuesta != 0 then
+--         return 'true';
+--     else
+--         return 'false';
+--     end if;
+-- END
+-- --======================================--
+-- CREATE FUNCTION verificaContra(correo varchar(50), contraseña varchar(20)) returns varchar(5)
+-- begin
+--     declare respuesta int;
+--     select log_usuarios.id_usuario into respuesta from log_usuarios where log_usuarios.correo = correo and log_usuarios.contra = contraseña;
+--     if respuesta != 0 then
+--         return 'true';
+--     else
+--         return 'false';
+--     end if;
+-- end
+-- --======================================--
+-- create FUNCTION id_by_correo(correo varchar(50)) returns int
+-- begin
+--     declare salida int;
+--     select log_usuarios.id_usuario into salida from log_usuarios where log_usuarios.correo = correo;
+--     return salida;
+-- end
+-- --======================================--
+-- CREATE FUNCTION img_by_correo(correo varchar(50)) returns varchar(200)
+-- BEGIN
+--     declare salida varchar(200);
+--     select log_usuarios.img_log into salida from log_usuarios where log_usuarios.correo = correo;
+--     return salida;
+-- end
+-- --======================================--
+-- CREATE FUNCTION puesto_by_correo(correo varchar(50)) returns varchar(50)
+-- BEGIN
+--     declare salida varchar(100);
+--     declare id int;
+--     SELECT id_by_correo(correo) into id;
+--     select usuarios.puesto into salida from usuarios where usuarios.id_usuario = id;
+--     return salida;
+-- end
+-- --======================================--

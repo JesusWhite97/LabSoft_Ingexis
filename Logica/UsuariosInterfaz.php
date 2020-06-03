@@ -9,8 +9,7 @@
         $Tarjetas = '';
         for($i = 0; $i<count($arrayTajetas); $i++){
             $Tarjetas = $Tarjetas . '
-                        <div class="contenedorTarjetaUsuario" onclick=cargarInfoUsuario("'. $arrayTajetas[$i]['correo'] .'")>
-                            <div id="desenfoque" class="sombra"></div>
+                        <div  id="'. $arrayTajetas[$i]['correo'] .'" class="contenedorTarjetaUsuario" onclick=cargarInfoU("'. $arrayTajetas[$i]['correo'] .'")>
                             <a>
                                 <div class="imgUsuario" style="background-image: url('."'../Usuarios/".$arrayTajetas[$i]['correo']."/".$arrayTajetas[$i]['img']."'".');"></div>
                                 <h2 class="tituloTarjetaUsuario"> '.$arrayTajetas[$i]['apodo'].' </h2>
@@ -27,9 +26,28 @@
     function imprimir_info_usuario($correo){
         $Usuario = new Usuario();
         $infoUsuario = $Usuario->VistaCompleta($correo);
-        $imgUsuario = $Usuario->Info_Correo($correo);
 
+        $imgUsuario = $Usuario->Info_Correo($correo);
         $optionsPuesto = "";
+
+        //=========DATOS MODAL=================
+        $tipoModal = "'confirmar'";
+        $item = "'".$correo."'";
+
+        //=========DATOS MODAL MODIFICAR=================
+        $textoModificar = "'Desea modificar usuario: '";
+        $funcionModificar = "'modificarUser()'";
+        $textoBotonModificar = "'Modificar'";
+        $claseBotonModificar = "'guardarBotonModal'";
+
+      
+        //=========DATOS MODAL ELIMINAR=================
+        $textoEliminar = "'Desea eliminar usuario: '";
+        $funcionEliminar = "'eliminarUsuario()'";
+        $textoBotonEliminar = "'Eliminar'";
+        $claseBotonEliminar = "'eliminarBotonModal'";
+
+     
 
         if($infoUsuario["puesto"] == "Administrador"){
             $optionsPuesto = '<option selected value="Administrador">Administrador</option>';
@@ -54,24 +72,28 @@
         }else{
             $optionsPuesto =$optionsPuesto.'<option value="Laboratorista 2">Laboratorista 2</option>';
         }
-            
-
-
         $interfazInfoUsuario = '
         <div class="contenedorCentradoResponsivo">
                         <div id="tituloContenedor">
-                            <div id="editarImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".'); background-size: cover; background-position: center;">
+                            <div id="editarImagen" style="background-image: url('."'../Usuarios/".$correo."/".$imgUsuario[1]."'".');">
                             <form id="formImg">
                                 <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this); arregloCambios[8]=1;" value=""/>
                             </form> 
                             <label id="botonImg" for="inImg" style="display:none;"></label>
+                            <button id="botonEditar" onclick=verPantallaModificar(document.getElementById("correo").value)>
+                            <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
+                            <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
                             <div id="blah"> </div>
+
+                            
                         </div>
-                        <input id="apodo" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoUsuario['apodo'].'" onchange="arregloCambios[0]=1;">
-                        <p class="textoAyuda textoAyudaTitulo">Apodo</p>
+                        <input id="apodo tituloInfo" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoUsuario['apodo'].'" onchange="arregloCambios[0]=1;" maxlength="60">
+                            <p class="textoAyuda textoAyudaTitulo">Apodo</p>
+                     
                             </div>
-                        <div class="tarjetaBlanca" style="margin-top: 0px;">        
-                            <select id="puesto" class="registro" onchange="arregloCambios[1]=1;">
+                        <div class="tarjetaBlanca" style="margin-top: 0px;">
+                            <input type="text" id="puestoInput" class="selectInfo" style="text-align:center;" value="'.$infoUsuario['puesto'].'" onchange="arregloCambios[2]=1;">        
+                            <select id="puesto" class="registro" style="display:none;" onchange="arregloCambios[1]=1;">
                                 '.$optionsPuesto.'
                             </select>
                             <p class="textoAyuda" style="text-align: center; grid-row: 2/ span 1; grid-column: 1/ span 1;">Puesto</p>
@@ -80,95 +102,76 @@
                         <div class="tarjetaBlanca">
                             <p class="titulo">Datos personales</p>
                             <div class="inputEnLinea" >
-                                <input type="text" id="nom1" value="'.$infoUsuario['nom1'].'" onchange="arregloCambios[2]=1;">
-                                <input type="text" id="nom2" value="'.$infoUsuario['nom2'].'" onchange="arregloCambios[2]=1;">
+                                <input  type="text" id="nom1" class="required" value="'.$infoUsuario['nom1'].'" onchange="arregloCambios[2]=1;" maxlength="20">
+                                <input type="text" id="nom2" value="'.$infoUsuario['nom2'].'" onchange="arregloCambios[2]=1;" maxlength="20">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Primer Nombre</p>
                                 <p class="textoAyuda">Segundo Nombre</p>
                             </div>
                             <div class="inputEnLinea" >
-                                <input type="text" id="ape1" value="'.$infoUsuario['ape1'].'" onchange="arregloCambios[2]=1;">
-                                <input type="text" id="ape2" value="'.$infoUsuario['ape2'].'" onchange="arregloCambios[2]=1;">
+                                <input required type="text" id="ape1" class="required" value="'.$infoUsuario['ape1'].'" onchange="arregloCambios[2]=1;" maxlength="30">
+                                <input type="text" id="ape2" value="'.$infoUsuario['ape2'].'" onchange="arregloCambios[2]=1;" maxlength="30">
                             </div>
                             <div class="inputEnLinea" >
                                     <p class="textoAyuda">Apellido Paterno</p>
                                     <p class="textoAyuda">Apellido Materno</p>
                             </div>
-                            <input type="text" id="rfc" value="'.$infoUsuario['rfc'].'" onchange="arregloCambios[3]=1;">
+                            <input type="text" id="rfc" value="'.$infoUsuario['rfc'].'" onchange="arregloCambios[3]=1;" onkeyup=campoOK("rfc",validateRFC(document.getElementById("rfc").value)) maxlength="13">
                             <p class="textoAyuda" >RFC</p>
-                            <input type="text" id="curp" value="'.$infoUsuario['curp'].'" onchange="arregloCambios[4]=1;">
+                            <input  type="text" id="curp" class="required" value="'.$infoUsuario['curp'].'" onchange="arregloCambios[4]=1;" onkeyup=campoOK("curp",curpValida(document.getElementById("curp").value)) maxlength="18">
                             <p class="textoAyuda">CURP</p>
                         </div>
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input type="text"id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;">
+                            <input required type="tel" id="cel" value="'.$infoUsuario['telefono'].'" onchange="arregloCambios[5]=1;" onkeypress="javascript:return isNumberKey(event)" onkeyup=telNumberFormat("cel") maxlength="14">
                             <p class="textoAyuda">Número celular</p>
-                            <input type="text" id="correo" value="'.$infoUsuario['correo'].'">
+                            <input required type="email" id="correo" class="required" value="'.$infoUsuario['correo'].'" onkeyup=campoOK("correo",validaCorreoValido(document.getElementById("correo").value)) maxlength="50">
                             <p class="textoAyuda">Email</p>
-                            <input type="text" id="password"  value="'.$infoUsuario['contra'].'" onchange="arregloCambios[6]=1;">
-                            <p class="textoAyuda" >Contraseña</p>
+                        </div>
+                        <!-- Datos de contrseña=========================== -->
+                        <div id="inContras" style="display:none;"  class="tarjetaBlanca">
+                            <p class="titulo">Contraseña</p>
+                            <div  class="inputEnLinea">
+                            <input type="password" title="Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?&" id="contra1" value=""    onchange="arregloCambios[6]=1;" onkeyup=campoOK("contra1",validaContraFormat(document.getElementById("contra1").value)) maxlength="16">
+                            <input type="password" id="contra2"  value=""   onchange="arregloCambios[6]=1;" value="" onkeyup=campoOK("contra2",validaCoincideContra(document.getElementById("contra1").value,document.getElementById("contra2").value)) maxlength="16">
+                            </div>
+                            <div  class="inputEnLinea">
+                            <p class="textoAyuda">Contraseña nueva</p>
+                            <p class="textoAyuda">Confirmar contraseña nueva</p>
+                            </div>
                         </div>
                         <!-- Datos De direccion========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Dirección</p>
-                            <input type="text" id="calle" value="'.$infoUsuario['calle'].'" onchange="arregloCambios[7]=1;">
+                            <input type="text" id="calle" value="'.$infoUsuario['calle'].'" onchange="arregloCambios[7]=1;" maxlength="50">
                             <p class="textoAyuda">Calle</p>
-                            <input type="text" id="entre" value="'.$infoUsuario['entre'].'" onchange="arregloCambios[7]=1;">
+                            <input type="text" id="entre" value="'.$infoUsuario['entre'].'" onchange="arregloCambios[7]=1;" maxlength="50">
                             <p class="textoAyuda">Entre</p>
                             <div class="inputEnLinea">
-                                <input type="text" id="num" value="'.$infoUsuario['numCasa'].'"    onchange="arregloCambios[7]=1;">
-                                <input type="text" id="cp"  value="'.$infoUsuario['codPostal'].'"  onchange="arregloCambios[7]=1;">
+                                <input type="text" id="num" value="'.$infoUsuario['numCasa'].'"    onchange="arregloCambios[7]=1;" maxlength="10">
+                                <input type="text" id="cp"  value="'.$infoUsuario['codPostal'].'"  onchange="arregloCambios[7]=1;" maxlength="10">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Numero de casa</p>
                                 <p class="textoAyuda">Código Postal</p>
                             </div>
                             <div class="inputEnLinea">
-                                <input type="text" id="colonia" value="'.$infoUsuario['colonia'].'" onchange="arregloCambios[7]=1;">
-                                <input type="text" id="ciudad" value="'.$infoUsuario['ciudad'].'" onchange="arregloCambios[7]=1;">
+                                <input type="text" id="colonia" value="'.$infoUsuario['colonia'].'" onchange="arregloCambios[7]=1;"maxlength="50">
+                                <input type="text" id="ciudad" value="'.$infoUsuario['ciudad'].'" onchange="arregloCambios[7]=1;" maxlength="50">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Colonia</p>
                                 <p class="textoAyuda">ciudad</p>
                             </div>
                         </div>
-
-                        <div class="tarjetaBlanca centrar">
-                        <div id="botonesDelPrint" class="botonesEliminarImprimer">
-                            <button class="footerImprimir_Boton" onclick=cambiarPantallaEditar(document.getElementById("correo").value)>Modificar</button>
-                            <button class="footerEliminar_Boton" onclick=openModal(document.getElementById("correo").value)>Eliminar Usuario</button>
-                        </div>
-                        <div id="botonGuardar" class="botonesEliminarImprimer" style="display:none;">
-                            <button id="footerGuardar_Boton" onclick=openModal(document.getElementById("correo").value) style="grid-column: 1 / span 2;">Guardar</button>
-                        </div>
+                            <button id="footerGuardar_Boton" onclick="modificarUser()">Guardar</button>
                     </div>
                 </div>
-                
                 <div id="contenedorModal">
-                    <div id="fondoModal"></div>
-                        <div class="modal">
-                            <p id ="textoModalPregunta" class="textoModal">
-                                ¿Desea ELIMINAR?
-                            </p>
-                            <button id ="botonEliminarModal"class="eliminarBotonModal" onclick=eliminarUsuario()>Eliminar</button>
-                            <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=modificarUser()>Modificar</button>
-                            <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
-                        </div>
                 </div>
 
-
-                <div id="contenedorModalEliminado">
-                    <div id="fondoModal"></div>
-                        <div class="modal">
-                            <p class="textoModal" id="textoExito">
-                                Usuario eliminado
-                            </p>
-                            <button class="OK" onclick=cambiarPantallaInfo()>OK</button>
-                        </div>
-                        
-                </div>
         ';
         return $interfazInfoUsuario;
     }
@@ -176,87 +179,117 @@
     function imprimir_registro_usuario(){
         $interfazRegistroUsuario = '
         <div class="contenedorCentradoResponsivo">
+                        <form action="" autocomplete="on">
                         <div id="tituloContenedor">
                         <div id="editarImagen" style=" background-size: cover; background-position: center;">
                         <form id="formImg">
                             <input class="inputImg" id="inImg" name="archivo[]" type="file" accept=".png, .jpg, .jpeg, .png, .gif" onchange="readURL(this);" value=""/>
                         </form> 
-                        <label id="botonImg" for="inImg"></label>
+                        <label id="botonImg" class="btnImgRegistro" for="inImg"></label>
                         <div id="blah"> </div>
                     </div>
-                    <input id="apodo" class="registro inputTexto mayus" style="color:white;" type="text">
+                    <input id="apodo" class="registro inputTexto mayus" style="color:white;" type="text" maxlength="60">
                     <p class="textoAyuda textoAyudaTitulo">Apodo</p>
                         </div>
                         <div class="tarjetaBlanca" style="margin-top: 0px;">        
                             <select id="puesto" class="registro">
-                                    <option value="Administrador">Administrador</option>
-                                    <option value="Jefe de Laboratorio">Jefe de Laboratorio</option>
-                                    <option value="Laboratorista 1">Laboratorista 1</option>
-                                    <option value="Laboratorista 2">Laboratorista 2</option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Jefe de Laboratorio">Jefe de Laboratorio</option>
+                                <option value="Laboratorista 1">Laboratorista 1</option>
+                                <option value="Laboratorista 2">Laboratorista 2</option>
                             </select>
-                        <p class="textoAyuda" style="text-align: center;">Puesto</p>
+                        <p class="textoAyuda" style="text-align: center;">*Puesto</p>
                         </div>
                         <!-- DatosPersonales ============================ -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Datos personales</p>
                             <div class="inputEnLinea" >
-                                <input id="nom1" type="text" class="registro" placeholder="">
-                                <input id="nom2" type="text" class="registro" placeholder="">
+                                <input id="nom1" type="text" class="registro required" placeholder="" maxlength="20">
+                                <input id="nom2" type="text" class="registro" placeholder="" maxlength="20">
                             </div>
                             <div class="inputEnLinea">
-                                <p class="textoAyuda">Primer Nombre</p>
+                                <p class="textoAyuda">*Primer Nombre</p>
                                 <p class="textoAyuda">Segundo Nombre</p>
                             </div>
                             <div class="inputEnLinea" >
-                                <input id="ape1" type="text" class="registro" placeholder="">
-                                <input id="ape2" type="text" class="registro" placeholder="">
+                                <input id="ape1" type="text" class="registro required" placeholder="" maxlength="30">
+                                <input id="ape2" type="text" class="registro" placeholder="" maxlength="30">
                             </div>
                             <div class="inputEnLinea" >
-                                    <p class="textoAyuda">Apellido Paterno</p>
+                                    <p class="textoAyuda">*Apellido Paterno</p>
                                     <p class="textoAyuda">Apellido Materno</p>
                             </div>
-                            <input id="rfc" type="text"class="registro mayus" placeholder="" >
+                            <input id="rfc" type="text"class="registro mayus" placeholder="" onkeyup=campoOK("rfc",validateRFC(document.getElementById("rfc").value)) maxlength="13">
                             <p class="textoAyuda" >RFC</p>
-                            <input id="curp" type="text"class="registro mayus" placeholder="">
-                            <p class="textoAyuda">CURP</p>
+                            <input id="curp" type="text"class="registro mayus required" placeholder="" onkeyup=campoOK("curp",curpValida(document.getElementById("curp").value)) maxlength="18">
+                            <p class="textoAyuda">*CURP</p>
                         </div>
                         <!-- Datos de contacto=========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Contacto</p>
-                            <input id="cel" type="text" class="registro" id="telefono" placeholder="">
-                            <p class="textoAyuda">Número celular</p>
-                            <input id="correo" type="text" class="registro" id="correo" placeholder="">
-                            <p class="textoAyuda">Email</p>
-                            <input id="contra" type="text" class="registro" id="password"  placeholder="">
-                            <p class="textoAyuda" >Contraseña</p>
+                            <input id="cel" type="tel" class="registro required" id="telefono" placeholder="" onkeypress="javascript:return isNumberKey(event)" onkeyup=telNumberFormat("cel") maxlength="14">
+                            <p class="textoAyuda">*Número celular</p>
+                            <input id="correo" type="text" class="registro required" id="correo" placeholder="" onkeyup=campoOK("correo",validaCorreoValido(document.getElementById("correo").value)) maxlength="50">
+                            <p class="textoAyuda">*Email</p>
+                        </div>
+                        <!-- Datos de contrseña=========================== -->
+                        <div id="inContras"  class="tarjetaBlanca">
+                            <p class="titulo">Contraseña</p>
+                            <div  class="inputEnLinea">
+                            <input type="password" id="contra1" value="" onkeyup=campoOK("contra1",validaContraFormat(document.getElementById("contra1").value)) class="registro required" maxlength="16">
+                            <input type="password" id="contra2"  value="" onkeyup=campoOK("contra2",validaCoincideContra(document.getElementById("contra1").value,document.getElementById("contra2").value)) class="registro required" maxlength="16">
+                            </div>
+                            <div  class="inputEnLinea">
+                            <p class="textoAyuda">*Contraseña nueva</p>
+                            <p class="textoAyuda">*Confirmar contraseña nueva</p>
+                            </div>
                         </div>
                         <!-- Datos De direccion========================== -->
                         <div class="tarjetaBlanca">
                             <p class="titulo">Dirección</p>
-                            <input id="calle" type="text" class="registro" placeholder="">
+                            <input id="calle" type="text" class="registro" placeholder="" maxlength="50">
                             <p class="textoAyuda">Calle</p>
-                            <input id="entre" type="text" class="registro" placeholder="">
+                            <input id="entre" type="text" class="registro" placeholder="" maxlength="50">
                             <p class="textoAyuda">Entre</p>
                             <div class="inputEnLinea">
-                                <input id="num" type="text" class="registro" placeholder="">
-                                <input id="cp" type="text" class="registro" placeholder="">
+                                <input id="num" type="text" class="registro" placeholder="" onkeypress="javascript:return isNumberKey(event)" maxlength="10">
+                                <input id="cp" type="text" class="registro" placeholder="" onkeypress="javascript:return isNumberKey(event)" maxlength="10">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Número de casa</p>
                                 <p class="textoAyuda">Código Postal</p>
                             </div>
                             <div class="inputEnLinea">
-                                <input id="colonia" type="text" class="registro" placeholder="">
-                                <input id="ciudad" type="text" class="registro" placeholder="">
+                                <input id="colonia" type="text" class="registro" placeholder="" maxlength="50">
+                                <input id="ciudad" type="text" class="registro" placeholder="" maxlength="50">
                             </div>
                             <div class="inputEnLinea">
                                 <p class="textoAyuda">Colonia</p>
                                 <p class="textoAyuda">Ciudad</p>
                             </div>
                         </div>
-                        <button id="footerGuardar_Boton" onclick = guardarUser()>Guardar</button>
-                    
+                        <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick="guardarUser()">Guardar</button>
+                        </form>
                 </div>
+                <div id="contenedorModal">
+                <div id="fondoModal"></div>
+                <div class="modal">
+                    <p id ="textoModalPregunta" class="textoModal">
+                        ¿Desea?
+                    </p>
+                    <button id ="botonGuardarModal"class="guardarBotonModal" style="display:none;" onclick=guardarUser()>Guardar</button>
+                    <button class="cancelarBotonModal"  onclick="closeModal()">Cancelar</button>
+                </div>
+            </div>
+            <div id="contenedorModal">
+                <div id="fondoModal"></div>
+                <div class="modal">
+                    <p class="textoModal" id="textoExito">
+
+                    </p>
+                    <button class="OK" onclick=verPantallaInfo()>OK</button>
+                </div>
+            </div>
         ';
         return $interfazRegistroUsuario;
     }

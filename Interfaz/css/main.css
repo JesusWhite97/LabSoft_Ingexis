@@ -17,7 +17,6 @@ body {
   padding: 0%;
   margin: 0%;
   border: 0px;
-  overflow-x: hidden;
 }
 
 .fondoPantalla {
@@ -40,7 +39,7 @@ body {
   overflow: hidden;
 }
 
-.contenedorPrincipal {
+#contenedorPrincipal {
   display: -ms-grid;
   display: grid;
 }
@@ -57,7 +56,7 @@ body {
   display: grid;
   -ms-grid-columns: auto 60px;
       grid-template-columns: auto 60px;
-  background: #0109fc;
+  background: #2D2B36;
   background: linear-gradient(127deg, #0109fc 35%, #0c95ff 100%);
   color: white;
   font-family: "Segoe UI", sans-serif;
@@ -100,10 +99,9 @@ body {
   z-index: 100;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50px auto 50px;
-      grid-template-columns: 50px auto 50px;
-  background: #0109fc;
-  background: linear-gradient(127deg, #0109fc 35%, #0c95ff 100%);
+  -ms-grid-columns: 50px auto 50px 70px;
+      grid-template-columns: 50px auto 50px 70px;
+  background: #2D2B36;
   color: white;
   font-family: "Segoe UI", sans-serif;
   height: 50px;
@@ -111,6 +109,7 @@ body {
   border: 0px;
   padding: 0px;
   margin: 0px;
+  border-bottom: 0px 3px 6px rgba(0, 0, 0, 0.451);
 }
 
 #encabezadoBotones #titulo {
@@ -136,22 +135,95 @@ body {
 }
 
 #encabezadoBotones #regresar {
-  background-image: url("../img/back.svg");
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #f3f3f3;
+  background-image: url("../img/LOGO_INGEXIS_Trans.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40PX;
   cursor: pointer;
 }
 
-#encabezadoBotones #menu {
-  background-image: url("../img/menu.svg");
+#encabezadoBotones #imgUsuarioLogin {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#encabezadoBotones #nombreUsuarioLogin {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #f2f2f2;
+  text-align: start;
+}
+
+#encabezadoBotones #menuNavegacion {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: ()[70px];
+      grid-template-columns: repeat(70px);
+  -ms-grid-rows: 50px;
+      grid-template-rows: 50px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+#encabezadoBotones #menuNavegacion .item {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  color: white;
+  width: 70px;
+  height: 50px;
+  border-radius: 5px;
+  background-position: center;
+  background-size: 40px 40px;
+  background-image: url("../img/menu.svg");
+  background-repeat: no-repeat;
+}
+
+#encabezadoBotones #menuNavegacion .item:hover {
+  background-color: rgba(255, 255, 255, 0.219);
+}
+
+#tituloPag {
+  z-index: 5;
+  width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: white;
+  margin: 0px;
+  margin-bottom: 10px;
+  padding-left: 5%;
+  padding-top: 5px;
 }
 
 #contenedorBuscador {
   position: fixed;
   left: 5%;
   z-index: 2;
-  top: 50px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto 42px;
@@ -163,7 +235,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   height: 50px;
   width: 90%;
-  margin: 15px auto;
+  margin: 10px auto;
   font-family: "Segoe UI", sans-serif;
   background-image: -webkit-gradient(linear, left top, right top, from(#17232470), to(#17232470));
   background-image: linear-gradient(to right, #17232470, #17232470);
@@ -303,7 +375,7 @@ body {
   box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
 }
 
-#desenfoque {
+.desenfoque {
   display: -ms-grid;
   display: grid;
   z-index: 1;
@@ -453,6 +525,7 @@ body {
 }
 
 #footerGuardar_Boton {
+  display: none;
   -ms-grid-column-align: center;
       justify-self: center;
   text-align: center;
@@ -597,6 +670,10 @@ body {
   text-align: center;
 }
 
+.tarjetaBlanca select option {
+  text-align: center;
+}
+
 .tarjetaBlanca .registro {
   pointer-events: auto !important;
   background-color: rgba(66, 66, 66, 0.513) !important;
@@ -694,22 +771,24 @@ body {
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
 }
 
+textarea:focus, input:focus {
+  outline: none;
+}
+
 #tituloContenedor {
   -ms-grid-row-align: center;
       align-self: center;
   display: -ms-grid;
   display: grid;
-  max-width: 600px;
-  min-width: 600px;
+  width: 100%;
   height: 300px;
-  margin: 0px auto;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
   -ms-grid-rows: 1fr 50px;
       grid-template-rows: 1fr 50px;
   justify-items: center;
   font-family: "Segoe UI", sans-serif;
   color: white;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
 }
 
 #tituloContenedor #editarImagen {
@@ -720,13 +799,125 @@ body {
   -ms-grid-row-span: 3;
   grid-row: 1 / span 3;
   width: 100%;
+  max-width: 100%;
   height: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 50px;
-      grid-template-columns: 1fr 50px;
-  -ms-grid-rows: 50px 1fr;
-      grid-template-rows: 50px 1fr;
+  -ms-grid-columns: 50px 1fr  50px;
+      grid-template-columns: 50px 1fr  50px;
+  -ms-grid-rows: 50px  50px 1fr;
+      grid-template-rows: 50px  50px 1fr;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: border-box;
+}
+
+#tituloContenedor #editarImagen #imgBack {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/ span 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / span 3;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  z-index: 3;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: border-box;
+}
+
+#tituloContenedor #editarImagen #botonEditar {
+  width: 35px;
+  height: 35px;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/ span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  z-index: 4;
+  background-color: rgba(22, 22, 22, 0.76);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+  background-image: url("../img/icoEdit.svg");
+  background-repeat: no-repeat;
+  background-size: 30px 25px;
+  background-position: center;
+  padding: 0px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#tituloContenedor #editarImagen #botonEditar:hover {
+  background-color: rgba(1, 9, 252, 0.76);
+}
+
+#tituloContenedor #editarImagen #botonEliminar {
+  width: 35px;
+  height: 35px;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/ span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  z-index: 4;
+  background-color: rgba(22, 22, 22, 0.76);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+  background-image: url("../img/icoDelete.svg");
+  background-repeat: no-repeat;
+  background-size: 30px 25px;
+  background-position: center;
+  padding: 0px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#tituloContenedor #editarImagen #botonEliminar:hover {
+  content: "Eliminar";
+  background-color: rgba(246, 59, 59, 0.75);
+}
+
+#tituloContenedor #editarImagen #botonCancelar {
+  width: 35px;
+  height: 35px;
+  border: none;
+  margin: 5px;
+  padding: 10px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/ span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  z-index: 4;
+  background-color: rgba(22, 22, 22, 0.76);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+  background-image: url("../img/close.svg");
+  background-repeat: no-repeat;
+  background-size: 40px;
+  background-position: center;
+  padding: 0px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
 }
 
 #tituloContenedor #editarImagen .inputImg {
@@ -735,12 +926,12 @@ body {
 
 #tituloContenedor #editarImagen label {
   width: 50px;
-  -ms-grid-column: 2;
+  -ms-grid-column: 1;
   -ms-grid-column-span: 1;
-  grid-column: 2/ span 1;
-  -ms-grid-row: 1;
+  grid-column: 1/ span 1;
+  -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 1 / span 1;
+  grid-row: 2 / span 1;
   z-index: 4;
   background-image: url("../img/upImg.svg");
   background-repeat: no-repeat;
@@ -748,20 +939,6 @@ body {
   background-position: center;
   padding: 0px;
   cursor: pointer;
-}
-
-#tituloContenedor #editarImagen div {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1/ span 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / span 2;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  border: 0px;
 }
 
 #tituloContenedor #tituloImagen {
@@ -838,7 +1015,7 @@ body {
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
   border: 0px;
-  width: 500px;
+  width: 100%;
   text-align: center;
   font-family: "Segoe UI", sans-serif;
   font-weight: 600;
@@ -867,6 +1044,21 @@ body {
   text-shadow: 2px 2px 4px #000000;
 }
 
+.btnImgRegistro {
+  width: 100% !important;
+  -ms-grid-column: 1 !important;
+  -ms-grid-column-span: 3 !important;
+  grid-column: 1/ span 3 !important;
+  -ms-grid-row: 1 !important;
+  -ms-grid-row-span: 3 !important;
+  grid-row: 1 / span 3 !important;
+  background-image: url("../img/regImg.svg") !important;
+  background-repeat: no-repeat !important;
+  background-size: 220px 220px !important;
+  background-position: top !important;
+  border-radius: 10px;
+}
+
 .contenedorTarjetaUsuario {
   display: -ms-grid;
   display: grid;
@@ -879,8 +1071,13 @@ body {
   margin: 10px auto;
   padding: 5px;
   font-family: "Segoe UI", sans-serif;
-  background-color: transparent;
-  border-radius: 10px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#17232470), to(#17232470));
+  background-image: linear-gradient(to right, #17232470, #17232470);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
+          box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
 }
 
 .contenedorTarjetaUsuario a {
@@ -1035,35 +1232,176 @@ body {
   background-position: 0px 2px;
 }
 
+.tarjetaElemento {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 30px 30px;
+      grid-template-columns: 1fr 30px 30px;
+  -ms-grid-rows: 30px 50px 30px;
+      grid-template-rows: 30px 50px 30px;
+  width: 90%;
+  min-width: 150px;
+  height: 110px;
+  margin: 10px auto;
+  padding: 10px;
+  font-family: "Segoe UI", sans-serif;
+  background-image: -webkit-gradient(linear, left top, right top, from(#17232470), to(#17232470));
+  background-image: linear-gradient(to right, #17232470, #17232470);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 0px;
+  -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
+          box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
+}
+
+.tarjetaElemento .tituloElemento {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / span 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  height: 24px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding-left: 10px;
+  color: white;
+  font-size: 24px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.tarjetaElemento .subtituloElemento {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1 / span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / span 1;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding-left: 10px;
+  color: #bdbdbd;
+  font-size: 12px;
+}
+
+.tarjetaElemento .botonInfo {
+  padding: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0px;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.tarjetaElemento .botonEditar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 /span 1;
+  background-image: url("../img/icoEdit.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.tarjetaElemento .botonEliminar {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / span 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 /span 1;
+  background-image: url("../img/icoDelete.svg");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+.tarjetaElemento .botonElemento {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  height: 21px;
+  padding: 2px;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / span 3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / span 1;
+  background-color: rgba(255, 255, 255, 0.87);
+  border: 0px;
+  color: #3100FF;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+  margin: 0px;
+}
+
 #contenedorGridResponsivo {
-  margin-top: 60px;
+  height: 85vh;
+  margin-top: 10px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(320px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   grid-auto-rows: 120px;
+  overflow-y: scroll;
+}
+
+#elementosGridResponsivo {
+  height: auto;
+  margin-top: 0px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-auto-rows: 160px;
+  overflow-y: scroll;
 }
 
 .contenedorCentradoResponsivo {
   margin-top: 50px;
   width: 100%;
-  height: 100%;
+  height: 95vh;
   display: -ms-grid;
   display: grid;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 640px) {
-  #divUsuarios {
+  #divTarjetas {
     display: block;
   }
-  #divInfoUsuarios {
+  #divInfo {
     display: none;
   }
-  #contenedorPrincipal {
+  .contenedorPrincipal {
     margin-top: 80px;
     grid-gap: 15px;
   }
-  #contenedorPrincipal #cerrarSesion {
+  .contenedorPrincipal #cerrarSesion {
     margin-top: 170px;
   }
   .contenedorCentradoResponsivo {
@@ -1494,6 +1832,7 @@ body {
   margin: 10px;
 }
 
+/* ======================================================== */
 .contenidoTarjetaAzul {
   display: -ms-grid;
   display: grid;
@@ -1531,6 +1870,7 @@ body {
   pointer-events: none;
 }
 
+/* ======================================================== */
 .hederTarjetaAzul {
   width: 300px;
   margin: 2px;
@@ -1547,6 +1887,7 @@ body {
   padding-left: 5px;
 }
 
+/* ======================================================== */
 .textoTarjetaAzul {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -1555,6 +1896,7 @@ body {
   font-family: Segoe UI;
 }
 
+/* ======================================================== */
 .imgTarjetaAzul {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
@@ -1577,6 +1919,7 @@ body {
   margin-top: 5px;
 }
 
+/* ======================================================== */
 .TarjetaAzulBtnModificar_registrar {
   background-color: white;
   opacity: 70%;
@@ -1591,6 +1934,7 @@ body {
   margin: 10px;
 }
 
+/* ======================================================== */
 #TarjetaAzulBotones, #TarjetaAzulBotonesDos, #TarjetaAzulBotonesTres {
   display: none;
   -ms-grid-columns: 1fr 1fr;
@@ -1646,6 +1990,7 @@ body {
   grid-area: btnCheck;
 }
 
+/* ======================================================== */
 .TarjetaAzul_round label {
   position: absolute;
   background-color: #fff;
@@ -1659,6 +2004,7 @@ body {
   top: 6px;
 }
 
+/* ======================================================== */
 .TarjetaAzul_round label:after {
   position: absolute;
   border: 4px solid blue;
@@ -1674,25 +2020,28 @@ body {
           transform: rotate(-45deg);
 }
 
+/* ======================================================== */
 .TarjetaAzul_round input[type="checkbox"] {
   /* visibility: hidden; */
   display: none;
   pointer-events: none;
 }
 
+/* ======================================================== */
 .TarjetaAzul_round input[type="checkbox"]:checked + label {
   background-color: white;
   border-color: white;
   pointer-events: none;
 }
 
+/* ======================================================== */
 .TarjetaAzul_round input[type="checkbox"]:checked + label:after {
   opacity: 1;
   pointer-events: none;
 }
 
 /* ======================================================== */
-#contenedorModal, #contenedorModalEliminado {
+#contenedorModal {
   position: fixed;
   top: 450px;
   display: -ms-grid;
@@ -1712,7 +2061,7 @@ body {
   overflow-y: hidden;
 }
 
-#contenedorModal #fondoModal, #contenedorModalEliminado #fondoModal {
+#contenedorModal #fondoModal {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
@@ -1727,7 +2076,7 @@ body {
   -webkit-backdrop-filter: blur(50px);
 }
 
-#contenedorModal .modal, #contenedorModalEliminado .modal {
+#contenedorModal .modal {
   z-index: 21;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
@@ -1761,7 +2110,7 @@ body {
   text-align: center;
 }
 
-#contenedorModal .textoModal, #contenedorModalEliminado .textoModal {
+#contenedorModal .textoModal {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -1778,7 +2127,8 @@ body {
   text-align: center;
 }
 
-#contenedorModal .eliminarBotonModal, #contenedorModalEliminado .eliminarBotonModal {
+#contenedorModal .eliminarBotonModal {
+  display: block;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
@@ -1788,7 +2138,7 @@ body {
   width: 95px;
   height: 31px;
   text-align: center;
-  font-family: Lato;
+  font-family: "Segoe UI", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -1800,7 +2150,8 @@ body {
   border: 0px;
 }
 
-#contenedorModal .guardarBotonModal, #contenedorModalEliminado .guardarBotonModal {
+#contenedorModal .guardarBotonModal {
+  display: block;
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / span 1;
@@ -1810,7 +2161,7 @@ body {
   width: 95px;
   height: 31px;
   text-align: center;
-  font-family: Lato;
+  font-family: "Segoe UI", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -1822,7 +2173,8 @@ body {
   border: 0px;
 }
 
-#contenedorModal .cancelarBotonModal, #contenedorModalEliminado .cancelarBotonModal {
+#contenedorModal .cancelarBotonModal {
+  display: block;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2 / span 1;
@@ -1839,7 +2191,8 @@ body {
   box-shadow: 0px 3px 6px rgba(80, 6, 6, 0.451);
 }
 
-#contenedorModal .OK, #contenedorModalEliminado .OK {
+#contenedorModal .OK {
+  display: block;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
@@ -1856,14 +2209,15 @@ body {
   border: 0px;
 }
 
+/* ======================================================== */
 @media screen and (min-width: 640px) {
-  .contenedorPrincipal {
+  #contenedorPrincipal {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 50% 50%;
         grid-template-columns: 50% 50%;
   }
-  .divUsuarios {
+  #divTarjetas {
     grid-column: 1 span 1;
     display: block;
     font-family: "Segoe UI", sans-serif;
@@ -1874,7 +2228,7 @@ body {
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
   }
-  .divInfoUsuarios {
+  #divInfo {
     grid-column: 2 span 1;
     display: none;
     overflow-y: scroll;
@@ -1888,18 +2242,18 @@ body {
     left: 0px;
   }
   .contenedorCentradoResponsivo {
-    margin-top: 50px;
+    margin-top: 10px;
     width: 100%;
+    -ms-flex-line-pack: start;
+        align-content: start;
   }
   #tituloContenedor {
     margin-left: auto;
     margin-right: auto;
     min-width: 80%;
-    width: 94%;
-    max-width: 94%;
-    padding-right: 0px;
-    padding-left: 0px;
-    padding: 0px;
+    width: 90%;
+    max-width: 90%;
+    padding: 2%;
   }
   .tarjetaBlanca {
     margin-left: auto;
@@ -1909,8 +2263,21 @@ body {
     max-width: 90%;
     padding: 2%;
   }
+  #elementosGridResponsivo {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 80%;
+    width: 90%;
+    max-width: 90%;
+    padding: 2%;
+    padding-top: 0px;
+  }
+  .tarjetaElemento .botonEditar {
+    background-position: right;
+  }
 }
 
+/* ======================================================== */
 @media screen and (min-width: 800px) {
   #desenfoque {
     background-image: -webkit-gradient(linear, left top, right top, from(#fbfbfb00), to(#3b3b3b00));
@@ -1918,15 +2285,19 @@ body {
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
   }
-  .contenedorPrincipal {
+  #contenedorPrincipal {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 400px 1fr;
-        grid-template-columns: 400px 1fr;
+    margin-top: 50px;
+    -ms-grid-columns: 380px 1fr 380px;
+        grid-template-columns: 380px 1fr 380px;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
   }
-  .contenedorPrincipal #divUsuarios {
+  #divTarjetas {
     grid-column: 1 span 1;
     display: block;
+    width: 100%;
     font-family: "Segoe UI", sans-serif;
     -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
@@ -1934,11 +2305,12 @@ body {
     background-image: linear-gradient(to right, #17232470, #17232470);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+    overflow-y: visible;
   }
-  #divInfoUsuarios {
+  #divInfo {
+    margin-top: 10px;
     grid-column: 2 span 1;
     display: block;
-    overflow-y: scroll;
   }
   #tituloContenedor {
     background-image: -webkit-gradient(linear, left top, right top, from(#17232470), to(#17232470));
@@ -1955,6 +2327,10 @@ body {
     width: 400px;
     height: 280px;
     border-radius: 20px;
+  }
+  #divInfo {
+    -ms-grid-column-align: stretch;
+        justify-self: stretch;
   }
 }
 /*# sourceMappingURL=main.css.map */

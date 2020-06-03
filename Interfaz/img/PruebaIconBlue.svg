@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57.999" height="58" viewBox="0 0 57.999 58">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.018" x2="0.857" y2="0.767" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0109fc"/>
+      <stop offset="1" stop-color="#0a92fc"/>
+    </linearGradient>
+    <filter id="Unión_1" x="0" y="0" width="57.999" height="30" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.471"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Unión_2" x="0" y="28" width="57.999" height="30" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.561"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient-3" x1="0.018" y1="1" x2="1.701" y2="0.597" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eaeaf3"/>
+      <stop offset="1" stop-color="#404b54"/>
+    </linearGradient>
+    <filter id="Rectángulo_161" x="14.999" y="13" width="28" height="32" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_170" x="26.999" y="16" width="19" height="27" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-4"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_172" x="28.999" y="18" width="19" height="23" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-5"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_174" x="30.999" y="19" width="19" height="21" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-6"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_171" x="11.999" y="16" width="19" height="27" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-7"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_173" x="9.999" y="18" width="19" height="23" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-8"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectángulo_175" x="7.999" y="19" width="19" height="21" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-9"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="PruebaIconBlue" transform="translate(-1319.001 -17)">
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Unión_1)">
+      <g id="Unión_1-2" data-name="Unión 1" transform="translate(9 6)" stroke-linecap="round" stroke-linejoin="round" fill="url(#linear-gradient)">
+        <path d="M14.666,5.4H18V2.8H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H39a1,1,0,0,1,1,1v.8a1,1,0,0,1-1,1H22V5.4h3.334L20,12Z" stroke="none"/>
+        <path d="M 1.000801086425781 0.5 C 0.7251510620117188 0.5 0.5009002685546875 0.7242498397827148 0.5009002685546875 0.9998998641967773 L 0.5009002685546875 1.800000190734863 C 0.5009002685546875 2.075650215148926 0.7251510620117188 2.299900054931641 1.000801086425781 2.299900054931641 L 18 2.299900054931641 C 18.2761402130127 2.299900054931641 18.5 2.523759841918945 18.5 2.799900054931641 L 18.5 5.400000095367432 C 18.5 5.676140308380127 18.2761402130127 5.900000095367432 18 5.900000095367432 L 15.71332359313965 5.900000095367432 L 19.99979972839355 11.2042064666748 L 24.28627586364746 5.900000095367432 L 21.99959945678711 5.900000095367432 C 21.72345924377441 5.900000095367432 21.49959945678711 5.676140308380127 21.49959945678711 5.400000095367432 L 21.49959945678711 2.799900054931641 C 21.49959945678711 2.523759841918945 21.72345924377441 2.299900054931641 21.99959945678711 2.299900054931641 L 38.99969863891602 2.299900054931641 C 39.27534866333008 2.299900054931641 39.49959945678711 2.075650215148926 39.49959945678711 1.800000190734863 L 39.49959945678711 0.9998998641967773 C 39.49959945678711 0.7242498397827148 39.27534866333008 0.5 38.99969863891602 0.5 L 1.000801086425781 0.5 M 1.000801086425781 0 L 38.99969863891602 0 C 39.55139923095703 0 39.99959945678711 0.4472999572753906 39.99959945678711 0.9998998641967773 L 39.99959945678711 1.800000190734863 C 39.99959945678711 2.35260009765625 39.55139923095703 2.799900054931641 38.99969863891602 2.799900054931641 L 21.99959945678711 2.799900054931641 L 21.99959945678711 5.400000095367432 L 25.33319854736328 5.400000095367432 L 19.99979972839355 11.99970054626465 L 14.6663990020752 5.400000095367432 L 18 5.400000095367432 L 18 2.799900054931641 L 1.000801086425781 2.799900054931641 C 0.4482002258300781 2.799900054931641 0.0009002685546875 2.35260009765625 0.0009002685546875 1.800000190734863 L 0.0009002685546875 0.9998998641967773 C 0.0009002685546875 0.4472999572753906 0.4482002258300781 0 1.000801086425781 0 Z" stroke="none" fill="rgba(242,242,242,0.19)"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Unión_2)">
+      <g id="Unión_2-2" data-name="Unión 2" transform="translate(49 46) rotate(-180)" stroke-linecap="round" stroke-linejoin="round" fill="url(#linear-gradient)">
+        <path d="M14.666,5.4H18V2.8H1a1,1,0,0,1-1-1V1A1,1,0,0,1,1,0H39a1,1,0,0,1,1,1v.8a1,1,0,0,1-1,1H22V5.4h3.334L20,12Z" stroke="none"/>
+        <path d="M 1.000801086425781 0.5 C 0.7251510620117188 0.5 0.5009002685546875 0.7242498397827148 0.5009002685546875 0.9998998641967773 L 0.5009002685546875 1.800000190734863 C 0.5009002685546875 2.075650215148926 0.7251510620117188 2.299900054931641 1.000801086425781 2.299900054931641 L 18 2.299900054931641 C 18.2761402130127 2.299900054931641 18.5 2.523759841918945 18.5 2.799900054931641 L 18.5 5.400000095367432 C 18.5 5.676140308380127 18.2761402130127 5.900000095367432 18 5.900000095367432 L 15.71332359313965 5.900000095367432 L 19.99979972839355 11.2042064666748 L 24.28627586364746 5.900000095367432 L 21.99959945678711 5.900000095367432 C 21.72345924377441 5.900000095367432 21.49959945678711 5.676140308380127 21.49959945678711 5.400000095367432 L 21.49959945678711 2.799900054931641 C 21.49959945678711 2.523759841918945 21.72345924377441 2.299900054931641 21.99959945678711 2.299900054931641 L 38.99969863891602 2.299900054931641 C 39.27534866333008 2.299900054931641 39.49959945678711 2.075650215148926 39.49959945678711 1.800000190734863 L 39.49959945678711 0.9998998641967773 C 39.49959945678711 0.7242498397827148 39.27534866333008 0.5 38.99969863891602 0.5 L 1.000801086425781 0.5 M 1.000801086425781 0 L 38.99969863891602 0 C 39.55139923095703 0 39.99959945678711 0.4472999572753906 39.99959945678711 0.9998998641967773 L 39.99959945678711 1.800000190734863 C 39.99959945678711 2.35260009765625 39.55139923095703 2.799900054931641 38.99969863891602 2.799900054931641 L 21.99959945678711 2.799900054931641 L 21.99959945678711 5.400000095367432 L 25.33319854736328 5.400000095367432 L 19.99979972839355 11.99970054626465 L 14.6663990020752 5.400000095367432 L 18 5.400000095367432 L 18 2.799900054931641 L 1.000801086425781 2.799900054931641 C 0.4482002258300781 2.799900054931641 0.0009002685546875 2.35260009765625 0.0009002685546875 1.800000190734863 L 0.0009002685546875 0.9998998641967773 C 0.0009002685546875 0.4472999572753906 0.4482002258300781 0 1.000801086425781 0 Z" stroke="none" fill="rgba(242,242,242,0.19)"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Rectángulo_161)">
+      <g id="Rectángulo_161-2" data-name="Rectángulo 161" transform="translate(24 19)" stroke="rgba(242,242,242,0.27)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)">
+        <rect width="10" height="14" stroke="none"/>
+        <rect x="0.5" y="0.5" width="9" height="13" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Rectángulo_170)">
+      <g id="Rectángulo_170-2" data-name="Rectángulo 170" transform="translate(36 22)" stroke="rgba(242,242,242,0.27)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)">
+        <path d="M0,0H0A1,1,0,0,1,1,1V8A1,1,0,0,1,0,9H0A0,0,0,0,1,0,9V0A0,0,0,0,1,0,0Z" stroke="none"/>
+        <rect x="0.5" y="0.5" height="8" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Rectángulo_172)">
+      <g id="Rectángulo_172-2" data-name="Rectángulo 172" transform="translate(38 24)" stroke="rgba(242,242,242,0.27)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)">
+        <path d="M0,0H0A1,1,0,0,1,1,1V4A1,1,0,0,1,0,5H0A0,0,0,0,1,0,5V0A0,0,0,0,1,0,0Z" stroke="none"/>
+        <rect x="0.5" y="0.5" height="4" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Rectángulo_174)">
+      <g id="Rectángulo_174-2" data-name="Rectángulo 174" transform="translate(40 25)" stroke="rgba(242,242,242,0.27)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)">
+        <path d="M0,0H0A1,1,0,0,1,1,1V2A1,1,0,0,1,0,3H0A0,0,0,0,1,0,3V0A0,0,0,0,1,0,0Z" stroke="none"/>
+        <rect x="0.5" y="0.5" height="2" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Rectángulo_171)">
+      <g id="Rectángulo_171-2" data-name="Rectángulo 171" transform="translate(21 22)" stroke="rgba(242,242,242,0.27)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)">
+        <path d="M1,0H1A0,0,0,0,1,1,0V9A0,0,0,0,1,1,9H1A1,1,0,0,1,0,8V1A1,1,0,0,1,1,0Z" stroke="none"/>
+        <rect x="0.5" y="0.5" height="8" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Rectángulo_173)">
+      <g id="Rectángulo_173-2" data-name="Rectángulo 173" transform="translate(19 24)" stroke="rgba(242,242,242,0.27)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)">
+        <path d="M1,0H1A0,0,0,0,1,1,0V5A0,0,0,0,1,1,5H1A1,1,0,0,1,0,4V1A1,1,0,0,1,1,0Z" stroke="none"/>
+        <rect x="0.5" y="0.5" height="4" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1319, 17)" filter="url(#Rectángulo_175)">
+      <g id="Rectángulo_175-2" data-name="Rectángulo 175" transform="translate(17 25)" stroke="rgba(242,242,242,0.27)" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-3)">
+        <path d="M1,0H1A0,0,0,0,1,1,0V3A0,0,0,0,1,1,3H1A1,1,0,0,1,0,2V1A1,1,0,0,1,1,0Z" stroke="none"/>
+        <rect x="0.5" y="0.5" height="2" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

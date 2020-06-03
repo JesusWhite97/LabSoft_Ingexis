@@ -4,6 +4,12 @@
     // ========================================================
     class Usuario{
         //#####################################################
+        public function Puesto($correo){
+            $usuarioBD = new procedimientos_User();
+            $respuesta = $usuarioBD->PuestoByCorreo($correo);
+            return $respuesta;
+        }
+        //#####################################################
         public function Existencia_de_correo($correo){
             $usuarioBD = new procedimientos_User();
             $respuesta = $usuarioBD->ExisteCorreo($correo);
@@ -29,7 +35,6 @@
             $calleP,    $entre,     $numCasas,  $col, 
             $codPost,   $ciudad
         ){
-            $Directorios = new CreacionDirectorios();
             $usuarioBD = new procedimientos_User();
             $respuesta = $usuarioBD->AgregarUsuario($correo, $contra, $img, $nom1, $nom2, $ape1, $ape2, $apodo, $num, $puesto, $curp, $rfc, $calleP, $entre, $numCasas, $col, $codPost, $ciudad);
             return $respuesta;
@@ -53,9 +58,15 @@
             return $respuesta;
         }
         //#####################################################
-        public function Modificar_contra($correo, $actual, $nueva){
+        public function Modificar_contra_user($correo, $actual, $nueva){
             $usuarioBD = new procedimientos_User();
-            $respuesta = $usuarioBD->ModContra($correo, $actual, $nueva);
+            $respuesta = $usuarioBD->ModContra_user($correo, $actual, $nueva);
+            return $respuesta;
+        }
+        //#####################################################
+        public function Modificar_contra_admin($correo, $actual){
+            $usuarioBD = new procedimientos_User();
+            $respuesta = $usuarioBD->ModContra_admin($correo, $actual);
             return $respuesta;
         }
         //#####################################################

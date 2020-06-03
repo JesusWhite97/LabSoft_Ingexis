@@ -1,32 +1,55 @@
-//Funciones=====================================================
-//################################
-function cargarTarjetas(cadenaBuscar, cadenaFiltrado){
+//variables========================================================================================
+var salidaUsuario ="";                  //agregar
+var salidaUsuarioEliminado ="";         //eliminado
+var modificacionSalida = "";            //modificado
+//Funciones========================================================================================
+function cargarInterfazUsuarios(busqueda,filtro,correo){
+    this.cargarTarjetasU(busqueda,filtro);
+    cargarInfoU(correo);
+}
+//=================================================================================================
+function cargarTarjetasU(cadenaBuscar, cadenaFiltrado){
     const postData ={
         metodo:"cargarTarjetas", 
         busqueda: cadenaBuscar, 
         filtro: cadenaFiltrado
     };
-    $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
-        console.log(response);
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
         let arrayResponse = JSON.parse(response);
         document.getElementById("contenedorGridResponsivo").innerHTML = arrayResponse[0].mensajeDatos;
+        }
     });
 }
-//################################
-function cargarInfo(correo){
+//=================================================================================================
+function cargarInfoU(correo){
     var salida = '';
+    tarjetaSeleccionada(correo);
     const postData = {
         metodo: "cargarInfo",
         correo: correo
     };
-    $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
-        console.log(response);
-        let arrayResponse = JSON.parse(response);
-        console.log(arrayResponse[0].infoUsuario);
-        document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].infoUsuario;
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            console.log(arrayResponse[0].infoUsuario);
+            
+            document.getElementById("divInfo").innerHTML = arrayResponse[0].infoUsuario;
+        }
     });
+    
 }
-//################################
+//=================================================================================================
 function cargarRegistroUsuario(){
     const postData = {
         metodo: "cargarRegistroUsuario",
@@ -34,25 +57,24 @@ function cargarRegistroUsuario(){
     $.post('/LabSoft_Ingexis/Logica/UsuariosAjax.php',postData,function(response){
         let arrayResponse = JSON.parse(response);
         console.log(arrayResponse[0].registroUsuario);
-        document.getElementById("divInfoUsuarios").innerHTML = arrayResponse[0].registroUsuario;
+        document.getElementById("divInfo").innerHTML = arrayResponse[0].registroUsuario;
     });
 }
-//################################
-var salidaUsuario ="";
+//=================================================================================================
 function guardarUsuario(){
     var postData = {
         metodo: "guardarUsuario",
-        apodo:document.getElementById("apodo").value,
+        apodo:document.getElementById("apodo").value.toUpperCase(),
         puesto: obtenerValorSelect(document.getElementById("puesto").selectedIndex),
-        nom1:document.getElementById("nom1").value,
+        nom1:document.getElementById("nom1").value[0].toUpperCase() + document.getElementById("nom1").value.slice(1),
         nom2:document.getElementById("nom2").value,
-        ape1:document.getElementById("ape1").value,
+        ape1:document.getElementById("ape1").value[0].toUpperCase() + document.getElementById("ape1").value.slice(1),
         ape2:document.getElementById("ape2").value,
-        rfc: document.getElementById("rfc").value,
-        curp: document.getElementById("curp").value,
+        rfc: document.getElementById("rfc").value.toUpperCase(),
+        curp: document.getElementById("curp").value.toUpperCase(),
         cel: document.getElementById("cel").value,
-        correo: document.getElementById("correo").value,
-        contra: document.getElementById("contra").value,
+        correo: document.getElementById("correo").value.toLowerCase(),
+        contra1: document.getElementById("contra1").value,
         calle: document.getElementById("calle").value,
         entre: document.getElementById("entre").value,
         numCasa: document.getElementById("num").value,
@@ -67,7 +89,6 @@ function guardarUsuario(){
         type:"POST",
         async: false,
         success:function(response){
-            console.log(response);
             var arrayResponse = JSON.parse(response);
             console.log(arrayResponse[0].validacion);
             salidaUsuario = arrayResponse[0].validacion;
@@ -75,11 +96,16 @@ function guardarUsuario(){
         }
     });
 }
-//################################
-var salidaUsuarioEliminado ="";
-
+//=================================================================================================
 function eliminarUsuario(){
+    let correoLOG = usuarioLog();
     let correo = document.getElementById("correo").value
+
+    if(correo == correoLOG){
+    infoModal('respuesta','No se puede eliminar el usuario que inicio sesión:',"closeModal('contenedorModal')",'OK','"'+correo+'"','ninguna');
+    }else{
+
+    let respuestaServidor = "No contesto";
     postData = {
         metodo: "eliminarUsuario",
         correo: document.getElementById("correo").value,
@@ -94,19 +120,18 @@ function eliminarUsuario(){
             var arrayResponse = JSON.parse(response);
             salidaUsuarioEliminado = arrayResponse[0].validacion;
             if(arrayResponse[0].validacion == "true"){
-                document.getElementById("textoExito").innerHTML = "El usuario <b>"+ correo +"</b> ha sido eliminado del sistema";   
+                respuestaServidor = "Eliminado del sistema: ";   
             }else{
-                document.getElementById("textoExito").innerHTML = "<b>Error:</b>"+arrayResponse[0].validacion;
+                respuestaServidor = "<b>Error:</b>"+arrayResponse[0].validacion;
             }
-            
-            document.getElementById("contenedorModal").style.height = "0%";
-            document.getElementById("contenedorModalEliminado").style.height = "100%";
-            window.addEventListener('scroll', noScrollModal);
+
         }
-    });
+    })
+    var correoScript = usuarioLog();
+    infoModal('respuesta',respuestaServidor,"cargarInterfazUsuarios('','1111','"+correoScript+"')",'OK','"'+correo+'"','ninguna');
 }
-//################################
-var modificacionSalida = "";
+}
+//=================================================================================================
 function modificarUsuario(cambios){
     var postData = {
         metodo: "modificarUsuario",
@@ -136,7 +161,7 @@ function modificarUsuario(cambios){
         postData.cel = document.getElementById("cel").value;
     }
     if(cambios[6]){
-        postData.contra = document.getElementById("password").value;
+        postData.contra1 = document.getElementById("contra1").value;
         postData.contra2 = document.getElementById("contra2").value;
     }
     if(cambios[7]){
@@ -156,14 +181,17 @@ function modificarUsuario(cambios){
         url:'/LabSoft_Ingexis/Logica/UsuariosAjax.php',
         type:"POST",
         async: false,
-        success:function(response){
+         success:function(response){
             console.log(response);
             var arrayResponse = JSON.parse(response);
             modificacionSalida = arrayResponse[0].validacion;
         }
     });
+
 }
-//################################
+//=================================================================================================
+
+//=================================================================================================
 function filtrado(){
     var checkAdmon = document.getElementById("admon");
     var checkJefe = document.getElementById("jefe");
@@ -194,5 +222,4 @@ function filtrado(){
     
     return(filtro);
 }
-//################################
-//==============================================================
+//=================================================================================================

@@ -1,6 +1,6 @@
 <!-- ========================================================================================== -->
 <?php
-    session_start();
+    session_start();    
     if(!isset($_SESSION["correo"])){
         header('Location: /LabSoft_Ingexis/Interfaz/Login.php');
     }
@@ -27,14 +27,13 @@
 
     <div id="contenedorLogin">
         <div id="contenedorTituloLogin">
-            <div id="imgUser"></div>
+            <div id="imgUser" style="background-image: url('../Usuarios/<?php echo $_SESSION['correo'];?>/<?php echo $_SESSION['imgUsuario'];?>')"></div>
             <h2 id="tituloLogin"> <?php echo $_SESSION['apodo']; ?></h2>
         </div>
         <div id="contenedorInputLogin">
             <input type="password" name="password" id="inputLogin" placeholder="Contraseña">
-            <button id="footerGuardar_Boton" style="margin:00px auto;" onclick=clickIniciar()>Iniciar sesión</button>
+            <button id="footerGuardar_Boton" style="margin:00px auto; display:block;" onclick=clickIniciar()>Iniciar sesión</button>
         </div>
     </div>
-
 </html>
 <!-- ========================================================================================== -->

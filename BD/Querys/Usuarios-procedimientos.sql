@@ -1,0 +1,191 @@
+-- use databaseingexis;
+-- --======================================--
+-- create procedure inf_log(in correo varchar(50))
+--     select usuarios.apodo, log_usuarios.img_log from log_usuarios, usuarios where usuarios.id_usuario = log_usuarios.id_usuario and log_usuarios.correo = correo;
+-- -- ======================================--
+-- create PROCEDURE agregaUsuario(
+--     in correo       varchar(50), 
+--     in contra       varchar(20), 
+--     in img          varchar(200),
+--     -------------------------
+--     in nom1         varchar(20),
+--     in nom2         varchar(20),
+--     in ape1         varchar(30),
+--     in ape2         varchar(30),
+--     in apodo        varchar(60),
+--     in num          varchar(30),
+--     in puest        varchar(25),
+--     in curp         varchar(18),
+--     in rfc          varchar(13),
+--     in calleP       varchar(50),
+--     in entre        varchar(50),
+--     in numcasa      varchar(10),
+--     in colonia      varchar(50),
+--     in codPostal    varchar(20),
+--     in ciudad       varchar(50)
+-- )
+-- BEGIN
+--     INSERT Log_usuarios (log_usuarios.correo, log_usuarios.contra, log_usuarios.img_log) values (correo, contra, img);
+--     if apodo = '' then
+--         set apodo = CONCAT(nom1, ' ', nom2);
+--     end if;
+--     INSERT usuarios values(last_insert_id(), nom1, nom2, ape1, ape2, apodo, num, puest, curp, rfc, calleP, entre, numcasa, colonia, codPostal, ciudad);
+-- END
+-- --======================================--
+-- create PROCEDURE eliminar_usuario(in correo varchar(50))
+-- begin
+--     declare id int;
+--     SELECT id_by_correo(correo) into id;
+--     delete from usuarios where usuarios.id_usuario = id;
+--     DELETE from log_usuarios where log_usuarios.correo = correo;
+-- end
+-- --======================================--
+-- create PROCEDURE listaTargetaUsuario()
+--     select * from dat_tar_Usuarios;
+-- --======================================--
+-- create PROCEDURE Targeta_Especifica_Usuario(in correo varchar(50))
+--     select * from dat_tar_Usuarios where correo = dat_tar_Usuarios.correo;
+-- --======================================--
+-- create PROCEDURE vista_por_usuario(in correo varchar(50))
+-- begin
+--     SELECT * from dat_usuarios where dat_usuarios.correo = correo;
+-- end
+-- --======================================--
+-- create PROCEDURE Usuario_mod_contra(in correo varchar(50), in anterior varchar(20), in nueva varchar(20))
+-- begin 
+--     declare aprobado varchar(5);
+--     select verificaContra(correo, anterior) into aprobado;
+--     if aprobado = 'true' then
+--         update log_usuarios set log_usuarios.contra = nueva where log_usuarios.correo = correo;
+--         select 'Aprobado';
+--     else
+--         select 'No aprobado';
+--     end if;
+-- end
+-- --======================================--
+-- create PROCEDURE Usuario_mod_contra_admin(in correo varchar(50), in nueva varchar(20))
+-- begin 
+--     update log_usuarios set log_usuarios.contra = nueva where log_usuarios.correo = correo;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_puesto(in correo varchar(50), in puesto varchar(25))
+-- begin
+--     declare id_usuario int;
+--     select id_by_correo(correo) into id_usuario;
+--     update usuarios set usuarios.puesto = puesto where usuarios.id_usuario = id_usuario;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_nombre(in correo varchar(50), in nom1 varchar(20), in nom2 varchar(20), in ape1 varchar(30), in ape2 varchar(30))
+-- begin
+--     declare id_usuario int;
+--     select id_by_correo(correo) into id_usuario;
+--     update usuarios
+--     set 
+--         usuarios.nombre1 = nom1,
+--         usuarios.nombre2 = nom2,
+--         usuarios.Primer_ape = ape1,
+--         usuarios.Segund_ape = ape2
+--     WHERE 
+--         usuarios.id_usuario = id_usuario;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_curp(in correo varchar(50), in curp varchar(18))
+-- begin
+--     declare id int;
+--     select id_by_correo(correo) into id;
+--     update usuarios set usuarios.Curp = curp where usuarios.id_usuario = id;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_rfc(in correo varchar(50), in rfc varchar(13))
+-- begin
+--     declare id_usuario int;
+--     select id_by_correo(correo) into id_usuario;
+--     update usuarios set usuarios.rfc = rfc where usuarios.id_usuario = id_usuario;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_apodo(in correo varchar(50), in apodo varchar(13))
+-- begin
+--     declare id_usuario int;
+--     select id_by_correo(correo) into id_usuario;
+--     update usuarios set usuarios.apodo = apodo where usuarios.id_usuario = id_usuario;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_Telefono(in correo varchar(50), in telefono varchar(30))
+-- begin
+--     declare id_usuario int;
+--     select id_by_correo(correo) into id_usuario;
+--     update usuarios set usuarios.Num_contacto = telefono where usuarios.id_usuario = id_usuario;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_Img(in correo varchar(50), in img varchar(200))
+-- begin
+--     declare id_usuario int;
+--     select id_by_correo(correo) into id_usuario;
+--     update log_usuarios set log_usuarios.img_log = img where log_usuarios.id_usuario = id_usuario;
+-- end
+-- --======================================--
+-- create procedure Usuario_mod_direccion(
+--     in correo varchar(50),
+--     in calle varchar(50), 
+--     in entre varchar(50), 
+--     in numCasa varchar(10), 
+--     in col varchar(50), 
+--     in codigoP varchar(10),
+--     in ciudad varchar(50)
+--     )
+-- begin
+--     declare id_usuario int;
+--     select id_by_correo(correo) into id_usuario;
+--     update usuarios 
+--     set 
+--         usuarios.calleP = calle,
+--         usuarios.Entrecalles = entre,
+--         usuarios.numero = numCasa,
+--         usuarios.colonia = col,
+--         usuarios.cod_postal = codigoP,
+--         usuarios.ciudad = ciudad
+--     where 
+--         usuarios.id_usuario = id_usuario;
+-- end
+-- --======================================--
+-- create procedure buscar_tar_usuarios(in texto varchar(60))
+-- begin
+--     select * 
+--     from 
+--         dat_tar_Usuarios 
+--     where 
+--         dat_tar_usuarios.apodo like concat('%', texto, '%') or 
+--         dat_tar_usuarios.correo like concat('%', texto, '%') or
+--         dat_tar_usuarios.nombre like concat('%', texto, '%');
+-- end
+-- --======================================--
+-- create procedure Usuario_filtro_puesto(in puesto1 varchar(20), in puesto2 varchar(20), in puesto3 varchar(20), in puesto4 varchar(20))
+-- begin
+--     select * from dat_tar_usuarios
+--     WHERE 
+--         dat_tar_usuarios.puesto like concat('%', puesto1, '%') or
+--         dat_tar_usuarios.puesto like concat('%', puesto2, '%') or
+--         dat_tar_usuarios.puesto like concat('%', puesto3, '%') or
+--         dat_tar_usuarios.puesto like concat('%', puesto4, '%');
+-- end
+-- -- ======================================--
+-- -- pendientes:
+-- --      informacion de logeo                                                ✓✓✓✓✓✓✓✓✓
+-- --      filtro por tipo de user varios al mismo tiempo (like por tipo user) ✓✓✓✓✓✓✓✓✓
+-- --      agregar usuarios                                                    ✓✓✓✓✓✓✓✓✓
+-- --      eliminar usuarios                                                   ✓✓✓✓✓✓✓✓✓
+-- --      datos para tajetas usuarios                                         ✓✓✓✓✓✓✓✓✓
+-- --      buscador tarjetas usuarios                                          ✓✓✓✓✓✓✓✓✓
+-- --      datos especifico para tarjeta                                       ✓✓✓✓✓✓✓✓✓
+-- --      datos del usuario especifico                                        ✓✓✓✓✓✓✓✓✓
+-- --      modificar usuarios (por seccion)                                    ✓✓✓✓✓✓✓✓✓
+-- --          +contraseña         ✓
+-- --          +puesto             ✓
+-- --          +datos_Nombre       ✓
+-- --          +curp               ✓
+-- --          +RFC                ✓
+-- --          +telefono           ✓
+-- --          +direccion          ✓
+-- --          +apodo              ✓
+-- --          +img                ✓
+-- -- ======================================--

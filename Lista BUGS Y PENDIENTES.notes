@@ -1,0 +1,145 @@
+========================TAREAS========================
+POR HACER:
+<<<<<<< HEAD
+
+
+========================TAPIZ==================================================================================================================================================================
+TAPIZ:
+
+===>GENERAL
+    [ ] Responsividad de pantallas.
+    [ ] Diseñar y implemetar Tooltip generico para el sistema 
+    [ ] Cargar HEADER desde php
+    [ ] Diseño de barra superior de navegación tipo Facebook
+    [ ] HTML Barra  de navegación
+    [ ] CSS Barra de navegación
+    [ ] JS Barra de navegación
+    [ ] Input quitar borde al seleccionar
+
+=======
+========================>TAPIZ<=======================
+>>>>>>> bf0839831baebcb67fddd1105af07c00b603887e
+===>Usuarios
+
+    -->Interfaz
+        [√] Transición OK
+        [√] Botón #GUARDAR# en Info Usuarios
+        [√] Scroll de tarjetas
+        [ ] Quitar tarjeta usuario logueado y mostrar apodo y img en HEADER
+
+
+    -->Validaciones
+        [ ] Validación subir imagen (TAMAÑO)
+        [x] Formato número contacto " (612)-121-1723 " -->50%
+        [√] Validación numero contacto(14 digitos, solo números)
+        [ ] Tip de contraseña  " Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?& "
+        [√] Indicación casilla campo formato correcto: (onkeyup)
+                    ->contraseña
+                    ->email
+                    ->curp
+                    ->rfc
+        [√] Required: 
+                    ->1er nombre, 
+                    ->1er apellido, 
+                    ->curp,
+                    ->número contacto, 
+                    ->correo
+                    [ ] ->Puesto: option vacía para que el usuario tenga que seleccionar un puesto.
+        [√] Indicar campos erroneos en interfaz (borde sombra color rojo)
+        [√] No poder eliminar usuario logueado
+        [√] MaxLenght campos
+                Usuarios
+                    [√] ->Apodo                   60
+                    [√] ->1er nombrev             20
+                    [√] ->2do                     20  
+                    [√] ->1er apellido            30
+                    [√] ->2do apellido            30
+                    [√] ->RFC                     13
+                    [√] ->CURP                    18
+                    [√] ->Telefono                14
+                    [√] ->Correo                  50
+                    [√] ->Calle Principal         50
+                    [√] ->Calle entre             50
+                    [√] ->Número de casa          10
+                    [√] ->Código Postal           10
+                    [√] ->Colonia                 50
+                    [√] ->Ciudad                  50
+
+===>Clientes
+        [ ] ver la edicion de correo en #clientes#
+        [ ] Agregar a #clientes# campo notas
+        [ ] Responsividad de pantallas #Usuarios# y #Clientes# 
+        [ ] Marcar tarjeta seleccionada  #Clientes#
+        [ ] Agregar Ver contraseña en pantalla agregar usuario
+        [ ] agregar modal eliminar al boton en #clinetes#
+
+
+    -->Validaciones
+        [ ] Validación subir imagen (TAMAÑO)
+        [x] Formato número contacto " (612)-121-1723 " -->50%
+        [ ] Validación numero contacto(14 digitos, solo números)
+        [ ] Tip de contraseña  " Entre 8 y 16 caracteres,obligatorio: mayuscula, minuscula, número y algún caracter de los siguientes:$@!%*?& "
+        [ ] Indicación casilla campo formato correcto: (onkeyup)
+                    ->contraseña
+                    ->email
+                    ->curp
+                    ->rfc
+        [ ] Required: 
+                    ->1er nombre, 
+                    ->1er apellido, 
+                    ->curp,
+                    ->número contacto, 
+                    ->correo
+                    [ ] ->Puesto: option vacía para que el usuario tenga que seleccionar un puesto.
+        [ ] Indicar campos erroneos en interfaz (borde sombra color rojo)
+        [ ] No poder eliminar usuario logueado
+        [ ] MaxLenght campos
+
+===>Obras
+
+    -->Interfaz:
+        [ ] Diseño
+        [ ] HTML
+        [ ] CSS
+        [ ] Responsividad
+        [ ] Implementación PHP
+
+
+====================================================================================================><==========================================================================================
+
+
+=====================>JESUS WHITE<====================
+[√] Cambiar id de campos en pantalla clientes #tarjetas#
+[√] Cambiar id de campos en pantalla clientes #infoCliente#
+[√] Campo buscar en clientes
+[√] Boton agregar en pantalla #Clientes#
+[√] Edicion de los campos en agregar cliente en pantalla #clientes#
+[√] agregar funcion guardar clientes
+[√] agregar funcion eliminar clientes
+[√] agregar funcion modificar clientes
+[√] modificar orden de modificacion por #paradoja de modificacion#
+[√] ya que este campo notas Agregarlo a las funciones # agregar , modificar #
+[√] cambiar tamaño en BD de imagen, calle y numero de contacto
+[√] crear tabla #obras#
+[√] crear table #muestras#
+[√] crear table #pruebas#
+[√] crear paquete procedimientos completos para #obras#
+[ ] crear vistas para #obras y muestras#
+[ ] diseñar enum para las acciones en la tabla log
+[ ] tabla #log activity# para todos 
+[ ] crear procedimientos para log
+[ ] agregar log a todas las actividades
+
+
+!!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
+BUGS:
+[ ] Cargar una foto muy grande se rompe el sistema pero no muestra ningun error.
+[√] No sale del modal al eliminar un !usuario!
+
+------------------->RECORDATORIOS<--------------------
+[ ] Eliminar codigo que evita que se guarde el cache
+[ ] Quitar console.log
+!!!!!!!!!!!!!!!!!!!!!elemento y obserbaciones de la obra que se esta registrando
+!carga en kilos por cm Cuadrado!
+!ver obras anteriores del cliente!
+//con el comando Alt + l se marcan tareas.

@@ -6,10 +6,27 @@
     // ========================================================
     class procedimientos_User{
         //#####################################################
+        public function PuestoByCorreo($correo){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion('login');
+            //============================
+            $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "select puesto_by_correo('".$correo."');";
+            $resultado=$mysqli->query($query);
+            $rows = $resultado->fetch_array();
+            $salida = $rows[0];
+            //============================
+            return $salida;
+            $resultado->free();
+            //============================
+        }
+        //#####################################################
         public function ExisteCorreo($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion('login');
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -26,7 +43,7 @@
         public function ConfirmarContraseña($correo, $contraseña){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion('login');
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -57,7 +74,7 @@
         public function InfoLogin($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion('login');
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -81,7 +98,7 @@
             //crea Conexion===============
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL agregaUsuario('".$correo."', '".$contra."', '".$img."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."', '".$apodo."', '".$num."', '".$puesto."', '".$curp."', '".$rfc."', '".$calleP."', '".$entre."', '".$numCasas."', '".$col."', '".$codPost."', '".$ciudad."')";
@@ -98,7 +115,7 @@
             //crea Conexion===============
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL eliminar_usuario('".$correo."')";
@@ -114,7 +131,7 @@
         public function ListaTarjetasUsuarios(){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -136,7 +153,7 @@
         public function TrajetaEspecifica($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -156,7 +173,7 @@
         public function VistaPorUsuario($correo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -185,10 +202,10 @@
             //============================
         }
         //#####################################################
-        public function ModContra($correo, $anterior, $nueva){
+        public function ModContra_user($correo, $anterior, $nueva){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -201,17 +218,33 @@
             //============================
         }
         //#####################################################
+        public function ModContra_admin($correo, $nueva){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL Usuario_mod_contra_admin('".$correo."', '".$nueva."');";
+            if($mysqli->query($query)===TRUE){
+                return "<br>- Modificado";
+            }else{
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
+            }   
+            //============================
+        }
+        //#####################################################
         public function ModPuesto($correo, $puesto){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_puesto('".$correo."', '".$puesto."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -219,14 +252,14 @@
         public function ModNombre($correo, $nom1, $nom2, $ape1, $ape2){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_nombre('".$correo."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -234,14 +267,14 @@
         public function Modcurp($correo, $curp){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_curp('".$correo."', '".$curp."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -249,14 +282,14 @@
         public function ModRFC($correo, $rfc){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_rfc('".$correo."', '".$rfc."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -264,14 +297,14 @@
         public function ModApodo($correo, $apodo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_apodo('".$correo."', '".$apodo."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -279,14 +312,14 @@
         public function ModTelefono($correo, $telefono){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Telefono('".$correo."', '".$telefono."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -295,14 +328,14 @@
         {
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -311,22 +344,23 @@
             //crea Conexion===============
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $imgAnte = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "select img_by_correo('".$correo."');");
             $rows = $resultado->fetch_array();
             $imgAnte = $rows[0];
-            $directorios->EliminarUnArchivo($correo, $imgAnte);
+            if($imgAnte != '')
+                $directorios->EliminarUnArchivo($correo, $imgAnte);
             $resultado->free();
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
-                return "Modificacion Existosa.";
+                return "<br>- Modificado";
             }else{
-                return "NO se puedo Modificar el registro: ".$mysqli->error;
+                return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
             }     
             //============================
         }
@@ -335,7 +369,7 @@
         {
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -357,7 +391,7 @@
         public function Filtro_tarjetas_puesto($puesto1, $puesto2 = null, $puesto3 = null, $puesto4 = null){
             //crea Conexion===============
             $conex = new conexionMySQLi();
-            $mysqli = $conex->conexion();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             //============================
             $salida = array();
@@ -390,6 +424,12 @@
     }
     // ========================================================
     // $prueba = new procedimientos_User();
+    // $salida = $prueba->ModContra_admin('yo@gmail.com', '12345');
+    // var_dump($salida);
+    // $prueba = new procedimientos_User();
+    // $salida = $prueba->PuestoByCorreo('Rtapiz@gmail.com');
+    // var_dump($salida);
+    // $prueba = new procedimientos_User();
     // $salida = $prueba->ExisteCorreo('Rtapiz@gmail.com');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
@@ -417,7 +457,7 @@
     // $salida = $prueba->VistaPorUsuario('jesus120190240.8@gmail.com');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
-    // $salida = $prueba->ModContra('jesus120190240.8@gmail.com', 'holis', 'holaMundo');
+    // $salida = $prueba->ModContra_user('jesus120190240.8@gmail.com', 'holis', 'holaMundo');
     // var_dump($salida);
     // $prueba = new procedimientos_User();
     // $salida = $prueba->ModPuesto('jesus120190240.8@gmail.com', 'Jefe De Laboratorio');

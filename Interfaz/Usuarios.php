@@ -1,9 +1,22 @@
 <?php   
 	session_start();
+	if($_SESSION['puesto'] != 'Administrador' && $_SESSION['puesto'] != 'Jefe De Laboratorio'){
+		header('Location: /LabSoft_Ingexis/Interfaz/Login.php');
+		// echo "<script type='text/javascript'>";
+		// echo "window.history.back(-1)";
+		// echo "</script>";
+	}
+	$_SESSION['carpeta'] = 'Usuarios';
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+	<!-- ========================Con esto evitamos la cache (Quitar despues)======================== -->
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Last-Modified" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<!-- =========================================================================================== -->
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -15,11 +28,16 @@
 	</script>
 	<script src="js/usuarios.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/interfaz.js"></script>
+	<script src="js/validaciones.js"></script>
 	<script>
 		// --------------------------------------
 		window.onload = function(){
-			this.cargarTarjetas('','1111');
-			cargarInfo('<?php echo $_SESSION['correo'] ?>');
+			cargarInterfazUsuarios("",'1111',usuarioLog());
+		}
+		// --------------------------------------
+		function usuarioLog(){
+			return '<?php echo $_SESSION['correo'] ?>';
 		}
 		// --------------------------------------
 		var flag = true;
@@ -47,62 +65,94 @@
 		// --------------------------------------
 		function cargarInfoUsuario(email){
 			if (screen.width >= 800) {
-			let divUsuarios = document.getElementById("divUsuarios");
-			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-			divUsuarios.style.display = "block";
-			divInfoUsuarios.style.display = "block";
+				let divTarjetas = document.getElementById("divTarjetas");
+				let divInfo = document.getElementById("divInfo");
+				divTarjetas.style.display = "block";
+				divInfo.style.display = "block";
 			}
-
 			if (screen.width < 800) {
-			let divUsuarios = document.getElementById("divUsuarios");
-			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-			divUsuarios.style.display = "none";
-			divInfoUsuarios.style.display = "block";
+				let divTarjetas = document.getElementById("divTarjetas");
+				let divInfo = document.getElementById("divInfo");
+				divTarjetas.style.display = "none";
+				divInfo.style.display = "block";
 			}
 			cargarInfo(email);
 		}
 		// --------------------------------------
 		function goBack(){
 			if (screen.width < 800) {
-			let divUsuarios = document.getElementById("divUsuarios");
-			let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-			divUsuarios.style.display = "block";
-			divInfoUsuarios.style.display = "none";
+				let divTarjetas = document.getElementById("divTarjetas");
+				let divInfo = document.getElementById("divInfo");
+				divTarjetas.style.display = "block";
+				divInfo.style.display = "none";
 			}
 		}
 		// --------------------------------------
 		function guardarUser(){
-			guardarUsuario();
-			if(salidaUsuario == 'true'){
-				subirImg();
-				if(respuestaSubirIMG != 'NO'){
-					alert('Usuario registrado con exito 🤘.');
-				}else{
-					eliminarUsuario();
-					if(eliminarUsuario == 'true'){
-						alert('error al registrar Usuario: ' + errorSubirIMG);
-					}
+			if(camposRequeridos()== false){
+				infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+			}
+			else{
+				if(errores() == false){
+					infoModal('confirmar','Desea guardar el usuario:','guardarUser2()','Guardar',document.getElementById("correo").value,'guardarBotonModal');
+				}
+				else{
+					infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
 				}
 			}
-			var correoNuevo = document.getElementById("correo").value;
-			this.cargarTarjetas('','1111');
-			cargarInfo(correoNuevo);
+		}
+
+		function guardarUser2(){
+			correoNuevo = document.getElementById("correo").value;
+			guardarUsuario();
+				if(salidaUsuario == 'true'){
+					subirImg();
+					if(respuestaSubirIMG != 'NO'){
+						infoModal('respuesta','Usuario registrado con exito 🤘.',"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK',correoNuevo,'ninguna');
+					}
+					else{
+						eliminarUsuario();
+						if(eliminarUsuario == 'true'){
+							infoModal('respuesta','error al registrar Usuario: ' + errorSubirIMG,"closeModal('contenedorModal')",'OK',correoNuevo,'ninguna');
+						}
+					}
+				}
+				else{
+					infoModal('respuesta',salidaUsuario,"closeModal('contenedorModal')",'OK','No hay registro','ninguna');
+				}
 		}
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
-		function modificarUser(){//validar con el arreglo si no no hace nada ==========================================================================================================
-			if(arregloCambios[8]){
-				subirImg();
-				if(respuestaSubirIMG == 'NO'){
-					arregloCambios[8] = 0;
+
+		function modificarUser(){
+			if(arregloCambios.includes(1)){
+				if(camposRequeridos()== false){
+							infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+
 				}
+				else{
+						if(errores() == false){
+								infoModal('confirmar','Desea guardar el usuario:','modificarUser2()','Modificar',document.getElementById("correo").value,'guardarBotonModal');
+						}
+						else{
+								infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+						}
+					}
+			}else{
+				infoModal('respuesta','El sistema no detecta cambios en ningún campo.<br>','cargarInfo(document.getElementById("correo").value)','OK','No se registro ninguna modificación.','ninguna');
 			}
-			modificarUsuario(arregloCambios);
-			alert(modificacionSalida);
-			arregloCambios = Array(0,0,0,0,0,0,0,0,0);
+		}
+		function modificarUser2(){
 			var correoNuevo = document.getElementById("correo").value;
-			this.cargarTarjetas('','1111');
-			cargarInfo(correoNuevo);
+				if(arregloCambios[8]){
+					subirImg();
+					if(respuestaSubirIMG == 'NO'){
+						arregloCambios[8] = 0;
+					}
+				}
+				modificarUsuario(arregloCambios);
+				infoModal('respuesta',modificacionSalida,"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK','"'+correoNuevo+"'",'ninguna');
+				arregloCambios = Array(0,0,0,0,0,0,0,0,0);
 		}
 		// --------------------------------------
 		function selectItem(seleccionado){
@@ -120,13 +170,22 @@
 <body >
 	<div class="fondoPantalla"></div>
 	<header id="encabezadoBotones">
-	<button id="regresar" onclick="goBack()"></button>
-	<h2 id="titulo">Usuarios</h2>
-	<button id="menu"></button>
-	</header>
-	<div class="contenedorPrincipal">
+            <button id="regresar">
+            </button>
+            <div id="menuNavegacion">
+                <div class="item" id="itemHome"  style='background-image: url("img/HomeIcon.svg");' onclick=selectItemMenu("itemHome","img/HomeIconBlue.svg");></div>
+                <div class="item" id="itemObras" style='background-image: url("img/ObrasIcon.svg");' onclick=selectItemMenu("itemObras","img/ObrasIconBlue.svg");></div>
+                <div class="item" id="itemMuestras" style='background-image: url("img/MuestraIcon.svg");' onclick=selectItemMenu("itemMuestras","img/MuestraIconBlue.svg");></div>
+                <div class="item" id="itemPruebas" style='background-image: url("img/PruebaIcon.svg");'  onclick=selectItemMenu("itemPruebas","img/PruebaIconBlue.svg");></div>
+                <div class="item" id="itemUsers" style='background-image: url("img/UserIcon.svg");'  onclick=selectItemMenu("itemUsers","img/UserIconBlue.svg");></div>
+                <div class="item" id="itemClients" style='background-image: url("img/ClientesIcon.svg");'  onclick=selectItemMenu("itemClients","img/ClientesIconBlue.svg");></div>
+            </div>
+            <div id="imgUsuarioLogin" style='background-image: url("../Usuarios/<?php echo $_SESSION['correo'];?>/<?php echo $_SESSION['imgUsuario'];?>");'></div>
+                <div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
+        </header>   
+	<div id="contenedorPrincipal">
 		<!-- 00000000000000000000000 -->
-		<div id="divUsuarios">
+		<div id="divTarjetas">
 			<div id="contenedorBuscador">
 					<div id="desenfoque" class="sombra"></div>
 					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value,filtrado())" placeholder="Buscar..." title="Type in a name"></input>
@@ -150,13 +209,15 @@
                                 </div>
             </div>
 					
-			<div id="contenedorGridResponsivo" onload="cargarTarjetas('','1111')"> 
+			<div id="contenedorGridResponsivo"> 
 			</div>
 		</div>
 		<!-- 11111111111111111111111 -->
-		<div id="divInfoUsuarios">
+		<div id="divInfo">
 			
 		</div>
 		<!-- 22222222222222222222222 -->
+
+		<!-- 33333333333333333333333 -->
 	</div>
 </body>

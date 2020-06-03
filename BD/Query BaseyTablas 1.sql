@@ -1,0 +1,94 @@
+-- CREATE database databaseingexis;
+-- --======================================--
+-- use databaseingexis;
+-- --======================================--
+-- create table Log_usuarios(
+--     id_usuario      int             primary key     not null    AUTO_INCREMENT,
+--     correo          varchar(50)     unique,
+--     contra          varchar(20),
+--     img_log         VARCHAR(200)
+-- );
+-- -- ======================================--
+-- create table usuarios(
+--     id_usuario      int             not null,
+--     nombre1         varchar(20),
+--     nombre2         varchar(20),
+--     Primer_ape      varchar(30),
+--     Segund_ape      varchar(30),
+--     apodo           varchar(60),
+--     --informacion---------------
+--     Num_contacto    varchar(30),
+--     puesto          enum('Jefe De Laboratorio', 'Administrador', 'Laboratorista 1', 'Laboratorista 2'),
+--     Curp            varchar(18)     primary key, -- 4 letras, 6 numeros, 1 letra, 2 letras, 3 letras, 1 num o letra, 1 numero
+--     rfc             varchar(13), -- 4 0 3 letras, 6 numeros, 3 num o letras
+--     --direccion-----------------
+--     calleP          varchar(50),
+--     Entrecalles     varchar(50),
+--     numero          varchar(10),
+--     colonia         varchar(50),
+--     cod_postal      varchar(10),
+--     ciudad          varchar(50),
+--     --ralaciones ETC------------
+--     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
+-- );
+-- --======================================--
+-- create table clientes(
+--     id_clientes     int             primary key     not null    AUTO_INCREMENT,
+--     titulo          varchar(60),
+--     nom_empr        varchar(60),
+--     rfc             varchar(13), -- 4 0 3 letras, 6 numeros, 3 num o letras
+--     direc           text,
+--     cod_pos         varchar(10),
+--     colonia         varchar(20),
+--     ciudad          varchar(30),
+--     nombre_contac   varchar(100),
+--     numero_contac   varchar(30),
+--     email           varchar(50)     unique,
+--     nota            text,
+--     img             varchar(100),
+--     fecha_reg       date
+-- );
+-- -- ======================================--
+-- create table Obras(
+--     id_obra         INT         PRIMARY KEY     not NULL    AUTO_INCREMENT,
+--     id_clientes     int,
+--     nombre          VARCHAR(50),
+--     direccion       text,
+--     anotaciones     text,
+--     --ralaciones ETC------------
+--     FOREIGN key(id_clientes) REFERENCES clientes(id_clientes)
+-- );
+-- -- ======================================--
+-- create table Elemento(
+--     id_elemento     int         PRIMARY key     NOT NULL    AUTO_INCREMENT,
+--     id_obra         int,
+--     id_usuario      int,
+--     nombre          VARCHAR(50),
+--     observaciones   text,
+--     fecha_reg       date,
+--     --ralaciones ETC------------
+--     FOREIGN key(id_obra) REFERENCES Obras(id_obra),
+--     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
+-- );
+-- -- -- ======================================--
+-- create table Muestra(
+--     id_muestra      int         PRIMARY key     not NULL    AUTO_INCREMENT,
+--     id_elemento     int,
+--     id_usuario      int,
+--     identificador   varchar(10),
+--     resultado       varchar(50),
+--     fecha_prog      date,
+--     --ralaciones ETC------------    
+--     FOREIGN key(id_elemento) REFERENCES Elemento(id_elemento),
+--     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
+-- );
+-- -- ======================================--
+-- create table registro_log(
+--     id_log          int         PRIMARY key     not null    AUTO_INCREMENT,
+--     id_usuario      int,
+--     accion          text,
+--     fecha           datetime,
+--     --ralaciones ETC------------  
+--     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
+-- );
+-- -- ======================================--

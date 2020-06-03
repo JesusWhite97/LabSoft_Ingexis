@@ -8,23 +8,26 @@ function readURL(input)
   flagImg = 1;
   if (input.files && input.files[0]) 
   {
+    if(input.files[0].size < 1000000){
       var reader = new FileReader();
       reader.onload = function(evt)
       {
-        var field = document.getElementById('blah');
+        var field = document.getElementById('editarImagen');
         field.style.backgroundImage = "url('"+evt.target.result+"')";
+        
       }
       reader.readAsDataURL(input.files[0]);
+      var label = document.getElementById("botonImg");
+      label.classList.remove("btnImgRegistro");
+      label.style["grid-row"] = "1 / span 1";
+  }else{
+        infoModal('respuesta','El tamaño de la imagen es muy grande.',"closeModal('contenedorModal')",'OK','Elige una imagen con un tamaño menor.','ninguna'); 
+      }
+  
   }
 }
 
-function isNumberKey(evt){
-  var charCode = (evt.which) ? evt.which : evt.keyCode;
-  if (charCode != 46 && charCode > 31 
-  && (charCode < 48 || charCode > 57))
-  return false;
-  return true;
-} 
+
 
 var flag = 0;
 function openNav() {
@@ -41,26 +44,10 @@ function openNav() {
     flag = 0;
   } 
 }
-function openModal(item) {
-    document.getElementById("textoModalPregunta").innerHTML = "Desea eliminar usuario: <br><b>"+item+"?"
-    document.getElementById("contenedorModal").style.height = "100%";
-    window.addEventListener('scroll', noScrollModal);
-}
-
-function closeModal(){
-  document.getElementById("contenedorModal").style.height = "0%";
-  window.removeEventListener('scroll', noScrollModal);
-} 
 
 
-function noScroll() {
-  window.scrollTo(0, 0);
-}
-function noScrollModal() {
-  var y1 = document.getElementById("contenedorModal").offsetTop;
-  var y2 = y1 + document.getElementById("contenedorModal").height;
-  window.scrollTo(y1, y2);
-}
+
+
 
 function mostrarInput(dias,contenedorBtn,btnReg){
   var input = document.getElementById(dias);
@@ -134,7 +121,7 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
 //       let arrayResponse = JSON.parse(response);
 //       document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
 //       document.getElementById("contenedorModal").style.height = "0%";
-//       document.getElementById("contenedorModalEliminado").style.height = "100%";
+//       document.getElementById("contenedorModal").style.height = "100%";
 //       window.addEventListener('scroll', noScrollModal);
 
 //     });
@@ -219,14 +206,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
     //     let arrayResponse = JSON.parse(response);
     //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
     //     document.getElementById("contenedorModal").style.height = "0%";
-    //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+    //     document.getElementById("contenedorModal").style.height = "100%";
     //     window.addEventListener('scroll', noScrollModal);
   
     //   });
     // }else{
     //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
     //   document.getElementById("contenedorModal").style.height = "0%";
-    //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+    //   document.getElementById("contenedorModal").style.height = "100%";
     //   window.addEventListener('scroll', noScrollModal);
 
     // }
@@ -236,8 +223,10 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
     var respuestaSubirIMG = "";
     var errorSubirIMG = "";
     function subirImg(){
+
       var postData = new FormData(document.getElementById("formImg"));
       console.log(postData);
+
       $.ajax({
         data:postData,
         url:'../Logica/claseSubirImg.php',
@@ -252,6 +241,8 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
           errorSubirIMG = arrayResponse[0].mensajeDatos;
         }
       });
+
+
   }
   // ==================================================================================
   // function registrarUsuario(){
@@ -286,14 +277,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
   //     let arrayResponse = JSON.parse(response);
   //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
   //     document.getElementById("contenedorModal").style.height = "0%";
-  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     document.getElementById("contenedorModal").style.height = "100%";
   //     window.addEventListener('scroll', noScrollModal);
 
   //   });
   // }else{
   //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
   //   document.getElementById("contenedorModal").style.height = "0%";
-  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   document.getElementById("contenedorModal").style.height = "100%";
   //   window.addEventListener('scroll', noScrollModal);
 
   // }
@@ -327,14 +318,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
   //     let arrayResponse = JSON.parse(response);
   //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
   //     document.getElementById("contenedorModal").style.height = "0%";
-  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     document.getElementById("contenedorModal").style.height = "100%";
   //     window.addEventListener('scroll', noScrollModal);
 
   //   });
   // }else{
   //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
   //   document.getElementById("contenedorModal").style.height = "0%";
-  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   document.getElementById("contenedorModal").style.height = "100%";
   //   window.addEventListener('scroll', noScrollModal);
 
   // }
@@ -375,14 +366,14 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
   //     let arrayResponse = JSON.parse(response);
   //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
   //     document.getElementById("contenedorModal").style.height = "0%";
-  //     document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //     document.getElementById("contenedorModal").style.height = "100%";
   //     window.addEventListener('scroll', noScrollModal);
 
   //   });
   // }else{
   //   document.getElementById("textoExito").innerHTML = "Error al subir la imagen";
   //   document.getElementById("contenedorModal").style.height = "0%";
-  //   document.getElementById("contenedorModalEliminado").style.height = "100%";
+  //   document.getElementById("contenedorModal").style.height = "100%";
   //   window.addEventListener('scroll', noScrollModal);
 
   // }
@@ -397,7 +388,7 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
 //       let arrayResponse = JSON.parse(response);
 //       document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
 //       document.getElementById("contenedorModal").style.height = "0%";
-//       document.getElementById("contenedorModalEliminado").style.height = "100%";
+//       document.getElementById("contenedorModal").style.height = "100%";
 //       window.addEventListener('scroll', noScrollModal);
 
 //     });
@@ -411,14 +402,13 @@ function guardarRegistro(dias, checkbox,contenedorBtn,btnReg){
 //     let arrayResponse = JSON.parse(response);
 //     document.getElementById("textoExito").innerHTML = arrayResponse[0].mensajeDatos;
 //     document.getElementById("contenedorModal").style.height = "0%";
-//     document.getElementById("contenedorModalEliminado").style.height = "100%";
+//     document.getElementById("contenedorModal").style.height = "100%";
 //     window.addEventListener('scroll', noScrollModal);
 
 //   });
 //   return respuesta;
 // }
 //################################################
-
 function obtenerNombreArchivo(){
   var x = document.getElementById("inImg");
   var txt = "";
@@ -432,11 +422,8 @@ function obtenerNombreArchivo(){
         if ('name' in file) {
           txt =  file.name;
         }
-
       }
     }
   }
   return txt; 
 }
-
-  

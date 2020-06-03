@@ -1,0 +1,18 @@
+use databaseingexis;
+-- =================================================
+-- create procedure log_reg(in correoUser varchar(50), in accion text)
+-- begin
+--     declare id_user int;
+--     SELECT id_by_correo(correoUser) into id_user;
+--     insert registro_log(registro_log.id_usuario, registro_log.accion, registro_log.fecha) VALUES (id_user, accion, now());
+-- end
+-- =================================================
+-- create procedure log_buscar_by_user(in correoUser varchar(50), in fecha varchar(30), in texto text)
+-- begin
+--     declare id_user int;
+--     SELECT id_by_correo(correoUser) into id_user;
+--     SELECT * from registro_log WHERE registro_log.accion like concat('%', texto, '%') and registro_log.fecha like concat('%', fecha, '%') and registro_log.id_usuario = id_user ORDER BY registro_log.fecha desc;
+-- end
+-- =================================================
+-- =================================================
+-- =================================================
