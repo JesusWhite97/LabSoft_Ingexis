@@ -141,7 +141,7 @@
 	</header>
 	<div class="contenedorPrincipal">
 		<!-- 00000000000000000000000 -->
-		<div id="divUsuarios">
+		<div id="divTarjetas">
 			<div id="contenedorBuscador">
 					<div id="desenfoque" class="sombra"></div>
 					<input type="text" id="buscarEntrada" onkeyup="cargarTarjetas(document.getElementById('buscarEntrada').value);" placeholder="Buscar..." title="Type in a name"></input>
@@ -158,7 +158,7 @@
 			</div>
 		</div>
 		<!-- 11111111111111111111111 -->
-		<div id="divInfoClientes">
+		<div id="divInfo">
 			
 		</div>
 		<!-- 22222222222222222222222 -->

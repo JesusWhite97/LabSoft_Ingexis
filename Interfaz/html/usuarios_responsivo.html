@@ -31,16 +31,16 @@
                         }
                 }
                 function cargarInfoUsuario(){
-                    let divUsuarios = document.getElementById("divUsuarios");
-                    let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-                    divUsuarios.style.display = "none";
-                    divInfoUsuarios.style.display = "block";
+                    let divTarjetas = document.getElementById("divTarjetas");
+                    let divInfo = document.getElementById("divInfo");
+                    divTarjetas.style.display = "none";
+                    divInfo.style.display = "block";
                 }
                 function goBack(){
-                    let divUsuarios = document.getElementById("divUsuarios");
-                    let divInfoUsuarios = document.getElementById("divInfoUsuarios");
-                    divUsuarios.style.display = "block";
-                    divInfoUsuarios.style.display = "none";
+                    let divTarjetas = document.getElementById("divTarjetas");
+                    let divInfo = document.getElementById("divInfo");
+                    divTarjetas.style.display = "block";
+                    divInfo.style.display = "none";
                 }
         </script>
         <title>Ingexis Labsoft - Usuarios</title>
@@ -56,7 +56,7 @@
 
         <div class="contenedorPrincipal">
 
-                <div id="divUsuarios">
+                <div id="divTarjetas">
                         <div id="contenedorBuscador">
                                 <div id="desenfoque" class="sombra"></div>
                                 <input type="text" id="buscarEntrada" onkeyup="myFunction()" placeholder="Buscar..." title="Type in a name"></input>
@@ -92,7 +92,7 @@
                 </div>
 
 
-                <div id="divInfoUsuarios">
+                <div id="divInfo">
                         <div class="contenedorCentradoResponsivo">
                                 <div id="tituloContenedor">
                                         <div id="tituloImagen"> </div>

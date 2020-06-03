@@ -253,5 +253,58 @@ function selectItemMenu(itemSelected,img){
   item.style["background-image"] = 'url('+img+')';
   item.style["border-radius"] = "0px";
   item.style["border-bottom"]= "4px solid #0109FC";
+
+  if(itemSelected == "itemUsers"){
+    imprimirLayout("usuarios");
+    cargarInterfazUsuarios("",'1111',usuarioLog());
+    
+  }
+  if(itemSelected == "itemClients"){
+    imprimirLayout("clientes");
+    iniciarInterfazClientes();
+  }
+
+  if(itemSelected == "itemObras"){
+    imprimirLayout("obras");
+    cargarTarjetasO();
+    cargarInfoO();
+  }
+}
+//===================================================================================================
+function imprimirNavBar(){
+  postData = {
+      metodo: "imprimir_navbar"
+  };
+  $.ajax({
+      data: postData,
+      url: '/LabSoft_Ingexis/Logica/NavBar.php',
+      type: "POST",
+      async: false,
+      success:function(response){
+          console.log(response);
+          var arrayResponse = JSON.parse(response);
+          document.getElementById("menuNavegacion").innerHTML = arrayResponse[0].scriptHTML; 
+      }
+  });
+  
+}
+//===================================================================================================
+function imprimirLayout(interfaz){
+  postData = {
+      metodo: "imprimir_layout",
+      layout: interfaz
+  };
+  $.ajax({
+      data: postData,
+      url: '/LabSoft_Ingexis/Logica/LayoutInterfaz.php',
+      type: "POST",
+      async: false,
+      success:function(response){
+          console.log(response);
+          var arrayResponse = JSON.parse(response);
+          document.getElementById("contenedorPrincipal").innerHTML = arrayResponse[0].scriptHTML; 
+      }
+  });
+  
 }
 //===================================================================================================

@@ -5,7 +5,7 @@ var eliminarCliente;    //salida de eliminaCiente
 var modificacionCliente;    //salida de la modificacion
 var correoActivo;       //salida de cargar Info
 //Funciones========================================================================================
-function cargarTarjetas(texto){
+function cargarTarjetasC(texto){
     var postData = {
         metodo: "cargarTarjetas",
         texto: texto
@@ -25,11 +25,11 @@ function cargarTarjetas(texto){
 }
 //=================================================================================================
 function iniciarInterfazClientes(){
-    cargarTarjetas('');
-    cargarInfo(cliente1);
+    cargarTarjetasC('');
+    cargarInfoC(cliente1);
 }
 //=================================================================================================
-function cargarInfo(correo){
+function cargarInfoC(correo){
     tarjetaSeleccionada(correo);
     correoActivo = correo;
     var postData = {
@@ -44,7 +44,7 @@ function cargarInfo(correo){
         success:function(response){
             console.log(response);
             let arrayResponse = JSON.parse(response);
-            document.getElementById("divInfoClientes").innerHTML = arrayResponse[0].mensajeDatos;
+            document.getElementById("divInfo").innerHTML = arrayResponse[0].mensajeDatos;
         }
     });
 }
@@ -61,7 +61,7 @@ function cargarAgregar(){
         success:function(response){
             console.log(response);
             let arrayResponse = JSON.parse(response);
-            document.getElementById("divInfoClientes").innerHTML = arrayResponse[0].mensajeDatos;
+            document.getElementById("divInfo").innerHTML = arrayResponse[0].mensajeDatos;
         }
     });
 }
