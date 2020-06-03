@@ -123,11 +123,11 @@
             {
                 $salida[] = [
                     "id_elemento"       => $rows["id_elemento"],
-                    "id_obra"     => $rows["id_obra"],
-                    "id_usuario"    => $rows["id_usuario"],
-                    "nombre"    => $rows["nombre"],
-                    "observaciones"    => $rows["observaciones"],
-                    "fecha_reg"    => $rows["fecha_reg"]
+                    "id_obra"           => $rows["id_obra"],
+                    "id_usuario"        => $rows["id_usuario"],
+                    "nombre"            => $rows["nombre"],
+                    "observaciones"     => $rows["observaciones"],
+                    "fecha_muestreo"    => $rows["fecha_muestreo"]
                 ];
             }
             return $salida;

@@ -63,7 +63,7 @@
             </div>
             <!=========== Elementos ============================= -->
             <h1 id="tituloPag" style="margin-bottom:0px;">Elementos de la obra</h1>
-            <div id="elementosGridResponsivo">'.imprimir_tarjetas_elementos().'</div>
+            <div id="elementosGridResponsivo">'.imprimir_tarjetas_elementos($infObra['id_obra']).'</div>
                 <!-- Boton Final================================= -->
                 <button id="footerGuardar_Boton" onclick="" style="margin:20px auto; display:block;">Registrar elemento</button>
                 <!-- ============================================ -->
@@ -77,18 +77,21 @@
         return $interfazInfoUsuario;
     }
     //=========================================================================
-    function imprimir_tarjetas_elementos(){
-
+    function imprimir_tarjetas_elementos($id_obra){
+        //declaracion de variables=========================
+        $obras = new Obra();
+        $TarElem = $obras->Elementos($id_obra);
+        //=================================================
         $TarjetasElementos = '';
-
-        for($i = 0; $i<10; $i++){
-            $TarjetasElementos = $TarjetasElementos.'<div id="*IDObra*" class="tarjetaElemento">
-                                                            <div class="tituloElemento">Titulo Elemento</div>
-                                                            <div class="subtituloElemento">Observaciones:<br></div>
-                                                            <div class="botonEditar"></div>
-                                                            <div class="botonEliminar"></div>
-                                                            <div class="botonElemento">Registrar muestras</div>
-                                                    </div>'
+        for($i = 0; $i < count($TarElem); $i++){
+            $TarjetasElementos = $TarjetasElementos.
+            '<div id="'.$TarElem[$i]['id_elemento'].'" class="tarjetaElemento">
+                <div class="tituloElemento">'.$TarElem[$i]['nombre'].'</div>
+                <div class="subtituloElemento">Observaciones: '.$TarElem[$i]['observaciones'].'<br></div>
+                <div class="botonEditar"></div>
+                <div class="botonEliminar"></div>
+                <div class="botonElemento">Registrar muestras</div>
+            </div>'
             ;
         }
         return $TarjetasElementos;
