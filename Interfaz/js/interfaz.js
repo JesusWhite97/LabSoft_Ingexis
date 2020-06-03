@@ -89,13 +89,13 @@ function verModalGuardar(item){
 //===================================================================================================
 // Función para que una cambiar a una pantalla donde se muestra información sin campos modificables
 function verPantallaInfo(correo){
-    cargarTarjetas("",filtrado());
-    cargarInfo(correo);
+    cargarTarjetasU("",filtrado());
+    cargarInfoU(correo);
 }
 //===================================================================================================
 function verPantallaInfoCliente(correo){
-  cargarTarjetas("");
-  cargarInfo(correo);
+  cargarTarjetasC("");
+  cargarInfoC(correo);
 }
 //===================================================================================================
 // Función para que un select sea seleccionable
