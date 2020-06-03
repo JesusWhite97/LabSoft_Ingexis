@@ -41,7 +41,7 @@
             $cliente = new Cliente();
             $salida = '';
             //Formular Respuesta--------------------------------
-            $salida = $cliente->Insertar();
+            // $salida = $cliente->Insertar();
             $_SESSION['Nuevo'] = $_POST['emailReg'];
             //salida--------------------------------------------
             $json[] =   
@@ -56,7 +56,7 @@
             $cliente = new Cliente();
             $salida = '';
             //Formular Respuesta--------------------------------
-            $salida = $cliente->Eliminar();
+            // $salida = $cliente->Eliminar();
             //salida--------------------------------------------
             $json[] =   
                 [
@@ -72,7 +72,7 @@
             $cambios = $_POST["cambios"];
             $salida = '';
             //Formular Respuesta--------------------------------
-            $salida = $cliente->Eliminar();
+            // $salida = $cliente->Eliminar();
             //salida--------------------------------------------
             $json[] =   
                 [
