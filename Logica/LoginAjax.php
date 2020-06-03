@@ -1,6 +1,7 @@
 <?php
     // Librerias ETC============================================
     include '/wamp64/www/LabSoft_Ingexis/Logica/UsuariosFunciones.php';
+    include '../BD/ProceLog.php'; // clase para el registro log
     session_start();
     //Metodos===================================================
     if(isset($_POST["metodo"])){
@@ -39,10 +40,12 @@
             $Salida = '';
             $usuario = new Usuario();
             $contra = $_POST['contra'];
+            $log = new claseLog();
             //Formular Respuesta--------------------------------
             if($usuario->Validar_contra($_SESSION["correo"], $contra) == 'true'){
                 $_SESSION['puesto'] = $usuario->Puesto($_SESSION["correo"]);
                 $Respuesta = 'A Trabajar '. $_SESSION["apodo"] .' 👍.';
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Inicio de Sesion.');
                 $Salida = '/LabSoft_Ingexis/Interfaz/Principal.php';
             }
             else{

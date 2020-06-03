@@ -11,6 +11,11 @@
 -- CREATE user 'Jefe De Laboratorio'@'localhost'    IDENTIFIED by 'Jefe De Laboratorio';
 -- CREATE user 'Laboratorista 1'@'localhost'        IDENTIFIED by 'Laboratorista 1';
 -- CREATE user 'Laboratorista 2'@'localhost'        IDENTIFIED by 'Laboratorista 2';
+-- CREATE user 'Registrador'@'localhost'        IDENTIFIED by 'Registrador';
+-- -- -- -- ==============================================
+-- -- -- permisos para usuario Registrador
+-- GRANT select on databaseingexis.registro_log to         'Registrador'@'localhost';
+-- GRANT EXECUTE ON *.* TO                                 'Registrador'@'localhost';
 -- -- -- -- ==============================================
 -- -- -- permisos para usuario login
 -- GRANT select on databaseingexis.log_usuarios to         'login'@'localhost';
