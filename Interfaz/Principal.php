@@ -25,6 +25,7 @@
 	</script>
 	<script src="js/usuarios.js"></script>
     <script src="js/clientes.js"></script>
+    <script src="js/obras.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/interfaz.js"></script>
 	<script src="js/validaciones.js"></script>

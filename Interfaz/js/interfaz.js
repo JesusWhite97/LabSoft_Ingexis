@@ -266,6 +266,8 @@ function selectItemMenu(itemSelected,img){
 
   if(itemSelected == "itemObras"){
     imprimirLayout("obras");
+    cargarTarjetasO();
+    cargarInfoO();
   }
 }
 //===================================================================================================
