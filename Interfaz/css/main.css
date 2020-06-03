@@ -658,6 +658,44 @@ body {
   /* Firefox */
 }
 
+.tarjetaBlanca textarea {
+  z-index: 5;
+  pointer-events: none;
+  border: 0px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.719);
+  width: 100%;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 1px;
+  background-color: transparent;
+  padding: 0px;
+}
+
+.tarjetaBlanca textarea::-webkit-input-placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.tarjetaBlanca textarea:-ms-input-placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.tarjetaBlanca textarea::-ms-input-placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
+.tarjetaBlanca textarea::placeholder {
+  color: white;
+  opacity: 1;
+  /* Firefox */
+}
+
 .tarjetaBlanca select {
   pointer-events: none;
   border: 0px;

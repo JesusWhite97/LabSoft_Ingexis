@@ -37,3 +37,54 @@ function cargarInfoO(id_obra){
         }
     });
 }
+//=================================================================================================
+function cargarInfoE(){
+    var postData = {
+        metodo: "imprimir_info_elemento",
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            document.getElementById("divInfoElemento").innerHTML = arrayResponse[0].scriptHTML;
+        }
+    });
+}
+//=================================================================================================
+function cargarRegistroO(){
+    var postData = {
+        metodo: "imprimir_registro_obra",
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            document.getElementById("divInfo").innerHTML = arrayResponse[0].scriptHTML;
+        }
+    });
+}
+//=================================================================================================
+function cargarRegistroE(){
+    var postData = {
+        metodo: "imprimir_registro_elemento",
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            document.getElementById("divInfo").innerHTML = arrayResponse[0].scriptHTML;
+        }
+    });
+}

@@ -503,6 +503,23 @@ body{
         color: white;
         opacity: 1; /* Firefox */
     }
+    textarea{
+        z-index: 5;
+        pointer-events: none;
+        border:0px;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.719);
+        width: 100%;
+        font-family: $fuente;
+        font-size: 20px;
+        color: white;
+        margin-bottom: 1px;
+        background-color: transparent;
+        padding: 0px;
+    }
+    textarea::placeholder {
+        color: white;
+        opacity: 1; /* Firefox */
+    }
     select{
         pointer-events: none;
         border:0px;

@@ -1,8 +1,8 @@
 <?php
-    //=========================================================================
+//=========================================================================
     include '/wamp64/www/LabSoft_Ingexis/Logica/ObrasFunciones.php';
     session_start();
-    //=========================================================================
+//=========================================================================
     function imprimir_tarjetas_obras(){
         //declaracion de variables=====
         $obras = new Obra();
@@ -22,7 +22,7 @@
         //salida=======================
         return $Tarjetas;
     }
-    //=========================================================================
+//=========================================================================
     function imprimir_info_obra($id_obra){
         //declaracion de variables=========================
         $obras = new Obra();
@@ -76,7 +76,7 @@
         ';
         return $interfazInfoUsuario;
     }
-    //=========================================================================
+//=========================================================================
     function imprimir_tarjetas_elementos($id_obra){
         //declaracion de variables=========================
         $obras = new Obra();
@@ -97,4 +97,220 @@
         return $TarjetasElementos;
     }
     //=========================================================================
+    function imprimir_info_elemento(){
+    
+        $id7 = "1";
+        $id14 = "1";
+        $id28 = "1";
+
+        if($id7 == ""){
+
+            $script = ' 
+            <div class="contenedorCentradoResponsivo">
+
+
+                <!-- Titulo elemento ============================ -->
+                <div class="tarjetaBlanca">
+                    <h1 class="tituloElemento">Elemento</h1>
+                    <textarea id="observaciones" disabled></textarea>
+                    <div class="textoAyuda">Observaciones<br></div>
+                </div>
+
+                <!-- Registro ID´s muestras ============================ -->
+                <div class="tarjetaBlanca">
+                        <p class="titulo" style="margin-bottom:5px;">Registro de identificadores</p>
+                        <input id="fechaMuestro" type="date" class="registro mayus" style="margin-top:5px;" placeholder="">
+                        <p class="textoAyuda" >Fech muestreo</p>
+                        <input id="7dias" type="text"class="registro mayus required" placeholder=""  maxlength="5">
+                        <p class="textoAyuda">ID 7 días</p>
+                        <input id="14dias" type="text"class="registro mayus required" placeholder=""  maxlength="5">
+                        <p class="textoAyuda">ID 14 días</p>
+                        <input id="28dias" type="text"class="registro mayus required" placeholder=""  maxlength="5">
+                        <p class="textoAyuda">ID 28 días</p>
+                        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="">Guardar</button>
+                </div>
+
+                ';
+
+        }
+        else{
+
+            $script = ' 
+            <div class="contenedorCentradoResponsivo">
+
+
+                <!-- Titulo elemento ============================ -->
+                <div class="tarjetaBlanca">
+                    <h1 class="tituloElemento">Elemento</h1>
+                    <textarea id="Notas" disabled></textarea>
+                    <div class="textoAyuda">Observaciones<br></div>
+                    <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" placeholder="">
+                    <p class="textoAyuda" >Fecha de muestreo</p>
+                </div>  '
+                .scriptPruebas("","resultado ingresado")
+                .scriptPruebas("","")
+                .scriptPruebas("antesPrueba","")
+                
+            .'</div>';
+         
+        }
+
+       return $script;
+}
+// ================================================================================================================================================================
+function scriptPruebas($fecha, $prueba){
+
+
+
+    if($fecha == "antesPrueba"){
+
+
+            return ' 
+            
+            <!-- Información por muestra ============================ -->
+            <div class="tarjetaBlanca" style="font-size:16px; ">
+            <p class="titulo" >7 Dias</p>
+            <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                    <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
+                                    <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+                                    </div>
+                                
+                                    <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                    <p class="textoAyuda" style="">Identificador</p>
+                                    <p class="textoAyuda" style="">Fecha</p>  
+                                    </div> 
+            </div>';
+
+    }else{
+        if($prueba == ""){
+            
+            return ' 
+            <!-- Registro prueba ============================ -->
+
+            <div class="tarjetaBlanca" style="font-size:16px; ">
+           
+            <p class="titulo" >7 Dias</p>
+           
+           <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+               <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
+               <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+           </div>
+       
+           <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+               <p class="textoAyuda" style="">Identificador</p>
+               <p class="textoAyuda" style="">Fecha</p>  
+           </div> 
+
+           <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
+               <input id="Prueba7dias" type="text"class=" registro mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
+               <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
+           </div>
+           <p class="textoAyuda">Resultado prueba</p>
+           
+           <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
+           
+            </div>';
+
+
+        }
+        if($prueba == "resultado ingresado"){
+
+            return '
+            <!-- Información prueba ============================ -->
+
+            <div class="tarjetaBlanca" style="font-size:16px; ">
+           
+                                     <p class="titulo" >7 Dias</p>
+                                    
+                                    <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                        <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
+                                        <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+                                    </div>
+                                
+                                    <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                        <p class="textoAyuda" style="">Identificador</p>
+                                        <p class="textoAyuda" style="">Fecha</p>  
+                                    </div> 
+
+                                    <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
+                                        <input id="Prueba7dias" type="text"class=" mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
+                                        <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
+                                    </div>
+                                    <p class="textoAyuda">Resultado prueba</p>
+                                    
+                                    
+            </div>
+';
+
+        }
+
+
+    }
+
+}
+
+
+// ================================================================================================================================================================
+// =========================================================================IMPRIMIR REGISTRO DE OBRA==============================================================
+// ================================================================================================================================================================
+
+function imprimir_registro_obra(){
+
+    return '
+    
+        <div class="tarjetaBlanca " style="margin-top: 0px;">   
+            
+            <h1 id="tituloPag" style="margin-bottom:10px;">Registro de obra nueva</h1>
+
+            <input id="tituloObra" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
+            <p class="textoAyuda" style="text-align: center;">Titulo de la obra</p>
+
+            <select id="puesto" class="registro">
+                <option value="Cliente 1">Cliente 1</option>
+                <option value="Cliente 2">Cliente 2</option>
+                <option value="Cliente 3"> Cliente 3</option>
+            </select>
+            <p class="textoAyuda" style="text-align: center;">Cliente</p>
+
+            <textarea class="registro" id="Notas"></textarea>
+            <div class="textoAyuda">Ubicación<br></div>
+        
+    
+        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
+        </div>';
+}
+// ================================================================================================================================================================
+// ======================================================================IMPRIMIR REGISTRO ELEMENTO================================================================
+// ================================================================================================================================================================
+function imprimir_registro_elemento(){
+
+    return '
+    
+        <div class="tarjetaBlanca " style="margin-top: 0px;">   
+            <h1 id="tituloPag" style="margin-bottom:10px;">Registro nuevo elemmento</h1>
+
+            <input id="tituloElemento" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
+            <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
+
+            <textarea id="Notas" disabled></textarea>
+            <div class="textoAyuda">Observaciones<br></div>
+
+            <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" placeholder="">
+            <p class="textoAyuda" >Fecha de muestreo</p>
+
+            <div class="inputEnLinea" style="">
+                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
+                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Cancelarr</button>
+            </div>
+            
+        </div>';
+}
+
+
+
+
+
+
+// ================================================================================================================================================================
+// ================================================================================================================================================================
 ?>
