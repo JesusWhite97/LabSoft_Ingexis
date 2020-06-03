@@ -123,10 +123,12 @@
 		}
 		// --------------------------------------
 		var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
+
 		function modificarUser(){
 			if(arregloCambios.includes(1)){
 				if(camposRequeridos()== false){
 							infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+
 				}
 				else{
 						if(errores() == false){
