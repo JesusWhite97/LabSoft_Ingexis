@@ -35,7 +35,7 @@ use databaseingexis;
 -- -- =================================================
 -- create procedure Obra_full()
 -- begin
---     select * from obras;
+--     select * from tarjetas_obras;
 -- end
 -- -- =================================================
 -- create procedure Obra_elementos(in id_obra int)

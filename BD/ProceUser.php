@@ -2,6 +2,7 @@
     // ========================================================
     include '../Logica/CrearDirectorios.php';
     include 'conexion.php';
+    include '../BD/ProceLog.php'; // clase para el registro log
     header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================
     class procedimientos_User{
@@ -99,11 +100,13 @@
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL agregaUsuario('".$correo."', '".$contra."', '".$img."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."', '".$apodo."', '".$num."', '".$puesto."', '".$curp."', '".$rfc."', '".$calleP."', '".$entre."', '".$numCasas."', '".$col."', '".$codPost."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
                 $directorios->CrearDirectorioUsuario($correo);
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Agrego al usuario con el correo: .'. $correo);
                 return 'true';
             }else{
                 return "Error: ".$mysqli->error;
@@ -116,11 +119,13 @@
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL eliminar_usuario('".$correo."')";
             if($mysqli->query($query)===TRUE){
                 $directorios->EliminarDirectorioConContenido($correo);
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Elimino al usuario con el correo: .'. $correo);
                 return "true";
             }else{
                 return "Error: ".$mysqli->error;
@@ -222,11 +227,13 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             $salida = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_contra_admin('".$correo."', '".$nueva."');";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico la contraseña del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -238,10 +245,12 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_puesto('".$correo."', '".$puesto."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico el puesto del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -253,10 +262,12 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_nombre('".$correo."', '".$nom1."', '".$nom2."', '".$ape1."', '".$ape2."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico el Nombre del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -268,10 +279,12 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_curp('".$correo."', '".$curp."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico el CURP del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -283,10 +296,12 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_rfc('".$correo."', '".$rfc."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico el RFC del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -298,10 +313,12 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_apodo('".$correo."', '".$apodo."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico el apodo del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -313,10 +330,12 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Telefono('".$correo."', '".$telefono."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico el telefono del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -329,10 +348,12 @@
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_direccion('".$correo."', '".$calle."', '".$entre."', '".$numCasa."', '".$col."', '".$codP."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico la direccion del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -345,6 +366,7 @@
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
+            $log = new claseLog();//=========================================>>>>>>>>>>>>>>>>
             //============================
             $imgAnte = "";
             mysqli_query($mysqli, "SET NAMES 'utf8'");
@@ -358,6 +380,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Usuario_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico la imagen del usuario con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;

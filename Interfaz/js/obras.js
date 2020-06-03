@@ -1,3 +1,5 @@
+//variables========================================================================================
+var obra1;
 //Funciones========================================================================================
 function cargarTarjetasO(){
     var postData = {
@@ -13,16 +15,15 @@ function cargarTarjetasO(){
             console.log(response);
             let arrayResponse = JSON.parse(response);
             document.getElementById("contenedorGridResponsivo").innerHTML = arrayResponse[0].mensajeDatos;
-            //cliente1 = arrayResponse[0].Cliente1;
+            obra1 = arrayResponse[0].obra1;
         }
     });
 }
 //=================================================================================================
-function cargarInfoO(){
-    //tarjetaSeleccionada(correo);
+function cargarInfoO(id_obra){
     var postData = {
         metodo: "cargarInfo",
-        //correo: correo
+        id_obra: id_obra
     };
     $.ajax({
         data:postData,

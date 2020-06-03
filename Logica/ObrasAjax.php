@@ -9,8 +9,8 @@
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'mensajeDatos'   => imprimir_tarjetas_obras()
-                    // 'Obra1'       => $_SESSION['Obra1']
+                    'mensajeDatos'   => imprimir_tarjetas_obras(),
+                    'obra1'          => $_SESSION['Obra1']
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
@@ -18,10 +18,11 @@
         //########################
         if($_POST["metodo"]=="cargarInfo"){
             //declaracion de variables--------------------------
+            $id_obra = $_POST['id_obra'];
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'mensajeDatos'   => imprimir_info_obra()
+                    'mensajeDatos'   => imprimir_info_obra($id_obra)
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
@@ -30,7 +31,7 @@
         if($_POST["metodo"] == "cargarAgregar"){
             $json[] =   
                 [
-                    'mensajeDatos'   => imprimir_registro_cliente()
+                    'mensajeDatos'   => ""
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
@@ -41,12 +42,10 @@
             $cliente = new Cliente();
             $salida = '';
             //Formular Respuesta--------------------------------
-            $salida = $cliente->Insertar();
-            $_SESSION['Nuevo'] = $_POST['emailReg'];
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'mensajeDatos'   => $salida
+                    'mensajeDatos'   => ""
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
@@ -56,23 +55,16 @@
             $cliente = new Cliente();
             $salida = '';
             //Formular Respuesta--------------------------------
-            $salida = $cliente->Eliminar();
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'mensajeDatos'   => $salida
+                    'mensajeDatos'   => ""
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
         }
         //########################
         if($_POST["metodo"] == "modificarCliente"){
-            $cliente = new Cliente();
-            $correoA = $_POST["correoA"];
-            $cambios = $_POST["cambios"];
-            $salida = '';
-            //Formular Respuesta--------------------------------
-
             //salida--------------------------------------------
             $json[] =   
                 [

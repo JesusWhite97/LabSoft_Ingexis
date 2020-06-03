@@ -24,7 +24,7 @@
         $pruebasIcon = "'background-image: url(".'"img/PruebaIcon.svg"'.");'";
         $usersIcon = "'background-image: url(".'"img/UserIcon.svg"'.");'";
         $clientsIcon = "'background-image: url(".'"img/ClientesIcon.svg"'.");'";
-        if($puesto == "Administrador" || $puesto == "Jefe de Laboratorios"){
+        if($puesto == "Administrador" || $puesto == "Jefe De Laboratorio"){
             return ' 
             <div class="item" id="itemHome"  style='.$homeIcon.' onclick=selectItemMenu("itemHome","img/HomeIconBlue.svg");></div>
             <div class="item" id="itemObras" style='.$obrasIcon.' onclick=selectItemMenu("itemObras","img/ObrasIconBlue.svg");></div>
@@ -42,8 +42,6 @@
             <div class="item" id="itemPruebas" style='.$pruebasIcon.'  onclick=selectItemMenu("itemPruebas","img/PruebaIconBlue.svg");></div>
             ';
         }
-      
     }
-
     // ========================================================
 ?>

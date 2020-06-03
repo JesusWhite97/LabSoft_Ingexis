@@ -17,10 +17,9 @@
     }
     // ========================================================
     function imprimir_layout($interfaz){
-          // ===========================USUARIOS============================
-
-
+        // ===========================USUARIOS============================
         if($interfaz == "usuarios"){
+            $_SESSION['carpeta'] = 'Usuarios';
             return ' 
             <!-- 00000000000000000000000 -->
             <div id="divTarjetas">
@@ -65,6 +64,7 @@
         }
           // ============================CLIENTES============================
         if($interfaz == "clientes" ){
+            $_SESSION['carpeta'] = 'Clientes';
             return ' 
             <!-- 00000000000000000000000 -->
         <div id="divTarjetas">
