@@ -59,16 +59,12 @@
             $salida = array();
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $resultado = mysqli_query($mysqli, "call Obra_by_id('".$id_obra."')");
-            while ($rows = $resultado->fetch_assoc())
-            {
-                $salida[] = [
-                    "id_obra"       => $rows["id_obra"],
-                    "id_Cliente"     => $rows["id_clientes"],
-                    "nombre"    => $rows["nombre"],
-                    "direccion"    => $rows["direccion"],
-                    "anotaciones"    => $rows["anotaciones"]
-                ];
-            }
+            $rows = $resultado->fetch_assoc();
+            $salida['id_obra']    = $rows['id_obra'];
+            $salida['id_clientes']    = $rows['id_clientes'];
+            $salida['nombre']    = $rows['nombre'];
+            $salida['direccion']    = $rows['direccion'];
+            $salida['anotaciones']    = $rows['anotaciones'];
             return $salida;
             $resultado->free();
         }
@@ -107,10 +103,8 @@
             {
                 $salida[] = [
                     "id_obra"       => $rows["id_obra"],
-                    "id_Cliente"     => $rows["id_clientes"],
-                    "nombre"    => $rows["nombre"],
-                    "direccion"    => $rows["direccion"],
-                    "anotaciones"    => $rows["anotaciones"]
+                    "nombre"     => $rows["nombre"],
+                    "nom_empr"    => $rows["nom_empr"]
                 ];
             }
             return $salida;

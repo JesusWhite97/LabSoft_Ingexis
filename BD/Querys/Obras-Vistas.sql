@@ -1,0 +1,13 @@
+use databaseingexis;
+-- =================================================
+-- create view Tarjetas_Obras AS
+-- select 
+--     obras.id_obra,
+--     obras.nombre,
+--     clientes.nom_empr
+-- from 
+--     clientes,
+--     obras
+-- WHERE
+--     clientes.id_clientes = obras.id_clientes;
+-- =================================================
