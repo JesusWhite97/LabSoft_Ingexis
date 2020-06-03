@@ -1,9 +1,5 @@
 ========================TAREAS========================
 POR HACER:
-<<<<<<< HEAD
-
-
-========================TAPIZ==================================================================================================================================================================
 TAPIZ:
 
 ===>GENERAL
@@ -18,7 +14,6 @@ TAPIZ:
 
 =======
 ========================>TAPIZ<=======================
->>>>>>> bf0839831baebcb67fddd1105af07c00b603887e
 ===>Usuarios
 
     -->Interfaz
@@ -124,11 +119,12 @@ TAPIZ:
 [√] crear table #muestras#
 [√] crear table #pruebas#
 [√] crear paquete procedimientos completos para #obras#
-[ ] crear vistas para #obras y muestras#
-[ ] diseñar enum para las acciones en la tabla log
-[ ] tabla #log activity# para todos 
-[ ] crear procedimientos para log
-[ ] agregar log a todas las actividades
+[√] crear vistas para #obras y muestras#
+[√] tabla #log activity# para todos
+[ ] terminar procedimientos PHP para elemento y muestra
+[√] crear procedimientos para log
+[ ] terminar procedimientos para log PHP
+[ ] #agregar log a todas las actividades#
 
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!

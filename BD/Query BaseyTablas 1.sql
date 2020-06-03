@@ -65,12 +65,12 @@
 --     id_usuario      int,
 --     nombre          VARCHAR(50),
 --     observaciones   text,
---     fecha_reg       date,
+--     fecha_muestreo       date,
 --     --ralaciones ETC------------
 --     FOREIGN key(id_obra) REFERENCES Obras(id_obra),
 --     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
 -- );
--- -- -- ======================================--
+-- ======================================--
 -- create table Muestra(
 --     id_muestra      int         PRIMARY key     not NULL    AUTO_INCREMENT,
 --     id_elemento     int,
