@@ -144,82 +144,96 @@
                     </div>
 
                     <!-- Información por muestra ============================ -->
-                    <div class="tarjetaBlanca">
-                            <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 100px 1fr">
-                                        <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 45px 1fr">
-                                            <p class="textoAyuda">7 días:</p>
-                                            <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5">
+                    <div class="tarjetaBlanca" style="font-size:16px; ">
+                    <p class="titulo" >7 Dias</p>
+                    <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                            <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
+                                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+                                            </div>
                                         
-                                        </div>
-                                        <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 40px 1fr">
-                                            <p class="textoAyuda" style="text-align:right;">Fecha:</p>
-                                            <input id="fechaMuestro" type="date" class="" style="margin-left:1px;" placeholder="">
-                                        </div>
-                            </div>
-
-                           
-                    </div>
-                    <div class="tarjetaBlanca">
-                            <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 100px 1fr">
-                                        <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 45px 1fr">
-                                            <p class="textoAyuda">14 días:</p>
-                                            <input id="7dias" type="text"class="mayus required"   placeholder="1235"  maxlength="5">
-                                        
-                                        </div>
-                                        <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 40px 1fr">
-                                            <p class="textoAyuda" style="text-align:right;">Fecha:</p>
-                                            <input id="fechaMuestro" type="date" class="" style="margin-left:1px;" placeholder="">
-                                        </div>
-                            </div>
-
-                           
-                    </div>
-                    <div class="tarjetaBlanca">
-                            <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 100px 1fr">
-                                        <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 45px 1fr">
-                                            <p class="textoAyuda">28 días:</p>
-                                            <input id="7dias" type="text"class="mayus required"   placeholder="1236"  maxlength="5">
-                                        
-                                        </div>
-                                        <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 40px 1fr">
-                                            <p class="textoAyuda" style="text-align:right;">Fecha:</p>
-                                            <input id="fechaMuestro" type="date" class="" style="margin-left:1px;" placeholder="">
-                                        </div>
-                            </div>
-
-                           
+                                            <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                            <p class="textoAyuda" style="">Identificador</p>
+                                            <p class="textoAyuda" style="">Fecha</p>  
+                                            </div> 
                     </div>
 
+                    <div class="tarjetaBlanca" style="font-size:16px; ">
+                    <p class="titulo" >14 Dias</p>
+                    <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                            <input id="7dias" type="text"class="mayus required"   placeholder="1235"  maxlength="5" >
+                                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+                                            </div>
+                                        
+                                            <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                            <p class="textoAyuda" style="">Identificador</p>
+                                            <p class="textoAyuda" style="">Fecha</p>  
+                                            </div> 
+                    </div>
+
+                    <div class="tarjetaBlanca" style="font-size:16px; ">
+                    <p class="titulo" >18 Dias</p>
+                    <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                            <input id="7dias" type="text"class="mayus required"   placeholder="1236"  maxlength="5" >
+                                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+                                            </div>
+                                        
+                                            <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                            <p class="textoAyuda" style="">Identificador</p>
+                                            <p class="textoAyuda" style="">Fecha</p>  
+                                            </div> 
+                    </div>
+                   
                 <!-- Registro prueba ============================ -->
 
-                <div class="tarjetaBlanca">
-                            <div class="inputEnLinea" style="justify-self:start;  align-items: center; grid-template-columns: 100px 1fr">
-                                        <div class="inputEnLinea" style="justify-self:start; grid-template-columns: 45px 1fr">
-                                            <p class="textoAyuda" style:"height:20px; align-self:center;">7 días:</p>
-                                            <input id="7dias" type="text"class="mayus required" style:"height:20px; align-self:center;"   placeholder="1234"  maxlength="5">
+                <div class="tarjetaBlanca" style="font-size:16px; ">
+               
+                                         <p class="titulo" >7 Dias</p>
                                         
+                                        <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                            <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
+                                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
                                         </div>
-                                        <div class="inputEnLinea" style=" align-items:center; grid-template-columns: 40px 1fr">
-                                            <p class="textoAyuda" style="text-align:right; height:20px; align-self:center;">Fecha:</p>
-                                            <input id="fechaMuestro" type="date" class="" style="margin-left:1px; height:20px; align-self:center;" placeholder="">
-                                        </div>
-                            </div>
+                                    
+                                        <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                            <p class="textoAyuda" style="">Identificador</p>
+                                            <p class="textoAyuda" style="">Fecha</p>  
+                                        </div> 
 
-                            <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
-                                            
+                                        <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
                                             <input id="Prueba7dias" type="text"class=" registro mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
-                                            <p class="textoAyuda">kg/cm2</p>
-                            </div>
+                                            <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
+                                        </div>
+                                        <p class="textoAyuda">Resultado prueba</p>
                                         
-                                       
-                            
-                            <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
-
+                                        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
                                         
-                            
+                </div>
+                <!-- Información prueba ============================ -->
 
-                           
-                    </div>
+                <div class="tarjetaBlanca" style="font-size:16px; ">
+               
+                                         <p class="titulo" >7 Dias</p>
+                                        
+                                        <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                            <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
+                                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+                                        </div>
+                                    
+                                        <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                            <p class="textoAyuda" style="">Identificador</p>
+                                            <p class="textoAyuda" style="">Fecha</p>  
+                                        </div> 
+
+                                        <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
+                                            <input id="Prueba7dias" type="text"class=" mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
+                                            <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
+                                        </div>
+                                        <p class="textoAyuda">Resultado prueba</p>
+                                        
+                                        
+                </div>
+
+              
 
 
                 </div>
