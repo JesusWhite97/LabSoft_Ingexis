@@ -45,7 +45,7 @@
             if($usuario->Validar_contra($_SESSION["correo"], $contra) == 'true'){
                 $_SESSION['puesto'] = $usuario->Puesto($_SESSION["correo"]);
                 $Respuesta = 'A Trabajar '. $_SESSION["apodo"] .' 👍.';
-                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Inicio de Sesion.');
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], $_SESSION["correo"].' Inicio de Sesion.');
                 $Salida = '/LabSoft_Ingexis/Interfaz/Principal.php';
             }
             else{
