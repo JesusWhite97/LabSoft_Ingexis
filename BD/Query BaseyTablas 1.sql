@@ -35,7 +35,7 @@
 -- create table clientes(
 --     id_clientes     int             primary key     not null    AUTO_INCREMENT,
 --     titulo          varchar(60),
---     nom_empr        varchar(60),
+--     nom_empr        varchar(60)     unique,
 --     rfc             varchar(13), -- 4 0 3 letras, 6 numeros, 3 num o letras
 --     direc           text,
 --     cod_pos         varchar(10),
@@ -70,7 +70,7 @@
 --     FOREIGN key(id_obra) REFERENCES Obras(id_obra),
 --     FOREIGN key(id_usuario) REFERENCES Log_usuarios(id_usuario)
 -- );
--- ======================================--
+-- -- ======================================--
 -- create table Muestra(
 --     id_muestra      int         PRIMARY key     not NULL    AUTO_INCREMENT,
 --     id_elemento     int,

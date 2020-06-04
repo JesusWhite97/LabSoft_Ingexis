@@ -61,7 +61,7 @@
             $resultado = mysqli_query($mysqli, "call Obra_by_id('".$id_obra."')");
             $rows = $resultado->fetch_assoc();
             $salida['id_obra']    = $rows['id_obra'];
-            $salida['id_clientes']    = $rows['id_clientes'];
+            $salida['nom_empr']    = $rows['nom_empr'];
             $salida['nombre']    = $rows['nombre'];
             $salida['direccion']    = $rows['direccion'];
             $salida['anotaciones']    = $rows['anotaciones'];
