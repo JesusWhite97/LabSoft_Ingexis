@@ -1,7 +1,7 @@
 <?php
     // ========================================================
-    include '../Logica/CrearDirectorios.php';
-    include 'conexion.php';
+    include_once '../Logica/CrearDirectorios.php';
+    include_once 'conexion.php';
     header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================
     class procedimientos_Clientes{

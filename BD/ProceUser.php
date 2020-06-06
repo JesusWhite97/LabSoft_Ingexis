@@ -1,7 +1,7 @@
 <?php
     // ========================================================
-    include '../Logica/CrearDirectorios.php';
-    include 'conexion.php';
+    include_once '../Logica/CrearDirectorios.php';
+    include_once 'conexion.php';
     include '../BD/ProceLog.php'; // clase para el registro log
     header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================

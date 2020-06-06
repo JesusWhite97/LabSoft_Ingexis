@@ -1,7 +1,6 @@
 <?php
     // ========================================================
-    include '../Logica/CrearDirectorios.php';
-    include 'conexion.php';
+    include_once 'conexion.php';
     header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================================================================================
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
@@ -225,9 +224,47 @@
             } 
         }
         //#####################################################
+        public function infoTotalById($id_elemento){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "call ElemMues_info_elemento_by_id('".$id_elemento."')");
+            $rows = $resultado->fetch_assoc();
+            $salida['id_elemento']          = $rows['id_elemento'];
+            $salida['nombre']               = $rows['nombre'];
+            $salida['observaciones']        = $rows['observaciones'];
+            $salida['fecha_muestreo']       = $rows['fecha_muestreo'];
+            //----------------------------
+            $salida['07-id_muestra']        = $rows['id_muestra'];
+            $salida['07-identificador']     = $rows['identificador'];
+            $salida['07-resultado']         = $rows['resultado'];
+            $salida['07-fecha_prog']        = $rows['fecha_prog'];
+            $rows = $resultado->fetch_assoc();
+            //----------------------------  
+            $salida['14-id_muestra']        = $rows['id_muestra'];
+            $salida['14-identificador']     = $rows['identificador'];
+            $salida['14-resultado']         = $rows['resultado'];
+            $salida['14-fecha_prog']        = $rows['fecha_prog'];
+            $rows = $resultado->fetch_assoc();
+            //----------------------------  
+            $salida['28-id_muestra']        = $rows['id_muestra'];
+            $salida['28-identificador']     = $rows['identificador'];
+            $salida['28-resultado']         = $rows['resultado'];
+            $salida['28-fecha_prog']        = $rows['fecha_prog'];
+            return $salida;
+            $resultado->free();
+        }
+        //#####################################################
     }
     // ========================================================================================================================
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
     // ========================================================================================================================
+    // $_SESSION["puesto"] = 'Jefe De Laboratorio';
+    // var_dump($_SESSION);
+    // $jaja = new procedimientos_elementos_muestra();
+    // var_dump($jaja->infoTotalById(1));
 ?>

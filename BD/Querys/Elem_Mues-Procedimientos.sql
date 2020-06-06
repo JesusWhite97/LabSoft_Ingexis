@@ -75,3 +75,8 @@ use databaseingexis;
 --         muestra.id_muestra = id_muestra;
 -- end
 -- -- =================================================
+-- CREATE procedure ElemMues_info_elemento_by_id(in id_elemento int)
+-- BEGIN
+--     select * from info_elemento where info_elemento.id_elemento = id_elemento;
+-- end
+-- -- =================================================
