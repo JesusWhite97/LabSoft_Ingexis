@@ -17,17 +17,18 @@ use databaseingexis;
 --     muestra.id_usuario = usuarios.id_usuario AND
 --     muestra.resultado != '??';
 -- =================================================
-create VIEW elemento_user as
-select
-    elemento.id_elemento,
-    elemento.nombre,
-    elemento.observaciones,
-    elemento.fecha_reg,
-    usuarios.apodo
-FROM
-    elemento,
-    usuarios
-where
-    elemento.id_usuario = usuarios.id_usuario;
+-- create view info_elemento as
+-- select 
+--     elemento.id_elemento,
+--     elemento.nombre,
+--     elemento.observaciones,
+--     elemento.fecha_muestreo,
+--     muestra.id_muestra,
+--     muestra.identificador,
+--     muestra.resultado,
+--     muestra.fecha_prog
+-- from 
+--     elemento inner join muestra on elemento.id_elemento = muestra.id_elemento 
+-- ORDER BY  muestra.fecha_prog ASC;
 -- =================================================
 -- =================================================

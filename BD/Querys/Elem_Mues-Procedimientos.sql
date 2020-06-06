@@ -8,13 +8,13 @@ use databaseingexis;
 -- begin
 --     DECLARE id_elem int;
 --     insert elemento(elemento.id_obra, elemento.id_usuario, elemento.nombre) values (id_obra, id_usuario, nombre);
---     ------------------------------
+--     ----------------------------
 --     SELECT last_insert_id() into id_elem;
---     ------------------------------
+--     ----------------------------
 --     INSERT muestra(muestra.id_elemento, muestra.resultado) values (id_elem, '??');
---     ------------------------------
+--     ----------------------------
 --     INSERT muestra(muestra.id_elemento, muestra.resultado) values (id_elem, '??');
---     ------------------------------
+--     ----------------------------
 --     INSERT muestra(muestra.id_elemento, muestra.resultado) values (id_elem, '??');
 -- end
 -- -- call ElemMues_agregar(3, 1, "prueba1");

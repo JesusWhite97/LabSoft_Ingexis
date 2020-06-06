@@ -203,6 +203,25 @@
             $resultado->free();
         }
         //#####################################################
+        public function Clientes_reg(){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "call Clientes_reg()");
+            while ($rows = $resultado->fetch_assoc())
+            {
+                $salida[] = [
+                    "id_clientes"     => $rows["id_clientes"],
+                    "nom_empr"        => $rows["nom_empr"]
+                ];
+            }
+            return $salida;
+            $resultado->free();
+        }
+        //#####################################################
     }
     // ========================================================
     // $prueba = new procedimientos_Clientes();

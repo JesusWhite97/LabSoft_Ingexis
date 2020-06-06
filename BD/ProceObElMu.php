@@ -141,6 +141,20 @@
     // ========================================================================================================================
     class procedimientos_elementos_muestra{
         //#####################################################
+        public function VerificaNombre($id_obra, $nombre){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "select existencia_elemento_in_obra('".$id_obra."', '".$nombre."')");
+            $rows = $resultado->fetch_assoc();
+            $salida['existencia_elemento_in_obra']    = $rows['existencia_elemento_in_obra'];
+            return $salida;
+            $resultado->free();
+        }
+        //#####################################################
         public function Agregar($id_obra, $id_usuario, $nombre){
             //crea Conexion===============
             $conex = new conexionMySQLi();

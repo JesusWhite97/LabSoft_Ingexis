@@ -1,0 +1,13 @@
+-- use databaseingexis;
+-- --======================================--
+-- CREATE FUNCTION existencia_elemento_in_obra(id_obra int, nombre varchar(50)) returns VARCHAR(5)
+-- begin 
+--     declare respuesta int;
+--     SELECT elemento.id_elemento into respuesta from elemento WHERE elemento.id_obra = Id_obra and elemento.nombre = nombre;
+--     if respuesta != 0 then
+--         return 'true';
+--     else
+--         return 'false';
+--     end if;
+-- end
+-- --======================================--

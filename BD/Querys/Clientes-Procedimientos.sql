@@ -119,6 +119,11 @@
 -- 		clientes.nom_empr like concat('%', texto, '%');
 -- end
 -- -- ======================================--
+-- create procedure Clientes_reg()
+-- begin
+--     select clientes.id_clientes, clientes.nom_empr from clientes ORDER BY clientes.id_clientes asc;
+-- end
+-- -- ======================================--
 -- -- pendientes
 -- --     insertar clientes                ✓✓✓✓✓
 -- --     Busqueda                         ✓✓✓✓✓

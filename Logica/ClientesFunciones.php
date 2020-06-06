@@ -68,7 +68,12 @@
             $respuesta = $cliente->Buscar_tarjetas($texto);
             return $respuesta;
         }
-        //#####################################################
+        //#####################################################.
+        public function Clientes_reg(){
+            $cliente = new procedimientos_Clientes();
+            $respuesta = $cliente->Clientes_reg();
+            return $respuesta;
+        }
         //#####################################################
         //#####################################################
         //#####################################################
