@@ -415,7 +415,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 21px;
+    font-size: 16px;
     color: rgba(255,255,255,1);
     width: 314px;
     height: 57px;
@@ -446,8 +446,8 @@ body{
     z-index: 6;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 40px;
-    grid-auto-rows: 40px;
+    grid-template-rows: 25px;
+    grid-auto-rows: 25px;
     max-width: 600px;
     min-width: 300px;
     width: auto;
@@ -474,7 +474,7 @@ body{
         z-index: 5;
         width: 100%;
         font-family: $fuente;
-        font-size: 24px;
+        font-size: 18px;
         font-weight: 500;
         color:rgb(255, 255, 255);
         margin: 0px;
@@ -489,7 +489,7 @@ body{
         border-bottom: 2px solid rgba(255, 255, 255, 0.719);
         width: 100%;
         font-family: $fuente;
-        font-size: 20px;
+        font-size: 14px;
         color: white;
         margin-bottom: 1px;
         background-color: transparent;
@@ -506,11 +506,13 @@ body{
         border-bottom: 2px solid rgba(255, 255, 255, 0.719);
         width: 100%;
         font-family: $fuente;
-        font-size: 20px;
+        font-size: 14px;
         color: white;
         margin-bottom: 1px;
         background-color: transparent;
         padding: 0px;
+        resize: none;
+        overflow-y: scroll;
     }
     textarea::placeholder {
         color: white;
@@ -539,10 +541,10 @@ body{
     .textoAyuda{
         z-index: 4;
         font-family: $fuente;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 300;
         color: $colorForm;
-        margin-top: 5px;
+        margin-top: 2px;
         margin-bottom: 0px;
     }
     #descripcion{
@@ -968,10 +970,10 @@ textarea:focus, input:focus{
 .tarjetaElemento{
     display: grid;
     grid-template-columns: 1fr 30px 30px ;
-    grid-template-rows: 30px 50px 30px;
+    grid-template-rows: 20px 20px 20px;
     width: 90%;
-    min-width: 150px;
-    height: 110px;
+    min-width: 120px;
+    height: 60px;
     margin: 10px auto;
     padding: 10px;
     font-family: $fuente;
@@ -1001,7 +1003,7 @@ textarea:focus, input:focus{
         grid-row: 2 / span 1;
         height: 100%;
         width: 100%;
-        margin: 0px;
+        margin-top: 15px;
         padding-left: 10px;
         color: rgb(189, 189, 189);
         font-size: 12px;
@@ -1065,7 +1067,7 @@ textarea:focus, input:focus{
     height: auto;
     margin-top: 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
     grid-auto-rows: 160px;
     overflow-y: scroll;
 }

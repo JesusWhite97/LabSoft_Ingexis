@@ -44,28 +44,36 @@
         $interfazInfoUsuario = '
         <div class="contenedorCentradoResponsivo">
             <!-- Titulo de la obra ============================== -->
-            <div id="tituloContenedor">
+            <div id="tituloContenedor" style="height:150px;">
                 <div id="editarImagen" style="background-image: url(../Interfaz/img/obracolado.jpeg);"> 
-                    <button id="botonEditar" onclick=verPantallaModificar(document.getElementById("correo").value)>
+                    <button id="botonEditar" onclick=verPantallaModificar("obra")>
                     <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
                     <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
                 </div>
                 <input id="TituloObra" class="inputTexto mayus" style="color:white;" type="text" value="'.$infObra['nombre'].'" maxlength="60">
                 <p class="textoAyuda textoAyudaTitulo">Titulo Obra</p>
             </div>
-            <div class="tarjetaBlanca" style="margin-top: 0px;">
-                <label class="titulo">Ubicación</label>
-                <textarea id="Direccion" disabled>'.$infObra['direccion'].'</textarea>
-            </div>
-            <div class="tarjetaBlanca" style="margin-top: 0px;">
-                <label class="titulo">Notas</label>
-                <textarea id="Notas" disabled>'.$infObra['anotaciones'].'</textarea>
+            <div class="tarjetaBlanca" style="margin-top:5px;">
+
+                    <input type="text" id="puestoInput" class="selectInfo" style="text-align:center;" value="'.$infObra['nombre'].'" onchange="arregloCambios[2]=1;">        
+                    <select id="puesto" class="registro" style="display:none;" onchange="arregloCambios[1]=1;">
+                        '."cliente".'
+                    </select>
+                <p class="textoAyuda" style="text-align: center;">Cliente</p>
+
+                <textarea class="" id="Direccion">'.$infObra['direccion'].'</textarea>
+                <div class="textoAyuda">Dirección obra<br></div>
+                <textarea class="" id="Direccion">'.$infObra['anotaciones'].'</textarea>
+                <div class="textoAyuda">Notas<br></div>
+
             </div>
             <!=========== Elementos ============================= -->
             <h1 id="tituloPag" style="margin-bottom:0px;">Elementos de la obra</h1>
-            <div id="elementosGridResponsivo">'.imprimir_tarjetas_elementos($infObra['id_obra']).'</div>
+            <div id="elementosGridResponsivo">'.imprimir_tarjetas_elementos($infObra['id_obra']).'
+            <div id="tarjetaElementoNuevo"></div>
+            </div>
                 <!-- Boton Final================================= -->
-                <button id="footerGuardar_Boton" onclick="" style="margin:20px auto; display:block;">Registrar elemento</button>
+                <button id="footerGuardar_Boton" onclick="cargarRegistroE()" style="margin:20px auto; display:block;">Registrar elemento</button>
                 <!-- ============================================ -->
             </div>
         </div>
@@ -90,7 +98,6 @@
                 <div class="subtituloElemento">Observaciones: '.$TarElem[$i]['observaciones'].'<br></div>
                 <div class="botonEditar"></div>
                 <div class="botonEliminar"></div>
-                <div class="botonElemento">Registrar muestras</div>
             </div>'
             ;
         }
@@ -102,7 +109,7 @@
         $id7 = "1";
         $id14 = "1";
         $id28 = "1";
-
+  // Si edtan vacios los identificadores de las muestras 
         if($id7 == ""){
 
             $script = ' 
@@ -255,12 +262,14 @@ function scriptPruebas($fecha, $prueba){
 // ================================================================================================================================================================
 
 function imprimir_registro_obra(){
-
+    
     return '
     
         <div class="tarjetaBlanca " style="margin-top: 0px;">   
-            
             <h1 id="tituloPag" style="margin-bottom:10px;">Registro de obra nueva</h1>
+        </div>
+
+        <div class="tarjetaBlanca " style="margin-top: 0px;"> 
 
             <input id="tituloObra" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
             <p class="textoAyuda" style="text-align: center;">Titulo de la obra</p>
@@ -268,12 +277,15 @@ function imprimir_registro_obra(){
             <select id="puesto" class="registro">
                 <option value="Cliente 1">Cliente 1</option>
                 <option value="Cliente 2">Cliente 2</option>
-                <option value="Cliente 3"> Cliente 3</option>
+                <option value="Cliente 3">Cliente 3</option>
             </select>
             <p class="textoAyuda" style="text-align: center;">Cliente</p>
 
             <textarea class="registro" id="Notas"></textarea>
             <div class="textoAyuda">Ubicación<br></div>
+
+            <textarea class="registro" id="Notas"></textarea>
+            <div class="textoAyuda">Notas<br></div>
         
     
         <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
@@ -285,10 +297,12 @@ function imprimir_registro_obra(){
 function imprimir_registro_elemento(){
 
     return '
-    
-        <div class="tarjetaBlanca " style="margin-top: 0px;">   
-            <h1 id="tituloPag" style="margin-bottom:10px;">Registro nuevo elemmento</h1>
 
+        <div class="tarjetaBlanca">
+            <h1 class="tituloElemento"> Registro Elemento</h1>
+        </div>
+            
+        <div class="tarjetaBlanca " style="margin-top: 0px;">  
             <input id="tituloElemento" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
             <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
 
@@ -299,8 +313,8 @@ function imprimir_registro_elemento(){
             <p class="textoAyuda" >Fecha de muestreo</p>
 
             <div class="inputEnLinea" style="">
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Cancelarr</button>
+                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:center;" onclick="">Guardar</button>
+                    <button class="footerEliminar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:center;" onclick="">Cancelar</button>
             </div>
             
         </div>';
