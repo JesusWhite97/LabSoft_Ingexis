@@ -302,19 +302,21 @@ function imprimir_registro_elemento(){
             <h1 class="tituloElemento"> Registro Elemento</h1>
         </div>
             
-        <div class="tarjetaBlanca " style="margin-top: 0px;">  
+        <div class="tarjetaBlanca ">  
             <input id="tituloElemento" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
             <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
 
-            <textarea id="Notas" disabled></textarea>
+            <textarea id="Notas" class="registro"></textarea>
             <div class="textoAyuda">Observaciones<br></div>
 
-            <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" placeholder="">
+            <input id="fechaMuestro" type="date" class="mayus registro" style="margin-top:5px;" placeholder="">
             <p class="textoAyuda" >Fecha de muestreo</p>
 
             <div class="inputEnLinea" style="">
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:center;" onclick="">Guardar</button>
-                    <button class="footerEliminar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:center;" onclick="">Cancelar</button>
+
+                    <button id ="botonGuardarModal"class="" onclick=>Guardar</button>
+
+                    <button class="cancelarBotonModal"  onclick="closeModal("")">Cancelar</button>
             </div>
             
         </div>';
