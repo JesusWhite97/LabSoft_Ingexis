@@ -301,6 +301,7 @@
     <div id="contenedorPrincipal">
 		
 	</div>
+	<div id="contenedorModal"></div>
 	
     
 </body>
