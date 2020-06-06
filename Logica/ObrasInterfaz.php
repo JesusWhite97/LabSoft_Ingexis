@@ -297,7 +297,11 @@ function imprimir_registro_obra(){
 function imprimir_registro_elemento(){
 
     return '
-    
+
+        <div class="tarjetaBlanca">
+            <h1 class="tituloElemento"> Registro Elemento</h1>
+        </div>
+            
         <div class="tarjetaBlanca " style="margin-top: 0px;">  
             <input id="tituloElemento" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
             <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>

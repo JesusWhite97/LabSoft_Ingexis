@@ -84,7 +84,7 @@ function cargarRegistroE(){
         success:function(response){
             console.log(response);
             let arrayResponse = JSON.parse(response);
-            document.getElementById("tarjetaElementoNuevo").innerHTML = arrayResponse[0].scriptHTML;
+            document.getElementById("divInfoElemento").innerHTML = arrayResponse[0].scriptHTML;
         }
     });
 }
