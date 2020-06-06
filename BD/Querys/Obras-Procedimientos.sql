@@ -25,7 +25,7 @@ use databaseingexis;
 -- -- =================================================
 -- create procedure Obra_by_id(in id_obra int)
 -- begin
---     select * from info_obra_clien WHERE obras.id_obra = id_obra;
+--     select * from info_obra_clien WHERE info_obra_clien.id_obra = id_obra;
 -- end
 -- -- =================================================
 -- create procedure Obra_full_by_client(in id_cliente int)

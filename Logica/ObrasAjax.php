@@ -28,38 +28,38 @@
             echo $jsonString;
         }
         //########################
-         if($_POST["metodo"]=="imprimir_info_elemento"){
-                //declaracion de variables--------------------------
-                //salida--------------------------------------------
-                $json[] =   
-                    [
-                        'scriptHTML'   => imprimir_info_elemento()
-                    ];
-                $jsonString = json_encode($json);
-                echo $jsonString;
+        if($_POST["metodo"]=="imprimir_info_elemento"){
+            //declaracion de variables--------------------------
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'scriptHTML'   => imprimir_info_elemento()
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
         }
         
         //########################
-         if($_POST["metodo"]=="imprimir_registro_obra"){
-                //declaracion de variables--------------------------
-                //salida--------------------------------------------
-                $json[] =   
-                    [
-                        'scriptHTML'   => imprimir_registro_obra()
-                    ];
-                $jsonString = json_encode($json);
-                echo $jsonString;
+        if($_POST["metodo"]=="imprimir_registro_obra"){
+            //declaracion de variables--------------------------
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'scriptHTML'   => imprimir_registro_obra()
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
         }
         //########################
-         if($_POST["metodo"]=="imprimir_registro_elemento"){
-                //declaracion de variables--------------------------
-                //salida--------------------------------------------
-                $json[] =   
-                    [
-                        'scriptHTML'   => imprimir_registro_elemento()
-                    ];
-                $jsonString = json_encode($json);
-                echo $jsonString;
+        if($_POST["metodo"]=="imprimir_registro_elemento"){
+            //declaracion de variables--------------------------
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'scriptHTML'   => imprimir_registro_elemento()
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
         }
         
         //########################
