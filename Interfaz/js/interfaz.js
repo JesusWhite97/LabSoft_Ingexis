@@ -8,10 +8,16 @@ function verPantallaModificar(item){
  // muestra botones opciones parte superior
     let btnEdit = document.getElementById("botonEditar");
     let btnCancel = document.getElementById("botonCancelar");
-    let btnImg = document.getElementById("botonImg");
-    btnImg.style.display = "block";
+
     btnCancel.style.display = "block";
     btnEdit.style.display = "none";
+
+
+ // Validación por si no existe boton imagen
+    if(document.getElementById("botonImg")){
+      let btnImg = document.getElementById("botonImg");
+      btnImg.style.display = "block";
+    }
 
 
     // Validación por si existe  los campos contraseña los muestre
@@ -29,6 +35,7 @@ function verPantallaModificar(item){
 
     for(let i = 0; i < arrayTextArea.length;i++){
       arrayTextArea[i].disabled = false;
+      arrayTextArea[i].classList.add("registro");
     }
 
     //Quita la clase registro para que no se pueda modificar

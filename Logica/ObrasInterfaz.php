@@ -11,7 +11,7 @@
         //=============================
         for($i = 0; $i < count($fullObras); $i++){
             $Tarjetas = ' 
-                    <div id="TO-'.$fullObras[$i]['id_obra'].'" class="contenedorTarjetaUsuario" style="height:70px;" onclick=cargarInfoO("'.$fullObras[$i]['id_obra'].'")>
+                    <div id="'.$fullObras[$i]['id_obra'].'" class="contenedorTarjetaUsuario" style="height:70px;" onclick=cargarInfoO("'.$fullObras[$i]['id_obra'].'")>
                         <a style= "grid-column:1 / span 2; justify-self:start; justify-content:start;">
                             <h2 class="tituloTarjetaUsuario" style="margin-left:0px; grid-column:1 / span 2;"> "'.$fullObras[$i]['nombre'].'" </h2>
                             <h3 class="subtituloTarjetaUsuario" style="margin-left:0px; grid-column:1 / span 2;">"'.$fullObras[$i]['nom_empr'].'"</h3>
@@ -106,7 +106,7 @@
     //=========================================================================
     function imprimir_info_elemento(){
     
-        $id7 = "1";
+        $id7 = "7";
         $id14 = "1";
         $id28 = "1";
   // Si edtan vacios los identificadores de las muestras 
@@ -298,25 +298,19 @@ function imprimir_registro_elemento(){
 
     return '
 
-        <div class="tarjetaBlanca">
-            <h1 class="tituloElemento"> Registro Elemento</h1>
-        </div>
+ 
             
-        <div class="tarjetaBlanca ">  
-            <input id="tituloElemento" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
+        <div class="tarjetaBlanca " style="margin:10px 5px;">  
+            <input id="tituloElemento" type="text"class=" required registro"   placeholder=""  maxlength="30"> 
             <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
 
-            <textarea id="Notas" class="registro"></textarea>
-            <div class="textoAyuda">Observaciones<br></div>
 
-            <input id="fechaMuestro" type="date" class="mayus registro" style="margin-top:5px;" placeholder="">
-            <p class="textoAyuda" >Fecha de muestreo</p>
 
             <div class="inputEnLinea" style="">
 
                     <button id ="botonGuardarModal"class="" onclick=>Guardar</button>
 
-                    <button class="cancelarBotonModal"  onclick="closeModal("")">Cancelar</button>
+                    <button class="cancelarBotonModal"  onclick="cargarInfoO(obraSeleccionada)">Cancelar</button>
             </div>
             
         </div>';

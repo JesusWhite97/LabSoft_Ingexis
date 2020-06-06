@@ -20,7 +20,11 @@ function cargarTarjetasO(){
     });
 }
 //=================================================================================================
+obraSeleccionada = "";
+//=================================================================================================
 function cargarInfoO(id_obra){
+    obraSeleccionada = id_obra;
+    tarjetaSeleccionada(id_obra);
     var postData = {
         metodo: "cargarInfo",
         id_obra: id_obra
@@ -84,7 +88,7 @@ function cargarRegistroE(){
         success:function(response){
             console.log(response);
             let arrayResponse = JSON.parse(response);
-            document.getElementById("divInfoElemento").innerHTML = arrayResponse[0].scriptHTML;
+            document.getElementById("tarjetaElementoNuevo").innerHTML = arrayResponse[0].scriptHTML;
         }
     });
 }
