@@ -9,13 +9,14 @@
         $obras = new Obra();
         $fullObras = $obras->obraFull();
         $_SESSION['Obra1'] = $fullObras[0]['id_obra'];
+        $Tarjetas = '';
         //=============================
         for($i = 0; $i < count($fullObras); $i++){
-            $Tarjetas = ' 
+            $Tarjetas .= ' 
                     <div id="'.$fullObras[$i]['id_obra'].'" class="contenedorTarjetaUsuario" style="height:70px;" onclick=cargarInfoO("'.$fullObras[$i]['id_obra'].'")>
                         <a style= "grid-column:1 / span 2; justify-self:start; justify-content:start;">
-                            <h2 class="tituloTarjetaUsuario" style="margin-left:0px; grid-column:1 / span 2;"> "'.$fullObras[$i]['nombre'].'" </h2>
-                            <h3 class="subtituloTarjetaUsuario" style="margin-left:0px; grid-column:1 / span 2;">"'.$fullObras[$i]['nom_empr'].'"</h3>
+                            <h2 class="tituloTarjetaUsuario" style="margin-left:0px; grid-column:1 / span 2;"> '.$fullObras[$i]['nombre'].' </h2>
+                            <h3 class="subtituloTarjetaUsuario" style="margin-left:0px; grid-column:1 / span 2;">'.$fullObras[$i]['nom_empr'].'</h3>
                         </a>
                     </div>
                     ';
@@ -231,15 +232,15 @@ function imprimir_registro_obra(){
         <div class="tarjetaBlanca " style="margin-top: 0px;"> 
             <input id="tituloObra" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
             <p class="textoAyuda" style="text-align: center;">Titulo de la obra</p>
-            <select id="puesto" class="registro">
+            <select id="IdCliente" class="registro">
                 '.$options.'
             </select>
             <p class="textoAyuda" style="text-align: center;">Cliente</p>
-            <textarea class="registro" id="Notas"></textarea>
+            <textarea class="registro" id="ubicacion"></textarea>
             <div class="textoAyuda">Ubicación<br></div>
             <textarea class="registro" id="Notas"></textarea>
             <div class="textoAyuda">Notas<br></div>
-        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
+        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="registrarObraNueva();">Guardar</button>
         </div>
     ';
 }

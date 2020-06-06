@@ -11,3 +11,10 @@
 --     end if;
 -- end
 -- --======================================--
+-- create FUNCTION Obra_id_by_nombre(nombre VARCHAR(50)) RETURNS  int
+-- begin
+--     declare respuesta int;
+--     SELECT obras.id_obra into respuesta from obras where obras.nombre = nombre;
+--     return respuesta;
+-- end
+-- --======================================--

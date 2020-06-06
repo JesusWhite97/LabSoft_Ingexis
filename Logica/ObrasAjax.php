@@ -61,54 +61,20 @@
             $jsonString = json_encode($json);
             echo $jsonString;
         }
-        
         //########################
-        if($_POST["metodo"] == "cargarAgregar"){
-            $json[] =   
-                [
-                    'mensajeDatos'   => ""
-                ];
-            $jsonString = json_encode($json);
-            echo $jsonString;
-        }
-        //########################
-        if($_POST["metodo"] == "guardarCliente"){
+        if($_POST['metodo'] == 'registrarObraNueva'){
             //declaracion de variables--------------------------
-            $cliente = new Cliente();
-            $salida = '';
-            //Formular Respuesta--------------------------------
+            $obra = new Obra();
+            $salida = $obra->Agregar($_POST['id_cliente'], $_POST['titulo'], $_POST['ubicacion'], $_POST['notas']);
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'mensajeDatos'   => ""
+                    'salida'    => $salida,
+                    'cargar'    => $obra->Obra_by_titulo($_POST['titulo'])
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
         }
-        //########################
-        if($_POST["metodo"] == "eliminarCliente"){
-            $cliente = new Cliente();
-            $salida = '';
-            //Formular Respuesta--------------------------------
-            //salida--------------------------------------------
-            $json[] =   
-                [
-                    'mensajeDatos'   => ""
-                ];
-            $jsonString = json_encode($json);
-            echo $jsonString;
-        }
-        //########################
-        if($_POST["metodo"] == "modificarCliente"){
-            //salida--------------------------------------------
-            $json[] =   
-                [
-                    'mensajeDatos'   => $salida
-                ];
-            $jsonString = json_encode($json);
-            echo $jsonString;
-        }
-        //########################
         //########################
     }
     // ========================================================

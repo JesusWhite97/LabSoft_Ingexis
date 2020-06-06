@@ -1,10 +1,10 @@
 //variables========================================================================================
 var obra1;
+obraSeleccionada = "";
 //Funciones========================================================================================
 function cargarTarjetasO(){
     var postData = {
         metodo: "cargarTarjetas",
-        //texto: texto
     };
     $.ajax({
         data:postData,
@@ -19,8 +19,6 @@ function cargarTarjetasO(){
         }
     });
 }
-//=================================================================================================
-obraSeleccionada = "";
 //=================================================================================================
 function cargarInfoO(id_obra){
     obraSeleccionada = id_obra;
@@ -92,3 +90,33 @@ function cargarRegistroE(){
         }
     });
 }
+//=================================================================================================
+function registrarObraNueva(){
+    var postData = {
+        metodo:     "registrarObraNueva",
+        titulo:     document.getElementById('tituloObra').value,
+        id_cliente: document.getElementById('IdCliente').value,
+        ubicacion:  document.getElementById('ubicacion').value,
+        notas:      document.getElementById('Notas').value
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            let arrayResponse = JSON.parse(response);
+            $salida = arrayResponse[0].salida;
+            if($salida == 'true'){
+                alert('Obra registrada correctamente');
+                cargarTarjetasO();
+                obraSeleccionada = arrayResponse[0].cargar;
+                cargarInfoO(arrayResponse[0].cargar);
+            }else{
+                alert($salida);
+            }
+        }
+    });
+}
+//=================================================================================================
+//=================================================================================================

@@ -22,6 +22,23 @@
             } 
         }
         //#####################################################
+        public function Obra_by_titulo($nombre){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = "";
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "select Obra_id_by_nombre('".$nombre."');";
+            $resultado=$mysqli->query($query);
+            $rows = $resultado->fetch_array();
+            $salida = $rows[0];
+            //============================
+            return $salida;
+            $resultado->free();
+            //============================
+        }
+        //#####################################################
         public function Eliminar($id_obra){
             //crea Conexion===============
             $conex = new conexionMySQLi();
@@ -265,6 +282,6 @@
     // ========================================================================================================================
     // $_SESSION["puesto"] = 'Jefe De Laboratorio';
     // var_dump($_SESSION);
-    // $jaja = new procedimientos_elementos_muestra();
-    // var_dump($jaja->infoTotalById(1));
+    // $jaja = new procedimientos_Obra();
+    // var_dump($jaja->obraFull());
 ?>

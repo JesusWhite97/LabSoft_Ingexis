@@ -52,7 +52,7 @@
 -- create table Obras(
 --     id_obra         INT         PRIMARY KEY     not NULL    AUTO_INCREMENT,
 --     id_clientes     int,
---     nombre          VARCHAR(50),
+--     nombre          VARCHAR(50) UNIQUE,
 --     direccion       text,
 --     anotaciones     text,
 --     --ralaciones ETC------------
