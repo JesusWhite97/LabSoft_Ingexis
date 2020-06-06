@@ -74,9 +74,10 @@ function cargarRegistroO(){
     });
 }
 //=================================================================================================
-function cargarRegistroE(){
+function cargarRegistroE(id_obra){
     var postData = {
         metodo: "imprimir_registro_elemento",
+        id_obra: id_obra
     };
     $.ajax({
         data:postData,
@@ -108,7 +109,7 @@ function registrarObraNueva(){
             let arrayResponse = JSON.parse(response);
             $salida = arrayResponse[0].salida;
             if($salida == 'true'){
-                alert('Obra registrada correctamente');
+                alert('Obra Registrada Correctamente');
                 cargarTarjetasO();
                 obraSeleccionada = arrayResponse[0].cargar;
                 cargarInfoO(arrayResponse[0].cargar);
@@ -119,4 +120,27 @@ function registrarObraNueva(){
     });
 }
 //=================================================================================================
+function registrarNuevoElemento(id_obra){
+    var postData = {
+        metodo:  "registrarNuevoElemento",
+        tituloEle: document.getElementById('tituloElemento').value,
+        id_obra: id_obra
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            let arrayResponse = JSON.parse(response);
+            $salida = arrayResponse[0].salida;
+            if($salida == 'true'){
+                alert('Elemento Agregado Correctamente');
+                cargarInfoO(id_obra)
+            }else{
+                alert($salida);
+            }
+        }
+    });
+}
 //=================================================================================================

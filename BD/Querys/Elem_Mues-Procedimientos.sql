@@ -2,12 +2,12 @@ use databaseingexis;
 -- -- =================================================
 -- create procedure ElemMues_agregar(
 --     in id_obra int,
---     in id_usuario int,
+--     in correo varchar(50),
 --     in nombre varchar(50)
 -- )
 -- begin
 --     DECLARE id_elem int;
---     insert elemento(elemento.id_obra, elemento.id_usuario, elemento.nombre) values (id_obra, id_usuario, nombre);
+--     insert elemento(elemento.id_obra, elemento.id_usuario, elemento.nombre) values (id_obra, id_by_correo(correo), nombre);
 --     ----------------------------
 --     SELECT last_insert_id() into id_elem;
 --     ----------------------------

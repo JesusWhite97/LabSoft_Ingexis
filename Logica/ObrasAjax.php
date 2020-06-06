@@ -56,7 +56,7 @@
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'scriptHTML'   => imprimir_registro_elemento()
+                    'scriptHTML'   => imprimir_registro_elemento($_POST['id_obra'])
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
@@ -71,6 +71,19 @@
                 [
                     'salida'    => $salida,
                     'cargar'    => $obra->Obra_by_titulo($_POST['titulo'])
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
+        if($_POST['metodo'] == 'registrarNuevoElemento'){
+            //declaracion de variables--------------------------
+            $obra = new ElemMues();
+            $salida = $obra->Agregar($_POST['id_obra'], $_SESSION['correo'], $_POST['tituloEle']);
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'salida'    => $salida,
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;

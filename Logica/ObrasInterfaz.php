@@ -72,7 +72,7 @@
             <div id="tarjetaElementoNuevo"></div>
             </div>
                 <!-- Boton Final================================= -->
-                <button id="footerGuardar_Boton" onclick="cargarRegistroE()" style="margin:20px auto; display:block;">Registrar elemento</button>
+                <button id="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">Registrar elemento</button>
                 <!-- ============================================ -->
             </div>
         </div>
@@ -247,13 +247,13 @@ function imprimir_registro_obra(){
 // ================================================================================================================================================================
 // ======================================================================IMPRIMIR REGISTRO ELEMENTO================================================================
 // ================================================================================================================================================================
-function imprimir_registro_elemento(){
+function imprimir_registro_elemento($id_obra){
     return '
         <div class="tarjetaBlanca " style="margin:10px 5px;">  
             <input id="tituloElemento" type="text"class=" required registro"   placeholder=""  maxlength="30"> 
             <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
             <div class="inputEnLinea" style="">
-                    <button id ="botonGuardarModal"class="" onclick=>Guardar</button>
+                    <button id ="botonGuardarModal"class="" onclick=registrarNuevoElemento('.$id_obra.')>Guardar</button>
                     <button class="cancelarBotonModal"  onclick="cargarInfoO(obraSeleccionada)">Cancelar</button>
             </div>
         </div>
