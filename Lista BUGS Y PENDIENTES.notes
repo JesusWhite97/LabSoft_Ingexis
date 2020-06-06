@@ -122,10 +122,16 @@ TAPIZ:
 [√] crear vistas para #obras y muestras#
 [√] tabla #log activity# para todos
 [ ] terminar procedimientos PHP para elemento y muestra
+[√] agregar tituliCliente(nomEmp) a vista obra completa
 [√] crear procedimientos para log
 [ ] terminar procedimientos para log PHP
 [ ] #agregar log a todas las actividades#
-
+    [√] logeo
+    [√] modulo Usuarios
+    [ ] modulo clientes
+    [ ] modulo obras
+    [ ] modulo elementos - muestras
+[√] cambiar a unico el campo nomemp en clientes
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
 BUGS:
