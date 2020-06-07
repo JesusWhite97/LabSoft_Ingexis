@@ -52,7 +52,7 @@
                     <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
                     <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
                 </div>
-                <input id="TituloObra" class="inputTexto mayus" style="color:white;" type="text" value="'.$infObra['nombre'].'" maxlength="60">
+                <input id="TituloObra" class="inputTexto mayus registro" style="color:white;" type="text" value="'.$infObra['nombre'].'" maxlength="60">
                 <p class="textoAyuda textoAyudaTitulo">Titulo Obra</p>
             </div>
             <div class="tarjetaBlanca" style="margin-top:5px;">
@@ -130,7 +130,7 @@
                     <p class="textoAyuda">ID 14 días</p>
                     <input id="id_muestra_3" type="text"class="registro mayus required" placeholder=""  maxlength="5">
                     <p class="textoAyuda">ID 28 días</p>
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="registrarDatosElemento('.$infoElemento['id_elemento'].')">Guardar</button>
+                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="registrarDatosElemento('.$infoElemento['id_elemento'].','.$infoElemento['07-id_muestra'].','.$infoElemento['14-id_muestra'].','.$infoElemento['28-id_muestra'].')">Guardar</button>
                 </div>
             ';
         }else{
@@ -153,7 +153,7 @@
     }
 // ================================================================================================================================================================
 function scriptPruebas($dias,$identificador,$prueba,$fecha){
-    $hoy = date("Y-m-d");
+    $hoy = date("Y/m/d");
     if($hoy >= $fecha){
             return '
             <!-- Información por muestra ============================ -->
