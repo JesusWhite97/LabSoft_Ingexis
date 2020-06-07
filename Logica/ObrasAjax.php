@@ -29,11 +29,12 @@
         }
         //########################
         if($_POST["metodo"]=="imprimir_info_elemento"){
+          
             //declaracion de variables--------------------------
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'scriptHTML'   => imprimir_info_elemento()
+                    'scriptHTML'   => imprimir_info_elemento($_POST["idElemento"])
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;
@@ -80,6 +81,20 @@
             //declaracion de variables--------------------------
             $obra = new ElemMues();
             $salida = $obra->Agregar($_POST['id_obra'], $_SESSION['correo'], $_POST['tituloEle']);
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'salida'    => $salida,
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
+        if($_POST['metodo'] == 'registraDatosElemento'){
+            //declaracion de variables--------------------------
+            $obra = new ElemMues();
+            $salida = $obra->Fechas_identificadores($_POST['correoUser'],$_POST['id_elemento'],$_POST['id_muestra_1'],$_POST['id_muestra_2'],$_POST['id_muestra_3'],$_POST['id_muestra_1'],$_POST['id_muestra_2'],$_POST['id_muestra_3']);
+            var_dump($salida);
             //salida--------------------------------------------
             $json[] =   
                 [

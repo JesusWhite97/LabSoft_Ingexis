@@ -92,7 +92,7 @@
         $TarjetasElementos = '';
         for($i = 0; $i < count($TarElem); $i++){
             $TarjetasElementos = $TarjetasElementos.
-            '<div id="'.$TarElem[$i]['id_elemento'].'" class="tarjetaElemento">
+            '<div id="'.$TarElem[$i]['id_elemento'].'" class="tarjetaElemento" onclick=cargarInfoE("'.$TarElem[$i]['id_elemento'].'")>
                 <div class="tituloElemento">'.$TarElem[$i]['nombre'].'</div>
                 <div class="subtituloElemento">Observaciones: '.$TarElem[$i]['observaciones'].'<br></div>
                 <div class="botonEditar"></div>
@@ -103,33 +103,34 @@
         return $TarjetasElementos;
     }
     //=========================================================================
-    function imprimir_info_elemento(){
+    function imprimir_info_elemento($id_elemento){
+
+        //declaracion de variables=========================
+        $obras = new ElemMues();
+        $infoElemento = $obras->infoElemtoById($id_elemento);
     
-        $id7 = "7";
-        $id14 = "1";
-        $id28 = "1";
         // Si edtan vacios los identificadores de las muestras 
-        if($id7 == ""){
+        if($infoElemento['fecha_muestreo']== '' ||$infoElemento['07-identificador']== ''||$infoElemento['14-identificador']== ''||$infoElemento['28-identificador']== ''){
             $script = ' 
             <div class="contenedorCentradoResponsivo">
                 <!-- Titulo elemento ============================ -->
                 <div class="tarjetaBlanca">
-                    <h1 class="tituloElemento">Elemento</h1>
-                    <textarea id="observaciones" disabled></textarea>
+                    <h1 class="tituloElemento">'.$infoElemento['nombre'].'</h1>
+                    <textarea id="observaciones" class="registro">'.$infoElemento['observaciones'].'</textarea>
                     <div class="textoAyuda">Observaciones<br></div>
                 </div>
                 <!-- Registro ID´s muestras ============================ -->
                 <div class="tarjetaBlanca">
                     <p class="titulo" style="margin-bottom:5px;">Registro de identificadores</p>
-                    <input id="fechaMuestro" type="date" class="registro mayus" style="margin-top:5px;" placeholder="">
+                    <input id="fecha_muestreo" type="date" class="registro mayus" style="margin-top:5px;" placeholder="">
                     <p class="textoAyuda" >Fech muestreo</p>
-                    <input id="7dias" type="text"class="registro mayus required" placeholder=""  maxlength="5">
+                    <input id="id_muestra_1" type="text"class="registro mayus required" placeholder=""  maxlength="5">
                     <p class="textoAyuda">ID 7 días</p>
-                    <input id="14dias" type="text"class="registro mayus required" placeholder=""  maxlength="5">
+                    <input id="id_muestra_2" type="text"class="registro mayus required" placeholder=""  maxlength="5">
                     <p class="textoAyuda">ID 14 días</p>
-                    <input id="28dias" type="text"class="registro mayus required" placeholder=""  maxlength="5">
+                    <input id="id_muestra_3" type="text"class="registro mayus required" placeholder=""  maxlength="5">
                     <p class="textoAyuda">ID 28 días</p>
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="">Guardar</button>
+                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="registrarDatosElemento('.$infoElemento['id_elemento'].')">Guardar</button>
                 </div>
             ';
         }else{
@@ -137,29 +138,30 @@
             <div class="contenedorCentradoResponsivo">
                 <!-- Titulo elemento ============================ -->
                 <div class="tarjetaBlanca">
-                    <h1 class="tituloElemento">Elemento</h1>
-                    <textarea id="Notas" disabled></textarea>
+                    <h1 class="tituloElemento">'.$infoElemento['nombre'].'</h1>
+                    <textarea id="Notas" disabled>'.$infoElemento['observaciones'].'</textarea>
                     <div class="textoAyuda">Observaciones<br></div>
-                    <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" placeholder="">
+                    <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" values="'.$infoElemento['fecha_muestreo'].'">
                     <p class="textoAyuda" >Fecha de muestreo</p>
                 </div>'
-                .scriptPruebas("","resultado ingresado")
-                .scriptPruebas("","")
-                .scriptPruebas("antesPrueba","").'
+                .scriptPruebas("07 Días",$infoElemento['07-identificador'],$infoElemento['07-resultado'],$infoElemento['07-fecha_prog'])
+                .scriptPruebas("14 Días",$infoElemento['14-identificador'],$infoElemento['14-resultado'],$infoElemento['14-fecha_prog'])
+                .scriptPruebas("18 Días",$infoElemento['28-identificador'],$infoElemento['28-resultado'],$infoElemento['28-fecha_prog']).'
             </div>';
         }
         return $script;
     }
 // ================================================================================================================================================================
-function scriptPruebas($fecha, $prueba){
-    if($fecha == "antesPrueba"){
+function scriptPruebas($dias,$identificador,$prueba,$fecha){
+    $hoy = date("Y-m-d");
+    if($hoy >= $fecha){
             return '
             <!-- Información por muestra ============================ -->
             <div class="tarjetaBlanca" style="font-size:16px; ">
-                <p class="titulo" >7 Dias</p>
+                <p class="titulo" >'.$dias.'</p>
                 <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
-                    <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
-                    <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
+                    <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
+                    <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
                 </div>
                 <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
                     <p class="textoAyuda" style="">Identificador</p>
@@ -167,19 +169,19 @@ function scriptPruebas($fecha, $prueba){
                 </div> 
             </div>';
     }else{
-        if($prueba == ""){
+        if($prueba == "??" || $prueba == ""){
             return ' 
                 <!-- Registro prueba ============================ -->
                 <div class="tarjetaBlanca" style="font-size:16px; ">
-                    <p class="titulo" >7 Dias</p>
-                    <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
-                        <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
-                        <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
-                    </div>
-                    <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
-                        <p class="textoAyuda" style="">Identificador</p>
-                        <p class="textoAyuda" style="">Fecha</p>  
-                    </div> 
+                        <p class="titulo" >'.$dias.'</p>
+                        <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                            <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
+                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                        </div>
+                        <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                            <p class="textoAyuda" style="">Identificador</p>
+                            <p class="textoAyuda" style="">Fecha</p>  
+                        </div> 
                     <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
                         <input id="Prueba7dias" type="text"class=" registro mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
                         <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
@@ -189,24 +191,24 @@ function scriptPruebas($fecha, $prueba){
                 </div>
             ';
         }
-        if($prueba == "resultado ingresado"){
+        else{
             return '
                 <!-- Información prueba ============================ -->
                 <div class="tarjetaBlanca" style="font-size:16px; ">
-                    <p class="titulo" >7 Dias</p>
-                    <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
-                        <input id="7dias" type="text"class="mayus required"   placeholder="1234"  maxlength="5" >
-                        <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" placeholder="">
-                    </div>
-                    <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
-                        <p class="textoAyuda" style="">Identificador</p>
-                        <p class="textoAyuda" style="">Fecha</p>  
-                    </div> 
+                        <p class="titulo" >'.$dias.'</p>
+                        <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                            <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
+                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                        </div>
+                        <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                            <p class="textoAyuda" style="">Identificador</p>
+                            <p class="textoAyuda" style="">Fecha</p>  
+                        </div> 
                     <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
-                        <input id="Prueba7dias" type="text"class=" mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
+                        <input id="Prueba7dias" type="text"class=" mayus required" style:"height:20px; align-self:center;"  value="'.$prueba.'"  maxlength="5">
                         <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
                     </div>
-                    <p class="textoAyuda">Resultado prueba</p>
+                    <p class="textoAyuda">Resultado prueba</p>                                                                                              
                 </div>
             ';
         }

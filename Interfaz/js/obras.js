@@ -40,9 +40,10 @@ function cargarInfoO(id_obra){
     });
 }
 //=================================================================================================
-function cargarInfoE(){
+function cargarInfoE(idEle){
     var postData = {
         metodo: "imprimir_info_elemento",
+        idElemento: idEle
     };
     $.ajax({
         data:postData,
@@ -136,6 +137,38 @@ function registrarNuevoElemento(id_obra){
             $salida = arrayResponse[0].salida;
             if($salida == 'true'){
                 alert('Elemento Agregado Correctamente');
+                cargarInfoO(id_obra)
+            }else{
+                alert($salida);
+            }
+        }
+    });
+}
+//=================================================================================================
+function registrarDatosElemento(idElemento){
+    var postData = {
+        metodo:  "registrarDatosElemento",
+        correoUser:  usuarioLog(),
+        id_elemento: idElemento,
+        fecha_muestreo: document.getElementById('fecha_muestreo').value,
+        id_muestra_1: document.getElementById('id_muestra_1').value,
+        id_muestra_2: document.getElementById('id_muestra_2').value,
+        id_muestra_3: document.getElementById('id_muestra_3').value,
+        id_1: document.getElementById('id_muestra_1').value,
+        id_3: document.getElementById('id_muestra_2').value,
+        id_3: document.getElementById('id_muestra_3').value
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            $salida = arrayResponse[0].salida;
+            if($salida == 'true'){
+                alert('Datos Elemento agregados correctamente.');
                 cargarInfoO(id_obra)
             }else{
                 alert($salida);
