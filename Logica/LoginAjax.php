@@ -47,6 +47,7 @@
                 $Respuesta = 'A Trabajar '. $_SESSION["apodo"] .' 👍.';
                 $Almacenamiento = $log->Entrada($_SESSION["correo"], $_SESSION["correo"].' Inicio de Sesion.');
                 $Salida = '/LabSoft_Ingexis/Interfaz/Principal.php';
+                $_SESSION['NavBarSelected'] = '"itemHome","img/HomeIconBlue.svg"';//================================variable seleccion de menu
             }
             else{
                 $Respuesta = 'Contraseña Incorrecta.';                
