@@ -132,6 +132,7 @@ TAPIZ:
     [ ] modulo obras
     [ ] modulo elementos - muestras
 [√] cambiar a unico el campo nomemp en clientes
+[ ] agregar fecha a campo identificador en el update
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
 BUGS:
