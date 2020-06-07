@@ -99,7 +99,6 @@ TAPIZ:
         [ ] Responsividad
         [ ] Implementación PHP
 
-
 ====================================================================================================><==========================================================================================
 
 
@@ -132,12 +131,12 @@ TAPIZ:
     [ ] modulo obras
     [ ] modulo elementos - muestras
 [√] cambiar a unico el campo nomemp en clientes
-[ ] agregar fecha a campo identificador en el update
 
 !!!!!!!!!!!!!!!!!FALLOS DEL SISTEMA!!!!!!!!!!!!!!!!!!!
 BUGS:
 [ ] Cargar una foto muy grande se rompe el sistema pero no muestra ningun error.
 [√] No sale del modal al eliminar un !usuario!
+[ ] se corta el nombre en el header donde esta la img
 
 ------------------->RECORDATORIOS<--------------------
 [ ] Eliminar codigo que evita que se guarde el cache

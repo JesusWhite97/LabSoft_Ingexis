@@ -53,13 +53,13 @@
             } 
         }
         //#####################################################
-        public function Modificar($id_obra, $nombre, $direccion, $anotaciones){
+        public function Modificar($id_obra, $nombre, $direccion, $anotaciones, $id_cliente){
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
-            $query = "CALL Obra_modificar('".$id_obra."', '".$nombre."', '".$direccion."', '".$anotaciones."')";
+            $query = "CALL Obra_modificar('".$id_obra."', '".$nombre."', '".$direccion."', '".$anotaciones."', '".$id_cliente."')";
             if($mysqli->query($query)===TRUE){
                 return 'true';
             }else{

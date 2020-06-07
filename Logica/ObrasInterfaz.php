@@ -29,6 +29,18 @@
         //declaracion de variables=========================
         $obras = new Obra();
         $infObra = $obras->obraById($id_obra);
+        //creacion de option===============================
+        $clientes = new Cliente();
+        $clientesReg = $clientes->Clientes_reg();
+        $options = '';
+        for($i = 0; $i < count($clientesReg); $i++){
+            if($clientesReg[$i]['nom_empr'] == $infObra['nom_empr'])
+            {
+                $options .= '<option selected value="'.$clientesReg[$i]['id_clientes'].'">'.$clientesReg[$i]['nom_empr'].'</option>';
+            }else{
+                $options .= '<option value="'.$clientesReg[$i]['id_clientes'].'">'.$clientesReg[$i]['nom_empr'].'</option>';
+            }
+        }
         // //=========DATOS MODAL==========================
         $tipoModal = "'confirmar'";
         $item = "'"."Titulo"."'";
@@ -39,7 +51,7 @@
         $claseBotonModificar = "'guardarBotonModal'";
         // //=========DATOS MODAL ELIMINAR=================
         $textoEliminar = "'Desea eliminar obra: '";
-        $funcionEliminar = "'eliminarObra()'";
+        $funcionEliminar = "'EliminarObra(".$infObra['id_obra'].")'";
         $textoBotonEliminar = "'Eliminar'";
         $claseBotonEliminar = "'eliminarBotonModal'";
         //=================================================
@@ -56,14 +68,14 @@
                 <p class="textoAyuda textoAyudaTitulo">Titulo Obra</p>
             </div>
             <div class="tarjetaBlanca" style="margin-top:5px;">
-                    <input type="text" id="puestoInput" class="selectInfo" style="text-align:center;" value="'.$infObra['nombre'].'" onchange="arregloCambios[2]=1;">        
-                    <select id="puesto" class="registro" style="display:none;" onchange="arregloCambios[1]=1;">
-                        '."cliente".'
+                    <input type="text" id="puestoInput" class="selectInfo" style="text-align:center;" value="'.$infObra['nom_empr'].'" onchange="arregloCambios[2]=1;">        
+                    <select id="Cliente" class="registro" style="display:none;" onchange="arregloCambios[1]=1;">
+                        '.$options.'
                     </select>
                 <p class="textoAyuda" style="text-align: center;">Cliente</p>
                 <textarea class="" id="Direccion">'.$infObra['direccion'].'</textarea>
                 <div class="textoAyuda">Dirección obra<br></div>
-                <textarea class="" id="Direccion">'.$infObra['anotaciones'].'</textarea>
+                <textarea class="" id="Anotaciones">'.$infObra['anotaciones'].'</textarea>
                 <div class="textoAyuda">Notas<br></div>
             </div>
             <!=========== Elementos ============================= -->
@@ -73,6 +85,7 @@
             </div>
                 <!-- Boton Final================================= -->
                 <button id="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">Registrar elemento</button>
+                <button id="footerGuardar_Boton" onclick="ModificarObra('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">ModificarObra</button>
                 <!-- ============================================ -->
             </div>
         </div>

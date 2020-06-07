@@ -19,9 +19,9 @@
             return $respuesta;
         }
         //#####################################################
-        public function Modificar($id_obra, $nombre, $direccion, $anotaciones){
+        public function Modificar($id_obra, $nombre, $direccion, $anotaciones, $id_cliente){
             $ObraFun = new procedimientos_Obra();
-            $respuesta = $ObraFun->Modificar($id_obra, $nombre, $direccion, $anotaciones);
+            $respuesta = $ObraFun->Modificar($id_obra, $nombre, $direccion, $anotaciones, $id_cliente);
             return $respuesta;
         }
         //#####################################################
