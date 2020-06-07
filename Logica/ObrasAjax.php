@@ -90,11 +90,10 @@
             echo $jsonString;
         }
         //########################
-        if($_POST['metodo'] == 'registraDatosElemento'){
+        if($_POST['metodo'] == 'registrarDatosElemento'){
             //declaracion de variables--------------------------
             $obra = new ElemMues();
-            $salida = $obra->Fechas_identificadores($_POST['correoUser'],$_POST['id_elemento'],$_POST['id_muestra_1'],$_POST['id_muestra_2'],$_POST['id_muestra_3'],$_POST['id_muestra_1'],$_POST['id_muestra_2'],$_POST['id_muestra_3']);
-            var_dump($salida);
+            $salida = $obra->Fechas_identificadores($_POST['correoUser'],$_POST['id_elemento'],$_POST['fecha_muestreo'],$_POST['id1'],$_POST['id2'],$_POST['id3'],$_POST['id_muestra_1'],$_POST['id_muestra_2'],$_POST['id_muestra_3']);
             //salida--------------------------------------------
             $json[] =   
                 [

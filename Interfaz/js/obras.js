@@ -145,7 +145,7 @@ function registrarNuevoElemento(id_obra){
     });
 }
 //=================================================================================================
-function registrarDatosElemento(idElemento){
+function registrarDatosElemento(idElemento,id1,id2,id3){
     var postData = {
         metodo:  "registrarDatosElemento",
         correoUser:  usuarioLog(),
@@ -154,9 +154,9 @@ function registrarDatosElemento(idElemento){
         id_muestra_1: document.getElementById('id_muestra_1').value,
         id_muestra_2: document.getElementById('id_muestra_2').value,
         id_muestra_3: document.getElementById('id_muestra_3').value,
-        id_1: document.getElementById('id_muestra_1').value,
-        id_3: document.getElementById('id_muestra_2').value,
-        id_3: document.getElementById('id_muestra_3').value
+        id1: id1,
+        id2: id2,
+        id3: id3
     };
     $.ajax({
         data:postData,
