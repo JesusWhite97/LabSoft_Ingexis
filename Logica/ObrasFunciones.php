@@ -104,6 +104,12 @@
             return $respuesta;
         }
         //#####################################################
+        public function existencia_identificador($identificador){
+            $eleMuesFun = new procedimientos_elementos_muestra();
+            $respuesta = $eleMuesFun->existencia_identificador($identificador);
+            return $respuesta;
+        }
+        //#####################################################
     }
     // ========================================================================================================================
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄

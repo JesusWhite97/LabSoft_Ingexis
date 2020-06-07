@@ -275,6 +275,20 @@
             $resultado->free();
         }
         //#####################################################
+        public function existencia_identificador($identificador){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = '';
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "select existencia_identificador('".$identificador."')");
+            $rows = $resultado->fetch_array();
+            $salida = $rows[0];
+            return $salida;
+            $resultado->free();
+        }
+        //#####################################################
     }
     // ========================================================================================================================
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
@@ -282,6 +296,6 @@
     // ========================================================================================================================
     // $_SESSION["puesto"] = 'Jefe De Laboratorio';
     // var_dump($_SESSION);
-    // $jaja = new procedimientos_Obra();
-    // var_dump($jaja->obraFull());
+    // $jaja = new procedimientos_elementos_muestra();
+    // var_dump($jaja->existencia_identificador('2020-no ma'));
 ?>
