@@ -77,6 +77,9 @@ echo "<style>
 .calendar-day, .calendar-day-head{
     border: 1px solid #ddd;
     padding: 5px;
+    height:100px;
+    width:100px;
+    text-align:center;
 }
 .calendar-day-head{
     background: #ddd;
@@ -84,6 +87,8 @@ echo "<style>
 </style>
 ";
 // Le pasamos el mes, el año y el idioma
+
+
 
 echo generar_calendario(07,2020,"es");
  
