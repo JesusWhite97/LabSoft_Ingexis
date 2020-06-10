@@ -73,6 +73,7 @@
             </div>
                 <!-- Boton Final================================= -->
                 <button id="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">Registrar elemento</button>
+                <button id="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">Modificar Obra</button>
                 <!-- ============================================ -->
             </div>
         </div>
@@ -139,9 +140,9 @@
                 <!-- Titulo elemento ============================ -->
                 <div class="tarjetaBlanca">
                     <h1 class="tituloElemento">'.$infoElemento['nombre'].'</h1>
-                    <textarea id="Notas" disabled>'.$infoElemento['observaciones'].'</textarea>
+                    <textarea id="Notas" disabled value="">'.$infoElemento['observaciones'].'</textarea>
                     <div class="textoAyuda">Observaciones<br></div>
-                    <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" values="'.$infoElemento['fecha_muestreo'].'">
+                    <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" value="'.$infoElemento['fecha_muestreo'].'">
                     <p class="textoAyuda" >Fecha de muestreo</p>
                 </div>'
                 .scriptPruebas("07 Días",$infoElemento['07-identificador'],$infoElemento['07-resultado'],$infoElemento['07-fecha_prog'])
@@ -151,7 +152,7 @@
         }
         return $script;
     }
-// ================================================================================================================================================================
+// ===================================================================Pruebas=============================================================================================
 function scriptPruebas($dias,$identificador,$prueba,$fecha){
     $hoy = date("Y/m/d");
     if($hoy >= $fecha){
