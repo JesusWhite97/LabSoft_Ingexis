@@ -1,4 +1,5 @@
 <?php
+ 	include 'PruebaCalendario.php';
     //-------------------------------------------
     session_start();
     if(!isset($_SESSION["correo"]) || !isset($_SESSION["puesto"])){
@@ -287,6 +288,7 @@
 			<div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
 		</header>   
 		<div id="contenedorPrincipal">
+			<?php echo generar_calendario(07,2020,"es"); ?>
 		</div>
 		<div id="contenedorModal"></div>
 	</body>
