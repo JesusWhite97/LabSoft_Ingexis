@@ -85,11 +85,7 @@
             </div>
                 <!-- Boton Final================================= -->
                 <button id="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">Registrar elemento</button>
-<<<<<<< HEAD
-                <button id="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">Modificar Obra</button>
-=======
                 <button id="footerGuardar_Boton" onclick="ModificarObra('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">ModificarObra</button>
->>>>>>> a794fb781657d5dc7e9dd8f45700d7ef7931f205
                 <!-- ============================================ -->
             </div>
         </div>
