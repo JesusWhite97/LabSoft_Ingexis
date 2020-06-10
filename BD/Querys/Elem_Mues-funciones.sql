@@ -18,3 +18,14 @@
 --     return respuesta;
 -- end
 -- --======================================--
+-- CREATE FUNCTION existencia_identificador(ident varchar(10)) returns VARCHAR(5)
+-- begin 
+--     declare respuesta int;
+--     SELECT muestra.id_muestra into respuesta from muestra where muestra.identificador = ident;
+--     if respuesta != 0 then
+--         return 'true';
+--     else
+--         return 'false';
+--     end if;
+-- end
+-- --======================================--

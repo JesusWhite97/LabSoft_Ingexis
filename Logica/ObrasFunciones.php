@@ -19,9 +19,9 @@
             return $respuesta;
         }
         //#####################################################
-        public function Modificar($id_obra, $nombre, $direccion, $anotaciones){
+        public function Modificar($id_obra, $nombre, $direccion, $anotaciones, $id_cliente){
             $ObraFun = new procedimientos_Obra();
-            $respuesta = $ObraFun->Modificar($id_obra, $nombre, $direccion, $anotaciones);
+            $respuesta = $ObraFun->Modificar($id_obra, $nombre, $direccion, $anotaciones, $id_cliente);
             return $respuesta;
         }
         //#####################################################
@@ -101,6 +101,12 @@
         public function infoElemtoById($id_elemento){
             $eleMuesFun = new procedimientos_elementos_muestra();
             $respuesta = $eleMuesFun->infoTotalById($id_elemento);
+            return $respuesta;
+        }
+        //#####################################################
+        public function existencia_identificador($identificador){
+            $eleMuesFun = new procedimientos_elementos_muestra();
+            $respuesta = $eleMuesFun->existencia_identificador($identificador);
             return $respuesta;
         }
         //#####################################################

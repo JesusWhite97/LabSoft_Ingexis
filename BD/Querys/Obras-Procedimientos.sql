@@ -12,13 +12,14 @@ use databaseingexis;
 --     DELETE from obras WHERE obras.id_obra = id_obra;
 -- end
 -- -- =================================================
--- create procedure Obra_modificar(in id_obra int, in nombre varchar(50), in direccion text, in anotaciones text)
+-- create procedure Obra_modificar(in id_obra int, in nombre varchar(50), in direccion text, in anotaciones text, in id_cliente int)
 -- begin
 --     UPDATE obras 
 --     set
 --         obras.nombre = nombre,
 --         obras.direccion = direccion,
---         obras.anotaciones = anotaciones
+--         obras.anotaciones = anotaciones,
+--         obras.id_clientes = id_cliente
 --     where
 --         obras.id_obra = id_obra;
 -- end

@@ -29,7 +29,6 @@
         }
         //########################
         if($_POST["metodo"]=="imprimir_info_elemento"){
-          
             //declaracion de variables--------------------------
             //salida--------------------------------------------
             $json[] =   
@@ -98,6 +97,32 @@
             $json[] =   
                 [
                     'salida'    => $salida,
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
+        if($_POST['metodo'] == 'ModificarObra'){
+            //declaracion de variables--------------------------
+            $obra = new Obra();
+            $salida = $obra->Modificar($_POST['id_obra'], $_POST['TituloObra'], $_POST['Direccion'], $_POST['Anotaciones'], $_POST['Cliente']);
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'salida'    => $salida
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
+        if($_POST['metodo'] == 'EliminarObra'){
+            //declaracion de variables--------------------------
+            $obra = new Obra();
+            $salida = $obra->Eliminar($_POST['id_obra']);
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'salida'    => $salida
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;

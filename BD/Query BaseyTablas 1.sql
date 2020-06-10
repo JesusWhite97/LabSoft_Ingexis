@@ -75,7 +75,7 @@
 --     id_muestra      int         PRIMARY key     not NULL    AUTO_INCREMENT,
 --     id_elemento     int,
 --     id_usuario      int,
---     identificador   varchar(10),
+--     identificador   varchar(10) UNIQUE,
 --     resultado       varchar(50),
 --     fecha_prog      date,
 --     --ralaciones ETC------------    
