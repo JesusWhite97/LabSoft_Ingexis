@@ -4,52 +4,99 @@ var CamposErroneos = [];
 // Función para que una cambiar a una pantalla con campos modificables
 
 function verPantallaModificar(item){
+  let elementos = document.getElementById(item).querySelectorAll("*");
+  for(let i = 0; i < elementos.length;i++){
 
- // muestra botones opciones parte superior
-    let btnEdit = document.getElementById("botonEditar");
-    let btnCancel = document.getElementById("botonCancelar");
+        // muestra botones opciones parte superior
+        if(elementos[i].id == "botonEditar"){
+          elementos[i].style.display = "none"
+        }
 
-    btnCancel.style.display = "block";
-    btnEdit.style.display = "none";
+        if(elementos[i].id == "botonCancelar"){
+          elementos[i].style.display = "block"
+        }
+        // Validación por si no existe boton imagen
+        if(elementos[i].id == "botonImg"){
+          elementos[i].style.display = "block"
+        }
+          // Validación por si existe  los campos contraseña los muestre
+        if(elementos[i].id == "inContras"){
+          elementos[i].style.display = "block"
+        }
+         // Agrega clase registro para hacer editable INPUTS  y TEXTAREAS
+         if(elementos[i].tagName == "INPUT" || elementos[i].tagName == "TEXTAREA"){
+            elementos[i].disabled = false;
+            elementos[i].classList.add("registro");
+        }
+        // Quita la clase registro de aquellos campos que no se pueden modificar.
+         if(elementos[i].classList.contains("NoModificable") == true){
+           elementos[i].classList.remove("registro");
+         }
+         // Metodo para que se active cualquiere select que se tenga
+          if(elementos[i].classList.contains("selectInfo") == true ){
+           elementos[i].style.display = "none"
+         }
+         if(elementos[i].tagName == "SELECT"){
+           elementos[i].style.display = "block"
+        }
+         if(elementos[i].id == "footerGuardar_Boton"){
+          elementos[i].style.display = "block"
+        }
+  }
+
+
+    //let btnEdit = document.getElementById("botonEditar");
+    // let btnCancel = document.getElementById("botonCancelar");
+
+    // btnCancel.style.display = "block";
+    //btnEdit.style.display = "none";
+
 
 
  // Validación por si no existe boton imagen
-    if(document.getElementById("botonImg")){
-      let btnImg = document.getElementById("botonImg");
-      btnImg.style.display = "block";
-    }
+    // if(document.getElementById("botonImg")){
+    //   let btnImg = document.getElementById("botonImg");
+    //   btnImg.style.display = "block";
+    // }
 
 
     // Validación por si existe  los campos contraseña los muestre
-    if (document.getElementById("inContras")){
-      let divContras = document.getElementById("inContras");
-      divContras.style.display = "block";
-    }
+    // if (document.getElementById("inContras")){
+    //   let divContras = document.getElementById("inContras");
+    //   divContras.style.display = "block";
+    // }
       
     //Muestra recorre los arreglos de los tags input y textarea para agregar la clase registro y sean editables.
-    let arrayInputs = document.getElementsByTagName("input");
-    let arrayTextArea = document.getElementsByTagName("textArea");
-    for(let i = 0; i < arrayInputs.length;i++){
-      arrayInputs[i].classList.add("registro");
-    }
-
-    for(let i = 0; i < arrayTextArea.length;i++){
-      arrayTextArea[i].disabled = false;
-      arrayTextArea[i].classList.add("registro");
-    }
-
-    //Quita la clase registro para que no se pueda modificar
-    if(document.getElementById("correo")){
-    let correo = document.getElementById("correo");
-      correo.classList.remove("registro");
-    }
     
-    // Metodo para que se active cualquiere select que se tenga
-    selectModificar();
+      
+       
+      
+   
+    
+    // let arrayInputs = document.getElementsByTagName("input");
+    // let arrayTextArea = document.getElementsByTagName("textArea");
+    // for(let i = 0; i < arrayInputs.length;i++){
+    //   arrayInputs[i].classList.add("registro");
+    // }
+
+    // for(let i = 0; i < arrayTextArea.length;i++){
+    //   arrayTextArea[i].disabled = false;
+    //   arrayTextArea[i].classList.add("registro");
+    // }
+
+    // //Quita la clase registro para que no se pueda modificar
+    // if(document.getElementById("correo")){
+    // let correo = document.getElementById("correo");
+    //   correo.classList.remove("registro");
+    // }
+    
+    
+    //selectModificar();
 
      //Muestra boton de guardar en la parte inferior
-      let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
-      btnFooterGuardar.style.display = "block";
+    //   let btnFooterGuardar = document.getElementById("footerGuardar_Boton");
+    //   btnFooterGuardar.style.display = "block";
+    // }
 }
 //===================================================================================================
   function infoModal(claseBoton, textoModal, textoBoton, metodo){

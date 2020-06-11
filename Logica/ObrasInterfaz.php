@@ -56,13 +56,13 @@
         $claseBotonEliminar = "'eliminarBotonModal'";
         //=================================================
         $interfazInfoUsuario = '
-        <div class="contenedorCentradoResponsivo">
+        <div id="contenedorObras" class="contenedorCentradoResponsivo">
             <!-- Titulo de la obra ============================== -->
             <div id="tituloContenedor" style="height:150px;">
                 <div id="editarImagen" style="background-image: url(../Interfaz/img/obracolado.jpeg);"> 
-                    <button id="botonEditar" onclick=verPantallaModificar("obra")>
+                    <button id="botonEditar" onclick=verPantallaModificar("contenedorObras")>
                     <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
-                    <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
+                    <button id="botonCancelar" style="display:none"  onclick=cargarInfoO('.$id_obra.') ></button>
                 </div>
                 <input id="TituloObra" class="inputTexto mayus registro" style="color:white;" type="text" value="'.$infObra['nombre'].'" maxlength="60">
                 <p class="textoAyuda textoAyudaTitulo">Titulo Obra</p>
@@ -142,7 +142,6 @@
                 <div id="tituloContenedor" style="height:145px;">
                 <div id="editarImagen" style=""> 
                     <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
-                    <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
                 </div>
                 <input id="TituloElemento" class="inputTexto mayus registro" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
                 <p class="textoAyuda textoAyudaTitulo">Titulo Elemento</p>
@@ -167,14 +166,14 @@
             ';
         }else{
             $script = ' 
-            <div class="contenedorCentradoResponsivo">
+            <div id="contenedorElemento" class="contenedorCentradoResponsivo">
                 <!-- Titulo elemento ============================ -->
                 <!-- Titulo elemento ============================ -->
                 <div id="tituloContenedor" style="height:145px;">
                 <div id="editarImagen" style=""> 
-                    <button id="botonEditar" onclick=verPantallaModificar("obra")>
+                    <button id="botonEditar" onclick=verPantallaModificar("contenedorElemento")>
                     <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
-                    <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
+                    <button id="botonCancelar" style="display:none"  onclick=cargarInfoE('.$id_elemento.','.$idObra.') ></button>
                 </div>
                 <input id="TituloElemento" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
                 <p class="textoAyuda textoAyudaTitulo">Titulo Elemento</p>
@@ -220,7 +219,7 @@ function scriptPruebas($dias,$identificador,$prueba,$fecha){
                         <p class="titulo" >'.$dias.'</p>
                         <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
                             <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
-                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                            <input id="fechaPrueba" type="date" class="NoModificable" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
                         </div>
                         <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
                             <p class="textoAyuda" style="">Identificador</p>
@@ -242,7 +241,7 @@ function scriptPruebas($dias,$identificador,$prueba,$fecha){
                         <p class="titulo" >'.$dias.'</p>
                         <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
                             <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
-                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                            <input id="fechaPrueba" type="date" class="NoModificable" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
                         </div>
                         <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
                             <p class="textoAyuda" style="">Identificador</p>
