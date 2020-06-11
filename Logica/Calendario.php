@@ -82,7 +82,12 @@
             // ==========================================================================
             if($evenMues != null){
                 for($i = 0; $i < count($evenMues); $i++){
-                    $events = "<div class='event'>Ident: ".substr($evenMues[$i]['ident'], 5)."</div>";
+                    if($evenMues[$i]['resul'] != '??')
+                    {
+                        $events = "<div class='event' style = 'background: rgb(255, 0, 0);'>Ident: ".substr($evenMues[$i]['ident'], 5)."</div>";
+                    }else{
+                        $events = "<div class='event' style = 'background: rgba(0, 128, 0);'>Ident: ".substr($evenMues[$i]['ident'], 5)."</div>";
+                    }
                 }
             }
             // ==========================================================================

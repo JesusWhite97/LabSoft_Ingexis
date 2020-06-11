@@ -301,7 +301,7 @@
             {
                 $salida[] = [
                     "ident"       => $rows[0],
-                    "resul"           => $rows[1]
+                    "resul"       => $rows[1]
                 ];
             }
             return $salida;
