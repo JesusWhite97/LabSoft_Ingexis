@@ -29,3 +29,10 @@
 --     end if;
 -- end
 -- --======================================--
+-- create FUNCTION ElemMues_idMues_by_ident(ident varchar(10)) returns int
+-- begin
+--     declare respuesta int;
+--     SELECT muestra.id_muestra into respuesta from muestra where muestra.identificador = ident;
+--     return respuesta;
+-- end
+-- --======================================--

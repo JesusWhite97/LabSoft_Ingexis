@@ -114,26 +114,23 @@
         return $TarjetasElementos;
     }
     //=========================================================================
-    function imprimir_info_elemento($id_elemento,$idObra){
+    function imprimir_info_elemento($id_elemento, $idObra){
          // //=========DATOS MODAL==========================
-         $tipoModal = "'confirmar'";
-         $item = "'"."Titulo"."'";
-         // //=========DATOS MODAL MODIFICAR================
-         $textoModificar = "'Desea modificar elemento: '";
-         $funcionModificar = "'ModificarElemento()'";
-         $textoBotonModificar = "'Modificar'";
-         $claseBotonModificar = "'guardarBotonModal'";
-         // //=========DATOS MODAL ELIMINAR=================
-         $textoEliminar = "'Desea eliminar elemento: '";
-         $funcionEliminar = "'EliminarElemento(".$id_elemento.")'";
-         $textoBotonEliminar = "'Eliminar'";
-         $claseBotonEliminar = "'eliminarBotonModal'";
-         //=================================================
-
+        $tipoModal = "'confirmar'";
+        $item = "'"."Titulo"."'";
+        // //=========DATOS MODAL MODIFICAR================
+        $textoModificar = "'Desea modificar elemento: '";
+        $funcionModificar = "'ModificarElemento()'";
+        $textoBotonModificar = "'Modificar'";
+        $claseBotonModificar = "'guardarBotonModal'";
+        // //=========DATOS MODAL ELIMINAR=================
+        $textoEliminar = "'Desea eliminar elemento: '";
+        $funcionEliminar = "'EliminarElemento(".$id_elemento.", ".$idObra.")'";
+        $textoBotonEliminar = "'Eliminar'";
+        $claseBotonEliminar = "'eliminarBotonModal'";
         //declaracion de variables=========================
         $obras = new ElemMues();
         $infoElemento = $obras->infoElemtoById($id_elemento);
-    
         // Si edtan vacios los identificadores de las muestras 
         if($infoElemento['fecha_muestreo']== '' ||$infoElemento['07-identificador']== ''||$infoElemento['14-identificador']== ''||$infoElemento['28-identificador']== ''){
             $script = ' 
@@ -141,7 +138,7 @@
                 <!-- Titulo elemento ============================ -->
                 <div id="tituloContenedor" style="height:145px;">
                 <div id="editarImagen" style=""> 
-                    <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
+                    <button id="botonEliminar" onclick="EliminarElemento('.$id_elemento.','.$idObra.')">
                     <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
                 </div>
                 <input id="TituloElemento" class="inputTexto mayus registro" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
@@ -173,7 +170,7 @@
                 <div id="tituloContenedor" style="height:145px;">
                 <div id="editarImagen" style=""> 
                     <button id="botonEditar" onclick=verPantallaModificar("obra")>
-                    <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
+                    <button id="botonEliminar" onclick="EliminarElemento('.$id_elemento.','.$idObra.')">
                     <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
                 </div>
                 <input id="TituloElemento" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
@@ -185,132 +182,126 @@
                     <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" value="'.$infoElemento['fecha_muestreo'].'">
                     <p class="textoAyuda" >Fecha de muestreo</p>
                 </div>'
-                .scriptPruebas("07 Días",$infoElemento['07-identificador'],$infoElemento['07-resultado'],$infoElemento['07-fecha_prog'])
-                .scriptPruebas("14 Días",$infoElemento['14-identificador'],$infoElemento['14-resultado'],$infoElemento['14-fecha_prog'])
-                .scriptPruebas("18 Días",$infoElemento['28-identificador'],$infoElemento['28-resultado'],$infoElemento['28-fecha_prog']).'
-            
-                <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="registrarObraNueva();">Modificar</button>
+                .scriptPruebas("07 Días", $infoElemento['07-identificador'], $infoElemento['07-resultado'], $infoElemento['07-fecha_prog'], $id_elemento, $idObra)
+                .scriptPruebas("14 Días", $infoElemento['14-identificador'], $infoElemento['14-resultado'], $infoElemento['14-fecha_prog'], $id_elemento, $idObra)
+                .scriptPruebas("28 Días", $infoElemento['28-identificador'], $infoElemento['28-resultado'], $infoElemento['28-fecha_prog'], $id_elemento, $idObra).'
+                <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="ModificarMuestraFull('.$idObra.', '.$id_elemento.', '."'".$infoElemento['07-identificador']."'".', '."'".$infoElemento['14-identificador']."'".', '."'".$infoElemento['28-identificador']."'".')">Modificar</button>
             </div>';
         }
         return $script;
     }
 // ===================================================================Pruebas=============================================================================================
-function scriptPruebas($dias,$identificador,$prueba,$fecha){
-    $hoy = date("Y/m/d");
-    if($hoy >= $fecha){
-            return '
-            <!-- Información por muestra ============================ -->
-            <div class="tarjetaBlanca" style="font-size:16px; ">
-                <p class="titulo" >'.$dias.'</p>
-
-                <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
-                    <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
-                    <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
-                </div>
-                <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
-                    <p class="textoAyuda" style="">Identificador</p>
-                    <p class="textoAyuda" style="">Fecha</p>  
-                </div> 
-            </div>';
-    }else{
-        if($prueba == "??" || $prueba == ""){
-            return ' 
-                <!-- Registro prueba ============================ -->
+    function scriptPruebas($dias, $identificador, $prueba, $fecha, $id_elemento, $obra){
+        $hoy = date("d/m/Y");
+        if($hoy >= $fecha){
+                return '
+                <!-- Información por muestra ============================ -->
                 <div class="tarjetaBlanca" style="font-size:16px; ">
-                        <p class="titulo" >'.$dias.'</p>
-                        <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
-                            <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
-                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
-                        </div>
-                        <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
-                            <p class="textoAyuda" style="">Identificador</p>
-                            <p class="textoAyuda" style="">Fecha</p>  
-                        </div> 
-                    <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
-                        <input id="Prueba7dias" type="text"class=" registro mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
-                        <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
+                    <p class="titulo" >'.$dias.'</p>
+                    <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                        <input id="iden-'.$identificador.'" type="text"class="mayus required"   value="'.substr($identificador, 5).'"  maxlength="5" >
+                        <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
                     </div>
-                    <p class="textoAyuda">Resultado prueba</p>
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
-                </div>
-            ';
-        }
-        else{
-            return '
-                <!-- Información prueba ============================ -->
-                <div class="tarjetaBlanca" style="font-size:16px; ">
-                        <p class="titulo" >'.$dias.'</p>
-                        <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
-                            <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
-                            <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                    <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                        <p class="textoAyuda" style="">Identificador</p>
+                        <p class="textoAyuda" style="">Fecha</p>  
+                    </div> 
+                </div>';
+        }else{
+            if($prueba == "??" || $prueba == ""){
+                return ' 
+                    <!-- Registro prueba ============================ -->
+                    <div class="tarjetaBlanca" style="font-size:16px; ">
+                            <p class="titulo" >'.$dias.'</p>
+                            <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                <input id="iden-'.$identificador.'" type="text"class="mayus required"   value="'.substr($identificador, 5).'"  maxlength="5" >
+                                <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                            </div>
+                            <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                <p class="textoAyuda" style="">Identificador</p>
+                                <p class="textoAyuda" style="">Fecha</p>  
+                            </div> 
+                        <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
+                            <input id="resul-'.$identificador.'" type="text"class=" registro mayus required" style:"height:20px; align-self:center;"  placeholder=""  maxlength="5">
+                            <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
                         </div>
-                        <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
-                            <p class="textoAyuda" style="">Identificador</p>
-                            <p class="textoAyuda" style="">Fecha</p>  
-                        </div> 
-                    <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
-                        <input id="Prueba7dias" type="text"class=" mayus required" style:"height:20px; align-self:center;"  value="'.$prueba.'"  maxlength="5">
-                        <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
+                        <p class="textoAyuda">Resultado prueba</p>
+                        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="
+                            RegistrarResultado('.$id_elemento.', '."'".$identificador."'".', (document.getElementById('."'".'resul-'.$identificador."'".').value), '.$obra.');
+                        ">Guardar</button>
                     </div>
-                    <p class="textoAyuda">Resultado prueba</p>                                                                                              
-                </div>
-            ';
+                ';
+            }
+            else{
+                return '
+                    <!-- Información prueba ============================ -->
+                    <div class="tarjetaBlanca" style="font-size:16px; ">
+                            <p class="titulo" >'.$dias.'</p>
+                            <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
+                                <input id="iden-'.$identificador.'" type="text"class="mayus required"   value="'.substr($identificador, 5).'"  maxlength="5" >
+                                <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                            </div>
+                            <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
+                                <p class="textoAyuda" style="">Identificador</p>
+                                <p class="textoAyuda" style="">Fecha</p>  
+                            </div> 
+                        <div class="inputEnLinea" style="justify-self:strech; align-items: center; height:40px; grid-template-columns: 1fr 50px;">
+                            <input id="resul-'.$identificador.'" type="text"class=" mayus required" style:"height:20px; align-self:center;"  value="'.$prueba.'"  maxlength="5">
+                            <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
+                        </div>
+                        <p class="textoAyuda">Resultado prueba</p>                                                                                              
+                    </div>
+                ';
+            }
         }
     }
-}
-// ================================================================================================================================================================
-// =========================================================================IMPRIMIR REGISTRO DE OBRA==============================================================
-// ================================================================================================================================================================
-function imprimir_registro_obra(){
-    //declaracion de variables=========================
-    $obras = new Cliente();
-    $clientesReg = $obras->Clientes_reg();
-    $options = '';
-    //creacion de option===============================
-    for($i = 0; $i < count($clientesReg); $i++){
-        $options .= '<option value="'.$clientesReg[$i]['id_clientes'].'">'.$clientesReg[$i]['nom_empr'].'</option>';
-    }
-    //=================================================
-    return '
-        <div class="tarjetaBlanca " style="margin-top: 0px;">   
-            <h1 id="tituloPag" style="margin-bottom:10px;">Registro de obra nueva</h1>
-        </div>
-        <div class="tarjetaBlanca " style="margin-top: 0px;"> 
-            <input id="tituloObra" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
-            <p class="textoAyuda" style="text-align: center;">Titulo de la obra</p>
-            <select id="IdCliente" class="registro">
-                '.$options.'
-            </select>
-            <p class="textoAyuda" style="text-align: center;">Cliente</p>
-            <textarea class="registro" id="ubicacion"></textarea>
-            <div class="textoAyuda">Ubicación<br></div>
-            <textarea class="registro" id="Notas"></textarea>
-            <div class="textoAyuda">Notas<br></div>
-        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="registrarObraNueva();">Guardar</button>
-        </div>
-    ';
-}
-// ================================================================================================================================================================
-// ======================================================================IMPRIMIR REGISTRO ELEMENTO================================================================
-// ================================================================================================================================================================
-function imprimir_registro_elemento($id_obra){
-    return '
-        <div class="tarjetaBlanca " style="margin:10px 5px;">  
-            <input id="tituloElemento" type="text"class=" required registro"   placeholder=""  maxlength="30"> 
-            <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
-            <div class="inputEnLinea" style="">
-                    <button id ="botonGuardarModal"class="" onclick=registrarNuevoElemento('.$id_obra.')>Guardar</button>
-                    <button class="cancelarBotonModal"  onclick="cargarInfoO(obraSeleccionada)">Cancelar</button>
+    // ================================================================================================================================================================
+    // =========================================================================IMPRIMIR REGISTRO DE OBRA==============================================================
+    // ================================================================================================================================================================
+    function imprimir_registro_obra(){
+        //declaracion de variables=========================
+        $obras = new Cliente();
+        $clientesReg = $obras->Clientes_reg();
+        $options = '';
+        //creacion de option===============================
+        for($i = 0; $i < count($clientesReg); $i++){
+            $options .= '<option value="'.$clientesReg[$i]['id_clientes'].'">'.$clientesReg[$i]['nom_empr'].'</option>';
+        }
+        //=================================================
+        return '
+            <div class="tarjetaBlanca " style="margin-top: 0px;">   
+                <h1 id="tituloPag" style="margin-bottom:10px;">Registro de obra nueva</h1>
             </div>
-        </div>
-    ';
-}
-
-
-
-
-
-
-// ================================================================================================================================================================
-// ================================================================================================================================================================
+            <div class="tarjetaBlanca " style="margin-top: 0px;"> 
+                <input id="tituloObra" type="text"class="mayus required registro"   placeholder=""  maxlength="30"> 
+                <p class="textoAyuda" style="text-align: center;">Titulo de la obra</p>
+                <select id="IdCliente" class="registro">
+                    '.$options.'
+                </select>
+                <p class="textoAyuda" style="text-align: center;">Cliente</p>
+                <textarea class="registro" id="ubicacion"></textarea>
+                <div class="textoAyuda">Ubicación<br></div>
+                <textarea class="registro" id="Notas"></textarea>
+                <div class="textoAyuda">Notas<br></div>
+            <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="registrarObraNueva();">Guardar</button>
+            </div>
+        ';
+    }
+    // ================================================================================================================================================================
+    // ======================================================================IMPRIMIR REGISTRO ELEMENTO================================================================
+    // ================================================================================================================================================================
+    function imprimir_registro_elemento($id_obra){
+        return '
+            <div class="tarjetaBlanca " style="margin:10px 5px;">  
+                <input id="tituloElemento" type="text"class=" required registro"   placeholder=""  maxlength="30"> 
+                <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
+                <div class="inputEnLinea" style="">
+                        <button id ="botonGuardarModal"class="" onclick=registrarNuevoElemento('.$id_obra.')>Guardar</button>
+                        <button class="cancelarBotonModal"  onclick="cargarInfoO(obraSeleccionada)">Cancelar</button>
+                </div>
+            </div>
+        ';
+    }
+    // ================================================================================================================================================================
+    // ================================================================================================================================================================
 ?>

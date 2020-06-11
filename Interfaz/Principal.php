@@ -34,7 +34,6 @@
 			window.onload = function(){
 				imprimirNavBar();
 				selectItemMenu(<?php echo $_SESSION['NavBarSelected'];?>)
-				imprimirCalendario(d.getMonth()+1, d.getFullYear());
 			}
 			function cargarUsers(){
 				var postData = {
