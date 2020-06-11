@@ -73,10 +73,4 @@ function generar_calendario($month,$year,$lang,$holidays = null){
      
     return $calendar;
 }
-
-
-
-
-
- 
 ?>

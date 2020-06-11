@@ -127,8 +127,8 @@
           // ===========================PRINCIPAL=============================
         if($interfaz == "principal" ){
             $_SESSION['NavBarSelected'] = '"itemHome","img/HomeIconBlue.svg"';//================================variable seleccion de menu
-            return ' 
-
+            return '
+            
             ';
         }
           // =============================PRUEBAS===========================
