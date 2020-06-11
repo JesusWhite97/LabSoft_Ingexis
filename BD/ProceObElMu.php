@@ -289,6 +289,24 @@
             $resultado->free();
         }
         //#####################################################
+        public function EventosCalendar($hoy){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            $salida = array();
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $resultado = mysqli_query($mysqli, "call ElemMues_Calendario('".$hoy."')");
+            while ($rows = $resultado->fetch_array())
+            {
+                $salida[] = [
+                    "ident"       => $rows[0],
+                    "resul"           => $rows[1]
+                ];
+            }
+            return $salida;
+        }
+        //#####################################################
     }
     // ========================================================================================================================
     // ▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄▀▄
