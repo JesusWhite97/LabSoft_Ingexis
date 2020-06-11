@@ -33,7 +33,7 @@
             //salida--------------------------------------------
             $json[] =   
                 [
-                    'scriptHTML'   => imprimir_info_elemento($_POST["idElemento"])
+                    'scriptHTML'   => imprimir_info_elemento($_POST["idElemento"],$_POST["idO"])
                 ];
             $jsonString = json_encode($json);
             echo $jsonString;

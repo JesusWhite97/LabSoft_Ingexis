@@ -105,18 +105,30 @@
         $TarjetasElementos = '';
         for($i = 0; $i < count($TarElem); $i++){
             $TarjetasElementos = $TarjetasElementos.
-            '<div id="'.$TarElem[$i]['id_elemento'].'" class="tarjetaElemento" onclick=cargarInfoE("'.$TarElem[$i]['id_elemento'].'")>
+            '<div id="'.$TarElem[$i]['id_elemento'].'" class="tarjetaElemento" onclick=cargarInfoE("'.$TarElem[$i]['id_elemento'].'","'.$id_obra.'")>
                 <div class="tituloElemento">'.$TarElem[$i]['nombre'].'</div>
-                <div class="subtituloElemento">Observaciones: '.$TarElem[$i]['observaciones'].'<br></div>
-                <div class="botonEditar"></div>
-                <div class="botonEliminar"></div>
+
             </div>'
             ;
         }
         return $TarjetasElementos;
     }
     //=========================================================================
-    function imprimir_info_elemento($id_elemento){
+    function imprimir_info_elemento($id_elemento,$idObra){
+         // //=========DATOS MODAL==========================
+         $tipoModal = "'confirmar'";
+         $item = "'"."Titulo"."'";
+         // //=========DATOS MODAL MODIFICAR================
+         $textoModificar = "'Desea modificar elemento: '";
+         $funcionModificar = "'ModificarElemento()'";
+         $textoBotonModificar = "'Modificar'";
+         $claseBotonModificar = "'guardarBotonModal'";
+         // //=========DATOS MODAL ELIMINAR=================
+         $textoEliminar = "'Desea eliminar elemento: '";
+         $funcionEliminar = "'EliminarElemento(".$id_elemento.")'";
+         $textoBotonEliminar = "'Eliminar'";
+         $claseBotonEliminar = "'eliminarBotonModal'";
+         //=================================================
 
         //declaracion de variables=========================
         $obras = new ElemMues();
@@ -127,9 +139,16 @@
             $script = ' 
             <div class="contenedorCentradoResponsivo">
                 <!-- Titulo elemento ============================ -->
+                <div id="tituloContenedor" style="height:145px;">
+                <div id="editarImagen" style=""> 
+                    <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
+                    <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
+                </div>
+                <input id="TituloElemento" class="inputTexto mayus registro" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
+                <p class="textoAyuda textoAyudaTitulo">Titulo Elemento</p>
+            </div>
                 <div class="tarjetaBlanca">
-                    <h1 class="tituloElemento">'.$infoElemento['nombre'].'</h1>
-                    <textarea id="observaciones" class="registro">'.$infoElemento['observaciones'].'</textarea>
+                    <textarea id="observaciones" class=" registro"></textarea>
                     <div class="textoAyuda">Observaciones<br></div>
                 </div>
                 <!-- Registro ID´s muestras ============================ -->
@@ -143,16 +162,25 @@
                     <p class="textoAyuda">ID 14 días</p>
                     <input id="id_muestra_3" type="text"class="registro mayus required" placeholder=""  maxlength="5">
                     <p class="textoAyuda">ID 28 días</p>
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="registrarDatosElemento('.$infoElemento['id_elemento'].','.$infoElemento['07-id_muestra'].','.$infoElemento['14-id_muestra'].','.$infoElemento['28-id_muestra'].')">Guardar</button>
+                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="registrarDatosElemento('.$infoElemento['id_elemento'].','.$infoElemento['07-id_muestra'].','.$infoElemento['14-id_muestra'].','.$infoElemento['28-id_muestra'].','.$idObra.')">Guardar</button>
                 </div>
             ';
         }else{
             $script = ' 
             <div class="contenedorCentradoResponsivo">
                 <!-- Titulo elemento ============================ -->
+                <!-- Titulo elemento ============================ -->
+                <div id="tituloContenedor" style="height:145px;">
+                <div id="editarImagen" style=""> 
+                    <button id="botonEditar" onclick=verPantallaModificar("obra")>
+                    <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
+                    <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
+                </div>
+                <input id="TituloElemento" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
+                <p class="textoAyuda textoAyudaTitulo">Titulo Elemento</p>
+            </div>
                 <div class="tarjetaBlanca">
-                    <h1 class="tituloElemento">'.$infoElemento['nombre'].'</h1>
-                    <textarea id="Notas" disabled value="">'.$infoElemento['observaciones'].'</textarea>
+                    <textarea id="observaciones" class="">'.$infoElemento['observaciones'].'</textarea>
                     <div class="textoAyuda">Observaciones<br></div>
                     <input id="fechaMuestro" type="date" class="mayus" style="margin-top:5px;" value="'.$infoElemento['fecha_muestreo'].'">
                     <p class="textoAyuda" >Fecha de muestreo</p>
@@ -160,6 +188,8 @@
                 .scriptPruebas("07 Días",$infoElemento['07-identificador'],$infoElemento['07-resultado'],$infoElemento['07-fecha_prog'])
                 .scriptPruebas("14 Días",$infoElemento['14-identificador'],$infoElemento['14-resultado'],$infoElemento['14-fecha_prog'])
                 .scriptPruebas("18 Días",$infoElemento['28-identificador'],$infoElemento['28-resultado'],$infoElemento['28-fecha_prog']).'
+            
+                <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="registrarObraNueva();">Modificar</button>
             </div>';
         }
         return $script;
@@ -172,6 +202,7 @@ function scriptPruebas($dias,$identificador,$prueba,$fecha){
             <!-- Información por muestra ============================ -->
             <div class="tarjetaBlanca" style="font-size:16px; ">
                 <p class="titulo" >'.$dias.'</p>
+
                 <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
                     <input id="'.$identificador.'" type="text"class="mayus required"   value="'.$identificador.'"  maxlength="5" >
                     <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">

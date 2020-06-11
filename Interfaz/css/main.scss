@@ -969,11 +969,11 @@ textarea:focus, input:focus{
 }
 .tarjetaElemento{
     display: grid;
-    grid-template-columns: 1fr 30px 30px ;
-    grid-template-rows: 20px 20px 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     width: 90%;
     min-width: 120px;
-    height: 60px;
+    height: 36px;
     margin: 10px auto;
     padding: 10px;
     font-family: $fuente;
@@ -985,18 +985,16 @@ textarea:focus, input:focus{
 
 
     .tituloElemento{
-        align-self: flex-end;
+        align-self: center;
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
         height: 24px;
-        width: 100%;
-        height: 100%;
         margin: 0px;
-        padding-left: 10px;
         color: white;
-        font-size: 24px;
+        font-size: 18px;
         align-self: center;
-        justify-self: start;
+        justify-self: center;
+        text-align: center;
     }
     .subtituloElemento{
         grid-column: 1 / span 2;
@@ -1068,7 +1066,8 @@ textarea:focus, input:focus{
     margin-top: 0px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-    grid-auto-rows: 120px;
+    grid-gap: 10px;
+    grid-auto-rows: 60px;
     overflow-y: scroll;
 }
 .contenedorCentradoResponsivo{

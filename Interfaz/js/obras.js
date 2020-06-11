@@ -40,11 +40,13 @@ function cargarInfoO(id_obra){
     });
 }
 //=================================================================================================
-function cargarInfoE(idEle){
+function cargarInfoE(idEle,idObra){
+    console.log(idObra);
     if(idEle != "" || idEle != null){
         var postData = {
             metodo:     "imprimir_info_elemento",
-            idElemento: idEle
+            idElemento: idEle,
+            idO: idObra
         };
         $.ajax({
             data:postData,
@@ -147,7 +149,7 @@ function registrarNuevoElemento(id_obra){
     });
 }
 //=================================================================================================
-function registrarDatosElemento(idElemento,id1,id2,id3){
+function registrarDatosElemento(idElemento,id1,id2,id3,id_obra){
     var postData = {
         metodo:         "registrarDatosElemento",
         correoUser:     usuarioLog(),
@@ -171,7 +173,8 @@ function registrarDatosElemento(idElemento,id1,id2,id3){
             $salida = arrayResponse[0].salida;
             if($salida == 'true'){
                 alert('Datos Elemento agregados correctamente.');
-                cargarInfoO(id_obra)
+                cargarInfoO(id_obra);
+                cargarInfoE(idElemento,id_obra);
             }else{
                 alert($salida);
             }
