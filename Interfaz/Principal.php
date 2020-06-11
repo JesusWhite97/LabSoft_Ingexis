@@ -32,7 +32,6 @@
 		<script>
 			var d = new Date();
 			window.onload = function(){
-				
 				imprimirNavBar();
 				selectItemMenu(<?php echo $_SESSION['NavBarSelected'];?>)
 				imprimirCalendario(d.getMonth()+1, d.getFullYear());
@@ -290,23 +289,7 @@
 			<div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
 		</header>   
 		<div id="contenedorPrincipal">
-			
 		</div>
 		<div id="contenedorModal"></div>
 	</body>
 </html>
-<!-- <br>
-<br>
-<br>
-<br>
-<a href="/LabSoft_Ingexis/Interfaz/usuarios.php">Usuarios</a>
-<br>
-<br>
-<br>
-<br>
-<a href="/LabSoft_Ingexis/Interfaz/clientes.php">Clientes</a>
-<br>
-<br>
-<br>
-<br>
-<button onclick="cargarUsers();">Cargar Usuarios</button> -->
