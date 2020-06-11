@@ -1,5 +1,8 @@
 <?php
 function generar_calendario($month,$year,$lang,$holidays = null){
+
+
+    $months = array('Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
  
     $calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
  
@@ -7,12 +10,15 @@ function generar_calendario($month,$year,$lang,$holidays = null){
         $headings = array('M','T','W','T','F','S','S');
     }
     if($lang=='es'){
-        $headings = array('L','M','M','J','V','S','D');
+        $headings = array('Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo');
     }
     if($lang=='ca'){
         $headings = array('DI','Dm','Dc','Dj','Dv','Ds','Dg');
     }
      
+    $calendar.= '<tr class="calendar-row"><td class="calendar-button-head" style="font-weight:300;">'.$months[$month-2].'</td><td class="calendar-name-head" colspan="5">'.$months[$month-1].' - '.$year.'</td>><td class="calendar-button-head" style="font-weight:300;">'.$months[$month].'</td></tr>';
+
+
     $calendar.= '<tr class="calendar-row"><td class="calendar-day-head">'.implode('</td><td class="calendar-day-head">',$headings).'</td></tr>';
  
     $running_day = date('w',mktime(0,0,0,$month,1,$year));
@@ -47,7 +53,7 @@ function generar_calendario($month,$year,$lang,$holidays = null){
             }
         }
          
-            $calendar.= "<div class='{$class}'>".$list_day."</div>";
+            $calendar.= "<div class='{$class}'>".$list_day."<div class='event'>Prueba 1</div> <div class='event'>Prueba 1</div> </div>";
              
         $calendar.= '</td>';
         if($running_day == 6):
