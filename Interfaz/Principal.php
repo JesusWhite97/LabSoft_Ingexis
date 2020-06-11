@@ -122,21 +122,21 @@
 			function guardarUser2(){
 				correoNuevo = document.getElementById("correo").value;
 				guardarUsuario();
-					if(salidaUsuario == 'true'){
-						subirImg();
-						if(respuestaSubirIMG != 'NO'){
-							infoModal('respuesta','Usuario registrado con exito 🤘.',"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK',correoNuevo,'ninguna');
-						}
-						else{
-							eliminarUsuario();
-							if(eliminarUsuario == 'true'){
-								infoModal('respuesta','error al registrar Usuario: ' + errorSubirIMG,"closeModal('contenedorModal')",'OK',correoNuevo,'ninguna');
-							}
-						}
+				if(salidaUsuario == 'true'){
+					subirImg();
+					if(respuestaSubirIMG != 'NO'){
+						infoModal('respuesta','Usuario registrado con exito 🤘.',"cargarInterfazUsuarios('','1111','"+correoNuevo+"')",'OK',correoNuevo,'ninguna');
 					}
 					else{
-						infoModal('respuesta',salidaUsuario,"closeModal('contenedorModal')",'OK','No hay registro','ninguna');
+						eliminarUsuario();
+						if(eliminarUsuario == 'true'){
+							infoModal('respuesta','error al registrar Usuario: ' + errorSubirIMG,"closeModal('contenedorModal')",'OK',correoNuevo,'ninguna');
+						}
 					}
+				}
+				else{
+					infoModal('respuesta',salidaUsuario,"closeModal('contenedorModal')",'OK','No hay registro','ninguna');
+				}
 			}
 			// --------------------------------------
 			var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
