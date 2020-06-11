@@ -40,7 +40,7 @@
         }
         //#####################################################
         public function Eliminar($id_obra){
-            //crea Conexion===============
+            //crea Conexion===============mas
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
@@ -50,7 +50,7 @@
                 return 'true';
             }else{
                 return "Error: ".$mysqli->error;
-            } 
+            }
         }
         //#####################################################
         public function Modificar($id_obra, $nombre, $direccion, $anotaciones, $id_cliente){
