@@ -275,7 +275,6 @@ function selectItemMenu(itemSelected,img){
     imprimirLayout("obras");
     cargarTarjetasO();
     cargarInfoO(obra1);
-    cargarInfoE();
   }
 
   if(itemSelected == "itemHome"){

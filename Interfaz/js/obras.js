@@ -41,21 +41,23 @@ function cargarInfoO(id_obra){
 }
 //=================================================================================================
 function cargarInfoE(idEle){
-    var postData = {
-        metodo:     "imprimir_info_elemento",
-        idElemento: idEle
-    };
-    $.ajax({
-        data:postData,
-        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
-        type:"POST",
-        async: false,
-        success:function(response){
-            console.log(response);
-            let arrayResponse = JSON.parse(response);
-            document.getElementById("divInfoElemento").innerHTML = arrayResponse[0].scriptHTML;
-        }
-    });
+    if(idEle != "" || idEle != null){
+        var postData = {
+            metodo:     "imprimir_info_elemento",
+            idElemento: idEle
+        };
+        $.ajax({
+            data:postData,
+            url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+            type:"POST",
+            async: false,
+            success:function(response){
+                console.log(response);
+                let arrayResponse = JSON.parse(response);
+                document.getElementById("divInfoElemento").innerHTML = arrayResponse[0].scriptHTML;
+            }
+        });
+    }
 }
 //=================================================================================================
 function cargarRegistroO(){

@@ -53,9 +53,13 @@ function generar_calendario($month,$year,$holidays = null){
 
      
     $calendar.= '<tr class="calendar-row">
-                    <td class="calendar-button-head" style="font-weight:300;" onclick=imprimirCalendario('.$monthBefore.','.$yearBefore.')>'.$months[$monthBefore-1].'</td>
-                    <td class="calendar-name-head" colspan="5">'.$months[$month-1].' de '.$year.'</td>>
-                    <td class="calendar-button-head" style="font-weight:300;"  onclick=imprimirCalendario('.$monthAfter.','.$yearAfter.')>'.$months[$monthAfter-1].'</td></tr>';
+                    <td class="calendar-name-head" colspan="1"></td>
+                    <td class="calendar-button-head" style="background-image:url('."'img/mesAnterior.svg'".');" onclick=imprimirCalendario('.$monthBefore.','.$yearBefore.')></td>
+                    <td class="calendar-name-head" colspan="3">'.$months[$month-1].' de '.$year.'</td>
+                    <td class="calendar-button-head" style="background-image:url('."'img/mesSiguiente.svg'".');"  onclick=imprimirCalendario('.$monthAfter.','.$yearAfter.')></td>
+                    <td class="calendar-button-head" onclick=imprimirCalendario(d.getMonth()+1,d.getFullYear())>Hoy</td>
+                    </tr>';
+                    
 
 
     $calendar.= '<tr class="calendar-row"><td class="calendar-day-head">'.implode('</td><td class="calendar-day-head">',$headings).'</td></tr>';
