@@ -1104,10 +1104,17 @@ textarea:focus, input:focus{
 }
 .calendar-day:hover{
     box-shadow: $colorSombras;
+
+    .day-number{
+        font-weight: 700;
+        text-shadow: $colorSombras;
+    }
 }
 .calendar-today{
     border-top: 5px solid #3100FF ;
     background-color: rgba(245, 245, 245, 0.068);
+    font-weight: 700;
+    text-shadow: $colorSombras;
 }
 .day-number{
     font-size: 16px;
@@ -1143,9 +1150,10 @@ textarea:focus, input:focus{
     font-weight: 300;
 }
 .calendar-button-head:hover{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
-    border: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    box-shadow: $colorSombras;
 }
 .calendar-day-np{
     background-color: rgba(0, 0, 0, 0.219);
