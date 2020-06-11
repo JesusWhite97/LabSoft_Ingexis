@@ -57,7 +57,7 @@
                 <!-- 33333333333333333333333 -->
             ';
         }
-          // ============================CLIENTES============================
+        // ============================CLIENTES============================
         if($interfaz == "clientes" ){
             $_SESSION['carpeta'] = 'Clientes';
             $_SESSION['NavBarSelected'] = '"itemClients","img/ClientesIconBlue.svg"';//================================variable seleccion de menu
@@ -87,7 +87,7 @@
                 </div>
             ';
         }
-          // ============================OBRAS============================
+        // ============================OBRAS============================
         if($interfaz == "obras" ){
             $_SESSION['NavBarSelected'] = '"itemObras","img/ObrasIconBlue.svg"';//================================variable seleccion de menu
             return ' 
@@ -117,21 +117,21 @@
                 <!-- 33333333333333333333333 -->
             ';
         }
-          // ============================MUESTRAS============================
+        // ============================MUESTRAS============================
         if($interfaz == "muestras" ){
             $_SESSION['NavBarSelected'] = '"itemMuestras","img/MuestraIconBlue.svg"';//================================variable seleccion de menu
             return ' 
 
             ';
         }
-          // ===========================PRINCIPAL=============================
-        if($interfaz == "principal" ){
-            $_SESSION['NavBarSelected'] = '"itemHome","img/HomeIconBlue.svg"';//================================variable seleccion de menu
-            return '
+        // ===========================PRINCIPAL=============================
+        // if($interfaz == "principal" ){
+        //     $_SESSION['NavBarSelected'] = '"itemHome","img/HomeIconBlue.svg"';//================================variable seleccion de menu
+        //     return '
             
-            ';
-        }
-          // =============================PRUEBAS===========================
+        //     ';
+        // }
+        // =============================PRUEBAS===========================
         if($interfaz == "pruebas" ){
             $_SESSION['NavBarSelected'] = '"itemPruebas","img/PruebaIconBlue.svg"';//================================variable seleccion de menu
             return ' 
