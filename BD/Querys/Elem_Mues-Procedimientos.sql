@@ -55,24 +55,36 @@ use databaseingexis;
 -- -- =================================================
 -- create procedure ElemMues_Modificar_Elemento(in id_elemento int, in correo_user varchar(50), in nombre varchar(50), in observaciones text, in fechaMues date)
 -- begin 
---     update elemento SET elemento.id_usuario = id_by_correo(correo_user), elemento.nombre = nombre, elemento.observaciones = observaciones, elemento.fecha_muestreo = fechaMues WHERE elemento.id_elemento = id_elemento;
+--     update elemento SET elemento.id_usuario = id_by_correo(correo_user), elemento.nombre = nombre, elemento.observaciones = observaciones WHERE elemento.id_elemento = id_elemento;
+-- end
+-- -- =================================================¿
+-- CREATE PROCEDURE ElemMues_Modificar_Fecha_elm (IN id_elemento INT, IN nombre VARCHAR(50), IN observaciones TEXT, IN fechaMues DATE)  
+-- begin 
+--     update elemento SET elemento.observaciones = observaciones, elemento.fecha_muestreo = fechaMues WHERE elemento.id_elemento = id_elemento;
 --     update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 28 day) where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc;
 --     update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 14 day) where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc LIMIT 2;
 --     update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 7 day)  where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc LIMIT 1;
 -- end
--- -- call ElemMues_Modificar_Elemento(2, 'jesus120190240.8@gmail.com', 'prueba11', 'ya las agrege', '2020-01-01');
 -- -- =================================================
--- create procedure ElemMues_Modificar_Muestra(in id_muestra int, in correo_user varchar(50), in ident varchar(10), in resultado varchar(50))
+-- create procedure ElemMues_Modificar_Muestra(in identAnte varchar(10), in identNew varchar(10), in resultado varchar(50))
 -- begin 
---     declare id_user int;
---     SELECT id_by_correo(correo_user) into id_user;
+--     DECLARE id_muestra int;
+--     SELECT ElemMues_idMues_by_ident(identAnte) into id_muestra;
 --     update muestra
 --     SET
---         muestra.id_usuario = id_user,
---         muestra.identificador = concat(date_format(now(), '%Y-'), ident),
+--         muestra.identificador = concat(date_format(now(), '%Y-'), identNew),
 --         muestra.resultado = resultado
 --     where 
 --         muestra.id_muestra = id_muestra;
+-- end
+-- -- =================================================
+-- create PROCEDURE ElemMues_guardar_resul(in identificador VARCHAR(10), in resultado varchar(50))
+-- begin
+--     update muestra
+--     SET
+--         muestra.resultado = resultado
+--     where 
+--         muestra.identificador = identificador;
 -- end
 -- -- =================================================
 -- CREATE procedure ElemMues_info_elemento_by_id(in id_elemento int)

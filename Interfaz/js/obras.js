@@ -41,7 +41,6 @@ function cargarInfoO(id_obra){
 }
 //=================================================================================================
 function cargarInfoE(idEle,idObra){
-    console.log(idObra);
     if(idEle != "" || idEle != null){
         var postData = {
             metodo:     "imprimir_info_elemento",
@@ -149,11 +148,39 @@ function registrarNuevoElemento(id_obra){
     });
 }
 //=================================================================================================
+function EliminarElemento(idElemento, id_obra){
+    var postData = {
+        metodo:         "EliminarElemento",
+        id_elemento:    idElemento
+    }
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            console.log(response);
+            let arrayResponse = JSON.parse(response);
+            $salida = arrayResponse[0].salida;
+            if($salida == 'true'){
+                alert('Elemento Eliminado correctamente.');
+                cargarInfoO(id_obra);
+                cargarInfoE(idElemento, id_obra);
+                document.getElementById("divInfoElemento").innerHTML = '';
+            }else{
+                alert($salida);
+            }
+        }
+    });
+}
+//=================================================================================================
 function registrarDatosElemento(idElemento,id1,id2,id3,id_obra){
     var postData = {
         metodo:         "registrarDatosElemento",
         correoUser:     usuarioLog(),
         id_elemento:    idElemento,
+        tituloElemento: document.getElementById('TituloElemento').value,
+        observaciones:  document.getElementById('observaciones').value,
         fecha_muestreo: document.getElementById('fecha_muestreo').value,
         id_muestra_1:   document.getElementById('id_muestra_1').value,
         id_muestra_2:   document.getElementById('id_muestra_2').value,
@@ -174,7 +201,7 @@ function registrarDatosElemento(idElemento,id1,id2,id3,id_obra){
             if($salida == 'true'){
                 alert('Datos Elemento agregados correctamente.');
                 cargarInfoO(id_obra);
-                cargarInfoE(idElemento,id_obra);
+                cargarInfoE(idElemento, id_obra);
             }else{
                 alert($salida);
             }
@@ -229,6 +256,68 @@ function EliminarObra(id_obra){
                 cargarTarjetasO();
                 obraSeleccionada = id_obra;
                 cargarInfoO(obra1);
+            }else{
+                alert($salida);
+            }
+        }
+    });
+}
+//=================================================================================================
+function RegistrarResultado(idElemento, identificador, resultado, id_obra){
+    var postData = {
+        metodo:         "RegistrarResultado",
+        identificador:  identificador,
+        resultado:      resultado
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            let arrayResponse = JSON.parse(response);
+            $salida = arrayResponse[0].salida;
+            if($salida == 'true'){
+                alert('El resultado se registro correctamente.');
+                cargarInfoE(idElemento, id_obra);
+            }else{
+                alert($salida);
+            }
+        }
+    });
+}
+//=================================================================================================
+function ModificarMuestraFull(id_obra, idElemento, identificador1, identificador2, identificador3){
+    var postData = {
+        metodo:            "ModificarMuestraFull",
+        TituloElemento:    document.getElementById('TituloElemento').value,
+        observaciones:     document.getElementById('observaciones').value,
+        fechaMuestro:      document.getElementById('fechaMuestro').value,
+        idElemento:        idElemento,
+        // ----------------------------
+        ident1Ant:         document.getElementById('iden-' +identificador1).id,
+        ident1New:         document.getElementById('iden-' +identificador1).value,
+        resul1:            document.getElementById('resul-'+identificador1).value,
+        // ----------------------------
+        ident2Ant:         document.getElementById('iden-' +identificador2).id,
+        ident2New:         document.getElementById('iden-' +identificador2).value,
+        resul2:            document.getElementById('resul-'+identificador2).value,
+        // ----------------------------
+        ident3Ant:         document.getElementById('iden-' +identificador3).id,
+        ident3New:         document.getElementById('iden-' +identificador3).value,
+        resul3:            document.getElementById('resul-'+identificador3).value,
+    };
+    $.ajax({
+        data:postData,
+        url:'/LabSoft_Ingexis/Logica/ObrasAjax.php',
+        type:"POST",
+        async: false,
+        success:function(response){
+            let arrayResponse = JSON.parse(response);
+            $salida = arrayResponse[0].salida;
+            if($salida == 'true'){
+                alert('Los campos se modificaron correctamente.');
+                cargarInfoE(idElemento, id_obra);
             }else{
                 alert($salida);
             }

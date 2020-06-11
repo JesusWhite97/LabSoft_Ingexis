@@ -91,8 +91,29 @@
         //########################
         if($_POST['metodo'] == 'registrarDatosElemento'){
             //declaracion de variables--------------------------
-            $obra = new ElemMues();
-            $salida = $obra->Fechas_identificadores($_POST['correoUser'],$_POST['id_elemento'],$_POST['fecha_muestreo'],$_POST['id1'],$_POST['id2'],$_POST['id3'],$_POST['id_muestra_1'],$_POST['id_muestra_2'],$_POST['id_muestra_3']);
+            $EleMues = new ElemMues();
+            $salida1 = $EleMues->Fechas_identificadores($_POST['correoUser'],$_POST['id_elemento'],$_POST['fecha_muestreo'],$_POST['id1'],$_POST['id2'],$_POST['id3'],$_POST['id_muestra_1'],$_POST['id_muestra_2'],$_POST['id_muestra_3']);
+            $salida2 = $EleMues->modificarElemento($_POST['id_elemento'], $_POST['correoUser'], $_POST['tituloElemento'], $_POST['observaciones'], $_POST['fecha_muestreo']);
+            //--------------------------------------------------
+            if($salida1 == 'true' && $salida2 == 'true'){
+                $salida = 'true';
+            }else{
+                $salida = ($salida1 != 'true') ? $salida1.'; ' : '';
+                $salida.= ($salida2 != 'true') ? $salida2.'; ' : '';
+            }
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'salida'    => $salida,
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
+        if($_POST['metodo'] == 'EliminarElemento'){
+            //declaracion de variables--------------------------
+            $EleMues = new ElemMues();
+            $salida = $EleMues->eliminarElemento($_POST['id_elemento']);
             //salida--------------------------------------------
             $json[] =   
                 [
@@ -121,6 +142,44 @@
             $salida = $obra->Eliminar($_POST['id_obra']);
             //salida--------------------------------------------
             $json[] =   
+                [
+                    'salida'    => $salida
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
+        if($_POST['metodo'] == 'RegistrarResultado'){
+            //declaracion de variables--------------------------
+            $EleMues = new ElemMues();
+            $salida = $EleMues->registrarResultado($_POST['identificador'], $_POST['resultado']);
+            //salida--------------------------------------------
+            $json[] =   
+                [
+                    'salida'    => $salida
+                ];
+            $jsonString = json_encode($json);
+            echo $jsonString;
+        }
+        //########################
+        if($_POST['metodo'] == 'ModificarMuestraFull'){
+            //declaracion de variables--------------------------
+            $EleMues = new ElemMues();
+            $salida1 = $EleMues->modificarElementoConFecha($_POST['idElemento'], $_POST['TituloElemento'], $_POST['observaciones'], $_POST['fechaMuestro']);
+            $salida2 = $EleMues->modificarMuestra(substr($_POST['ident1Ant'], 5), $_POST['ident1New'], $_POST['resul1']);
+            $salida3 = $EleMues->modificarMuestra(substr($_POST['ident2Ant'], 5), $_POST['ident2New'], $_POST['resul2']);
+            $salida4 = $EleMues->modificarMuestra(substr($_POST['ident3Ant'], 5), $_POST['ident3New'], $_POST['resul3']);
+            //preparar salida-----------------------------------
+            if($salida1 == 'true' && $salida2 == 'true' && $salida3 == 'true' && $salida4 == 'true'){
+                $salida = 'true';
+            }else{
+                $salida = ($salida1 != 'true') ? $salida1.'; ' : '';
+                $salida.= ($salida2 != 'true') ? $salida2.'; ' : '';
+                $salida.= ($salida3 != 'true') ? $salida3.'; ' : '';
+                $salida.= ($salida4 != 'true') ? $salida4.'; ' : '';
+            }
+            //salida------------------------------------------
+            $json[] =  
                 [
                     'salida'    => $salida
                 ];

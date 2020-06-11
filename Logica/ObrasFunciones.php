@@ -80,16 +80,28 @@
             return $respuesta;
         }
         //#####################################################
-        public function modificarElemento($id_elemento, $correoUser, $nombre, $observaciones, $fachaMestreo){
+        public function modificarElemento($id_elemento, $correoUser, $nombre, $observaciones){
             $eleMuesFun = new procedimientos_elementos_muestra();
-            $respuesta = $eleMuesFun->modificarElemento($id_elemento, $correoUser, $nombre, $observaciones, $fachaMestreo);
+            $respuesta = $eleMuesFun->modificarElemento($id_elemento, $correoUser, $nombre, $observaciones);
             return $respuesta;
         }
         //#####################################################
-        public function modificarMuestra($id_muestra, $correoUser, $iden, $resultado){
+        public function modificarElementoConFecha($id_elemento, $nombre, $observaciones, $fecha_muestreo){
             $eleMuesFun = new procedimientos_elementos_muestra();
-            $respuesta = $eleMuesFun->modificarMuestra($id_muestra, $correoUser, $iden, $resultado);
+            $respuesta = $eleMuesFun->modificarElementoConFecha($id_elemento, $nombre, $observaciones, $fecha_muestreo);
             return $respuesta;
+        }
+        //#####################################################
+        public function modificarMuestra($idenAnt, $idenNew, $resultado){
+            $eleMuesFun = new procedimientos_elementos_muestra();
+            $respuesta = $eleMuesFun->modificarMuestra($idenAnt, $idenNew, $resultado);
+            return $respuesta;
+        }
+        //#####################################################
+        public function registrarResultado($identificador, $resultado){
+            $eleMuesFun = new procedimientos_elementos_muestra();
+            $respuesta = $eleMuesFun->registrarResultado($identificador, $resultado);
+            return $respuesta; 
         }
         //#####################################################
         public function VerificaNombre($id_obra, $nombre){

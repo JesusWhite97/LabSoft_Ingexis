@@ -40,7 +40,7 @@
         }
         //#####################################################
         public function Eliminar($id_obra){
-            //crea Conexion===============
+            //crea Conexion===============mas
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
@@ -50,7 +50,7 @@
                 return 'true';
             }else{
                 return "Error: ".$mysqli->error;
-            } 
+            }
         }
         //#####################################################
         public function Modificar($id_obra, $nombre, $direccion, $anotaciones, $id_cliente){
@@ -213,13 +213,13 @@
             } 
         }
         //#####################################################
-        public function modificarElemento($id_elemento, $correoUser, $nombre, $observaciones, $fachaMestreo){
+        public function modificarElemento($id_elemento, $correoUser, $nombre, $observaciones){
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
-            $query = "CALL ElemMues_Modificar_Elemento('".$id_elemento."', '".$correoUser."', '".$nombre."', '".$observaciones."', '".$fachaMestreo."')";
+            $query = "CALL ElemMues_Modificar_Elemento('".$id_elemento."', '".$correoUser."', '".$nombre."', '".$observaciones."')";
             if($mysqli->query($query)===TRUE){
                 return 'true';
             }else{
@@ -227,13 +227,41 @@
             } 
         }
         //#####################################################
-        public function modificarMuestra($id_muestra, $correoUser, $iden, $resultado){
+        public function modificarElementoConFecha($id_elemento, $nombre, $observaciones, $fecha_muestreo){
             //crea Conexion===============
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             mysqli_query($mysqli, "SET NAMES 'utf8'");
-            $query = "CALL ElemMues_Modificar_Muestra('".$id_muestra."', '".$correoUser."', '".$iden."', '".$resultado."')";
+            $query = "CALL ElemMues_Modificar_Fecha_elm('".$id_elemento."', '".$nombre."', '".$observaciones."', '".$fecha_muestreo."')";
+            if($mysqli->query($query)===TRUE){
+                return 'true';
+            }else{
+                return "Error: ".$mysqli->error;
+            } 
+        }
+        //#####################################################
+        public function modificarMuestra($idenAnt, $idenNew, $resultado){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL ElemMues_Modificar_Muestra('".$idenAnt."', '".$idenNew."', '".$resultado."')";
+            if($mysqli->query($query)===TRUE){
+                return 'true';
+            }else{
+                return "Error: ".$mysqli->error;
+            } 
+        }
+        //#####################################################
+        public function registrarResultado($identificador, $resultado){
+            //crea Conexion===============
+            $conex = new conexionMySQLi();
+            $mysqli = $conex->conexion($_SESSION['puesto']);
+            //============================
+            mysqli_query($mysqli, "SET NAMES 'utf8'");
+            $query = "CALL ElemMues_guardar_resul('".$identificador."', '".$resultado."')";
             if($mysqli->query($query)===TRUE){
                 return 'true';
             }else{
@@ -301,11 +329,15 @@
             {
                 $salida[] = [
                     "ident"       => $rows[0],
-                    "resul"           => $rows[1]
+                    "resul"       => $rows[1]
                 ];
             }
             return $salida;
         }
+        //#####################################################
+        //#####################################################
+        //#####################################################
+        //#####################################################
         //#####################################################
     }
     // ========================================================================================================================
