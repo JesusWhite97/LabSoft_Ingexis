@@ -219,6 +219,56 @@ function telNumberFormat(id){
 }
 //===================================================================================================
 function selectItemMenu(itemSelected,img){
+<<<<<<< HEAD
+  document.getElementById("itemHome").style["background-image"] = 'url("img/HomeIcon.svg")';
+  document.getElementById("itemHome").style["border-radius"] = "5px";
+  document.getElementById("itemHome").style["border-bottom"]= "none";
+
+  document.getElementById("itemObras").style["background-image"] = 'url("img/ObrasIcon.svg")';
+  document.getElementById("itemObras").style["border-radius"] = "5px";
+  document.getElementById("itemObras").style["border-bottom"]= "none";
+
+  document.getElementById("itemMuestras").style["background-image"] = 'url("img/MuestraIcon.svg")';
+  document.getElementById("itemMuestras").style["border-radius"] = "5px";
+  document.getElementById("itemMuestras").style["border-bottom"]= "none";
+
+  document.getElementById("itemPruebas").style["background-image"] = 'url("img/PruebaIcon.svg")';
+  document.getElementById("itemPruebas").style["border-radius"] = "5px";
+  document.getElementById("itemPruebas").style["border-bottom"]= "none";
+
+  document.getElementById("itemUsers").style["background-image"] = 'url("img/UserIcon.svg")';
+  document.getElementById("itemUsers").style["border-radius"] = "5px";
+  document.getElementById("itemUsers").style["border-bottom"]= "none";
+
+  document.getElementById("itemClients").style["background-image"] = 'url("img/ClientesIcon.svg")';
+  document.getElementById("itemClients").style["border-radius"] = "5px";
+  document.getElementById("itemClients").style["border-bottom"]= "none";
+
+  item = document.getElementById(itemSelected);
+  item.style["background-image"] = 'url('+img+')';
+  item.style["border-radius"] = "0px";
+  item.style["border-bottom"]= "4px solid #0109FC";
+
+  if(itemSelected == "itemUsers"){
+    imprimirLayout("usuarios");
+    cargarInterfazUsuarios("",'1111',usuarioLog());
+    
+  }
+  if(itemSelected == "itemClients"){
+    imprimirLayout("clientes");
+    iniciarInterfazClientes();
+  }
+
+  if(itemSelected == "itemObras"){
+    imprimirLayout("obras");
+    cargarTarjetasO();
+    cargarInfoO(obra1);
+  }
+
+  if(itemSelected == "itemHome"){
+    imprimirCalendario(d.getMonth()+1, d.getFullYear());
+  }
+=======
 	document.getElementById("itemHome").style["background-image"] = 'url("img/HomeIcon.svg")';
 	document.getElementById("itemHome").style["border-radius"] = "5px";
 	document.getElementById("itemHome").style["border-bottom"]= "none";
@@ -257,6 +307,7 @@ function selectItemMenu(itemSelected,img){
 	if(itemSelected == "itemHome"){
 		imprimirCalendario(d.getMonth()+1, d.getFullYear());
 	}
+>>>>>>> b5d7c192b16dfeaafb32770a7b799990c05f5e02
 }
 //===================================================================================================
 function imprimirNavBar(){
