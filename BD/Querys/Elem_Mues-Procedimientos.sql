@@ -80,3 +80,8 @@ use databaseingexis;
 --     select * from info_elemento where info_elemento.id_elemento = id_elemento;
 -- end
 -- -- =================================================
+-- create procedure ElemMues_Calendario(in hoy date)
+-- begin
+--     SELECT muestra.identificador, muestra.resultado from muestra where muestra.fecha_prog = hoy;
+-- end
+-- -- =================================================
