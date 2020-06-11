@@ -34,7 +34,7 @@
             $yearBefore = $year - 1;
             $monthBefore = 12;
         }
-        $calendar.= '<a<tr class="calendar-row">
+        $calendar.= '<tr class="calendar-row">
                         <td class="calendar-button-head" style="font-weight:300;" onclick=imprimirCalendario('.$monthBefore.','.$yearBefore.')>'.$months[$monthBefore-1].'</td>
                         <td class="calendar-name-head" colspan="5">'.$months[$month-1].' de '.$year.'</td>>
                         <td class="calendar-button-head" style="font-weight:300;"  onclick=imprimirCalendario('.$monthAfter.','.$yearAfter.')>'.$months[$monthAfter-1].'</td></tr>';
@@ -69,7 +69,7 @@
             }
             //EN LA VARIABLE EVENTS VAN LOS EVENTOS DEL DÍA
             $events = "<div class='event'>Prueba 1</div>";//===============================================================
-                $calendar.= "<div class='{$class}'>".$list_day.$events." </div>";
+            $calendar.= "<div class='{$class}'>".$list_day.$events." </div>";
             $calendar.= '</td>';
             if($running_day == 6){
                 $calendar.= '</tr>';
