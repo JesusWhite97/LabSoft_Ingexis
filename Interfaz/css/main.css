@@ -1456,6 +1456,16 @@ textarea:focus, input:focus {
   font-family: "Segoe UI", sans-serif;
 }
 
+.calendar-day:hover {
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+}
+
+.calendar-today {
+  border-top: 5px solid #3100FF;
+  background-color: rgba(245, 245, 245, 0.068);
+}
+
 .day-number {
   font-size: 16px;
   text-align: left;
@@ -1472,7 +1482,7 @@ textarea:focus, input:focus {
 .calendar-day-head, .calendar-name-head, .calendar-button-head {
   background-color: rgba(53, 52, 52, 0.609);
   border-top: 0px;
-  height: 40px;
+  height: 50px;
 }
 
 .calendar-day-head {

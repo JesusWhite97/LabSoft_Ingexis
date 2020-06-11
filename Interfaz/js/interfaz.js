@@ -277,6 +277,10 @@ function selectItemMenu(itemSelected,img){
     cargarInfoO(obra1);
     cargarInfoE();
   }
+
+  if(itemSelected == "itemHome"){
+    imprimirCalendario(d.getMonth()+1, d.getFullYear());
+  }
 }
 //===================================================================================================
 function imprimirNavBar(){
@@ -316,5 +320,23 @@ function imprimirLayout(interfaz){
   
 }
 //===================================================================================================
-
+function imprimirCalendario(mes, año){
+  postData = {
+      metodo: "imprimirCalendario",
+      mes: mes,
+      año: año 
+  };
+  $.ajax({
+      data: postData,
+      url: '/LabSoft_Ingexis/Logica/Calendario.php',
+      type: "POST",
+      async: false,
+      success:function(response){
+          console.log(response);
+          var arrayResponse = JSON.parse(response);
+          document.getElementById("contenedorPrincipal").innerHTML = arrayResponse[0].script; 
+      }
+  });
+  
+}
 //===================================================================================================

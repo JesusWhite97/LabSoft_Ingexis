@@ -1,5 +1,4 @@
 <?php
- 	include 'PruebaCalendario.php';
     //-------------------------------------------
     session_start();
     if(!isset($_SESSION["correo"]) || !isset($_SESSION["puesto"])){
@@ -31,9 +30,12 @@
 		<script src="js/interfaz.js"></script>
 		<script src="js/validaciones.js"></script>
 		<script>
+			var d = new Date();
 			window.onload = function(){
+				
 				imprimirNavBar();
 				selectItemMenu(<?php echo $_SESSION['NavBarSelected'];?>)
+				imprimirCalendario(d.getMonth()+1, d.getFullYear());
 			}
 			function cargarUsers(){
 				var postData = {
@@ -288,7 +290,7 @@
 			<div id="nombreUsuarioLogin"><?php echo $_SESSION['apodo']; ?></div>
 		</header>   
 		<div id="contenedorPrincipal">
-			<?php echo generar_calendario(07,2020,"es"); ?>
+			
 		</div>
 		<div id="contenedorModal"></div>
 	</body>
