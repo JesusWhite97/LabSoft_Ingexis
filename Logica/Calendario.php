@@ -45,6 +45,7 @@
         $days_in_this_week = 1;
         $day_counter = 0;
         $dates_array = array();
+        $noMa ='';
         $calendar.= '<tr class="calendar-row">';
         for($x = 0; $x < $running_day; $x++){
             $calendar.= '<td class="calendar-day-np"> </td>';
@@ -67,6 +68,7 @@
                     $class.=" not-work-holiday ";
                 }
             }
+            //=============================================
             //EN LA VARIABLE EVENTS VAN LOS EVENTOS DEL DÍA
             $events = "<div class='event'>Prueba 1</div>";//===============================================================
             $calendar.= "<div class='{$class}'>".$list_day.$events." </div>";
@@ -88,6 +90,7 @@
         }
         $calendar.= '</tr>';
         $calendar.= '</table>';
+        $calendar.= $noMa;
         return $calendar;
     }
 ?>

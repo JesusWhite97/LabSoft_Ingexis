@@ -305,6 +305,7 @@ function imprimirCalendario(mes, año){
 		async: false,
 		success:function(response){
 			var arrayResponse = JSON.parse(response);
+			console.log(arrayResponse);
 			document.getElementById("contenedorPrincipal").innerHTML = arrayResponse[0].script; 
 		}
 	});
