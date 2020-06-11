@@ -1446,20 +1446,77 @@ textarea:focus, input:focus {
   overflow: scrolls;
 }
 
-.calendar-day, .calendar-day-head {
-  color: #cacaca;
-  border: 1px solid #ddd;
+.calendar-day, .calendar-day-head, .calendar-name-head, .calendar-day-np, .calendar-button-head {
+  color: white;
+  border-top: 2px solid rgba(221, 221, 221, 0.76);
+  padding: 0px;
   height: 140px;
   width: 140px;
-  text-align: center;
+  text-align: left;
   font-family: "Segoe UI", sans-serif;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
+}
+
+.day-number {
+  font-size: 16px;
+  text-align: left;
+  height: 100%;
+  padding: 3px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-gap: 3px;
+  grid-auto-rows: 20px;
+}
+
+.calendar-day-head, .calendar-name-head, .calendar-button-head {
+  background-color: rgba(53, 52, 52, 0.609);
+  border-top: 0px;
+  height: 40px;
 }
 
 .calendar-day-head {
-  color: black;
-  background: #ddd;
+  height: 20px;
+  padding-left: 3px;
+  padding-bottom: 1px;
+}
+
+.calendar-name-head {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.calendar-button-head {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.calendar-button-head:hover {
+  font-size: 24px;
+  font-weight: 600;
+  border: 1px solid whitesmoke;
+}
+
+.calendar-day-np {
+  background-color: rgba(0, 0, 0, 0.219);
+}
+
+.event {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 13px;
+  width: 120px;
+  padding: 2px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0109FC), to(#0A92FC));
+  background-image: linear-gradient(to right, #0109FC, #0A92FC);
+  font-size: 11px;
+  font-weight: 200;
+  border-radius: 2px;
+  -webkit-box-shadow: linear-gradient(127deg, #0109fc 35%, #0c95ff 100%);
+          box-shadow: linear-gradient(127deg, #0109fc 35%, #0c95ff 100%);
 }
 
 @media screen and (max-width: 640px) {
