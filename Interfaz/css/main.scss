@@ -973,28 +973,30 @@ textarea:focus, input:focus{
     grid-template-rows: 1fr;
     width: 90%;
     min-width: 120px;
-    height: 36px;
-    margin: 10px auto;
-    padding: 10px;
+    height: 60px;
+    margin: 0px auto;
+ 
     font-family: $fuente;
     background-image: $colorGradienteTarjetas;
     backdrop-filter:  blur(50px);
     -webkit-backdrop-filter:blur(50px);
     border-radius: 0px;
     box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.46);
+    align-self: center;
 
 
     .tituloElemento{
-        align-self: center;
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 90%;
         margin: 0px;
         color: white;
-        font-size: 18px;
-        align-self: center;
-        justify-self: center;
-        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        text-shadow: $colorSombrass;
+        border-radius: 5px;
     }
     .subtituloElemento{
         grid-column: 1 / span 2;
@@ -1065,7 +1067,7 @@ textarea:focus, input:focus{
     height: auto;
     margin-top: 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
     grid-gap: 10px;
     grid-auto-rows: 60px;
     overflow-y: scroll;

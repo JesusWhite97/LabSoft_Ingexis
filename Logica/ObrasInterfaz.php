@@ -125,7 +125,7 @@
         $claseBotonModificar = "'guardarBotonModal'";
         // //=========DATOS MODAL ELIMINAR=================
         $textoEliminar = "'Desea eliminar elemento: '";
-        $funcionEliminar = "'EliminarElemento(".$id_elemento.", ".$idObra.")'";
+        $funcionEliminar = "'EliminarElemento(".$id_elemento.",".$idObra.")'";
         $textoBotonEliminar = "'Eliminar'";
         $claseBotonEliminar = "'eliminarBotonModal'";
         //declaracion de variables=========================
@@ -138,12 +138,7 @@
                 <!-- Titulo elemento ============================ -->
                 <div id="tituloContenedor" style="height:145px;">
                 <div id="editarImagen" style=""> 
-<<<<<<< HEAD
                     <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
-=======
-                    <button id="botonEliminar" onclick="EliminarElemento('.$id_elemento.','.$idObra.')">
-                    <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
->>>>>>> b598f7e9f97e850a548e89b741f757d4d1be73a5
                 </div>
                 <input id="TituloElemento" class="inputTexto mayus registro" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
                 <p class="textoAyuda textoAyudaTitulo">Titulo Elemento</p>
@@ -173,15 +168,9 @@
                 <!-- Titulo elemento ============================ -->
                 <div id="tituloContenedor" style="height:145px;">
                 <div id="editarImagen" style=""> 
-<<<<<<< HEAD
                     <button id="botonEditar" onclick=verPantallaModificar("contenedorElemento")>
                     <button id="botonEliminar" onclick="infoModal('.$tipoModal.','.$textoEliminar.','.$funcionEliminar.','.$textoBotonEliminar.','.$item.','.$claseBotonEliminar.')">
                     <button id="botonCancelar" style="display:none"  onclick=cargarInfoE('.$id_elemento.','.$idObra.') ></button>
-=======
-                    <button id="botonEditar" onclick=verPantallaModificar("obra")>
-                    <button id="botonEliminar" onclick="EliminarElemento('.$id_elemento.','.$idObra.')">
-                    <button id="botonCancelar" style="display:none"  onclick=verPantallaInfo(document.getElementById("correo").value) ></button>
->>>>>>> b598f7e9f97e850a548e89b741f757d4d1be73a5
                 </div>
                 <input id="TituloElemento" class="inputTexto mayus" style="color:white;" type="text" value="'.$infoElemento['nombre'].'" maxlength="60">
                 <p class="textoAyuda textoAyudaTitulo">Titulo Elemento</p>
@@ -202,15 +191,22 @@
     }
 // ===================================================================Pruebas=============================================================================================
     function scriptPruebas($dias, $identificador, $prueba, $fecha, $id_elemento, $obra){
-        $hoy = date("d/m/Y");
-        if($hoy >= $fecha){
+
+    // Declaración de variables de fechas 
+        $hoy = date("Y-m-d");
+        $hoyDateStamp = new DateTime($hoy);
+        $fechaDateStamp = new DateTime($fecha);
+
+    //Compara las fechas de hoy y la fecha de la prueba
+        if($hoyDateStamp <= $fechaDateStamp){
+                //Regrega la tarjeta de la prueba sin el campo resultado.
                 return '
                 <!-- Información por muestra ============================ -->
-                <div class="tarjetaBlanca" style="font-size:16px; ">
+                <div class="tarjetaBlanca" style="font-size:16px; "> 
                     <p class="titulo" >'.$dias.'</p>
                     <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
                         <input id="iden-'.$identificador.'" type="text"class="mayus required"   value="'.substr($identificador, 5).'"  maxlength="5" >
-                        <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                        <input id="fechaMuestro" type="date" class="NoModificable" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
                     </div>
                     <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
                         <p class="textoAyuda" style="">Identificador</p>
@@ -225,7 +221,7 @@
                             <p class="titulo" >'.$dias.'</p>
                             <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
                                 <input id="iden-'.$identificador.'" type="text"class="mayus required"   value="'.substr($identificador, 5).'"  maxlength="5" >
-                                <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                                <input id="fechaPrueba" type="date" class="NoModificable" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
                             </div>
                             <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
                                 <p class="textoAyuda" style="">Identificador</p>
@@ -249,7 +245,7 @@
                             <p class="titulo" >'.$dias.'</p>
                             <div class="inputEnLinea" style="  grid-template-columns: 100px 1fr">
                                 <input id="iden-'.$identificador.'" type="text"class="mayus required"   value="'.substr($identificador, 5).'"  maxlength="5" >
-                                <input id="fechaMuestro" type="date" class="" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
+                                <input id="fechaPrueba" type="date" class="NoModificable" style="justify-self:center; margin-left:1px;" value="'.$fecha.'">
                             </div>
                             <div class="inputEnLinea" style="grid-template-columns: 100px 1fr">
                                 <p class="textoAyuda" style="">Identificador</p>

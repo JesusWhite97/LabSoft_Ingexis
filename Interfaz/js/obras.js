@@ -288,6 +288,19 @@ function RegistrarResultado(idElemento, identificador, resultado, id_obra){
 }
 //=================================================================================================
 function ModificarMuestraFull(id_obra, idElemento, identificador1, identificador2, identificador3){
+    let res1 = "??";
+    let res2 = "??";
+    let res3 = "??";
+    if( document.getElementById('resul-'+identificador1)){
+             res1 = document.getElementById('resul-'+identificador1).value;
+    }
+    if( document.getElementById('resul-'+identificador2)){
+             res2 = document.getElementById('resul-'+identificador2).value;
+    }
+    if( document.getElementById('resul-'+identificador3)){
+             res3 = document.getElementById('resul-'+identificador3).value;
+    }
+
     var postData = {
         metodo:            "ModificarMuestraFull",
         TituloElemento:    document.getElementById('TituloElemento').value,
@@ -297,15 +310,16 @@ function ModificarMuestraFull(id_obra, idElemento, identificador1, identificador
         // ----------------------------
         ident1Ant:         document.getElementById('iden-' +identificador1).id,
         ident1New:         document.getElementById('iden-' +identificador1).value,
-        resul1:            document.getElementById('resul-'+identificador1).value,
+   
+        resul1:            res1,
         // ----------------------------
         ident2Ant:         document.getElementById('iden-' +identificador2).id,
         ident2New:         document.getElementById('iden-' +identificador2).value,
-        resul2:            document.getElementById('resul-'+identificador2).value,
+        resul2:            res2,
         // ----------------------------
         ident3Ant:         document.getElementById('iden-' +identificador3).id,
         ident3New:         document.getElementById('iden-' +identificador3).value,
-        resul3:            document.getElementById('resul-'+identificador3).value,
+        resul3:            res3,
     };
     $.ajax({
         data:postData,

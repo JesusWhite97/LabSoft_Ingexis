@@ -1281,9 +1281,8 @@ textarea:focus, input:focus {
       grid-template-rows: 1fr;
   width: 90%;
   min-width: 120px;
-  height: 36px;
-  margin: 10px auto;
-  padding: 10px;
+  height: 60px;
+  margin: 0px auto;
   font-family: "Segoe UI", sans-serif;
   background-image: -webkit-gradient(linear, left top, right top, from(#17232470), to(#17232470));
   background-image: linear-gradient(to right, #17232470, #17232470);
@@ -1292,26 +1291,27 @@ textarea:focus, input:focus {
   border-radius: 0px;
   -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
           box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.46);
+  -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .tarjetaElemento .tituloElemento {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1 / span 1;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / span 1;
-  height: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 90%;
   margin: 0px;
   color: white;
-  font-size: 18px;
-  align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.451);
 }
 
 .tarjetaElemento .subtituloElemento {
@@ -1408,8 +1408,8 @@ textarea:focus, input:focus {
   margin-top: 0px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
   grid-auto-rows: 60px;
   overflow-y: scroll;
