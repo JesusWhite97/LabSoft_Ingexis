@@ -977,12 +977,12 @@ textarea:focus, input:focus{
     margin: 0px auto;
  
     font-family: $fuente;
-    background-image: $colorGradienteTarjetas;
-    backdrop-filter:  blur(50px);
-    -webkit-backdrop-filter:blur(50px);
-    border-radius: 0px;
+    background-color: rgba(53, 53, 53, 0.849);
+    backdrop-filter:  blur(5px);
+    -webkit-backdrop-filter:blur(5px);
     box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.46);
     align-self: center;
+    border-radius: 5px;
 
 
     .tituloElemento{
@@ -995,8 +995,8 @@ textarea:focus, input:focus{
         color: white;
         font-size: 16px;
         font-weight: 400;
-        text-shadow: $colorSombrass;
-        border-radius: 5px;
+        text-shadow: $colorSombras;
+        
     }
     .subtituloElemento{
         grid-column: 1 / span 2;

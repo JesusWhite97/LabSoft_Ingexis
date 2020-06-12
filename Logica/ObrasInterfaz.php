@@ -79,8 +79,8 @@
                 <div class="textoAyuda">Notas<br></div>
             </div>
             <!=========== Elementos ============================= -->
-            <h1 id="tituloPag" style="margin-bottom:0px;">Elementos de la obra</h1>
-            <div id="elementosGridResponsivo">'.imprimir_tarjetas_elementos($infObra['id_obra']).'
+            <h1 id="tituloPag" style="margin-top:15px;">Elementos de la obra</h1>
+            <div id="elementosGridResponsivo" style="margin-top:10px;">'.imprimir_tarjetas_elementos($infObra['id_obra']).'
             <div id="tarjetaElementoNuevo"></div>
             </div>
                 <!-- Boton Final================================= -->
@@ -105,7 +105,7 @@
         $TarjetasElementos = '';
         for($i = 0; $i < count($TarElem); $i++){
             $TarjetasElementos = $TarjetasElementos.
-            '<div id="'.$TarElem[$i]['id_elemento'].'" class="tarjetaElemento" onclick=cargarInfoE("'.$TarElem[$i]['id_elemento'].'","'.$id_obra.'")>
+            '<div id="ele-'.$TarElem[$i]['id_elemento'].'" class="tarjetaElemento" onclick=cargarInfoE("'.$TarElem[$i]['id_elemento'].'","'.$id_obra.'")>
                 <div class="tituloElemento">'.$TarElem[$i]['nombre'].'</div>
 
             </div>'

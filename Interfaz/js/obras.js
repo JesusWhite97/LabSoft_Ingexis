@@ -22,7 +22,7 @@ function cargarTarjetasO(){
 //=================================================================================================
 function cargarInfoO(id_obra){
     obraSeleccionada = id_obra;
-    tarjetaSeleccionada(id_obra);
+    tarjetaSeleccionada(id_obra,"contenedorGridResponsivo");
     var postData = {
         metodo:     "cargarInfo",
         id_obra:    id_obra
@@ -41,6 +41,7 @@ function cargarInfoO(id_obra){
 }
 //=================================================================================================
 function cargarInfoE(idEle,idObra){
+    tarjetaSeleccionada("ele-"+idEle, "elementosGridResponsivo");
     if(idEle != "" || idEle != null){
         var postData = {
             metodo:     "imprimir_info_elemento",

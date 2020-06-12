@@ -162,15 +162,22 @@ function selectModificar(){
 	}
 }
 //===================================================================================================
-function tarjetaSeleccionada(item){
-	arrayTarjetasUsuarios = document.getElementsByClassName("contenedorTarjetaUsuario");
-	for(let i = 0; i < arrayTarjetasUsuarios.length;i++){
-		arrayTarjetasUsuarios[i].style.border = "0px";
-		arrayTarjetasUsuarios[i].style["boxShadow"] = "0px 5px 4px 0px rgba(0,0,0,0.46)";
-	}
-	tarjetaUser = document.getElementById(item);
-	tarjetaUser.style.border = "1px solid #fff";
-	tarjetaUser.style["boxShadow"] = "0px 5px 4px 0px #fff";
+function tarjetaSeleccionada(item, container){
+  let elementos = document.getElementById(container).querySelectorAll("*");
+  for(let i = 0; i < elementos.length;i++){
+
+
+        if(elementos[i].classList.contains("contenedorTarjetaUsuario") == true || elementos[i].classList.contains("tarjetaElemento") == true){
+          elementos[i].style.border = "0px";
+          elementos[i].style["boxShadow"] = "0px 5px 4px 0px rgba(0,0,0,0.46)";
+        }
+   
+     
+      if(elementos[i].id == item){
+      elementos[i].style.border = "1px solid #fff";
+      elementos[i].style["boxShadow"] = "0px 5px 4px 0px #fff";
+    }
+  }
 }
 //===================================================================================================
 function infoModal(tipo,texto,funcion,textoBoton,item,claseBoton){
