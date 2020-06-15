@@ -127,7 +127,7 @@ TAPIZ:
 [ ] #agregar log a todas las actividades#
     [√] logeo
     [√] modulo Usuarios
-    [ ] modulo clientes
+    [√] modulo clientes
     [ ] modulo obras
     [ ] modulo elementos - muestras
 [√] cambiar a unico el campo nomemp en clientes
