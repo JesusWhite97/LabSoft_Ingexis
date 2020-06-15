@@ -30,7 +30,7 @@ function iniciarInterfazClientes(){
 }
 //=================================================================================================
 function cargarInfoC(correo){
-    tarjetaSeleccionada(correo);
+    // tarjetaSeleccionada(correo); =================================== no jala este metodo para esta pantalla
     correoActivo = correo;
     var postData = {
         metodo: "cargarInfo",

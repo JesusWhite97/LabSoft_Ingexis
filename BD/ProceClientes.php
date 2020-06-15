@@ -2,6 +2,7 @@
     // ========================================================
     include_once '../Logica/CrearDirectorios.php';
     include_once 'conexion.php';
+    include_once '../BD/ProceLog.php'; // clase para el registro log
     header("Content-Type: text/html;charset=utf-8"); 
     // ========================================================
     class procedimientos_Clientes{
@@ -41,6 +42,7 @@
             $correo,    $nota,          $img
         ){
             //crea Conexion===============
+            $log = new regLogReg();//=========================================>>>>>>>>>>>>>>>>
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
@@ -51,6 +53,7 @@
             $query = "CALL insertarCliente('".$titulo."', '".$Nom_emp."', '".$rfc."', '".$direc."', '".$cod_post."', '".$colonia."', '".$ciudad."', '".$nom_contacto."', '".$nun_contacto."', '".$correo."', '".$nota."', '".$img."', '".$fecha."')";
             if($mysqli->query($query)===TRUE){
                 $directorios->CrearDirectorioClientes($correo);
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Agrego al cliente con el correo: .'. $correo);
                 return "true";
             }else{
                 return "NO se puedo hacer el registro: ".$mysqli->error;
@@ -60,6 +63,7 @@
         //#####################################################
         public function Eliminar_clientes($correo){
             //crea Conexion===============
+            $log = new regLogReg();//=========================================>>>>>>>>>>>>>>>>
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
@@ -67,6 +71,7 @@
             $query = "CALL eliminar_cliente('".$correo."')";
             if($mysqli->query($query)===TRUE){
                 $directorios->EliminarDirectorioConContenido($correo);
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Agrego al Elimino con el correo: .'. $correo);
                 return "true";
             }else{
                 return "NO se puedo eliminar el registro: ".$mysqli->error;
@@ -99,11 +104,13 @@
         //#####################################################
         public function Mod_nota($correo, $nota){
             //crea Conexion===============
+            $log = new regLogReg();//=========================================>>>>>>>>>>>>>>>>
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_nota('".$correo."', '".$nota."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico la nota para el clinete con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -113,6 +120,7 @@
         //#####################################################
         public function Mod_contacto($correoA, $correoN, $nombreContac, $numeroContac){
             //crea Conexion===============
+            $log = new regLogReg();//=========================================>>>>>>>>>>>>>>>>
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
@@ -121,6 +129,7 @@
             if($mysqli->query($query)===TRUE){
                 if($correoA != $correoN)
                     $directorios->CambiarNameDirec($correoA, $correoN);
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico el contacto para el clinete con el correo: .'. $correoN);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -130,11 +139,13 @@
         //#####################################################
         public function Mod_datosBasicos($correo, $titulo, $nomEmpresa, $RFC){
             //crea Conexion===============
+            $log = new regLogReg();//=========================================>>>>>>>>>>>>>>>>
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_Dbasicos('".$correo."', '".$titulo."', '".$nomEmpresa."', '".$RFC."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico datos basicos para el clinete con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -144,11 +155,13 @@
         //#####################################################
         public function Mod_direccion($correo, $direccion, $cod_post, $colonia, $ciudad){
             //crea Conexion===============
+            $log = new regLogReg();//=========================================>>>>>>>>>>>>>>>>
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
             //============================
             $query = "CALL Clientes_mod_direccion('".$correo."', '".$direccion."', '".$cod_post."', '".$colonia."', '".$ciudad."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico la direccion para el clinete con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;
@@ -158,6 +171,7 @@
         //#####################################################
         public function Mod_img($correo, $img){
             //crea Conexion===============
+            $log = new regLogReg();//=========================================>>>>>>>>>>>>>>>>
             $directorios = new CreacionDirectorios();
             $conex = new conexionMySQLi();
             $mysqli = $conex->conexion($_SESSION['puesto']);
@@ -173,6 +187,7 @@
             mysqli_query($mysqli, "SET NAMES 'utf8'");
             $query = "CALL Clientes_mod_Img('".$correo."', '".$img."')";
             if($mysqli->query($query)===TRUE){
+                $Almacenamiento = $log->Entrada($_SESSION["correo"], 'Modifico la imagen para el clinete con el correo: .'. $correo);
                 return "<br>- Modificado";
             }else{
                 return "<br>- NO MODIFICADO; RESPUESTA SERVIDOR: ".$mysqli->error;

@@ -120,7 +120,7 @@ TAPIZ:
 [√] crear paquete procedimientos completos para #obras#
 [√] crear vistas para #obras y muestras#
 [√] tabla #log activity# para todos
-[ ] terminar procedimientos PHP para elemento y muestra
+[√] terminar procedimientos PHP para elemento y muestra
 [√] agregar tituliCliente(nomEmp) a vista obra completa
 [√] crear procedimientos para log
 [ ] terminar procedimientos para log PHP
