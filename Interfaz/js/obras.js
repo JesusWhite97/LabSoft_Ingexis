@@ -36,6 +36,7 @@ function cargarInfoO(id_obra){
             console.log(response);
             let arrayResponse = JSON.parse(response);
             document.getElementById("divInfo").innerHTML = arrayResponse[0].mensajeDatos;
+            document.getElementById("divInfoElemento").innerHTML = '';
         }
     });
 }

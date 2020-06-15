@@ -58,13 +58,13 @@ use databaseingexis;
 --     update elemento SET elemento.id_usuario = id_by_correo(correo_user), elemento.nombre = nombre, elemento.observaciones = observaciones WHERE elemento.id_elemento = id_elemento;
 -- end
 -- -- =================================================¿
--- CREATE PROCEDURE ElemMues_Modificar_Fecha_elm (IN id_elemento INT, IN nombre VARCHAR(50), IN observaciones TEXT, IN fechaMues DATE)  
--- begin 
---     update elemento SET elemento.observaciones = observaciones, elemento.fecha_muestreo = fechaMues WHERE elemento.id_elemento = id_elemento;
---     update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 28 day) where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc;
---     update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 14 day) where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc LIMIT 2;
---     update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 7 day)  where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc LIMIT 1;
--- end
+CREATE PROCEDURE ElemMues_Modificar_Fecha_elm (IN id_elemento INT, IN nombre VARCHAR(50), IN observaciones TEXT, IN fechaMues DATE)  
+begin 
+    update elemento SET elemento.nombre = nombre, elemento.observaciones = observaciones, elemento.fecha_muestreo = fechaMues WHERE elemento.id_elemento = id_elemento;
+    update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 28 day) where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc;
+    update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 14 day) where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc LIMIT 2;
+    update muestra set muestra.fecha_prog = DATE_ADD(fechaMues, interval 7 day)  where muestra.id_elemento = id_elemento ORDER BY muestra.id_muestra asc LIMIT 1;
+end
 -- -- =================================================
 -- create procedure ElemMues_Modificar_Muestra(in identAnte varchar(10), in identNew varchar(10), in resultado varchar(50))
 -- begin 
