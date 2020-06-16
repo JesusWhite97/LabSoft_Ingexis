@@ -29,7 +29,7 @@ function cargarTarjetasU(cadenaBuscar, cadenaFiltrado){
 //=================================================================================================
 function cargarInfoU(correo){
     var salida = '';
-    // tarjetaSeleccionada(correo); =================================== no jala este metodo para esta pantalla
+    tarjetaSeleccionada(correo,"contenedorGridResponsivo");
     const postData = {
         metodo: "cargarInfo",
         correo: correo
