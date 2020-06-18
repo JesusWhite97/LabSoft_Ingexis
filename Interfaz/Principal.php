@@ -105,7 +105,7 @@
 			}
 			// --------------------------------------
 			function guardarUser(){
-				if(camposRequeridos()== false){
+				if(camposRequeridos("contenedorGridResponsivo")== false){
 					infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
 				}
 				else{
@@ -140,7 +140,7 @@
 			var arregloCambios = Array(0,0,0,0,0,0,0,0,0);//Apodo-Puesto-Nombre-RFC-Curp-Telefono-Contraseña-Direccion-IMG
 			function modificarUser(){
 				if(arregloCambios.includes(1)){
-					if(camposRequeridos()== false){
+					if(camposRequeridos("contenedorGridResponsivo")== false){
 								infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
 					}
 					else{
@@ -201,7 +201,7 @@
 			}
 			// --------------------------------------
 			function guardarClient(){
-				if(camposRequeridos()== false){
+				if(camposRequeridos("contenedorGridResponsivo")== false){
 					infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
 				}
 				else{
@@ -239,7 +239,7 @@
 			var arregloCambios = Array(0,0,0,0,0); //-----nota--Contacto--datosBasicos--direccion--img
 			function ModificarClient(){
 				if(arregloCambios.includes(1)){
-					if(camposRequeridos()== false){
+					if(camposRequeridos("contenedorGridResponsivo")== false){
 						infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
 					}
 					else{
@@ -268,6 +268,38 @@
 				correoNuevo = document.getElementById("emailReg").value;
 				infoModal('respuesta',modificacionCliente,"iniciarInterfazClientes()",'OK','"'+correoNuevo+"'",'ninguna');
 			}
+
+			//##################### OBRAS ################################################################################
+			// --------------------------------------
+			function guardarObraValidaciones(){
+				if(camposRequeridos("contenedorGridResponsivo")== false){
+					infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+				}
+				else{
+					if(errores() == false){
+						infoModal('confirmar','Desea guardar la obra:','registrarObraNueva()','Guardar',document.getElementById('tituloObra').value,'guardarBotonModal');
+					}
+					else{
+						infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+					}
+				}
+				
+			}
+			// --------------------------------------
+			var arregloCambios = Array(0,0,0,0,0); //-----nota--Contacto--datosBasicos--direccion--img
+			function modificarObraValidaciones(id_obra){
+					if(camposRequeridos("contenedorGridResponsivo")== false){
+						infoModal('respuesta','Faltan campos requeridos:',"closeModal('contenedorModal')",'OK','Registre los campos requeridos','ninguna');
+					}
+					else{
+						if(errores() == false){
+								infoModal('confirmar','Desea modificar obra:','ModificarObra('+id_obra+')','Modificar',document.getElementById("TituloObra").value,'guardarBotonModal');
+						}
+						else{
+								infoModal('respuesta','Errores en los campos:'+errores(),"closeModal('contenedorModal')",'OK','Corrija los errores','ninguna');
+						}
+					}
+			}
 		</script>
 		<!-- ==================================================== -->
 		<style>
@@ -289,6 +321,6 @@
 		</header>   
 		<div id="contenedorPrincipal">
 		</div>
-		<div id="contenedorModal"></div>
+		
 	</body>
 </html>

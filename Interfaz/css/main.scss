@@ -408,7 +408,7 @@ body{
     margin: 10%;
     box-shadow:0px 3px 6px rgba(80, 6, 6, 0.451);       
 }
-#footerGuardar_Boton {
+.footerGuardar_Boton {
     display:none;
     justify-self: center;
     text-align: center;
@@ -418,7 +418,7 @@ body{
     font-size: 16px;
     color: rgba(255,255,255,1);
     width: 314px;
-    height: 57px;
+    height: 30px;
     border: 0px;
     border-radius: 20px;   
     background-image: linear-gradient(to right,#0109FC, #0A92FC);    

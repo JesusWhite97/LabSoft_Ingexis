@@ -63,18 +63,17 @@ function validaContraFormat(Contra){
 }
 }
 //======================================================================================================
-function camposRequeridos(){
+function camposRequeridos(item){
     var ok = true;
-    var requireds = document.getElementsByClassName("required");
-
-    for(var i = 0; i <  requireds.length; i++){
-              if(requireds[i].value == "" || requireds == null){
-                    ok = false;
-                    requireds[i].style.border = "1px solid #8B0000";
-                }else{
-                    requireds[i].style.border = "0px";
-                    requireds[i].style["border-bottom"]= "2px solid rgba(255, 255, 255, 0.5)";
-                }
+    let requireds = document.getElementById(item).querySelectorAll("*");
+    for(let i = 0; i < requireds.length; i++){  
+        if(requireds[i].classList.contains("required") == true && requireds[i].value == "" || requireds == null){
+                ok = false;
+                requireds[i].style.border = "1px solid #8B0000";
+        }else{
+                requireds[i].style.border = "0px";
+                requireds[i].style["border-bottom"]= "2px solid rgba(255, 255, 255, 0.5)";
+        }  
     }
     return ok;
 }

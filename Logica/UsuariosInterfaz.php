@@ -166,7 +166,7 @@
                                 <p class="textoAyuda">ciudad</p>
                             </div>
                         </div>
-                            <button id="footerGuardar_Boton" onclick="modificarUser()">Guardar</button>
+                            <button class="footerGuardar_Boton" onclick="modificarUser()">Guardar</button>
                     </div>
                 </div>
                 <div id="contenedorModal">
@@ -268,7 +268,7 @@
                                 <p class="textoAyuda">Ciudad</p>
                             </div>
                         </div>
-                        <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick="guardarUser()">Guardar</button>
+                        <button class="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick="guardarUser()">Guardar</button>
                         </form>
                 </div>
                 <div id="contenedorModal">

@@ -36,11 +36,16 @@ function verPantallaModificar(item){
           if(elementos[i].classList.contains("selectInfo") == true ){
            elementos[i].style.display = "none"
          }
+         // Metodo para que se active cualquiere select que se tenga
+          if(elementos[i].classList.contains("footerGuardar_Boton") == true ){
+           if(elementos[i].style.display == "none"){
+              elementos[i].style.display = "block";
+           }else{
+            elementos[i].style.display = "none";
+           }
+         }
          if(elementos[i].tagName == "SELECT"){
            elementos[i].style.display = "block"
-        }
-         if(elementos[i].id == "footerGuardar_Boton"){
-          elementos[i].style.display = "block"
         }
   }
 

@@ -2,6 +2,12 @@
 var obra1;
 obraSeleccionada = "";
 //Funciones========================================================================================
+//=================================================================================================
+function iniciarInterfazObra(id_obra){
+    imprimirLayout("obras");
+    cargarTarjetasO();
+    cargarInfoO(id_obra);
+}
 function cargarTarjetasO(){
     var postData = {
         metodo: "cargarTarjetas",
@@ -115,12 +121,9 @@ function registrarObraNueva(){
             let arrayResponse = JSON.parse(response);
             $salida = arrayResponse[0].salida;
             if($salida == 'true'){
-                alert('Obra Registrada Correctamente');
-                cargarTarjetasO();
-                obraSeleccionada = arrayResponse[0].cargar;
-                cargarInfoO(arrayResponse[0].cargar);
+                infoModal('respuesta','Obra Registrada Correctamente',"iniciarInterfazObra('"+arrayResponse[0].cargar +"')",'OK','"'+document.getElementById('tituloObra').value+"'",'ninguna');
             }else{
-                alert($salida);
+                infoModal('respuesta','Obra no se puedo registrar,<br> Informe de servidor:',"closeModal('contenedorModal')",'OK','"'+salida+"'",'ninguna');
             }
         }
     });
@@ -166,6 +169,7 @@ function EliminarElemento(idElemento, id_obra){
             $salida = arrayResponse[0].salida;
             if($salida == 'true'){
                 alert('Elemento Eliminado correctamente.');
+
                 cargarInfoO(id_obra);
                 cargarInfoE(idElemento, id_obra);
                 document.getElementById("divInfoElemento").innerHTML = '';
@@ -229,12 +233,9 @@ function ModificarObra(id_obra){
             let arrayResponse = JSON.parse(response);
             $salida = arrayResponse[0].salida;
             if($salida == 'true'){
-                alert('Datos Modificcados correctamente.');
-                cargarTarjetasO();
-                obraSeleccionada = id_obra;
-                cargarInfoO(id_obra);
+                infoModal('respuesta','Obra Modificada Correctamente',"iniciarInterfazObra('"+id_obra +"')",'OK',document.getElementById('TituloObra').value,'ninguna');
             }else{
-                alert($salida);
+                infoModal('respuesta','No se pudo modificar, <br> Respuesta servidor:',"iniciarInterfazObra('"+id_obra +"')",'OK',$salida,'ninguna');
             }
         }
     });
@@ -254,10 +255,7 @@ function EliminarObra(id_obra){
             let arrayResponse = JSON.parse(response);
             $salida = arrayResponse[0].salida;
             if($salida == 'true'){
-                alert('Obra eliminada correctamente.');
-                cargarTarjetasO();
-                obraSeleccionada = id_obra;
-                cargarInfoO(obra1);
+                infoModal('respuesta','Obra Eliminada Correctamente',"iniciarInterfazObra('"+obra1 +"')",'OK',"",'ninguna');
             }else{
                 alert($salida);
             }

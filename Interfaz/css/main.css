@@ -524,7 +524,7 @@ body {
           box-shadow: 0px 3px 6px rgba(80, 6, 6, 0.451);
 }
 
-#footerGuardar_Boton {
+.footerGuardar_Boton {
   display: none;
   -ms-grid-column-align: center;
       justify-self: center;
@@ -535,9 +535,9 @@ body {
   font-size: 16px;
   color: white;
   width: 314px;
-  height: 57px;
+  height: 30px;
   border: 0px;
-  border-radius: 20px;
+  border-radius: 5px;
   background-image: -webkit-gradient(linear, left top, right top, from(#0109FC), to(#0A92FC));
   background-image: linear-gradient(to right, #0109FC, #0A92FC);
   margin: 20px 20px;

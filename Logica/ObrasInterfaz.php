@@ -84,15 +84,10 @@
             <div id="tarjetaElementoNuevo"></div>
             </div>
                 <!-- Boton Final================================= -->
-                <button id="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">Registrar elemento</button>
-                <button id="footerGuardar_Boton" onclick="ModificarObra('.$infObra['id_obra'].')" style="margin:20px auto; display:block;">ModificarObra</button>
+                <button class="footerGuardar_Boton" onclick="cargarRegistroE('.$infObra['id_obra'].')" style="margin:5px auto 30px auto; display:block;">Registrar elemento</button>
+                <button class="footerGuardar_Boton" onclick="modificarObraValidaciones('.$id_obra.')" style="margin:10px auto; display:none;">ModificarObra</button>
                 <!-- ============================================ -->
-            </div>
         </div>
-        <!-- Modales ============================================ -->
-        <div id="contenedorModal">
-        </div>
-        <!-- ==================================================== -->
         ';
         return $interfazInfoUsuario;
     }
@@ -158,7 +153,7 @@
                     <p class="textoAyuda">ID 14 días</p>
                     <input id="id_muestra_3" type="text"class="registro mayus required" placeholder=""  maxlength="5">
                     <p class="textoAyuda">ID 28 días</p>
-                    <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="registrarDatosElemento('.$infoElemento['id_elemento'].','.$infoElemento['07-id_muestra'].','.$infoElemento['14-id_muestra'].','.$infoElemento['28-id_muestra'].','.$idObra.')">Guardar</button>
+                    <button class="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="registrarDatosElemento('.$infoElemento['id_elemento'].','.$infoElemento['07-id_muestra'].','.$infoElemento['14-id_muestra'].','.$infoElemento['28-id_muestra'].','.$idObra.')">Guardar</button>
                 </div>
             ';
         }else{
@@ -184,7 +179,8 @@
                 .scriptPruebas("07 Días", $infoElemento['07-identificador'], $infoElemento['07-resultado'], $infoElemento['07-fecha_prog'], $id_elemento, $idObra)
                 .scriptPruebas("14 Días", $infoElemento['14-identificador'], $infoElemento['14-resultado'], $infoElemento['14-fecha_prog'], $id_elemento, $idObra)
                 .scriptPruebas("28 Días", $infoElemento['28-identificador'], $infoElemento['28-resultado'], $infoElemento['28-fecha_prog'], $id_elemento, $idObra).'
-                <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="ModificarMuestraFull('.$idObra.', '.$id_elemento.', '."'".$infoElemento['07-identificador']."'".', '."'".$infoElemento['14-identificador']."'".', '."'".$infoElemento['28-identificador']."'".')">Modificar</button>
+                <button class="footerGuardar_Boton" style="margin:5px auto; display:none; height:auto; border-radius:5px; justify-self:strech;" onclick="ModificarMuestraFull('.$idObra.', '.$id_elemento.', '."'".$infoElemento['07-identificador']."'".', '."'".$infoElemento['14-identificador']."'".', '."'".$infoElemento['28-identificador']."'".')">Modificar</button>
+                <button class="footerGuardar_Boton" style="margin:5px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="ImprimirReporte()">Reporte</button>
             </div>';
         }
         return $script;
@@ -232,7 +228,7 @@
                             <p class="textoAyuda" style="color:white;font-size:16px;">kg/cm2</p>
                         </div>
                         <p class="textoAyuda">Resultado prueba</p>
-                        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="
+                        <button class="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="
                             RegistrarResultado('.$id_elemento.', '."'".$identificador."'".', (document.getElementById('."'".'resul-'.$identificador."'".').value), '.$obra.');
                         ">Guardar</button>
                     </div>
@@ -289,7 +285,7 @@
                 <div class="textoAyuda">Ubicación<br></div>
                 <textarea class="registro" id="Notas"></textarea>
                 <div class="textoAyuda">Notas<br></div>
-            <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="registrarObraNueva();">Guardar</button>
+            <button class="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="guardarObraValidaciones()">Guardar</button>
             </div>
         ';
     }

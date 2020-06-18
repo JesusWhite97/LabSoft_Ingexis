@@ -46,7 +46,7 @@
                             <input id="28dias" type="text"class="registro mayus required" placeholder=""  maxlength="5">
                             <p class="textoAyuda">ID 28 días</p>
 
-                            <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="">Guardar</button>
+                            <button class="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px;" onclick="">Guardar</button>
                     </div>
 
                     <!-- Información por muestra ============================ -->
@@ -113,7 +113,7 @@
                                         </div>
                                         <p class="textoAyuda">Resultado prueba</p>
                                         
-                                        <button id="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
+                                        <button class="footerGuardar_Boton" style="margin:0px auto; display:block; height:auto; border-radius:5px; justify-self:strech;" onclick="">Guardar</button>
                                         
                 </div>
 

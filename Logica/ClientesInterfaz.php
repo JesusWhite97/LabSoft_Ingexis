@@ -105,7 +105,7 @@
                     <textarea id="nota" onchange="arregloCambios[3] = 0;" disabled>'.$infoCliente['nota'].'</textarea>
                 </div>
                 <!-- Boton Final============================ -->
-                <button id="footerGuardar_Boton" onclick="ModificarClient()" style="margin:20px auto;">Guardar</button>
+                <button class="footerGuardar_Boton" onclick="ModificarClient()" style="margin:20px auto;">Guardar</button>
                 <!-- ======================================= -->
             </div>
         </div>
@@ -170,7 +170,7 @@
                 <label class="titulo">No hay notas</label>
                 <textarea id="nota" class="registro"></textarea>
             </div>
-            <button id="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick ="guardarClient()">Guardar</button>
+            <button class="footerGuardar_Boton" style="margin:20px auto; display:block;" onclick ="guardarClient()">Guardar</button>
         </div>
         <!-- Modales========================== -->
         <div id="contenedorModal">
