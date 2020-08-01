@@ -298,7 +298,8 @@
                 <input id="tituloElemento" type="text"class=" required registro"   placeholder=""  maxlength="30"> 
                 <p class="textoAyuda" style="text-align: center;">Titulo elemento</p>
                 <div class="inputEnLinea" style="">
-                        <button id ="botonGuardarModal"class="" onclick=registrarNuevoElemento('.$id_obra.')>Guardar</button>
+                
+                        <button class="guardarBotonModal" onclick=registrarNuevoElemento('.$id_obra.')>Guardar</button>
                         <button class="cancelarBotonModal"  onclick="cargarInfoO(obraSeleccionada)">Cancelar</button>
                 </div>
             </div>

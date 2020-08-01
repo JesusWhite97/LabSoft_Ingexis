@@ -84,9 +84,9 @@
                 for($i = 0; $i < count($evenMues); $i++){
                     if($evenMues[$i]['resul'] != '??')
                     {
-                        $events = "<div class='event' style = 'background: rgb(255, 0, 0);'>Ident: ".substr($evenMues[$i]['ident'], 5)."</div>";
+                        $events = "<div class='event' style = 'background: rgb(255, 0, 0);'>Prueba de muestra con ID:".substr($evenMues[$i]['ident'], 5)."</div>";
                     }else{
-                        $events = "<div class='event' style = 'background: rgba(0, 128, 0);'>Ident: ".substr($evenMues[$i]['ident'], 5)."</div>";
+                        $events = "<div class='event' style =margin-top:2px; height:auto; 'background: rgba(0, 128, 0);'>Prueba de muestra con ID:".substr($evenMues[$i]['ident'], 5)."</div>";
                     }
                 }
             }

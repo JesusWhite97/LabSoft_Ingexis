@@ -537,7 +537,7 @@ body {
   width: 314px;
   height: 30px;
   border: 0px;
-  border-radius: 5px;
+  border-radius: 20px;
   background-image: -webkit-gradient(linear, left top, right top, from(#0109FC), to(#0A92FC));
   background-image: linear-gradient(to right, #0109FC, #0A92FC);
   margin: 20px 20px;
@@ -1270,6 +1270,35 @@ textarea:focus, input:focus {
   background-repeat: no-repeat;
   background-size: 48px 48px;
   background-position: 0px 2px;
+}
+
+.guardarBotonModal {
+  display: block;
+  width: 95px;
+  height: 20px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #2600ff;
+  background-color: #8baaff;
+  -webkit-box-shadow: 0px 3px 6px rgba(6, 20, 80, 0.451);
+  box-shadow: 0px 3px 6px rgba(6, 13, 80, 0.451);
+  border-radius: 5px 5px 5px 5px;
+  border: 0px;
+}
+
+.cancelarBotonModal {
+  display: block;
+  color: #ee0000;
+  width: 95px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px 5px 5px 5px;
+  border: 1px solid #ff0101;
+  -webkit-box-shadow: 0px 3px 6px rgba(80, 6, 6, 0.451);
+  box-shadow: 0px 3px 6px rgba(80, 6, 6, 0.451);
 }
 
 .tarjetaElemento {
